@@ -52,7 +52,6 @@
     
     DWSwipeGestures *click = [[DWSwipeGestures alloc]init];
     [click dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(leftDrawerButtonPress:) AddView:_ImgView BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
-        
     }];
 }
 
