@@ -11,6 +11,8 @@
 #import "HotListViewController.h"
 #import "ReaderListTableViewController.h"
 #import "VideoCategoryCollectionViewController.h"
+#import "SongMenuTableViewController.h"
+#import "RankingBaseViewController.h"
 
 
 @interface TotalViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -79,6 +81,14 @@
         UICollectionViewFlowLayout *layout= [[UICollectionViewFlowLayout alloc] init];
         VideoCategoryCollectionViewController *videoListVC = [[VideoCategoryCollectionViewController alloc] initWithCollectionViewLayout:layout];
         [self.navigationController pushViewController:videoListVC animated:YES];
+    }
+    else if (indexPath.row == 3){
+        SongMenuTableViewController *songMenuVC = [[SongMenuTableViewController alloc] init];
+        [self.navigationController pushViewController:songMenuVC animated:YES];
+    }
+    else{
+        RankingBaseViewController *rankingVC = [[RankingBaseViewController alloc] init];
+        [self.navigationController pushViewController:rankingVC animated:YES];
     }
    
 }

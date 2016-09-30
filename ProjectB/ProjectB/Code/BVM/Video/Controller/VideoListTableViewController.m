@@ -1,21 +1,19 @@
 //
-//  SongMenuTableViewController.m
+//  VideoListTableViewController.m
 //  ProjectB
 //
-//  Created by long on 16/9/28.
+//  Created by long on 2016/9/29.
 //  Copyright © 2016年 long. All rights reserved.
 //
 
-#import "SongMenuTableViewController.h"
-#import "SongMenuHeaderView.h"
-#import "SongMenuTableViewCell.h"
-#import "SongListTableViewController.h"
+#import "VideoListTableViewController.h"
+#import "VideoListTableViewCell.h"
 
-@interface SongMenuTableViewController ()
+@interface VideoListTableViewController ()
 
 @end
 
-@implementation SongMenuTableViewController
+@implementation VideoListTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,16 +23,12 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self headerView];
     
-    UINib *songMenuNib = [UINib nibWithNibName:@"SongMenuTableViewCell" bundle:nil];
-    [self.tableView registerNib:songMenuNib forCellReuseIdentifier:@"songmenucell"];
+    self.title = @"视频列表";
+    UINib *videoListNib = [UINib nibWithNibName:@"VideoListTableViewCell" bundle:nil];
+    [self.tableView registerNib:videoListNib forCellReuseIdentifier:@"videolistcell"];
 }
--(void)headerView{
-    SongMenuHeaderView *headerView =[[NSBundle mainBundle] loadNibNamed:@"SongMenuHeaderView" owner:nil options:nil][0];
-    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH,0);
-    self.tableView.tableHeaderView = headerView;
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -47,31 +41,24 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 20;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SongMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songmenucell" forIndexPath:indexPath];
+   VideoListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"videolistcell" forIndexPath:indexPath];
     
-    
+   
     
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
-}
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    SongListTableViewController *songListVC = [[SongListTableViewController alloc] init];
-    
-    [self.navigationController pushViewController:songListVC animated:YES];
-    
 }
-
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 180;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
