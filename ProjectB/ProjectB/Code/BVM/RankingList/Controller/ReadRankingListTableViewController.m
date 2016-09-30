@@ -1,21 +1,18 @@
 //
-//  SongMenuTableViewController.m
+//  ReadRankingListTableViewController.m
 //  ProjectB
 //
-//  Created by long on 16/9/28.
+//  Created by long on 2016/9/29.
 //  Copyright © 2016年 long. All rights reserved.
 //
 
-#import "SongMenuTableViewController.h"
-#import "SongMenuHeaderView.h"
-#import "SongMenuTableViewCell.h"
-#import "SongListTableViewController.h"
+#import "ReadRankingListTableViewController.h"
 
-@interface SongMenuTableViewController ()
+@interface ReadRankingListTableViewController ()
 
 @end
 
-@implementation SongMenuTableViewController
+@implementation ReadRankingListTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,16 +22,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self headerView];
-    
-    UINib *songMenuNib = [UINib nibWithNibName:@"SongMenuTableViewCell" bundle:nil];
-    [self.tableView registerNib:songMenuNib forCellReuseIdentifier:@"songmenucell"];
 }
--(void)headerView{
-    SongMenuHeaderView *headerView =[[NSBundle mainBundle] loadNibNamed:@"SongMenuHeaderView" owner:nil options:nil][0];
-    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH,0);
-    self.tableView.tableHeaderView = headerView;
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -43,34 +32,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+#warning Incomplete implementation, return the number of sections
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SongMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songmenucell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    
+    // Configure the cell...
     
     return cell;
 }
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    SongListTableViewController *songListVC = [[SongListTableViewController alloc] init];
-    
-    [self.navigationController pushViewController:songListVC animated:YES];
-    
-}
-
+*/
 
 /*
 // Override to support conditional editing of the table view.

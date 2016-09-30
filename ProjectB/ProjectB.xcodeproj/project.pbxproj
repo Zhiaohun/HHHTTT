@@ -18,7 +18,6 @@
 		3F04707F1D9C09EA00DAD187 /* ScienceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0470741D9C09EA00DAD187 /* ScienceTableViewController.m */; };
 		3F0470801D9C09EA00DAD187 /* ScienceTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0470751D9C09EA00DAD187 /* ScienceTableViewController.xib */; };
 		3F0470AB1D9C0AC500DAD187 /* NewsImageMoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0470A31D9C0AC500DAD187 /* NewsImageMoreTableViewCell.m */; };
-		3F0470AC1D9C0AC500DAD187 /* NewsImageMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0470A41D9C0AC500DAD187 /* NewsImageMoreTableViewCell.xib */; };
 		3F0470AD1D9C0AC500DAD187 /* NewsImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0470A61D9C0AC500DAD187 /* NewsImageTableViewCell.m */; };
 		3F0470AE1D9C0AC500DAD187 /* NewsImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0470A71D9C0AC500DAD187 /* NewsImageTableViewCell.xib */; };
 		3F0470AF1D9C0AC500DAD187 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0470A91D9C0AC500DAD187 /* NewsTableViewCell.m */; };
@@ -29,8 +28,6 @@
 		3F04BF731D9B7204005CCA03 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04BF711D9B7204005CCA03 /* TableViewCell.m */; };
 		3F04BF741D9B7204005CCA03 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BF721D9B7204005CCA03 /* TableViewCell.xib */; };
 		3F04BF8C1D9B73E6005CCA03 /* TotalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BF8A1D9B73E6005CCA03 /* TotalViewController.xib */; };
-		3F04BF951D9B74D5005CCA03 /* SongMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04BF931D9B74D5005CCA03 /* SongMenuTableViewCell.m */; };
-		3F04BF961D9B74D5005CCA03 /* SongMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BF941D9B74D5005CCA03 /* SongMenuTableViewCell.xib */; };
 		3F04BF9A1D9B7518005CCA03 /* SongMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04BF981D9B7518005CCA03 /* SongMenuTableViewController.m */; };
 		3F04BF9B1D9B7518005CCA03 /* SongMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BF991D9B7518005CCA03 /* SongMenuTableViewController.xib */; };
 		3F04BF9F1D9B7551005CCA03 /* SongListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04BF9D1D9B7551005CCA03 /* SongListTableViewController.m */; };
@@ -52,6 +49,22 @@
 		3FA4E5F21D9AB1070090AC78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E5F01D9AB1070090AC78 /* LaunchScreen.storyboard */; };
 		3FA4E60C1D9AB1510090AC78 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E6091D9AB1510090AC78 /* Reachability.m */; };
 		3FA4E60D1D9AB1510090AC78 /* ScrollImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E60B1D9AB1510090AC78 /* ScrollImage.m */; };
+		3FA5EE1A1D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE191D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib */; };
+		3FA5EE1E1D9DFA2F0020E8CC /* SongMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE1C1D9DFA2F0020E8CC /* SongMenuHeaderView.m */; };
+		3FA5EE1F1D9DFA2F0020E8CC /* SongMenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE1D1D9DFA2F0020E8CC /* SongMenuHeaderView.xib */; };
+		3FA5EE231D9DFB120020E8CC /* VideoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE211D9DFB120020E8CC /* VideoListTableViewController.m */; };
+		3FA5EE241D9DFB120020E8CC /* VideoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE221D9DFB120020E8CC /* VideoListTableViewController.xib */; };
+		3FA5EE281D9DFBA00020E8CC /* VideoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE261D9DFBA00020E8CC /* VideoListTableViewCell.m */; };
+		3FA5EE291D9DFBA00020E8CC /* VideoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE271D9DFBA00020E8CC /* VideoListTableViewCell.xib */; };
+		3FA5EE351D9DFC230020E8CC /* MusicRankingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE2B1D9DFC230020E8CC /* MusicRankingListTableViewController.m */; };
+		3FA5EE361D9DFC230020E8CC /* MusicRankingListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE2C1D9DFC230020E8CC /* MusicRankingListTableViewController.xib */; };
+		3FA5EE371D9DFC230020E8CC /* RankingBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE2E1D9DFC230020E8CC /* RankingBaseViewController.m */; };
+		3FA5EE381D9DFC230020E8CC /* ReadRankingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE301D9DFC230020E8CC /* ReadRankingListTableViewController.m */; };
+		3FA5EE391D9DFC230020E8CC /* ReadRankingListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE311D9DFC230020E8CC /* ReadRankingListTableViewController.xib */; };
+		3FA5EE3A1D9DFC230020E8CC /* VideoRankingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE331D9DFC230020E8CC /* VideoRankingListTableViewController.m */; };
+		3FA5EE3B1D9DFC230020E8CC /* VideoRankingListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE341D9DFC230020E8CC /* VideoRankingListTableViewController.xib */; };
+		3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE3D1D9DFD120020E8CC /* SongMenuTableViewCell.m */; };
+		3FA5EE401D9DFD120020E8CC /* SongMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE3E1D9DFD120020E8CC /* SongMenuTableViewCell.xib */; };
 		3FC1BB201D9CF32000C834D8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB1F1D9CF32000C834D8 /* NewsWebViewController.m */; };
 		3FC1BB241D9CF33B00C834D8 /* NewsImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB221D9CF33B00C834D8 /* NewsImageViewController.m */; };
 		3FC1BB251D9CF33B00C834D8 /* NewsImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FC1BB231D9CF33B00C834D8 /* NewsImageViewController.xib */; };
@@ -115,7 +128,6 @@
 		3F0470751D9C09EA00DAD187 /* ScienceTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScienceTableViewController.xib; sourceTree = "<group>"; };
 		3F0470A21D9C0AC500DAD187 /* NewsImageMoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsImageMoreTableViewCell.h; sourceTree = "<group>"; };
 		3F0470A31D9C0AC500DAD187 /* NewsImageMoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsImageMoreTableViewCell.m; sourceTree = "<group>"; };
-		3F0470A41D9C0AC500DAD187 /* NewsImageMoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsImageMoreTableViewCell.xib; sourceTree = "<group>"; };
 		3F0470A51D9C0AC500DAD187 /* NewsImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsImageTableViewCell.h; sourceTree = "<group>"; };
 		3F0470A61D9C0AC500DAD187 /* NewsImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsImageTableViewCell.m; sourceTree = "<group>"; };
 		3F0470A71D9C0AC500DAD187 /* NewsImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsImageTableViewCell.xib; sourceTree = "<group>"; };
@@ -132,9 +144,6 @@
 		3F04BF721D9B7204005CCA03 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		3F04BF881D9B73E6005CCA03 /* TotalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalViewController.h; sourceTree = "<group>"; };
 		3F04BF8A1D9B73E6005CCA03 /* TotalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TotalViewController.xib; sourceTree = "<group>"; };
-		3F04BF921D9B74D5005CCA03 /* SongMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMenuTableViewCell.h; sourceTree = "<group>"; };
-		3F04BF931D9B74D5005CCA03 /* SongMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMenuTableViewCell.m; sourceTree = "<group>"; };
-		3F04BF941D9B74D5005CCA03 /* SongMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongMenuTableViewCell.xib; sourceTree = "<group>"; };
 		3F04BF971D9B7518005CCA03 /* SongMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMenuTableViewController.h; sourceTree = "<group>"; };
 		3F04BF981D9B7518005CCA03 /* SongMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMenuTableViewController.m; sourceTree = "<group>"; };
 		3F04BF991D9B7518005CCA03 /* SongMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongMenuTableViewController.xib; sourceTree = "<group>"; };
@@ -170,6 +179,30 @@
 		3FA4E60B1D9AB1510090AC78 /* ScrollImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollImage.m; sourceTree = "<group>"; };
 		3FA4E6111D9AB1580090AC78 /* ToolMacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolMacroDefine.h; sourceTree = "<group>"; };
 		3FA4E6121D9AB1580090AC78 /* URLMacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLMacroDefine.h; sourceTree = "<group>"; };
+		3FA5EE191D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsImageMoreTableViewCell.xib; sourceTree = "<group>"; };
+		3FA5EE1B1D9DFA2F0020E8CC /* SongMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMenuHeaderView.h; sourceTree = "<group>"; };
+		3FA5EE1C1D9DFA2F0020E8CC /* SongMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMenuHeaderView.m; sourceTree = "<group>"; };
+		3FA5EE1D1D9DFA2F0020E8CC /* SongMenuHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongMenuHeaderView.xib; sourceTree = "<group>"; };
+		3FA5EE201D9DFB120020E8CC /* VideoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListTableViewController.h; sourceTree = "<group>"; };
+		3FA5EE211D9DFB120020E8CC /* VideoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewController.m; sourceTree = "<group>"; };
+		3FA5EE221D9DFB120020E8CC /* VideoListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListTableViewController.xib; sourceTree = "<group>"; };
+		3FA5EE251D9DFBA00020E8CC /* VideoListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListTableViewCell.h; sourceTree = "<group>"; };
+		3FA5EE261D9DFBA00020E8CC /* VideoListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewCell.m; sourceTree = "<group>"; };
+		3FA5EE271D9DFBA00020E8CC /* VideoListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListTableViewCell.xib; sourceTree = "<group>"; };
+		3FA5EE2A1D9DFC230020E8CC /* MusicRankingListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicRankingListTableViewController.h; sourceTree = "<group>"; };
+		3FA5EE2B1D9DFC230020E8CC /* MusicRankingListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicRankingListTableViewController.m; sourceTree = "<group>"; };
+		3FA5EE2C1D9DFC230020E8CC /* MusicRankingListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicRankingListTableViewController.xib; sourceTree = "<group>"; };
+		3FA5EE2D1D9DFC230020E8CC /* RankingBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingBaseViewController.h; sourceTree = "<group>"; };
+		3FA5EE2E1D9DFC230020E8CC /* RankingBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingBaseViewController.m; sourceTree = "<group>"; };
+		3FA5EE2F1D9DFC230020E8CC /* ReadRankingListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadRankingListTableViewController.h; sourceTree = "<group>"; };
+		3FA5EE301D9DFC230020E8CC /* ReadRankingListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadRankingListTableViewController.m; sourceTree = "<group>"; };
+		3FA5EE311D9DFC230020E8CC /* ReadRankingListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadRankingListTableViewController.xib; sourceTree = "<group>"; };
+		3FA5EE321D9DFC230020E8CC /* VideoRankingListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRankingListTableViewController.h; sourceTree = "<group>"; };
+		3FA5EE331D9DFC230020E8CC /* VideoRankingListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRankingListTableViewController.m; sourceTree = "<group>"; };
+		3FA5EE341D9DFC230020E8CC /* VideoRankingListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoRankingListTableViewController.xib; sourceTree = "<group>"; };
+		3FA5EE3C1D9DFD120020E8CC /* SongMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMenuTableViewCell.h; sourceTree = "<group>"; };
+		3FA5EE3D1D9DFD120020E8CC /* SongMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMenuTableViewCell.m; sourceTree = "<group>"; };
+		3FA5EE3E1D9DFD120020E8CC /* SongMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongMenuTableViewCell.xib; sourceTree = "<group>"; };
 		3FC1BB1E1D9CF32000C834D8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		3FC1BB1F1D9CF32000C834D8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		3FC1BB211D9CF33B00C834D8 /* NewsImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsImageViewController.h; sourceTree = "<group>"; };
@@ -260,7 +293,7 @@
 			children = (
 				3F0470A21D9C0AC500DAD187 /* NewsImageMoreTableViewCell.h */,
 				3F0470A31D9C0AC500DAD187 /* NewsImageMoreTableViewCell.m */,
-				3F0470A41D9C0AC500DAD187 /* NewsImageMoreTableViewCell.xib */,
+				3FA5EE191D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib */,
 				3F0470A51D9C0AC500DAD187 /* NewsImageTableViewCell.h */,
 				3F0470A61D9C0AC500DAD187 /* NewsImageTableViewCell.m */,
 				3F0470A71D9C0AC500DAD187 /* NewsImageTableViewCell.xib */,
@@ -340,6 +373,9 @@
 		3F04BF5B1D9B702B005CCA03 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3FA5EE1B1D9DFA2F0020E8CC /* SongMenuHeaderView.h */,
+				3FA5EE1C1D9DFA2F0020E8CC /* SongMenuHeaderView.m */,
+				3FA5EE1D1D9DFA2F0020E8CC /* SongMenuHeaderView.xib */,
 				3F04BF971D9B7518005CCA03 /* SongMenuTableViewController.h */,
 				3F04BF981D9B7518005CCA03 /* SongMenuTableViewController.m */,
 				3F04BF991D9B7518005CCA03 /* SongMenuTableViewController.xib */,
@@ -363,9 +399,9 @@
 		3F04BF5D1D9B702B005CCA03 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3F04BF921D9B74D5005CCA03 /* SongMenuTableViewCell.h */,
-				3F04BF931D9B74D5005CCA03 /* SongMenuTableViewCell.m */,
-				3F04BF941D9B74D5005CCA03 /* SongMenuTableViewCell.xib */,
+				3FA5EE3C1D9DFD120020E8CC /* SongMenuTableViewCell.h */,
+				3FA5EE3D1D9DFD120020E8CC /* SongMenuTableViewCell.m */,
+				3FA5EE3E1D9DFD120020E8CC /* SongMenuTableViewCell.xib */,
 				3F04BFA61D9B7576005CCA03 /* SongListTableViewCell.h */,
 				3F04BFA71D9B7576005CCA03 /* SongListTableViewCell.m */,
 				3F04BFA81D9B7576005CCA03 /* SongListTableViewCell.xib */,
@@ -429,6 +465,9 @@
 				3FC1BB4C1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.h */,
 				3FC1BB4D1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.m */,
 				3FC1BB4E1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.xib */,
+				3FA5EE201D9DFB120020E8CC /* VideoListTableViewController.h */,
+				3FA5EE211D9DFB120020E8CC /* VideoListTableViewController.m */,
+				3FA5EE221D9DFB120020E8CC /* VideoListTableViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -449,6 +488,9 @@
 				3FC1BB421D9D089D00C834D8 /* VideoHeaderCollectionViewCell.h */,
 				3FC1BB431D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m */,
 				3FC1BB441D9D089D00C834D8 /* VideoHeaderCollectionViewCell.xib */,
+				3FA5EE251D9DFBA00020E8CC /* VideoListTableViewCell.h */,
+				3FA5EE261D9DFBA00020E8CC /* VideoListTableViewCell.m */,
+				3FA5EE271D9DFBA00020E8CC /* VideoListTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -796,6 +838,17 @@
 				5DA8EB171D9B80EF006DAECD /* RankingListViewController.h */,
 				5DA8EB181D9B80EF006DAECD /* RankingListViewController.m */,
 				5DA8EB191D9B80EF006DAECD /* RankingListViewController.xib */,
+				3FA5EE2A1D9DFC230020E8CC /* MusicRankingListTableViewController.h */,
+				3FA5EE2B1D9DFC230020E8CC /* MusicRankingListTableViewController.m */,
+				3FA5EE2C1D9DFC230020E8CC /* MusicRankingListTableViewController.xib */,
+				3FA5EE2D1D9DFC230020E8CC /* RankingBaseViewController.h */,
+				3FA5EE2E1D9DFC230020E8CC /* RankingBaseViewController.m */,
+				3FA5EE2F1D9DFC230020E8CC /* ReadRankingListTableViewController.h */,
+				3FA5EE301D9DFC230020E8CC /* ReadRankingListTableViewController.m */,
+				3FA5EE311D9DFC230020E8CC /* ReadRankingListTableViewController.xib */,
+				3FA5EE321D9DFC230020E8CC /* VideoRankingListTableViewController.h */,
+				3FA5EE331D9DFC230020E8CC /* VideoRankingListTableViewController.m */,
+				3FA5EE341D9DFC230020E8CC /* VideoRankingListTableViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -925,19 +978,23 @@
 				3FC1BB251D9CF33B00C834D8 /* NewsImageViewController.xib in Resources */,
 				5DA8EB241D9B9C5B006DAECD /* LoginViewController.xib in Resources */,
 				3FA4E5F21D9AB1070090AC78 /* LaunchScreen.storyboard in Resources */,
+				3FA5EE361D9DFC230020E8CC /* MusicRankingListTableViewController.xib in Resources */,
 				5DA8EB261D9B9C5B006DAECD /* RegisterViewController.xib in Resources */,
 				5DA8EB531D9BC960006DAECD /* HotListTableViewCell.xib in Resources */,
+				3FA5EE241D9DFB120020E8CC /* VideoListTableViewController.xib in Resources */,
 				3F04BF9B1D9B7518005CCA03 /* SongMenuTableViewController.xib in Resources */,
 				5D29E9F81D9CB61E00213A82 /* MyselfPageViewController.xib in Resources */,
+				3FA5EE391D9DFC230020E8CC /* ReadRankingListTableViewController.xib in Resources */,
 				3F0470B01D9C0AC500DAD187 /* NewsTableViewCell.xib in Resources */,
 				5DA8EB1B1D9B80EF006DAECD /* RankingListViewController.xib in Resources */,
 				3F04BFB41D9B76AB005CCA03 /* ReaderListTableViewController.xib in Resources */,
 				3F04BFB91D9B7701005CCA03 /* ReaderDetailViewController.xib in Resources */,
 				3F04BFA51D9B7563005CCA03 /* SongDetailViewController.xib in Resources */,
-				3F0470AC1D9C0AC500DAD187 /* NewsImageMoreTableViewCell.xib in Resources */,
 				3F04BF741D9B7204005CCA03 /* TableViewCell.xib in Resources */,
 				3F04707B1D9C09EA00DAD187 /* JokeTableViewController.xib in Resources */,
 				3FA4E5EF1D9AB1070090AC78 /* Assets.xcassets in Resources */,
+				3FA5EE291D9DFBA00020E8CC /* VideoListTableViewCell.xib in Resources */,
+				3FA5EE3B1D9DFC230020E8CC /* VideoRankingListTableViewController.xib in Resources */,
 				3F04BFAA1D9B7576005CCA03 /* SongListTableViewCell.xib in Resources */,
 				3FA4E5ED1D9AB1070090AC78 /* Main.storyboard in Resources */,
 				3FC1BB501D9D0C0800C834D8 /* VideoCategoryCollectionViewController.xib in Resources */,
@@ -946,10 +1003,10 @@
 				5DA8EB491D9BC2B1006DAECD /* TotalTableViewCell.xib in Resources */,
 				5DA8EB321D9BB48C006DAECD /* LeftViewController.xib in Resources */,
 				3F04BF581D9B6FE3005CCA03 /* MainViewController.xib in Resources */,
+				3FA5EE401D9DFD120020E8CC /* SongMenuTableViewCell.xib in Resources */,
 				3F04707E1D9C09EA00DAD187 /* RecommendTableViewController.xib in Resources */,
 				5D29EA221D9D19DE00213A82 /* SystemInfoTableViewCell.xib in Resources */,
 				3F0470AE1D9C0AC500DAD187 /* NewsImageTableViewCell.xib in Resources */,
-				3F04BF961D9B74D5005CCA03 /* SongMenuTableViewCell.xib in Resources */,
 				3F0470801D9C09EA00DAD187 /* ScienceTableViewController.xib in Resources */,
 				5D29E9EF1D9CAB8900213A82 /* MineEditViewController.xib in Resources */,
 				5DA8EB131D9B8089006DAECD /* HotListViewController.xib in Resources */,
@@ -959,6 +1016,8 @@
 				3F04BFA01D9B7551005CCA03 /* SongListTableViewController.xib in Resources */,
 				3F0470771D9C09EA00DAD187 /* EntertainmentTableViewController.xib in Resources */,
 				3F04BFBE1D9B7735005CCA03 /* ReaderListTableViewCell.xib in Resources */,
+				3FA5EE1F1D9DFA2F0020E8CC /* SongMenuHeaderView.xib in Resources */,
+				3FA5EE1A1D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1022,13 +1081,17 @@
 				3FC1BB241D9CF33B00C834D8 /* NewsImageViewController.m in Sources */,
 				5DA8EB481D9BC2B1006DAECD /* TotalTableViewCell.m in Sources */,
 				3F04BF9F1D9B7551005CCA03 /* SongListTableViewController.m in Sources */,
-				3F04BF951D9B74D5005CCA03 /* SongMenuTableViewCell.m in Sources */,
+				3FA5EE381D9DFC230020E8CC /* ReadRankingListTableViewController.m in Sources */,
 				3F04707D1D9C09EA00DAD187 /* RecommendTableViewController.m in Sources */,
+				3FA5EE1E1D9DFA2F0020E8CC /* SongMenuHeaderView.m in Sources */,
 				5DA8EB121D9B8089006DAECD /* HotListViewController.m in Sources */,
 				5DA8EB1A1D9B80EF006DAECD /* RankingListViewController.m in Sources */,
 				3FC1BB451D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m in Sources */,
+				3FA5EE3A1D9DFC230020E8CC /* VideoRankingListTableViewController.m in Sources */,
 				3F0470781D9C09EA00DAD187 /* GameTableViewController.m in Sources */,
 				5DA8EB431D9BC1EB006DAECD /* MineViewController.m in Sources */,
+				3FA5EE281D9DFBA00020E8CC /* VideoListTableViewCell.m in Sources */,
+				3FA5EE231D9DFB120020E8CC /* VideoListTableViewController.m in Sources */,
 				5D29E9F71D9CB61E00213A82 /* MyselfPageViewController.m in Sources */,
 				3F0470761D9C09EA00DAD187 /* EntertainmentTableViewController.m in Sources */,
 				3FA4E5E71D9AB1070090AC78 /* AppDelegate.m in Sources */,
@@ -1046,12 +1109,15 @@
 				5D29E9F31D9CB0DC00213A82 /* DWSwipeGestures.m in Sources */,
 				5DA8EB311D9BB48C006DAECD /* LeftViewController.m in Sources */,
 				3FA4E60C1D9AB1510090AC78 /* Reachability.m in Sources */,
+				3FA5EE351D9DFC230020E8CC /* MusicRankingListTableViewController.m in Sources */,
 				5DA8EB3D1D9BC028006DAECD /* LLNetWorkingRequest.m in Sources */,
 				3FC1BB2A1D9CF4BD00C834D8 /* NewsBaseViewController.m in Sources */,
 				3FA4E60D1D9AB1510090AC78 /* ScrollImage.m in Sources */,
+				3FA5EE371D9DFC230020E8CC /* RankingBaseViewController.m in Sources */,
 				3F04BF571D9B6FE3005CCA03 /* MainViewController.m in Sources */,
 				5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */,
 				5DA8EB251D9B9C5B006DAECD /* RegisterViewController.m in Sources */,
+				3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */,
 				3F04BFA41D9B7563005CCA03 /* SongDetailViewController.m in Sources */,
 				3FC1BB4F1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.m in Sources */,
 				5DA8EB361D9BB658006DAECD /* MMExampleDrawerVisualStateManager.m in Sources */,

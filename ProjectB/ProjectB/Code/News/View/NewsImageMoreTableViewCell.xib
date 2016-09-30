@@ -28,7 +28,7 @@
                             <constraint firstAttribute="height" constant="76" id="EW1-v7-rDU"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="U1850P115T41D162089F756DT20090317125324" translatesAutoresizingMaskIntoConstraints="NO" id="qHc-x2-jjG">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="123456" translatesAutoresizingMaskIntoConstraints="NO" id="qHc-x2-jjG">
                         <constraints>
                             <constraint firstAttribute="height" constant="76" id="ytp-Es-HyT"/>
                         </constraints>
@@ -41,7 +41,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQh-HI-eQG">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="5Hz-Gl-TbQ">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="76" id="CXf-b7-Raq"/>
+                            <constraint firstAttribute="width" constant="111" id="Ocl-as-qoy"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQh-HI-eQG">
+                        <frame key="frameInset" minX="328" minY="120" width="47" height="21.5"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="47" id="QLC-2x-1cG"/>
                         </constraints>
@@ -49,22 +56,18 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="5Hz-Gl-TbQ">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="76" id="CXf-b7-Raq"/>
-                            <constraint firstAttribute="width" constant="111" id="Ocl-as-qoy"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="5Hz-Gl-TbQ" firstAttribute="width" secondItem="jW5-FT-OXr" secondAttribute="width" id="8Nz-b6-lr4"/>
                     <constraint firstItem="TNp-IS-obJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Gqe-mq-mCL"/>
-                    <constraint firstAttribute="bottom" secondItem="ZQh-HI-eQG" secondAttribute="bottom" constant="7" id="MES-2q-7uq"/>
-                    <constraint firstAttribute="trailing" secondItem="ZQh-HI-eQG" secondAttribute="trailing" constant="8" id="U8w-ae-j6z"/>
+                    <constraint firstAttribute="bottom" secondItem="ZQh-HI-eQG" secondAttribute="bottom" constant="8.5" id="MES-2q-7uq"/>
+                    <constraint firstItem="jW5-FT-OXr" firstAttribute="width" secondItem="qHc-x2-jjG" secondAttribute="width" id="SfA-tR-Zgy"/>
+                    <constraint firstAttribute="trailing" secondItem="ZQh-HI-eQG" secondAttribute="trailing" constant="6" id="U8w-ae-j6z"/>
                     <constraint firstItem="jW5-FT-OXr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bDq-ZT-wft"/>
                     <constraint firstItem="MtO-Dp-EeX" firstAttribute="top" secondItem="5Hz-Gl-TbQ" secondAttribute="bottom" constant="9" id="bO8-PU-87e"/>
                     <constraint firstItem="jW5-FT-OXr" firstAttribute="top" secondItem="TNp-IS-obJ" secondAttribute="bottom" constant="8" id="bZt-Fu-rWs"/>
                     <constraint firstItem="MtO-Dp-EeX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="d9n-lm-P1y"/>
-                    <constraint firstItem="ZQh-HI-eQG" firstAttribute="top" secondItem="qHc-x2-jjG" secondAttribute="bottom" constant="9" id="fcK-D6-kBl"/>
+                    <constraint firstItem="ZQh-HI-eQG" firstAttribute="top" secondItem="qHc-x2-jjG" secondAttribute="bottom" constant="7" id="fcK-D6-kBl"/>
                     <constraint firstItem="5Hz-Gl-TbQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="gie-10-Pjs"/>
                     <constraint firstItem="5Hz-Gl-TbQ" firstAttribute="top" secondItem="TNp-IS-obJ" secondAttribute="bottom" constant="8" id="jzL-M8-nGX"/>
                     <constraint firstItem="TNp-IS-obJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="qy2-jO-T3M"/>
@@ -80,8 +83,8 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="123456" width="1920" height="1200"/>
         <image name="20121214223818_CmWuM" width="1920" height="1200"/>
         <image name="3839_pc" width="1920" height="1200"/>
-        <image name="U1850P115T41D162089F756DT20090317125324" width="1920" height="1200"/>
     </resources>
 </document>

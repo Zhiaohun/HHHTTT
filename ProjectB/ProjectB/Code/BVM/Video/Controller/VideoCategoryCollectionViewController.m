@@ -9,6 +9,7 @@
 #import "VideoCategoryCollectionViewController.h"
 #import "VideoNormalCollectionViewCell.h"
 #import "VideoHeaderCollectionViewCell.h"
+#import "VideoListTableViewController.h"
 @interface VideoCategoryCollectionViewController ()
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @end
@@ -44,6 +45,11 @@
         _flowLayout.headerReferenceSize = CGSizeMake(VIEW_WIDTH, 180);
     }
     return _flowLayout;
+}
+
+-(void)tapHeaderViewAction{
+    VideoListTableViewController *videoListVC = [[VideoListTableViewController alloc] init];
+    [self.navigationController pushViewController:videoListVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -83,11 +89,18 @@
     
     VideoHeaderCollectionViewCell *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind  withReuseIdentifier:@"videoheadercell" forIndexPath:indexPath];
     
+    DWSwipeGestures *gesture = [[DWSwipeGestures alloc] init];
+    [gesture dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(tapHeaderViewAction) AddView:headerView BackSwipeGestureTypeString:nil];
     return headerView;
     
     
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    VideoListTableViewController *videoListVC = [[VideoListTableViewController alloc] init];
+    [self.navigationController pushViewController:videoListVC animated:YES];
+}
 #pragma mark <UICollectionViewDelegate>
 
 /*
