@@ -15,7 +15,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="123456" translatesAutoresizingMaskIntoConstraints="NO" id="Vqf-YX-zut"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="123456" translatesAutoresizingMaskIntoConstraints="NO" id="Vqf-YX-zut">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卧槽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwk-ml-bbp">
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,6 +41,10 @@
                 <constraint firstItem="Kwk-ml-bbp" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="vf7-W6-cGu"/>
             </constraints>
             <size key="customSize" width="150" height="150"/>
+            <connections>
+                <outlet property="normalImageView" destination="Vqf-YX-zut" id="zHv-pn-3sj"/>
+                <outlet property="normalTitleLabel" destination="Kwk-ml-bbp" id="d3U-Rc-kxK"/>
+            </connections>
             <point key="canvasLocation" x="-64" y="8"/>
         </collectionViewCell>
     </objects>

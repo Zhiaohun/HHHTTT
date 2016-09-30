@@ -15,4 +15,9 @@
     // Initialization code
 }
 
+
+-(void)setListModel:(ItemList *)listModel{
+    self.normalTitleLabel.text = listModel.data.title;
+    [self.normalImageView sd_setImageWithURL:[NSURL URLWithString:listModel.data.image] placeholderImage:PlaceholderImage];
+}
 @end

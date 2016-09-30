@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VideoCategoryDataModels.h"
 
 @interface VideoHeaderCollectionViewCell : UICollectionViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+@property (nonatomic, strong) ItemList *listModel;
 @end

@@ -15,4 +15,8 @@
     // Initialization code
 }
 
+
+-(void)setListModel:(ItemList *)listModel{
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:listModel.data.image] placeholderImage:PlaceholderImage];
+}
 @end

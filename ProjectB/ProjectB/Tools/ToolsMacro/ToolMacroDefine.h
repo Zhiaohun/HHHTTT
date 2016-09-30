@@ -23,5 +23,6 @@
 //颜色RGBA
 #define LLRGBAColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(r)/255.0 blue:(r)/255.0 alpha:a]
 
-
+//图片加载背景
+#define PlaceholderImage [UIImage imageNamed:@"placeholderImage"]
 #endif /* ToolMacroDefine_h */
