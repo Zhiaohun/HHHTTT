@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, RequestType) {
     POST
 };
 
-typedef void(^Success)(NSData *data);
+typedef void(^Success)(NSDictionary *dic);
 typedef void(^Fail)(NSError *error);
 
 +(void)reuqestWithType:(RequestType)type Controller:(UIViewController *)controller URLString:(NSString *)URLString Parameter:(NSDictionary *)ParaDic Success:(Success)success Fail:(Fail)fail;

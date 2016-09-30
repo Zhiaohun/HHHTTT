@@ -25,6 +25,9 @@
                 <constraint firstItem="v6d-xx-KCH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vkG-wb-Vad"/>
             </constraints>
             <size key="customSize" width="387" height="130"/>
+            <connections>
+                <outlet property="headerImageView" destination="v6d-xx-KCH" id="1K7-ii-NJ2"/>
+            </connections>
             <point key="canvasLocation" x="39.5" y="8"/>
         </collectionViewCell>
     </objects>

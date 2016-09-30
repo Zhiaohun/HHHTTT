@@ -8,13 +8,28 @@
 
 #import "VideoListTableViewController.h"
 #import "VideoListTableViewCell.h"
+#import "VideoListHeaderView.h"
+#import "VideoListDataModels.h"
+
 
 @interface VideoListTableViewController ()
+@property (nonatomic, strong) NSString *strategyType;
+@property (nonatomic, assign) NSInteger startCount;
+@property (nonatomic, assign) NSInteger categoryId;
+@property (nonatomic, strong) VideoListBaseClass *baseModel;
+@property (nonatomic, strong) NSMutableArray *dateArray;
+@property (nonatomic, strong) NSMutableArray *shareArray;
 
 @end
 
 @implementation VideoListTableViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = YES;
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -25,10 +40,113 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.title = @"视频列表";
+    [self headerView];
+    self.tableView.frame = CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT-40);
     UINib *videoListNib = [UINib nibWithNibName:@"VideoListTableViewCell" bundle:nil];
     [self.tableView registerNib:videoListNib forCellReuseIdentifier:@"videolistcell"];
+    
+    self.startCount = 0;
+    self.strategyType = @"date";
+
+    [self headerRefresh];
 }
 
+-(void)headerView{
+    VideoListHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"VideoListHeaderView" owner:nil options:nil][0];
+    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 40);
+    [headerView insertSubview:headerView.backgroundView atIndex:0];
+    headerView.rightBtnView1.hidden = YES;
+    headerView.rightBtnView2.hidden = YES;
+    headerView.leftBtnView1.hidden = NO;
+    headerView.leftBtnView2.hidden = NO;
+    self.tableView.tableHeaderView = headerView;
+    
+    
+    headerView.dateBtnBlock = ^{
+        self.startCount = 0;
+        self.strategyType = @"date";
+        [self headerRefresh];
+    };
+    
+    
+    headerView.shareBtnBlock = ^{
+        self.startCount = 0;
+        self.strategyType = @"shareCount";
+        [self headerRefresh];
+    };
+    
+}
+
+#pragma mark - 网络请求
+-(void)dataRequest{
+    NSString *url = [[NSString alloc] init];
+    if (!IsEmptyString(self.listModel.data.title)) {
+        url = [NSString stringWithFormat:@"%@?start=%lu&num=20&categoryId=%d&strategy=%@",URL_NORMAL,self.startCount,(int)self.listModel.data.dataIdentifier,self.strategyType];
+    }else{
+        url = [NSString stringWithFormat:@"%@?start=%lu&num=20&tagId=658&strategy=%@",URL_360,self.startCount,self.strategyType];
+        
+    }
+    NSLog(@">>>>%@",url);
+    
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:url Parameter:nil Success:^(NSDictionary *dic) {
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        
+        self.baseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
+        
+        if ([self.strategyType isEqualToString:@"date"]) {
+            for (VideoListItemList *model in self.baseModel.itemList) {
+                [self.dateArray addObject:model];
+            }
+        }else{
+            for (VideoListItemList *model in self.baseModel.itemList) {
+                [self.shareArray addObject:model];
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self footerRefresh];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@">>>>>%@",error);
+    }];
+}
+
+
+#pragma mark - 初始化数组
+-(NSMutableArray *)dateArray{
+    if (!_dateArray) {
+        _dateArray = [NSMutableArray array];
+    }
+    return _dateArray;
+}
+
+-(NSMutableArray *)shareArray{
+    if (!_shareArray) {
+        _shareArray = [NSMutableArray array];
+    }
+    return _shareArray;
+}
+
+
+
+//刷新
+-(void)headerRefresh{
+    self.tableView.mj_header = [MJRefreshNormalHeader  headerWithRefreshingBlock:^{
+        [self dataRequest];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+}
+
+//加载更多
+-(void)footerRefresh{
+    self.startCount += 20;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self dataRequest];
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -41,15 +159,23 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    if ([self.strategyType isEqualToString:@"date"]) {
+        return self.dateArray.count;
+    }else{
+        return self.shareArray.count;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    VideoListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"videolistcell" forIndexPath:indexPath];
-    
-   
-    
+    if ([self.strategyType isEqualToString:@"date"]) {
+        VideoListItemList *listModel = self.dateArray[indexPath.row];
+        cell.listModel = listModel;
+    }else{
+        VideoListItemList *listModel = self.shareArray[indexPath.row];
+        cell.listModel = listModel;
+    }
     return cell;
 }
 
@@ -57,7 +183,7 @@
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 180;
+    return 150;
 }
 /*
 // Override to support conditional editing of the table view.

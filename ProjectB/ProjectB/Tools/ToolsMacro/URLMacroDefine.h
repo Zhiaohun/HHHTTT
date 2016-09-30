@@ -34,8 +34,11 @@
 //#define URL_MostPopular   @"http://mobileapi.5sing.kugou.com/songlist/hotsupportranklist?page=1&pageSize=20"
 
 //视频
+//视频类别
+#define URL_VideoList   @"http://baobab.wandoujia.com/api/v3/discovery"
 //视频列表
-#define URL_VideoList   @"http://baobab.wandoujia.com/api/v3/tabs/selected"
+#define URL_NORMAL  @"http://baobab.wandoujia.com/api/v3/videos" //normal  GET
+#define URL_360  @"http://baobab.wandoujia.com/api/v3/tag/videos" //360  GET
 //视频播放
 #define URL_VideoPlay   @"http://baobab.wandoujia.com/api/v3/video/9176/detail/related"
 //视频排行榜

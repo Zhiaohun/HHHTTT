@@ -33,7 +33,8 @@
         NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (data) {
                 
-                success(data);
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                success(dic);
             }else{
                 [LLShowHUD showHUD:controller.navigationController.view Message:@"数据加载失败,请重试!" AfterDelay:0];
                 fail(error);

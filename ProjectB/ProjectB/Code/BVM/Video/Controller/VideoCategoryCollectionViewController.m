@@ -10,8 +10,11 @@
 #import "VideoNormalCollectionViewCell.h"
 #import "VideoHeaderCollectionViewCell.h"
 #import "VideoListTableViewController.h"
+#import "VideoCategoryDataModels.h"
 @interface VideoCategoryCollectionViewController ()
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, strong) BaseClass *baseModel;
+@property (nonatomic, strong) NSMutableArray *videoDataArray;
 @end
 
 @implementation VideoCategoryCollectionViewController
@@ -26,7 +29,7 @@
     
     // Register cell classes
    
-    
+    [self dataRequest];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.collectionViewLayout = [self flowLayout];
@@ -47,8 +50,38 @@
     return _flowLayout;
 }
 
+-(NSMutableArray *)videoDataArray{
+    if (!_videoDataArray) {
+        _videoDataArray = [NSMutableArray array];
+    }
+    return _videoDataArray;
+}
+-(void)dataRequest{
+   [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_VideoList Parameter:nil Success:^(NSDictionary *dic) {
+       self.baseModel = [BaseClass modelObjectWithDictionary:dic];
+       NSLog(@"%@",self.baseModel);
+       for (int i= 0; i < self.baseModel.itemList.count; i++) {
+           if (i > 3) {
+               [self.videoDataArray addObject:self.baseModel.itemList[i]];
+           }
+       }
+       dispatch_async(dispatch_get_main_queue(), ^{
+           [self.collectionView reloadData];
+       });
+       
+   } Fail:^(NSError *error) {
+       NSLog(@">>>>>%@",error);
+   }];
+}
+
+
+
+
+
 -(void)tapHeaderViewAction{
     VideoListTableViewController *videoListVC = [[VideoListTableViewController alloc] init];
+    videoListVC.listModel = [[ItemList alloc] init];
+    videoListVC.listModel = self.baseModel.itemList[3];
     [self.navigationController pushViewController:videoListVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {
@@ -74,11 +107,15 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    return self.videoDataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     VideoNormalCollectionViewCell *normalCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"normalcell" forIndexPath:indexPath];
+    
+        ItemList *listModel = self.videoDataArray[indexPath.row];
+         normalCell.listModel = listModel;
+   
     
     return normalCell;
     
@@ -89,8 +126,13 @@
     
     VideoHeaderCollectionViewCell *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind  withReuseIdentifier:@"videoheadercell" forIndexPath:indexPath];
     
+    headerView.listModel = self.baseModel.itemList[3];
+    
     DWSwipeGestures *gesture = [[DWSwipeGestures alloc] init];
-    [gesture dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(tapHeaderViewAction) AddView:headerView BackSwipeGestureTypeString:nil];
+    [gesture dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(tapHeaderViewAction) AddView:headerView BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
+        
+    }];
+    
     return headerView;
     
     
@@ -99,6 +141,8 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     VideoListTableViewController *videoListVC = [[VideoListTableViewController alloc] init];
+    videoListVC.listModel = [[ItemList alloc] init];
+    videoListVC.listModel = self.videoDataArray[indexPath.row];
     [self.navigationController pushViewController:videoListVC animated:YES];
 }
 #pragma mark <UICollectionViewDelegate>

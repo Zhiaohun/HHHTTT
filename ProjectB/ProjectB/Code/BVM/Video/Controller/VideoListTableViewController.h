@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VideoCategoryDataModels.h"
 
 @interface VideoListTableViewController : UITableViewController
+@property (nonatomic, strong) ItemList *listModel;
 
 @end
