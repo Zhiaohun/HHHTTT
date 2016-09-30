@@ -55,7 +55,7 @@
     }];
 }
 
--(void)leftDrawerButtonPress:(id)sender{
+-(void)leftDrawerButtonPress:(id)sender{    
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 

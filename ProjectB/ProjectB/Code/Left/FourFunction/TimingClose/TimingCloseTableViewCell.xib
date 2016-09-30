@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="timingCell" id="KGk-i7-Jjw" customClass="TimingCloseTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrz-EL-aoR">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="209" id="xYr-SG-sC8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="whd-Q0-xPo">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="i6W-nv-RK5"/>
+                            <constraint firstAttribute="height" constant="30" id="p3p-BI-uuR"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="whd-Q0-xPo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="11x-wG-XFD"/>
+                    <constraint firstItem="Mrz-EL-aoR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="R5q-fY-J9u"/>
+                    <constraint firstAttribute="bottom" secondItem="whd-Q0-xPo" secondAttribute="bottom" constant="7" id="kly-ab-8sc"/>
+                    <constraint firstAttribute="bottom" secondItem="Mrz-EL-aoR" secondAttribute="bottom" id="mV8-5w-p2q"/>
+                    <constraint firstItem="Mrz-EL-aoR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tlX-qG-0O3"/>
+                    <constraint firstAttribute="trailing" secondItem="whd-Q0-xPo" secondAttribute="trailing" constant="15" id="zAS-6D-peZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="label1" destination="Mrz-EL-aoR" id="oLe-oc-2Zk"/>
+                <outlet property="tickImg" destination="whd-Q0-xPo" id="bb5-pl-dfO"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tick" width="24" height="24"/>
+    </resources>
+</document>

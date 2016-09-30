@@ -7,6 +7,7 @@
 //
 
 #import "LeftViewController.h"
+#import "TimingCloseTableViewController.h"
 
 @interface LeftViewController ()
 
@@ -33,19 +34,24 @@
 #pragma mark - Tapclick -
 
 - (IBAction)firstBtn:(id)sender {
+    //近期浏览
     
     
 }
 - (IBAction)secondBtn:(id)sender {
-    
+    //我的收藏
     
 }
 - (IBAction)ThirdBtn:(id)sender {
-    
+    //我的下载
     
 }
 - (IBAction)forthBtn:(id)sender {
+    //定时关闭
+    TimingCloseTableViewController *timingCloseVC = [TimingCloseTableViewController new];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:timingCloseVC];
     
+    [self presentViewController:navi animated:YES completion:nil];
     
 }
 
