@@ -15,7 +15,7 @@
 @property (nonatomic,assign) NSInteger selectIndex;
 
 @property (nonatomic,assign) NSInteger timeSeconds;
-
+@property (nonatomic,strong)  NSTimer *timer;
 @end
 
 @implementation TimingCloseTableViewController
@@ -77,8 +77,7 @@
     if (indexPath.row == 0) {
         cell.tickImg.hidden = NO;
     }
-    
-    
+
     return cell;
 }
 
@@ -86,42 +85,49 @@
     self.selectIndex = indexPath.row;
     
     if (indexPath.row == 0) {
-        
+        [_timer invalidate];
     }
     else{
         switch (indexPath.row) {
             case 1:{
-                _timeSeconds = 600;
+                [_timer invalidate];
+                _timeSeconds = 5;
                 break;
             }
             case 2:{
-                _timeSeconds = 1200;
+                [_timer invalidate];
+                _timeSeconds = 10;
                 break;
             }
             case 3:{
+                [_timer invalidate];
                 _timeSeconds = 1800;
                 break;
             }
             case 4:{
+                [_timer invalidate];
                 _timeSeconds = 3600;
                 break;
             }
             case 5:{
+                [_timer invalidate];
                 _timeSeconds = 5400;
                 break;
             }
             case 6:{
+                [_timer invalidate];
                 _timeSeconds = 7200;
                 break;
             }
             case 7:{
+                [_timer invalidate];
                 
                 break;
             }
             default:
                 break;
         }
-        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:_timeSeconds target:self selector:@selector(exitApp) userInfo:nil repeats:NO];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:_timeSeconds target:self selector:@selector(exitApp) userInfo:nil repeats:NO];
     }
     
 }
