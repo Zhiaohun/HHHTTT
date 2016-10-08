@@ -46,8 +46,22 @@
 
 
 //阅读
+//热门: page:1
+#define URL_HotRead @"http://mapi.dangdang.com/index.php?action=bang_tushu&user_client=iphone&client_version=5.5.6&udid=17BFEBF79BFCEED4EC1165EA26BC56B3&time_code=540A88E74CEFD9429857C6149B4CF7A4&timestamp=1474943523&union_id=537-50&permanent_id=20160927095850585330619986904624061&img_size=b&pagesize=10&time_region=24hours&cat_path=01.00.00.00.00.00&ischildren=0&bang_name=bestsell"
+//排行榜 : page:1
+#define URL_RankListRead @"http://mapi.dangdang.com/index.php?action=bang_tushu&user_client=iphone&client_version=5.5.6&udid=17BFEBF79BFCEED4EC1165EA26BC56B3&time_code=F1EBD5202292B784BEE1DFB8CD532666&timestamp=1474946548&union_id=537-50&permanent_id=20160927095850585330619986904624061&img_size=b&pagesize=10&time_region=recent30&cat_path=01.00.00.00.00.00&ischildren=0&bang_name=bestsell"
 //励志类图书:  page:1
-#define URL_  search.mapi.dangdang.com/index.php?action=list_category&user_client=iphone&client_version=5.5.6&udid=17BFEBF79BFCEED4EC1165EA26BC56B3&time_code=C4581CFC326F959AF115BCDF9848018E&timestamp=1474947087&union_id=537-50&permanent_id=20160927095850585330619986904624061&page_size=10&sort_type=default_0&cid=01.21.00.00.00.00&img_size=e
+#define URL_MovitionBook  @"http://search.mapi.dangdang.com/index.php?action=list_category&user_client=iphone&client_version=5.5.6&udid=17BFEBF79BFCEED4EC1165EA26BC56B3&time_code=C4581CFC326F959AF115BCDF9848018E&timestamp=1474947087&union_id=537-50&permanent_id=20160927095850585330619986904624061&page_size=10&sort_type=default_0&cid=01.21.00.00.00.00&img_size=e"
+//心理学类图书 :page:1
+#define URL_PsychologyBook @"http://search.mapi.dangdang.com/index.php?action=list_category&user_client=iphone&client_version=5.5.6&udid=17BFEBF79BFCEED4EC1165EA26BC56B3&time_code=5E72D523C0BCAECD65740BE315BB0A01&timestamp=1474947494&union_id=537-50&permanent_id=20160927095850585330619986904624061&page_size=10&sort_type=default_0&cid=01.31.00.00.00.00&img_size=e"
+//小说类图书:page:1
+#define URL_NovelBook @"http://search.mapi.dangdang.com/index.php?action=list_category&user_client=iphone&client_version=5.5.6&udid=17BFEBF79BFCEED4EC1165EA26BC56B3&time_code=697ED197434075AADCE67571C0F1C3E9&timestamp=1474947359&union_id=537-50&permanent_id=20160927095850585330619986904624061&page_size=10&sort_type=default_0&cid=01.03.00.00.00.00&img_size=e"
+//文艺类图书:page:1
+#define URL_ArtBook @"http://search.mapi.dangdang.com/index.php?action=list_category&user_client=iphone&client_version=5.5.6&udid=17BFEBF79BFCEED4EC1165EA26BC56B3&time_code=70FDCA8140265AF58283783625496153&timestamp=1474947261&union_id=537-50&permanent_id=20160927095850585330619986904624061&page_size=10&sort_type=default_0&cid=01.01.00.00.00.00&img_size=e"
+//图书详情 : product_id:23353342
+#define URL_BookDetail @"http://product.mapi.dangdang.com/index.php?action=get_product_book_html&user_client=iphone&client_version=5.5.6&udid=17BFEBF79BFCEED4EC1165EA26BC56B3&time_code=4A10112DE5CA01EE7C37FD3D36562A16&timestamp=1474945334&union_id=537-50&permanent_id=20160927095850585330619986904624061"
+//图书评论 : product_id:23353342 page:1
+#define URL_BookComment @"http://product.mapi.dangdang.com/index.php?action=get_product_reviews&user_client=iphone&client_version=5.5.6&udid=17BFEBF79BFCEED4EC1165EA26BC56B3&time_code=B212D2DFAAFC3AE0FAA04B43640E70F8&timestamp=1475027038&union_id=537-50&permanent_id=20160927095850585330619986904624061&pagesize=10&filtertype=1"
 
 
 //资讯

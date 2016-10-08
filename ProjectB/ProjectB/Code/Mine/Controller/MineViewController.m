@@ -60,9 +60,15 @@
     self.userImg.layer.cornerRadius = 40;
 //    _unLogin.hidden = YES;
 //    _username.hidden = NO;
-    DWSwipeGestures *click = [[DWSwipeGestures alloc]init];
-    [click dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(toSelfEdit) AddView:self.userInfoView BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
-    }];
+    
+    /********手势方法一******/
+//    DWSwipeGestures *click = [[DWSwipeGestures alloc]init];
+//    [click dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(toSelfEdit) AddView:self.userInfoView BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
+//    }];
+    /********手势方法二********/
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(toSelfEdit)];
+    gesture.numberOfTapsRequired = 1;
+    [self.userInfoView addGestureRecognizer:gesture];
     
     //系统信息
     [self.systemInfoTableView registerNib:[UINib nibWithNibName:@"SystemInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"systemCell"];
@@ -72,6 +78,27 @@
     _systemInfoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
 }
+
+//HUD纯文字
+- (void)showQusHUDWithMessage:(NSString *)msg {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = msg;
+    hud.offset = CGPointMake(0.f, 250);
+    [hud hideAnimated:YES afterDelay:1.f];
+}
+
+- (void)showSucHUDWithMessage:(NSString *)msg {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    hud.mode = MBProgressHUDModeCustomView;
+    UIImage *image = [[UIImage imageNamed:@"Checkmark"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    hud.customView = [[UIImageView alloc] initWithImage:image];
+    hud.square = YES;
+    hud.label.text = msg;
+    [hud hideAnimated:YES afterDelay:1.f];
+}
+
+
 #pragma mark - TapClick -
 - (IBAction)signOUt:(id)sender {
     
@@ -99,10 +126,28 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0) {
+        //意见反馈
+        
+    }
+    else if (indexPath.row == 1) {
+        //清除缓存
+        [self showQusHUDWithMessage:@"有问题"];
+    }
+    else if (indexPath.row == 2){
+        //功能介绍
+        [self showSucHUDWithMessage:@"是否清除"];
+    }
+    else{
+        //关于
+        
     
-    
+    }
     
 }
+
+
+
 
 /*
 #pragma mark - Navigation

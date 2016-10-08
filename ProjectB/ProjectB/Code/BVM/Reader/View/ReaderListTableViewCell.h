@@ -10,4 +10,9 @@
 
 @interface ReaderListTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *BookImg;
+@property (weak, nonatomic) IBOutlet UILabel *BookName;
+@property (weak, nonatomic) IBOutlet UILabel *BookWriter;
+@property (weak, nonatomic) IBOutlet UILabel *BookScore;
+
 @end

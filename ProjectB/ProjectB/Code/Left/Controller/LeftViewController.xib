@@ -76,7 +76,7 @@
                         <action selector="ThirdBtn:" destination="-1" eventType="touchUpInside" id="z0g-g2-jPt"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3839_pc" translatesAutoresizingMaskIntoConstraints="NO" id="lOj-eu-64V">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_nologin" translatesAutoresizingMaskIntoConstraints="NO" id="lOj-eu-64V">
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="592-c1-92U"/>
                         <constraint firstAttribute="width" constant="60" id="zWy-0P-WuM"/>
@@ -174,10 +174,10 @@
         </view>
     </objects>
     <resources>
-        <image name="3839_pc" width="1920" height="1200"/>
         <image name="left_bg" width="528" height="1136"/>
         <image name="left_collect" width="20" height="20"/>
         <image name="left_download" width="20" height="20"/>
+        <image name="left_nologin" width="26" height="26"/>
         <image name="left_subscibe" width="20" height="20"/>
         <image name="left_timeline" width="20" height="20"/>
         <image name="sidebar_signature_nor" width="19" height="19"/>

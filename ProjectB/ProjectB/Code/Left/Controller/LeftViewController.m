@@ -27,6 +27,7 @@
 
 #pragma  mark - private Method -
 -(void)initUI{
+    
     self.userImg.layer.cornerRadius = 30;
 }
 

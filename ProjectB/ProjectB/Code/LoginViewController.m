@@ -18,7 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self initUI];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+    
 }
 
 - (IBAction)registerBtn:(id)sender {
@@ -41,10 +45,8 @@
 
 
 #pragma mark - private Method -
--(void)initUI{
- 
-    
-}
+
+
 
 
 
