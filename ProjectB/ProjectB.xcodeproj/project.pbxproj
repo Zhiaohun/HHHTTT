@@ -144,6 +144,23 @@
 		5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB551D9BF369006DAECD /* HotVideoViewController.m */; };
 		5DA8EB5A1D9BF399006DAECD /* HotVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */; };
 		5DA8EB5B1D9BF399006DAECD /* HotVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */; };
+		5DF5547F1DA893BC00DFCBEC /* ReadCommentBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554631DA893BC00DFCBEC /* ReadCommentBaseClass.m */; };
+		5DF554801DA893BC00DFCBEC /* ReadCommentPageinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554661DA893BC00DFCBEC /* ReadCommentPageinfo.m */; };
+		5DF554811DA893BC00DFCBEC /* ReadCommentProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554681DA893BC00DFCBEC /* ReadCommentProduct.m */; };
+		5DF554821DA893BC00DFCBEC /* ReadCommentReviewList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF5546A1DA893BC00DFCBEC /* ReadCommentReviewList.m */; };
+		5DF554831DA893BC00DFCBEC /* ReadCommentStars.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF5546C1DA893BC00DFCBEC /* ReadCommentStars.m */; };
+		5DF554841DA893BC00DFCBEC /* ReadCommentSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF5546E1DA893BC00DFCBEC /* ReadCommentSummary.m */; };
+		5DF554851DA893BC00DFCBEC /* ReadMotivationBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554721DA893BC00DFCBEC /* ReadMotivationBaseClass.m */; };
+		5DF554861DA893BC00DFCBEC /* ReadMotivationCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554741DA893BC00DFCBEC /* ReadMotivationCategories.m */; };
+		5DF554871DA893BC00DFCBEC /* ReadMotivationCurrentCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554761DA893BC00DFCBEC /* ReadMotivationCurrentCat.m */; };
+		5DF554881DA893BC00DFCBEC /* ReadMotivationPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554781DA893BC00DFCBEC /* ReadMotivationPage.m */; };
+		5DF554891DA893BC00DFCBEC /* ReadMotivationParrentCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF5547A1DA893BC00DFCBEC /* ReadMotivationParrentCat.m */; };
+		5DF5548A1DA893BC00DFCBEC /* ReadMotivationProducts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF5547C1DA893BC00DFCBEC /* ReadMotivationProducts.m */; };
+		5DF5548B1DA893BC00DFCBEC /* ReadMotivationStars.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF5547E1DA893BC00DFCBEC /* ReadMotivationStars.m */; };
+		5DF554921DA893E100DFCBEC /* ReadCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF5548D1DA893E100DFCBEC /* ReadCommentTableViewCell.m */; };
+		5DF554931DA893E100DFCBEC /* ReadCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF5548E1DA893E100DFCBEC /* ReadCommentTableViewCell.xib */; };
+		5DF554941DA893E100DFCBEC /* ReaderListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554901DA893E100DFCBEC /* ReaderListHeaderView.m */; };
+		5DF554951DA893E100DFCBEC /* ReaderListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF554911DA893E100DFCBEC /* ReaderListHeaderView.xib */; };
 		A08776C5486BA27496832BBC /* libPods-ProjectB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC06D34C79C8B06836926D6 /* libPods-ProjectB.a */; };
 /* End PBXBuildFile section */
 
@@ -381,6 +398,40 @@
 		5DA8EB571D9BF399006DAECD /* HotVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotVideoTableViewCell.h; sourceTree = "<group>"; };
 		5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotVideoTableViewCell.m; sourceTree = "<group>"; };
 		5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotVideoTableViewCell.xib; sourceTree = "<group>"; };
+		5DF554621DA893BC00DFCBEC /* ReadCommentBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentBaseClass.h; sourceTree = "<group>"; };
+		5DF554631DA893BC00DFCBEC /* ReadCommentBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentBaseClass.m; sourceTree = "<group>"; };
+		5DF554641DA893BC00DFCBEC /* ReadCommentDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentDataModels.h; sourceTree = "<group>"; };
+		5DF554651DA893BC00DFCBEC /* ReadCommentPageinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentPageinfo.h; sourceTree = "<group>"; };
+		5DF554661DA893BC00DFCBEC /* ReadCommentPageinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentPageinfo.m; sourceTree = "<group>"; };
+		5DF554671DA893BC00DFCBEC /* ReadCommentProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentProduct.h; sourceTree = "<group>"; };
+		5DF554681DA893BC00DFCBEC /* ReadCommentProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentProduct.m; sourceTree = "<group>"; };
+		5DF554691DA893BC00DFCBEC /* ReadCommentReviewList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentReviewList.h; sourceTree = "<group>"; };
+		5DF5546A1DA893BC00DFCBEC /* ReadCommentReviewList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentReviewList.m; sourceTree = "<group>"; };
+		5DF5546B1DA893BC00DFCBEC /* ReadCommentStars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentStars.h; sourceTree = "<group>"; };
+		5DF5546C1DA893BC00DFCBEC /* ReadCommentStars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentStars.m; sourceTree = "<group>"; };
+		5DF5546D1DA893BC00DFCBEC /* ReadCommentSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentSummary.h; sourceTree = "<group>"; };
+		5DF5546E1DA893BC00DFCBEC /* ReadCommentSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentSummary.m; sourceTree = "<group>"; };
+		5DF554701DA893BC00DFCBEC /* ReadMotivation DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ReadMotivation DataModels.h"; sourceTree = "<group>"; };
+		5DF554711DA893BC00DFCBEC /* ReadMotivationBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMotivationBaseClass.h; sourceTree = "<group>"; };
+		5DF554721DA893BC00DFCBEC /* ReadMotivationBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMotivationBaseClass.m; sourceTree = "<group>"; };
+		5DF554731DA893BC00DFCBEC /* ReadMotivationCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMotivationCategories.h; sourceTree = "<group>"; };
+		5DF554741DA893BC00DFCBEC /* ReadMotivationCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMotivationCategories.m; sourceTree = "<group>"; };
+		5DF554751DA893BC00DFCBEC /* ReadMotivationCurrentCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMotivationCurrentCat.h; sourceTree = "<group>"; };
+		5DF554761DA893BC00DFCBEC /* ReadMotivationCurrentCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMotivationCurrentCat.m; sourceTree = "<group>"; };
+		5DF554771DA893BC00DFCBEC /* ReadMotivationPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMotivationPage.h; sourceTree = "<group>"; };
+		5DF554781DA893BC00DFCBEC /* ReadMotivationPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMotivationPage.m; sourceTree = "<group>"; };
+		5DF554791DA893BC00DFCBEC /* ReadMotivationParrentCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMotivationParrentCat.h; sourceTree = "<group>"; };
+		5DF5547A1DA893BC00DFCBEC /* ReadMotivationParrentCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMotivationParrentCat.m; sourceTree = "<group>"; };
+		5DF5547B1DA893BC00DFCBEC /* ReadMotivationProducts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMotivationProducts.h; sourceTree = "<group>"; };
+		5DF5547C1DA893BC00DFCBEC /* ReadMotivationProducts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMotivationProducts.m; sourceTree = "<group>"; };
+		5DF5547D1DA893BC00DFCBEC /* ReadMotivationStars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMotivationStars.h; sourceTree = "<group>"; };
+		5DF5547E1DA893BC00DFCBEC /* ReadMotivationStars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMotivationStars.m; sourceTree = "<group>"; };
+		5DF5548C1DA893E100DFCBEC /* ReadCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentTableViewCell.h; sourceTree = "<group>"; };
+		5DF5548D1DA893E100DFCBEC /* ReadCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentTableViewCell.m; sourceTree = "<group>"; };
+		5DF5548E1DA893E100DFCBEC /* ReadCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadCommentTableViewCell.xib; sourceTree = "<group>"; };
+		5DF5548F1DA893E100DFCBEC /* ReaderListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderListHeaderView.h; sourceTree = "<group>"; };
+		5DF554901DA893E100DFCBEC /* ReaderListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderListHeaderView.m; sourceTree = "<group>"; };
+		5DF554911DA893E100DFCBEC /* ReaderListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderListHeaderView.xib; sourceTree = "<group>"; };
 		A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.debug.xcconfig"; sourceTree = "<group>"; };
 		BFC06D34C79C8B06836926D6 /* libPods-ProjectB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.release.xcconfig"; sourceTree = "<group>"; };
@@ -539,6 +590,8 @@
 		3F04BF601D9B702B005CCA03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5DF554611DA893BC00DFCBEC /* ReadCommentModel */,
+				5DF5546F1DA893BC00DFCBEC /* ReadMotivationModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -549,6 +602,12 @@
 				3F04BFBA1D9B7735005CCA03 /* ReaderListTableViewCell.h */,
 				3F04BFBB1D9B7735005CCA03 /* ReaderListTableViewCell.m */,
 				3F04BFBC1D9B7735005CCA03 /* ReaderListTableViewCell.xib */,
+				5DF5548C1DA893E100DFCBEC /* ReadCommentTableViewCell.h */,
+				5DF5548D1DA893E100DFCBEC /* ReadCommentTableViewCell.m */,
+				5DF5548E1DA893E100DFCBEC /* ReadCommentTableViewCell.xib */,
+				5DF5548F1DA893E100DFCBEC /* ReaderListHeaderView.h */,
+				5DF554901DA893E100DFCBEC /* ReaderListHeaderView.m */,
+				5DF554911DA893E100DFCBEC /* ReaderListHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1159,6 +1218,48 @@
 			path = "抽屉动画";
 			sourceTree = "<group>";
 		};
+		5DF554611DA893BC00DFCBEC /* ReadCommentModel */ = {
+			isa = PBXGroup;
+			children = (
+				5DF554621DA893BC00DFCBEC /* ReadCommentBaseClass.h */,
+				5DF554631DA893BC00DFCBEC /* ReadCommentBaseClass.m */,
+				5DF554641DA893BC00DFCBEC /* ReadCommentDataModels.h */,
+				5DF554651DA893BC00DFCBEC /* ReadCommentPageinfo.h */,
+				5DF554661DA893BC00DFCBEC /* ReadCommentPageinfo.m */,
+				5DF554671DA893BC00DFCBEC /* ReadCommentProduct.h */,
+				5DF554681DA893BC00DFCBEC /* ReadCommentProduct.m */,
+				5DF554691DA893BC00DFCBEC /* ReadCommentReviewList.h */,
+				5DF5546A1DA893BC00DFCBEC /* ReadCommentReviewList.m */,
+				5DF5546B1DA893BC00DFCBEC /* ReadCommentStars.h */,
+				5DF5546C1DA893BC00DFCBEC /* ReadCommentStars.m */,
+				5DF5546D1DA893BC00DFCBEC /* ReadCommentSummary.h */,
+				5DF5546E1DA893BC00DFCBEC /* ReadCommentSummary.m */,
+			);
+			path = ReadCommentModel;
+			sourceTree = "<group>";
+		};
+		5DF5546F1DA893BC00DFCBEC /* ReadMotivationModel */ = {
+			isa = PBXGroup;
+			children = (
+				5DF554701DA893BC00DFCBEC /* ReadMotivation DataModels.h */,
+				5DF554711DA893BC00DFCBEC /* ReadMotivationBaseClass.h */,
+				5DF554721DA893BC00DFCBEC /* ReadMotivationBaseClass.m */,
+				5DF554731DA893BC00DFCBEC /* ReadMotivationCategories.h */,
+				5DF554741DA893BC00DFCBEC /* ReadMotivationCategories.m */,
+				5DF554751DA893BC00DFCBEC /* ReadMotivationCurrentCat.h */,
+				5DF554761DA893BC00DFCBEC /* ReadMotivationCurrentCat.m */,
+				5DF554771DA893BC00DFCBEC /* ReadMotivationPage.h */,
+				5DF554781DA893BC00DFCBEC /* ReadMotivationPage.m */,
+				5DF554791DA893BC00DFCBEC /* ReadMotivationParrentCat.h */,
+				5DF5547A1DA893BC00DFCBEC /* ReadMotivationParrentCat.m */,
+				5DF5547B1DA893BC00DFCBEC /* ReadMotivationProducts.h */,
+				5DF5547C1DA893BC00DFCBEC /* ReadMotivationProducts.m */,
+				5DF5547D1DA893BC00DFCBEC /* ReadMotivationStars.h */,
+				5DF5547E1DA893BC00DFCBEC /* ReadMotivationStars.m */,
+			);
+			path = ReadMotivationModel;
+			sourceTree = "<group>";
+		};
 		CB33ABD8255A0628C7C6E333 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1255,6 +1356,7 @@
 				3F04BFB41D9B76AB005CCA03 /* ReaderListTableViewController.xib in Resources */,
 				3F04BFB91D9B7701005CCA03 /* ReaderDetailViewController.xib in Resources */,
 				3F04BF741D9B7204005CCA03 /* TableViewCell.xib in Resources */,
+				5DF554931DA893E100DFCBEC /* ReadCommentTableViewCell.xib in Resources */,
 				3F04707B1D9C09EA00DAD187 /* JokeTableViewController.xib in Resources */,
 				3FA4E5EF1D9AB1070090AC78 /* Assets.xcassets in Resources */,
 				3FA5EE3B1D9DFC230020E8CC /* VideoRankingListTableViewController.xib in Resources */,
@@ -1267,6 +1369,7 @@
 				5DA8EB491D9BC2B1006DAECD /* TotalTableViewCell.xib in Resources */,
 				5DA8EB321D9BB48C006DAECD /* LeftViewController.xib in Resources */,
 				3F844A981D9E262D00AE9B3B /* VideoListHeaderView.xib in Resources */,
+				5DF554951DA893E100DFCBEC /* ReaderListHeaderView.xib in Resources */,
 				3F04BF581D9B6FE3005CCA03 /* MainViewController.xib in Resources */,
 				3FA5EE401D9DFD120020E8CC /* SongMenuTableViewCell.xib in Resources */,
 				3F04707E1D9C09EA00DAD187 /* RecommendTableViewController.xib in Resources */,
@@ -1350,6 +1453,7 @@
 				3F272F8E1DA7681300CA7E8F /* MusicListUser.m in Sources */,
 				5DA8EB3E1D9BC028006DAECD /* LLRefresh.m in Sources */,
 				3F272F8C1DA7681300CA7E8F /* MusicListList.m in Sources */,
+				5DF554851DA893BC00DFCBEC /* ReadMotivationBaseClass.m in Sources */,
 				3FC1BB241D9CF33B00C834D8 /* NewsImageViewController.m in Sources */,
 				3F844A881D9E0D4A00AE9B3B /* Data.m in Sources */,
 				5DA8EB481D9BC2B1006DAECD /* TotalTableViewCell.m in Sources */,
@@ -1364,6 +1468,7 @@
 				3FC1BB451D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m in Sources */,
 				3FA5EE3A1D9DFC230020E8CC /* VideoRankingListTableViewController.m in Sources */,
 				3F272F8A1DA7681300CA7E8F /* MusicListBaseClass.m in Sources */,
+				5DF554811DA893BC00DFCBEC /* ReadCommentProduct.m in Sources */,
 				3F0470781D9C09EA00DAD187 /* GameTableViewController.m in Sources */,
 				5DA8EB431D9BC1EB006DAECD /* MineViewController.m in Sources */,
 				3F844ADB1D9E3E2300AE9B3B /* VideoListAuthor.m in Sources */,
@@ -1385,6 +1490,7 @@
 				3F844AE41D9E3E2300AE9B3B /* VideoListTag.m in Sources */,
 				3F844A921D9E20BB00AE9B3B /* VideoListTableViewCell.m in Sources */,
 				5DA8EB3F1D9BC028006DAECD /* LLShowHUD.m in Sources */,
+				5DF554831DA893BC00DFCBEC /* ReadCommentStars.m in Sources */,
 				5D29E9EE1D9CAB8900213A82 /* MineEditViewController.m in Sources */,
 				5DA8EB231D9B9C5B006DAECD /* LoginViewController.m in Sources */,
 				3F844A961D9E261E00AE9B3B /* VideoListHeaderView.m in Sources */,
@@ -1393,21 +1499,28 @@
 				3F04BFA91D9B7576005CCA03 /* SongListTableViewCell.m in Sources */,
 				3F844AE01D9E3E2300AE9B3B /* VideoListItemList.m in Sources */,
 				3F04BF4F1D9B68DF005CCA03 /* BaseViewController.m in Sources */,
+				5DF554921DA893E100DFCBEC /* ReadCommentTableViewCell.m in Sources */,
 				3FC1BB2D1D9CF4D600C834D8 /* NewsBaseTableViewController.m in Sources */,
 				5D29EA691D9E3A6E00213A82 /* TimingCloseTableViewCell.m in Sources */,
 				5DA8EB5A1D9BF399006DAECD /* HotVideoTableViewCell.m in Sources */,
+				5DF554881DA893BC00DFCBEC /* ReadMotivationPage.m in Sources */,
 				5D29EA5C1D9E395400213A82 /* DownloadViewController.m in Sources */,
 				3F0470AF1D9C0AC500DAD187 /* NewsTableViewCell.m in Sources */,
+				5DF5548A1DA893BC00DFCBEC /* ReadMotivationProducts.m in Sources */,
 				5D29E9F31D9CB0DC00213A82 /* DWSwipeGestures.m in Sources */,
 				5DA8EB311D9BB48C006DAECD /* LeftViewController.m in Sources */,
 				3FA4E60C1D9AB1510090AC78 /* Reachability.m in Sources */,
 				3FA5EE351D9DFC230020E8CC /* MusicRankingListTableViewController.m in Sources */,
+				5DF554841DA893BC00DFCBEC /* ReadCommentSummary.m in Sources */,
+				5DF5547F1DA893BC00DFCBEC /* ReadCommentBaseClass.m in Sources */,
+				5DF554801DA893BC00DFCBEC /* ReadCommentPageinfo.m in Sources */,
 				5DA8EB3D1D9BC028006DAECD /* LLNetWorkingRequest.m in Sources */,
 				3FC1BB2A1D9CF4BD00C834D8 /* NewsBaseViewController.m in Sources */,
 				3FA4E60D1D9AB1510090AC78 /* ScrollImage.m in Sources */,
 				3F844AE61D9E3E2300AE9B3B /* VideoListWebUrl.m in Sources */,
 				3FA5EE371D9DFC230020E8CC /* RankingBaseViewController.m in Sources */,
 				3F04BF571D9B6FE3005CCA03 /* MainViewController.m in Sources */,
+				5DF554821DA893BC00DFCBEC /* ReadCommentReviewList.m in Sources */,
 				5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */,
 				5DA8EB251D9B9C5B006DAECD /* RegisterViewController.m in Sources */,
 				3FA92D961DA6361F007E622E /* MoviePlayerViewController.m in Sources */,
@@ -1419,17 +1532,22 @@
 				3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */,
 				3F04BFBD1D9B7735005CCA03 /* ReaderListTableViewCell.m in Sources */,
 				3FC1BB201D9CF32000C834D8 /* NewsWebViewController.m in Sources */,
+				5DF554941DA893E100DFCBEC /* ReaderListHeaderView.m in Sources */,
+				5DF5548B1DA893BC00DFCBEC /* ReadMotivationStars.m in Sources */,
 				3F272F871DA7681300CA7E8F /* MusicCategoryList.m in Sources */,
 				3F04BF9A1D9B7518005CCA03 /* SongMenuTableViewController.m in Sources */,
 				5DA8EB521D9BC960006DAECD /* HotListTableViewCell.m in Sources */,
 				3F0470AB1D9C0AC500DAD187 /* NewsImageMoreTableViewCell.m in Sources */,
 				3F04BFB31D9B76AB005CCA03 /* ReaderListTableViewController.m in Sources */,
+				5DF554891DA893BC00DFCBEC /* ReadMotivationParrentCat.m in Sources */,
+				5DF554871DA893BC00DFCBEC /* ReadMotivationCurrentCat.m in Sources */,
 				3F04BFB81D9B7701005CCA03 /* ReaderDetailViewController.m in Sources */,
 				3F844ADF1D9E3E2300AE9B3B /* VideoListData.m in Sources */,
 				5D29EA211D9D19DE00213A82 /* SystemInfoTableViewCell.m in Sources */,
 				3F04BF731D9B7204005CCA03 /* TableViewCell.m in Sources */,
 				3F844ADE1D9E3E2300AE9B3B /* VideoListCover.m in Sources */,
 				3FA4E5E41D9AB1070090AC78 /* main.m in Sources */,
+				5DF554861DA893BC00DFCBEC /* ReadMotivationCategories.m in Sources */,
 				3F844ADC1D9E3E2300AE9B3B /* VideoListBaseClass.m in Sources */,
 				3F844AEA1D9E523400AE9B3B /* VideoDetailViewController.m in Sources */,
 			);

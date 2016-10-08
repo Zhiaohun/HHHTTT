@@ -39,13 +39,14 @@
 #pragma mark - private Method -
 -(void)initUI{
     self.title = @"图书列表";
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.rowHeight = 120;
     [self.tableView registerNib:[UINib nibWithNibName:@"ReaderListTableViewCell" bundle:nil] forCellReuseIdentifier:@"readerListCell"];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     _readerView = [[NSBundle mainBundle]loadNibNamed:@"ReaderListHeaderView" owner:nil options:nil][0];
     self.tableView.tableHeaderView = _readerView;
-    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97);
+    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 161-64);
     [_readerView.movition setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     _url = URL_MovitionBook;
     

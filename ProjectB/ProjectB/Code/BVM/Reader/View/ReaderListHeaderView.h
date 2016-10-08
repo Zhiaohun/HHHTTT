@@ -17,6 +17,9 @@ typedef void(^ToTypeBlock)(NSString *);
 @property (weak, nonatomic) IBOutlet UIButton *novel;
 @property (weak, nonatomic) IBOutlet UIButton *art;
 
+@property (weak, nonatomic) IBOutlet UIView *cutline;
+
+
 @property (nonatomic,strong) ToTypeBlock toTypeBlock;
 
 @end

@@ -30,17 +30,17 @@
                         </textView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZeX-I4-6Tg">
                             <constraints>
-                                <constraint firstAttribute="height" constant="229" id="Szq-LM-Bch"/>
+                                <constraint firstAttribute="width" constant="270" id="5Zz-TX-0eM"/>
+                                <constraint firstAttribute="height" constant="229" id="oSF-Qf-11N"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="ZeX-I4-6Tg" firstAttribute="leading" secondItem="aU7-Cs-d27" secondAttribute="leading" constant="52" id="5Qu-u3-LW9"/>
-                        <constraint firstItem="ZeX-I4-6Tg" firstAttribute="top" secondItem="aU7-Cs-d27" secondAttribute="top" constant="64" id="9fD-rF-kcD"/>
-                        <constraint firstAttribute="trailing" secondItem="ZeX-I4-6Tg" secondAttribute="trailing" constant="53" id="CKb-cW-X4d"/>
                         <constraint firstItem="HYd-b1-RbQ" firstAttribute="leading" secondItem="aU7-Cs-d27" secondAttribute="leading" id="NNf-s2-fot"/>
                         <constraint firstAttribute="trailing" secondItem="HYd-b1-RbQ" secondAttribute="trailing" id="YRd-HB-1C7"/>
-                        <constraint firstItem="HYd-b1-RbQ" firstAttribute="top" secondItem="ZeX-I4-6Tg" secondAttribute="bottom" id="ZDf-wU-E8a"/>
+                        <constraint firstItem="ZeX-I4-6Tg" firstAttribute="centerX" secondItem="aU7-Cs-d27" secondAttribute="centerX" id="aij-0y-VaN"/>
+                        <constraint firstItem="HYd-b1-RbQ" firstAttribute="top" secondItem="ZeX-I4-6Tg" secondAttribute="bottom" id="dhq-Nv-bck"/>
+                        <constraint firstItem="ZeX-I4-6Tg" firstAttribute="top" secondItem="aU7-Cs-d27" secondAttribute="top" constant="74" id="iXC-Sa-Ksx"/>
                     </constraints>
                 </view>
             </subviews>
