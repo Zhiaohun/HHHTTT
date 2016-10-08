@@ -10,6 +10,7 @@
 #import "VideoListTableViewCell.h"
 #import "VideoListHeaderView.h"
 #import "VideoListDataModels.h"
+#import "VideoDetailViewController.h"
 
 
 @interface VideoListTableViewController ()
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) NSMutableArray *dateArray;
 @property (nonatomic, strong) NSMutableArray *shareArray;
 
+
 @end
 
 @implementation VideoListTableViewController
@@ -27,9 +29,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = YES;
 }
--(void)viewDidDisappear:(BOOL)animated{
-    self.tabBarController.tabBar.hidden = NO;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -180,11 +180,26 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+     VideoDetailViewController *videoDetailVC = [[VideoDetailViewController alloc] init];
+    videoDetailVC.dataArray = [NSArray array];
+    if ([self.strategyType isEqualToString:@"date"]) {
+        videoDetailVC.dataArray = self.dateArray;
+        videoDetailVC.selectIndex = indexPath.row;
+    }else{
+        videoDetailVC.dataArray = self.shareArray;
+        videoDetailVC.selectIndex = indexPath.row;
+    }
+    
+    [self.navigationController pushViewController:videoDetailVC animated:YES];
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 150;
+    
+    
 }
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

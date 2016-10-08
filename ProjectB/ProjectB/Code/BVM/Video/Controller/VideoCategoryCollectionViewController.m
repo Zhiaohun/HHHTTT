@@ -19,7 +19,9 @@
 
 @implementation VideoCategoryCollectionViewController
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = YES;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,9 +44,9 @@
 -(UICollectionViewFlowLayout *)flowLayout{
     if(!_flowLayout){
         _flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        _flowLayout.itemSize = CGSizeMake((VIEW_WIDTH-20)/2,140);
+        _flowLayout.itemSize = CGSizeMake((VIEW_WIDTH-10)/2,140);
         _flowLayout.minimumLineSpacing = 5;
-        _flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+        _flowLayout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0);
         _flowLayout.headerReferenceSize = CGSizeMake(VIEW_WIDTH, 180);
     }
     return _flowLayout;
@@ -130,7 +132,7 @@
     
     DWSwipeGestures *gesture = [[DWSwipeGestures alloc] init];
     [gesture dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(tapHeaderViewAction) AddView:headerView BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
-        
+        NSLog(@"%@",backSwipeGestureTypeString);
     }];
     
     return headerView;

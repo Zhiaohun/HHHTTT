@@ -32,8 +32,6 @@
 		3F04BF9B1D9B7518005CCA03 /* SongMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BF991D9B7518005CCA03 /* SongMenuTableViewController.xib */; };
 		3F04BF9F1D9B7551005CCA03 /* SongListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04BF9D1D9B7551005CCA03 /* SongListTableViewController.m */; };
 		3F04BFA01D9B7551005CCA03 /* SongListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BF9E1D9B7551005CCA03 /* SongListTableViewController.xib */; };
-		3F04BFA41D9B7563005CCA03 /* SongDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04BFA21D9B7563005CCA03 /* SongDetailViewController.m */; };
-		3F04BFA51D9B7563005CCA03 /* SongDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BFA31D9B7563005CCA03 /* SongDetailViewController.xib */; };
 		3F04BFA91D9B7576005CCA03 /* SongListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04BFA71D9B7576005CCA03 /* SongListTableViewCell.m */; };
 		3F04BFAA1D9B7576005CCA03 /* SongListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BFA81D9B7576005CCA03 /* SongListTableViewCell.xib */; };
 		3F04BFB31D9B76AB005CCA03 /* ReaderListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04BFB11D9B76AB005CCA03 /* ReaderListTableViewController.m */; };
@@ -42,6 +40,17 @@
 		3F04BFB91D9B7701005CCA03 /* ReaderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BFB71D9B7701005CCA03 /* ReaderDetailViewController.xib */; };
 		3F04BFBD1D9B7735005CCA03 /* ReaderListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04BFBB1D9B7735005CCA03 /* ReaderListTableViewCell.m */; };
 		3F04BFBE1D9B7735005CCA03 /* ReaderListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04BFBC1D9B7735005CCA03 /* ReaderListTableViewCell.xib */; };
+		3F272F861DA7681300CA7E8F /* MusicCategoryBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F531DA7681300CA7E8F /* MusicCategoryBaseClass.m */; };
+		3F272F871DA7681300CA7E8F /* MusicCategoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F551DA7681300CA7E8F /* MusicCategoryList.m */; };
+		3F272F881DA7681300CA7E8F /* MusicDownloadBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F591DA7681300CA7E8F /* MusicDownloadBaseClass.m */; };
+		3F272F891DA7681300CA7E8F /* MusicListAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F5D1DA7681300CA7E8F /* MusicListAlbum.m */; };
+		3F272F8A1DA7681300CA7E8F /* MusicListBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F5F1DA7681300CA7E8F /* MusicListBaseClass.m */; };
+		3F272F8B1DA7681300CA7E8F /* MusicListData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F611DA7681300CA7E8F /* MusicListData.m */; };
+		3F272F8C1DA7681300CA7E8F /* MusicListList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F631DA7681300CA7E8F /* MusicListList.m */; };
+		3F272F8D1DA7681300CA7E8F /* MusicListTracks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F651DA7681300CA7E8F /* MusicListTracks.m */; };
+		3F272F8E1DA7681300CA7E8F /* MusicListUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F671DA7681300CA7E8F /* MusicListUser.m */; };
+		3F272F9F1DA77AA300CA7E8F /* SongListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F9E1DA77AA300CA7E8F /* SongListHeaderView.m */; };
+		3F272FA11DA77AAD00CA7E8F /* SongListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F272FA01DA77AAD00CA7E8F /* SongListHeaderView.xib */; };
 		3F844A871D9E0D4A00AE9B3B /* BaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A811D9E0D4A00AE9B3B /* BaseClass.m */; };
 		3F844A881D9E0D4A00AE9B3B /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A831D9E0D4A00AE9B3B /* Data.m */; };
 		3F844A891D9E0D4A00AE9B3B /* ItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A851D9E0D4A00AE9B3B /* ItemList.m */; };
@@ -61,6 +70,8 @@
 		3F844AE41D9E3E2300AE9B3B /* VideoListTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844AD61D9E3E2300AE9B3B /* VideoListTag.m */; };
 		3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844AD81D9E3E2300AE9B3B /* VideoListTags.m */; };
 		3F844AE61D9E3E2300AE9B3B /* VideoListWebUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844ADA1D9E3E2300AE9B3B /* VideoListWebUrl.m */; };
+		3F844AEA1D9E523400AE9B3B /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844AE81D9E523400AE9B3B /* VideoDetailViewController.m */; };
+		3F844AEB1D9E523400AE9B3B /* VideoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F844AE91D9E523400AE9B3B /* VideoDetailViewController.xib */; };
 		3FA4E5E41D9AB1070090AC78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E5E31D9AB1070090AC78 /* main.m */; };
 		3FA4E5E71D9AB1070090AC78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E5E61D9AB1070090AC78 /* AppDelegate.m */; };
 		3FA4E5ED1D9AB1070090AC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E5EB1D9AB1070090AC78 /* Main.storyboard */; };
@@ -69,8 +80,6 @@
 		3FA4E60C1D9AB1510090AC78 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E6091D9AB1510090AC78 /* Reachability.m */; };
 		3FA4E60D1D9AB1510090AC78 /* ScrollImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E60B1D9AB1510090AC78 /* ScrollImage.m */; };
 		3FA5EE1A1D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE191D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib */; };
-		3FA5EE1E1D9DFA2F0020E8CC /* SongMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE1C1D9DFA2F0020E8CC /* SongMenuHeaderView.m */; };
-		3FA5EE1F1D9DFA2F0020E8CC /* SongMenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE1D1D9DFA2F0020E8CC /* SongMenuHeaderView.xib */; };
 		3FA5EE231D9DFB120020E8CC /* VideoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE211D9DFB120020E8CC /* VideoListTableViewController.m */; };
 		3FA5EE241D9DFB120020E8CC /* VideoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE221D9DFB120020E8CC /* VideoListTableViewController.xib */; };
 		3FA5EE351D9DFC230020E8CC /* MusicRankingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE2B1D9DFC230020E8CC /* MusicRankingListTableViewController.m */; };
@@ -82,6 +91,10 @@
 		3FA5EE3B1D9DFC230020E8CC /* VideoRankingListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE341D9DFC230020E8CC /* VideoRankingListTableViewController.xib */; };
 		3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE3D1D9DFD120020E8CC /* SongMenuTableViewCell.m */; };
 		3FA5EE401D9DFD120020E8CC /* SongMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE3E1D9DFD120020E8CC /* SongMenuTableViewCell.xib */; };
+		3FA716061DA8858B00B21C3F /* SongPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA716041DA8858B00B21C3F /* SongPlayViewController.m */; };
+		3FA716071DA8858B00B21C3F /* SongPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA716051DA8858B00B21C3F /* SongPlayViewController.xib */; };
+		3FA92D961DA6361F007E622E /* MoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA92D951DA6361F007E622E /* MoviePlayerViewController.m */; };
+		3FA92D981DA63AE2007E622E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA92D971DA63AE2007E622E /* MediaPlayer.framework */; };
 		3FC1BB201D9CF32000C834D8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB1F1D9CF32000C834D8 /* NewsWebViewController.m */; };
 		3FC1BB241D9CF33B00C834D8 /* NewsImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB221D9CF33B00C834D8 /* NewsImageViewController.m */; };
 		3FC1BB251D9CF33B00C834D8 /* NewsImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FC1BB231D9CF33B00C834D8 /* NewsImageViewController.xib */; };
@@ -167,9 +180,6 @@
 		3F04BF9C1D9B7551005CCA03 /* SongListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongListTableViewController.h; sourceTree = "<group>"; };
 		3F04BF9D1D9B7551005CCA03 /* SongListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongListTableViewController.m; sourceTree = "<group>"; };
 		3F04BF9E1D9B7551005CCA03 /* SongListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListTableViewController.xib; sourceTree = "<group>"; };
-		3F04BFA11D9B7563005CCA03 /* SongDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongDetailViewController.h; sourceTree = "<group>"; };
-		3F04BFA21D9B7563005CCA03 /* SongDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongDetailViewController.m; sourceTree = "<group>"; };
-		3F04BFA31D9B7563005CCA03 /* SongDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongDetailViewController.xib; sourceTree = "<group>"; };
 		3F04BFA61D9B7576005CCA03 /* SongListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongListTableViewCell.h; sourceTree = "<group>"; };
 		3F04BFA71D9B7576005CCA03 /* SongListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongListTableViewCell.m; sourceTree = "<group>"; };
 		3F04BFA81D9B7576005CCA03 /* SongListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListTableViewCell.xib; sourceTree = "<group>"; };
@@ -182,6 +192,30 @@
 		3F04BFBA1D9B7735005CCA03 /* ReaderListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderListTableViewCell.h; sourceTree = "<group>"; };
 		3F04BFBB1D9B7735005CCA03 /* ReaderListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderListTableViewCell.m; sourceTree = "<group>"; };
 		3F04BFBC1D9B7735005CCA03 /* ReaderListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderListTableViewCell.xib; sourceTree = "<group>"; };
+		3F272F511DA7681300CA7E8F /* MusicCategoryDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicCategoryDataModels.h; sourceTree = "<group>"; };
+		3F272F521DA7681300CA7E8F /* MusicCategoryBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicCategoryBaseClass.h; sourceTree = "<group>"; };
+		3F272F531DA7681300CA7E8F /* MusicCategoryBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicCategoryBaseClass.m; sourceTree = "<group>"; };
+		3F272F541DA7681300CA7E8F /* MusicCategoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicCategoryList.h; sourceTree = "<group>"; };
+		3F272F551DA7681300CA7E8F /* MusicCategoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicCategoryList.m; sourceTree = "<group>"; };
+		3F272F571DA7681300CA7E8F /* MusicDownloadDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDownloadDataModels.h; sourceTree = "<group>"; };
+		3F272F581DA7681300CA7E8F /* MusicDownloadBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDownloadBaseClass.h; sourceTree = "<group>"; };
+		3F272F591DA7681300CA7E8F /* MusicDownloadBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDownloadBaseClass.m; sourceTree = "<group>"; };
+		3F272F5B1DA7681300CA7E8F /* MusicListDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListDataModels.h; sourceTree = "<group>"; };
+		3F272F5C1DA7681300CA7E8F /* MusicListAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListAlbum.h; sourceTree = "<group>"; };
+		3F272F5D1DA7681300CA7E8F /* MusicListAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListAlbum.m; sourceTree = "<group>"; };
+		3F272F5E1DA7681300CA7E8F /* MusicListBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListBaseClass.h; sourceTree = "<group>"; };
+		3F272F5F1DA7681300CA7E8F /* MusicListBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListBaseClass.m; sourceTree = "<group>"; };
+		3F272F601DA7681300CA7E8F /* MusicListData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListData.h; sourceTree = "<group>"; };
+		3F272F611DA7681300CA7E8F /* MusicListData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListData.m; sourceTree = "<group>"; };
+		3F272F621DA7681300CA7E8F /* MusicListList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListList.h; sourceTree = "<group>"; };
+		3F272F631DA7681300CA7E8F /* MusicListList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListList.m; sourceTree = "<group>"; };
+		3F272F641DA7681300CA7E8F /* MusicListTracks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListTracks.h; sourceTree = "<group>"; };
+		3F272F651DA7681300CA7E8F /* MusicListTracks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListTracks.m; sourceTree = "<group>"; };
+		3F272F661DA7681300CA7E8F /* MusicListUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListUser.h; sourceTree = "<group>"; };
+		3F272F671DA7681300CA7E8F /* MusicListUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListUser.m; sourceTree = "<group>"; };
+		3F272F9D1DA77AA300CA7E8F /* SongListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongListHeaderView.h; sourceTree = "<group>"; };
+		3F272F9E1DA77AA300CA7E8F /* SongListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongListHeaderView.m; sourceTree = "<group>"; };
+		3F272FA01DA77AAD00CA7E8F /* SongListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListHeaderView.xib; sourceTree = "<group>"; };
 		3F844A801D9E0D4A00AE9B3B /* BaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseClass.h; sourceTree = "<group>"; };
 		3F844A811D9E0D4A00AE9B3B /* BaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseClass.m; sourceTree = "<group>"; };
 		3F844A821D9E0D4A00AE9B3B /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
@@ -220,6 +254,9 @@
 		3F844AD81D9E3E2300AE9B3B /* VideoListTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTags.m; sourceTree = "<group>"; };
 		3F844AD91D9E3E2300AE9B3B /* VideoListWebUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListWebUrl.h; sourceTree = "<group>"; };
 		3F844ADA1D9E3E2300AE9B3B /* VideoListWebUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListWebUrl.m; sourceTree = "<group>"; };
+		3F844AE71D9E523400AE9B3B /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
+		3F844AE81D9E523400AE9B3B /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailViewController.m; sourceTree = "<group>"; };
+		3F844AE91D9E523400AE9B3B /* VideoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoDetailViewController.xib; sourceTree = "<group>"; };
 		3FA4E5DF1D9AB1070090AC78 /* ProjectB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA4E5E31D9AB1070090AC78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3FA4E5E51D9AB1070090AC78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -235,9 +272,6 @@
 		3FA4E6111D9AB1580090AC78 /* ToolMacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolMacroDefine.h; sourceTree = "<group>"; };
 		3FA4E6121D9AB1580090AC78 /* URLMacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLMacroDefine.h; sourceTree = "<group>"; };
 		3FA5EE191D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsImageMoreTableViewCell.xib; sourceTree = "<group>"; };
-		3FA5EE1B1D9DFA2F0020E8CC /* SongMenuHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMenuHeaderView.h; sourceTree = "<group>"; };
-		3FA5EE1C1D9DFA2F0020E8CC /* SongMenuHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMenuHeaderView.m; sourceTree = "<group>"; };
-		3FA5EE1D1D9DFA2F0020E8CC /* SongMenuHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongMenuHeaderView.xib; sourceTree = "<group>"; };
 		3FA5EE201D9DFB120020E8CC /* VideoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListTableViewController.h; sourceTree = "<group>"; };
 		3FA5EE211D9DFB120020E8CC /* VideoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewController.m; sourceTree = "<group>"; };
 		3FA5EE221D9DFB120020E8CC /* VideoListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListTableViewController.xib; sourceTree = "<group>"; };
@@ -255,6 +289,12 @@
 		3FA5EE3C1D9DFD120020E8CC /* SongMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMenuTableViewCell.h; sourceTree = "<group>"; };
 		3FA5EE3D1D9DFD120020E8CC /* SongMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMenuTableViewCell.m; sourceTree = "<group>"; };
 		3FA5EE3E1D9DFD120020E8CC /* SongMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongMenuTableViewCell.xib; sourceTree = "<group>"; };
+		3FA716031DA8858B00B21C3F /* SongPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongPlayViewController.h; sourceTree = "<group>"; };
+		3FA716041DA8858B00B21C3F /* SongPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongPlayViewController.m; sourceTree = "<group>"; };
+		3FA716051DA8858B00B21C3F /* SongPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongPlayViewController.xib; sourceTree = "<group>"; };
+		3FA92D941DA6361F007E622E /* MoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerViewController.h; sourceTree = "<group>"; };
+		3FA92D951DA6361F007E622E /* MoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerViewController.m; sourceTree = "<group>"; };
+		3FA92D971DA63AE2007E622E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3FC1BB1E1D9CF32000C834D8 /* NewsWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsWebViewController.h; sourceTree = "<group>"; };
 		3FC1BB1F1D9CF32000C834D8 /* NewsWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsWebViewController.m; sourceTree = "<group>"; };
 		3FC1BB211D9CF33B00C834D8 /* NewsImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsImageViewController.h; sourceTree = "<group>"; };
@@ -333,6 +373,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA92D981DA63AE2007E622E /* MediaPlayer.framework in Frameworks */,
 				A08776C5486BA27496832BBC /* libPods-ProjectB.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,7 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				3F04BF5B1D9B702B005CCA03 /* Controller */,
-				3F04BF5C1D9B702B005CCA03 /* Model */,
+				3F272F4F1DA767FA00CA7E8F /* Model */,
 				3F04BF5D1D9B702B005CCA03 /* View */,
 			);
 			path = Music;
@@ -425,27 +466,17 @@
 		3F04BF5B1D9B702B005CCA03 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3FA5EE1B1D9DFA2F0020E8CC /* SongMenuHeaderView.h */,
-				3FA5EE1C1D9DFA2F0020E8CC /* SongMenuHeaderView.m */,
-				3FA5EE1D1D9DFA2F0020E8CC /* SongMenuHeaderView.xib */,
 				3F04BF971D9B7518005CCA03 /* SongMenuTableViewController.h */,
 				3F04BF981D9B7518005CCA03 /* SongMenuTableViewController.m */,
 				3F04BF991D9B7518005CCA03 /* SongMenuTableViewController.xib */,
 				3F04BF9C1D9B7551005CCA03 /* SongListTableViewController.h */,
 				3F04BF9D1D9B7551005CCA03 /* SongListTableViewController.m */,
 				3F04BF9E1D9B7551005CCA03 /* SongListTableViewController.xib */,
-				3F04BFA11D9B7563005CCA03 /* SongDetailViewController.h */,
-				3F04BFA21D9B7563005CCA03 /* SongDetailViewController.m */,
-				3F04BFA31D9B7563005CCA03 /* SongDetailViewController.xib */,
+				3FA716031DA8858B00B21C3F /* SongPlayViewController.h */,
+				3FA716041DA8858B00B21C3F /* SongPlayViewController.m */,
+				3FA716051DA8858B00B21C3F /* SongPlayViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		3F04BF5C1D9B702B005CCA03 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		3F04BF5D1D9B702B005CCA03 /* View */ = {
@@ -457,6 +488,9 @@
 				3F04BFA61D9B7576005CCA03 /* SongListTableViewCell.h */,
 				3F04BFA71D9B7576005CCA03 /* SongListTableViewCell.m */,
 				3F04BFA81D9B7576005CCA03 /* SongListTableViewCell.xib */,
+				3F272F9D1DA77AA300CA7E8F /* SongListHeaderView.h */,
+				3F272F9E1DA77AA300CA7E8F /* SongListHeaderView.m */,
+				3F272FA01DA77AAD00CA7E8F /* SongListHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -520,6 +554,11 @@
 				3FA5EE201D9DFB120020E8CC /* VideoListTableViewController.h */,
 				3FA5EE211D9DFB120020E8CC /* VideoListTableViewController.m */,
 				3FA5EE221D9DFB120020E8CC /* VideoListTableViewController.xib */,
+				3F844AE71D9E523400AE9B3B /* VideoDetailViewController.h */,
+				3F844AE81D9E523400AE9B3B /* VideoDetailViewController.m */,
+				3F844AE91D9E523400AE9B3B /* VideoDetailViewController.xib */,
+				3FA92D941DA6361F007E622E /* MoviePlayerViewController.h */,
+				3FA92D951DA6361F007E622E /* MoviePlayerViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -670,6 +709,58 @@
 				5DA8EB471D9BC2B1006DAECD /* TotalTableViewCell.xib */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3F272F4F1DA767FA00CA7E8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F272F501DA7681300CA7E8F /* MusicCategoryModel */,
+				3F272F561DA7681300CA7E8F /* MusicDownloadModel */,
+				3F272F5A1DA7681300CA7E8F /* MusicListModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F272F501DA7681300CA7E8F /* MusicCategoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F272F511DA7681300CA7E8F /* MusicCategoryDataModels.h */,
+				3F272F521DA7681300CA7E8F /* MusicCategoryBaseClass.h */,
+				3F272F531DA7681300CA7E8F /* MusicCategoryBaseClass.m */,
+				3F272F541DA7681300CA7E8F /* MusicCategoryList.h */,
+				3F272F551DA7681300CA7E8F /* MusicCategoryList.m */,
+			);
+			path = MusicCategoryModel;
+			sourceTree = "<group>";
+		};
+		3F272F561DA7681300CA7E8F /* MusicDownloadModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F272F571DA7681300CA7E8F /* MusicDownloadDataModels.h */,
+				3F272F581DA7681300CA7E8F /* MusicDownloadBaseClass.h */,
+				3F272F591DA7681300CA7E8F /* MusicDownloadBaseClass.m */,
+			);
+			path = MusicDownloadModel;
+			sourceTree = "<group>";
+		};
+		3F272F5A1DA7681300CA7E8F /* MusicListModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F272F5B1DA7681300CA7E8F /* MusicListDataModels.h */,
+				3F272F5C1DA7681300CA7E8F /* MusicListAlbum.h */,
+				3F272F5D1DA7681300CA7E8F /* MusicListAlbum.m */,
+				3F272F5E1DA7681300CA7E8F /* MusicListBaseClass.h */,
+				3F272F5F1DA7681300CA7E8F /* MusicListBaseClass.m */,
+				3F272F601DA7681300CA7E8F /* MusicListData.h */,
+				3F272F611DA7681300CA7E8F /* MusicListData.m */,
+				3F272F621DA7681300CA7E8F /* MusicListList.h */,
+				3F272F631DA7681300CA7E8F /* MusicListList.m */,
+				3F272F641DA7681300CA7E8F /* MusicListTracks.h */,
+				3F272F651DA7681300CA7E8F /* MusicListTracks.m */,
+				3F272F661DA7681300CA7E8F /* MusicListUser.h */,
+				3F272F671DA7681300CA7E8F /* MusicListUser.m */,
+			);
+			path = MusicListModel;
 			sourceTree = "<group>";
 		};
 		3F844A7F1D9E0D4A00AE9B3B /* VideoCategoryModel */ = {
@@ -1002,6 +1093,7 @@
 		CB33ABD8255A0628C7C6E333 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3FA92D971DA63AE2007E622E /* MediaPlayer.framework */,
 				BFC06D34C79C8B06836926D6 /* libPods-ProjectB.a */,
 			);
 			name = Frameworks;
@@ -1093,7 +1185,6 @@
 				5DA8EB1B1D9B80EF006DAECD /* RankingListViewController.xib in Resources */,
 				3F04BFB41D9B76AB005CCA03 /* ReaderListTableViewController.xib in Resources */,
 				3F04BFB91D9B7701005CCA03 /* ReaderDetailViewController.xib in Resources */,
-				3F04BFA51D9B7563005CCA03 /* SongDetailViewController.xib in Resources */,
 				3F04BF741D9B7204005CCA03 /* TableViewCell.xib in Resources */,
 				3F04707B1D9C09EA00DAD187 /* JokeTableViewController.xib in Resources */,
 				3FA4E5EF1D9AB1070090AC78 /* Assets.xcassets in Resources */,
@@ -1110,17 +1201,19 @@
 				3FA5EE401D9DFD120020E8CC /* SongMenuTableViewCell.xib in Resources */,
 				3F04707E1D9C09EA00DAD187 /* RecommendTableViewController.xib in Resources */,
 				5D29EA221D9D19DE00213A82 /* SystemInfoTableViewCell.xib in Resources */,
+				3F272FA11DA77AAD00CA7E8F /* SongListHeaderView.xib in Resources */,
 				3F0470AE1D9C0AC500DAD187 /* NewsImageTableViewCell.xib in Resources */,
 				3F0470801D9C09EA00DAD187 /* ScienceTableViewController.xib in Resources */,
+				3F844AEB1D9E523400AE9B3B /* VideoDetailViewController.xib in Resources */,
 				5D29E9EF1D9CAB8900213A82 /* MineEditViewController.xib in Resources */,
 				5DA8EB131D9B8089006DAECD /* HotListViewController.xib in Resources */,
 				3F04BF8C1D9B73E6005CCA03 /* TotalViewController.xib in Resources */,
 				3FC1BB3C1D9D036900C834D8 /* VideoNormalCollectionViewCell.xib in Resources */,
 				5DA8EB5B1D9BF399006DAECD /* HotVideoTableViewCell.xib in Resources */,
+				3FA716071DA8858B00B21C3F /* SongPlayViewController.xib in Resources */,
 				3F04BFA01D9B7551005CCA03 /* SongListTableViewController.xib in Resources */,
 				3F0470771D9C09EA00DAD187 /* EntertainmentTableViewController.xib in Resources */,
 				3F04BFBE1D9B7735005CCA03 /* ReaderListTableViewCell.xib in Resources */,
-				3FA5EE1F1D9DFA2F0020E8CC /* SongMenuHeaderView.xib in Resources */,
 				3FA5EE1A1D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1181,7 +1274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC1BB3B1D9D036900C834D8 /* VideoNormalCollectionViewCell.m in Sources */,
+				3F272F8B1DA7681300CA7E8F /* MusicListData.m in Sources */,
+				3F272F8E1DA7681300CA7E8F /* MusicListUser.m in Sources */,
 				5DA8EB3E1D9BC028006DAECD /* LLRefresh.m in Sources */,
+				3F272F8C1DA7681300CA7E8F /* MusicListList.m in Sources */,
 				3FC1BB241D9CF33B00C834D8 /* NewsImageViewController.m in Sources */,
 				3F844A881D9E0D4A00AE9B3B /* Data.m in Sources */,
 				5DA8EB481D9BC2B1006DAECD /* TotalTableViewCell.m in Sources */,
@@ -1191,20 +1287,25 @@
 				3F844ADD1D9E3E2300AE9B3B /* VideoListConsumption.m in Sources */,
 				3F844A871D9E0D4A00AE9B3B /* BaseClass.m in Sources */,
 				3F844AE31D9E3E2300AE9B3B /* VideoListProvider.m in Sources */,
-				3FA5EE1E1D9DFA2F0020E8CC /* SongMenuHeaderView.m in Sources */,
 				5DA8EB121D9B8089006DAECD /* HotListViewController.m in Sources */,
 				5DA8EB1A1D9B80EF006DAECD /* RankingListViewController.m in Sources */,
 				3FC1BB451D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m in Sources */,
 				3FA5EE3A1D9DFC230020E8CC /* VideoRankingListTableViewController.m in Sources */,
+				3F272F8A1DA7681300CA7E8F /* MusicListBaseClass.m in Sources */,
 				3F0470781D9C09EA00DAD187 /* GameTableViewController.m in Sources */,
 				5DA8EB431D9BC1EB006DAECD /* MineViewController.m in Sources */,
 				3F844ADB1D9E3E2300AE9B3B /* VideoListAuthor.m in Sources */,
+				3F272F891DA7681300CA7E8F /* MusicListAlbum.m in Sources */,
+				3F272F8D1DA7681300CA7E8F /* MusicListTracks.m in Sources */,
 				3F844A891D9E0D4A00AE9B3B /* ItemList.m in Sources */,
+				3F272F9F1DA77AA300CA7E8F /* SongListHeaderView.m in Sources */,
 				3F844AE21D9E3E2300AE9B3B /* VideoListPlayInfo.m in Sources */,
 				3F844AE11D9E3E2300AE9B3B /* VideoListLabel.m in Sources */,
 				3FA5EE231D9DFB120020E8CC /* VideoListTableViewController.m in Sources */,
 				5D29E9F71D9CB61E00213A82 /* MyselfPageViewController.m in Sources */,
+				3F272F881DA7681300CA7E8F /* MusicDownloadBaseClass.m in Sources */,
 				3F0470761D9C09EA00DAD187 /* EntertainmentTableViewController.m in Sources */,
+				3FA716061DA8858B00B21C3F /* SongPlayViewController.m in Sources */,
 				3FA4E5E71D9AB1070090AC78 /* AppDelegate.m in Sources */,
 				3F04707F1D9C09EA00DAD187 /* ScienceTableViewController.m in Sources */,
 				3F0470AD1D9C0AC500DAD187 /* NewsImageTableViewCell.m in Sources */,
@@ -1233,14 +1334,16 @@
 				3F04BF571D9B6FE3005CCA03 /* MainViewController.m in Sources */,
 				5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */,
 				5DA8EB251D9B9C5B006DAECD /* RegisterViewController.m in Sources */,
+				3FA92D961DA6361F007E622E /* MoviePlayerViewController.m in Sources */,
 				3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */,
-				3F04BFA41D9B7563005CCA03 /* SongDetailViewController.m in Sources */,
 				3FC1BB4F1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.m in Sources */,
+				3F272F861DA7681300CA7E8F /* MusicCategoryBaseClass.m in Sources */,
 				5DA8EB361D9BB658006DAECD /* MMExampleDrawerVisualStateManager.m in Sources */,
 				3F04707A1D9C09EA00DAD187 /* JokeTableViewController.m in Sources */,
 				3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */,
 				3F04BFBD1D9B7735005CCA03 /* ReaderListTableViewCell.m in Sources */,
 				3FC1BB201D9CF32000C834D8 /* NewsWebViewController.m in Sources */,
+				3F272F871DA7681300CA7E8F /* MusicCategoryList.m in Sources */,
 				3F04BF9A1D9B7518005CCA03 /* SongMenuTableViewController.m in Sources */,
 				5DA8EB521D9BC960006DAECD /* HotListTableViewCell.m in Sources */,
 				3F0470AB1D9C0AC500DAD187 /* NewsImageMoreTableViewCell.m in Sources */,
@@ -1252,6 +1355,7 @@
 				3F844ADE1D9E3E2300AE9B3B /* VideoListCover.m in Sources */,
 				3FA4E5E41D9AB1070090AC78 /* main.m in Sources */,
 				3F844ADC1D9E3E2300AE9B3B /* VideoListBaseClass.m in Sources */,
+				3F844AEA1D9E523400AE9B3B /* VideoDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1366,6 +1470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.long.ProjectB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1380,6 +1485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.long.ProjectB;
 				PRODUCT_NAME = "$(TARGET_NAME)";

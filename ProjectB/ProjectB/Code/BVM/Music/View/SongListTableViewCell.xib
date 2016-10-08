@@ -3,18 +3,109 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SongListTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songlistcell" rowHeight="67" id="KGk-i7-Jjw" customClass="SongListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="67"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <frame key="frameInset" width="350" height="66"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4VG-sY-4Go">
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="59Z-q7-feQ"/>
+                            <constraint firstAttribute="height" constant="50" id="DOs-8P-MIW"/>
+                            <constraint firstAttribute="width" constant="50" id="Nsf-N5-zRX"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="dOa-GD-qj1"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nu-Qj-jtb">
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8M1-2J-ayb">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="AS6-vI-9mC"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="QNc-mT-jXG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0j-WR-KwB">
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="cBB-P6-ma8"/>
+                            <constraint firstAttribute="height" constant="16" id="ibH-n2-s8W"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-2v-aUY">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="Gmf-7U-v6E"/>
+                            <constraint firstAttribute="height" constant="25" id="kKo-mT-WTT"/>
+                        </constraints>
+                        <state key="normal" image="download"/>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="scE-n8-RfW">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="DkC-sW-cGY"/>
+                            <constraint firstAttribute="height" constant="16" id="gP4-RB-KlF"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="NDl-2p-Vjo">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="Nq8-d5-Gwo"/>
+                            <constraint firstAttribute="height" constant="16" id="dMr-5i-J9v"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playBtn" translatesAutoresizingMaskIntoConstraints="NO" id="PIC-0D-pkV"/>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="BfE-2v-aUY" secondAttribute="trailing" constant="8" id="4iY-7b-1ar"/>
+                    <constraint firstItem="PIC-0D-pkV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="5OX-n7-ybF"/>
+                    <constraint firstItem="BfE-2v-aUY" firstAttribute="top" secondItem="6Nu-Qj-jtb" secondAttribute="bottom" constant="5" id="69f-YH-il3"/>
+                    <constraint firstAttribute="bottom" secondItem="s0j-WR-KwB" secondAttribute="bottom" constant="8" id="6Iu-pF-YtM"/>
+                    <constraint firstItem="6Nu-Qj-jtb" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="AIl-lM-StU"/>
+                    <constraint firstItem="scE-n8-RfW" firstAttribute="leading" secondItem="PIC-0D-pkV" secondAttribute="trailing" constant="20" id="BXc-Q8-j30"/>
+                    <constraint firstItem="s0j-WR-KwB" firstAttribute="leading" secondItem="NDl-2p-Vjo" secondAttribute="trailing" constant="4" id="DJ1-hX-LHy"/>
+                    <constraint firstItem="4VG-sY-4Go" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Eg3-on-KkI"/>
+                    <constraint firstItem="4VG-sY-4Go" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Ejq-iZ-XXv"/>
+                    <constraint firstItem="PIC-0D-pkV" firstAttribute="centerY" secondItem="4VG-sY-4Go" secondAttribute="centerY" id="Oaj-iM-fdK"/>
+                    <constraint firstAttribute="bottom" secondItem="NDl-2p-Vjo" secondAttribute="bottom" constant="8" id="Qso-PJ-WYC"/>
+                    <constraint firstItem="PIC-0D-pkV" firstAttribute="centerX" secondItem="4VG-sY-4Go" secondAttribute="centerX" id="RIo-cB-6cK"/>
+                    <constraint firstItem="6Nu-Qj-jtb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="WTS-sg-gSx"/>
+                    <constraint firstItem="8M1-2J-ayb" firstAttribute="leading" secondItem="scE-n8-RfW" secondAttribute="trailing" constant="2" id="Y9m-E7-2Em"/>
+                    <constraint firstAttribute="bottom" secondItem="8M1-2J-ayb" secondAttribute="bottom" constant="8" id="ZOI-d5-ZaR"/>
+                    <constraint firstItem="NDl-2p-Vjo" firstAttribute="leading" secondItem="8M1-2J-ayb" secondAttribute="trailing" constant="8" id="afo-SO-YLa"/>
+                    <constraint firstAttribute="bottom" secondItem="scE-n8-RfW" secondAttribute="bottom" constant="8.5" id="czI-Mc-2R1"/>
+                    <constraint firstItem="4VG-sY-4Go" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jmQ-Yv-C3n"/>
+                    <constraint firstItem="4VG-sY-4Go" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="p4H-Wv-Fiu"/>
+                    <constraint firstItem="scE-n8-RfW" firstAttribute="leading" secondItem="4VG-sY-4Go" secondAttribute="trailing" constant="8" id="qyR-V1-EQU"/>
+                    <constraint firstAttribute="bottom" secondItem="BfE-2v-aUY" secondAttribute="bottom" constant="7" id="srr-jo-IMP"/>
+                    <constraint firstItem="6Nu-Qj-jtb" firstAttribute="leading" secondItem="4VG-sY-4Go" secondAttribute="trailing" constant="8" id="wwi-f9-iGU"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="songListDurationLabel" destination="s0j-WR-KwB" id="KZQ-1q-pvw"/>
+                <outlet property="songListImageView" destination="4VG-sY-4Go" id="APZ-jx-5QB"/>
+                <outlet property="songListPlayTimesLabel" destination="8M1-2J-ayb" id="Dza-V3-rTk"/>
+                <outlet property="songListTitleLabel" destination="6Nu-Qj-jtb" id="EnE-La-6Df"/>
+            </connections>
+            <point key="canvasLocation" x="48" y="83.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="download" width="16" height="16"/>
+        <image name="play" width="64" height="64"/>
+        <image name="playBtn" width="36" height="36"/>
+        <image name="time" width="16" height="16"/>
+    </resources>
 </document>

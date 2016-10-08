@@ -16,10 +16,13 @@
 //书影音
 
 //音乐
+//音乐分类
+#define URL_MusicCategory   @"http://mobile.ximalaya.com/mobile/discovery/v2/category/metadata/albums?calcDimension=hot&categoryId=2&device=iPhone&pageId"  //&pageSize=20&status=0&version=5.4.33
 //音乐列表
-#define URL_MusciList   @"http://mobile.ximalaya.com/mobile/discovery/v2/category/metadata/albums?calcDimension=mostplay&categoryId=2&device=iPhone&pageId=1&pageSize=20&status=0&version=5.4.33"
-//详情
-#define URL_MusicListDetail   @" http://mobile.ximalaya.com/mobile/v1/album?albumId=243032&device=iPhone&pageSize=20&source=5&statEvent=pageview%2Falbum%40243032&statModule=&statPage=categorytag%40%E9%9F%B3%E4%B9%90_%E5%85%A8%E9%83%A8&statPosition=1"
+#define URL_MusicList   @"http://mobile.ximalaya.com/mobile/v1/album?albumId" //=3726515&device=iPhone&pageSize=20&source=5&statEvent=pageview%2Falbum%40243032&statModule=14%3A137&statPage=categorytag%40%E9%9F%B3%E4%B9%90_%E5%85%A8%E9%83%A8&statPosition=1&trackId=17166137
+//音乐列表加载更多
+#define URL_MusicListMore  @"http://mobile.ximalaya.com/mobile/v1/album/track?albumId"  //=3726515&device=iPhone&isAsc=true&pageId=2&pageSize=20&statEvent=pageview%2Falbum%403726515&statModule=&statPage=categorytag%40%E9%9F%B3%E4%B9%90_%E5%85%A8%E9%83%A8&statPosition=2
+
 //播放界面
 #define URL_Play   @"http://mobileapi.5sing.kugou.com/song/newget?songtype=yc&songid=3177252&songfields=ID%2CSN%2CSK%2CSW%2CSS%2CST%2CSI%2CCT%2CM%2CS%2CZQ%2CWO%2CZC%2CHY%2CYG%2CCK%2CD%2CRQ%2CDD%2CE%2CR%2CRC%2CSG%2CC%2CCS%2CLV%2CLG%2CSY%2CUID%2CPT%2CSCSR%2CSC%2CKM5&userfields=ID%2CNN%2CI"
 

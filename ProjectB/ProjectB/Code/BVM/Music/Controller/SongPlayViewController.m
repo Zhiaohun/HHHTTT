@@ -1,18 +1,18 @@
 //
-//  SongDetailViewController.m
+//  SongPlayViewController.m
 //  ProjectB
 //
-//  Created by long on 16/9/28.
+//  Created by long on 2016/10/8.
 //  Copyright © 2016年 long. All rights reserved.
 //
 
-#import "SongDetailViewController.h"
+#import "SongPlayViewController.h"
 
-@interface SongDetailViewController ()
+@interface SongPlayViewController ()
 
 @end
 
-@implementation SongDetailViewController
+@implementation SongPlayViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
