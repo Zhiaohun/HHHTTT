@@ -17,7 +17,7 @@ typedef void(^ShareBtnBlock)();
 @property (weak, nonatomic) IBOutlet UIView *rightBtnView1;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
-@property (nonatomic, assign) DateBtnBlock dateBtnBlock;
-@property (nonatomic, assign) ShareBtnBlock shareBtnBlock;
+@property (nonatomic, copy) DateBtnBlock dateBtnBlock;
+@property (nonatomic, copy) ShareBtnBlock shareBtnBlock;
 
 @end

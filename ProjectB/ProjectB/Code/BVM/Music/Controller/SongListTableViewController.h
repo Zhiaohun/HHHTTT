@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SongListTableViewController : UITableViewController
+@property (nonatomic, assign) NSInteger albumId;
 
 @end

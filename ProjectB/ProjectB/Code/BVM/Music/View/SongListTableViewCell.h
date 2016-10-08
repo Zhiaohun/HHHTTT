@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MusicListDataModels.h"
 
 @interface SongListTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *songListImageView;
+@property (weak, nonatomic) IBOutlet UILabel *songListTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *songListPlayTimesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *songListDurationLabel;
+
+@property (nonatomic, strong) MusicListList *listModel;
 
 @end

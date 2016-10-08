@@ -7,13 +7,26 @@
 //
 
 #import "SongListTableViewController.h"
-
+#import "SongListHeaderView.h"
+#import "SongListTableViewCell.h"
+#import "MusicListDataModels.h"
 @interface SongListTableViewController ()
+@property (nonatomic, strong) SongListHeaderView *headerView;
+@property (nonatomic, strong) MusicListBaseClass *listBaseModel;
+@property (nonatomic, strong) NSMutableArray *musicListArray;
+@property (nonatomic, assign) NSInteger pageId;
 
 @end
 
 @implementation SongListTableViewController
 
+//数组懒加载
+-(NSMutableArray *)musicListArray{
+    if (!_musicListArray) {
+        _musicListArray = [NSMutableArray array];
+    }
+    return _musicListArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -22,8 +35,87 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSLog(@"_+_+_+%lu",self.albumId);
+    self.pageId = 1;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 50;
+
+    [self dataRequest];
+   
+    
+    UINib *songListNib = [UINib nibWithNibName:@"SongListTableViewCell" bundle:nil];
+    [self.tableView registerNib:songListNib forCellReuseIdentifier:@"songlistcell"];
 }
 
+//tableView的头视图
+-(void)tableHeaderView{
+    _headerView = [[NSBundle mainBundle] loadNibNamed:@"SongListHeaderView" owner:nil options:nil][0];
+    _headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 120);
+    self.tableView.tableHeaderView = _headerView;
+
+    [_headerView.songListHeaderViewImageView sd_setImageWithURL:[NSURL URLWithString:self.listBaseModel.data.album.coverOrigin] placeholderImage:PlaceholderImage];
+    _headerView.songListHeaderViewTitleLabel.text = self.listBaseModel.data.album.title;
+    _headerView.songListHeaderViewNickNameLabel.text = self.listBaseModel.data.user.nickname;
+    _headerView.songListHeaderViewPlayCountsLabel.text = [NSString stringWithFormat:@"%0.1f万",self.listBaseModel.data.album.playTimes / 1000];
+    
+    
+}
+//数据器请求
+-(void)dataRequest{
+    NSString *str = @"device=iPhone&pageSize=20&source=5&statEvent=pageview%2Falbum%40243032&statModule=14%3A137&statPage=categorytag%40%E9%9F%B3%E4%B9%90_%E5%85%A8%E9%83%A8&statPosition=1&trackId=17166137";
+    NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_MusicList,self.albumId,str];
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+        
+        [self.tableView.mj_footer endRefreshing];
+        
+        
+        self.listBaseModel = [MusicListBaseClass modelObjectWithDictionary:dic];
+        for (MusicListList *listModel in self.listBaseModel.data.tracks.list) {
+            [self.musicListArray addObject:listModel];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self tableHeaderView];
+            [self footerRefresh];
+        });
+    } Fail:^(NSError *error) {
+        NSLog(@">>>>%@",error);
+    }];
+}
+
+//加载更多数据
+-(void)dataRequestMore{
+    NSString *str = @"pageSize=20&statEvent=pageview%2Falbum%403726515&statModule=&statPage=categorytag%40%E9%9F%B3%E4%B9%90_%E5%85%A8%E9%83%A8&statPosition=2";
+    NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&device=iPhone&isAsc=true&pageId=%lu&%@",URL_MusicListMore,self.albumId,self.pageId,str];
+    
+    NSLog(@"%@",URLStr);
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+    
+        [self.tableView.mj_footer endRefreshing];
+        NSArray *array = dic[@"data"][@"list"];
+        NSLog(@"_+_+_+_+_+_%@",dic);
+        for (NSDictionary *dic in array) {
+            MusicListList *listModel = [MusicListList modelObjectWithDictionary:dic];
+            [self.musicListArray addObject:listModel];
+        }
+   
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self footerRefresh];
+        });
+    } Fail:^(NSError *error) {
+        NSLog(@">>>>>>%@",error);
+    }];
+}
+
+
+-(void)footerRefresh{
+    self.pageId++;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self dataRequestMore];
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -32,22 +124,23 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.musicListArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    SongListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songlistcell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    MusicListList *listModel = self.musicListArray[indexPath.row];
+    cell.listModel = listModel;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

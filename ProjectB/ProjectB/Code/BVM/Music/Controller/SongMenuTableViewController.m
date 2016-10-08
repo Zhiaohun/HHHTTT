@@ -7,16 +7,26 @@
 //
 
 #import "SongMenuTableViewController.h"
-#import "SongMenuHeaderView.h"
 #import "SongMenuTableViewCell.h"
 #import "SongListTableViewController.h"
+#import "MusicCategoryDataModels.h"
 
 @interface SongMenuTableViewController ()
+@property (nonatomic, assign) NSInteger pageId;
+@property (nonatomic, strong) NSMutableArray *musicCategoryArray;
+@property (nonatomic, strong) MusicCategoryBaseClass *categoryBaseModel;
 
 @end
 
 @implementation SongMenuTableViewController
 
+//音乐分类数组懒加载
+-(NSMutableArray *)musicCategoryArray{
+    if (!_musicCategoryArray) {
+        _musicCategoryArray = [NSMutableArray array];
+    }
+    return _musicCategoryArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -25,15 +35,63 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self headerView];
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 50;
+
+   
+    self.pageId = 1;
+    [self headerRefresh];
     
     UINib *songMenuNib = [UINib nibWithNibName:@"SongMenuTableViewCell" bundle:nil];
     [self.tableView registerNib:songMenuNib forCellReuseIdentifier:@"songmenucell"];
 }
--(void)headerView{
-    SongMenuHeaderView *headerView =[[NSBundle mainBundle] loadNibNamed:@"SongMenuHeaderView" owner:nil options:nil][0];
-    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH,0);
-    self.tableView.tableHeaderView = headerView;
+
+
+//网络请求
+-(void)dataRequest{
+    NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&pageSize=20&status=0&version=5.4.33",URL_MusicCategory,self.pageId];
+    NSLog(@"%@",URLStr);
+    
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        
+        self.categoryBaseModel = [MusicCategoryBaseClass modelObjectWithDictionary:dic];
+        for (MusicCategoryList *listModel in self.categoryBaseModel.list) {
+            if (!listModel.displayPrice) {
+                [self.musicCategoryArray addObject:listModel];
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self footerRefresh];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@">>>>>%@",error);
+        
+    }];
+    
+}
+
+-(void)headerRefresh{
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self dataRequest];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+    
+    
+}
+
+-(void)footerRefresh{
+    self.pageId++;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self dataRequest];
+    }];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -47,26 +105,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.musicCategoryArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SongMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songmenucell" forIndexPath:indexPath];
-    
-    
+    MusicCategoryList *listModel = self.musicCategoryArray[indexPath.row];
+    cell.listModel = listModel;
     
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+ //   return 90;
+//}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     SongListTableViewController *songListVC = [[SongListTableViewController alloc] init];
-    
+    MusicCategoryList *model = self.musicCategoryArray[indexPath.row];
+    songListVC.albumId = model.albumId;
     [self.navigationController pushViewController:songListVC animated:YES];
     
 }

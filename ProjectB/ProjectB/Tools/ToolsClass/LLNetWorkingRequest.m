@@ -23,7 +23,7 @@
     if (![self isConnectionNetWorking]) {
         [LLShowHUD showHUD:controller.view Message:@"您还没有连接到网路!" AfterDelay:0];
     }else{
-        [LLShowHUD showHUD:controller.navigationController.view Message:@"正在努力加载数据..." AfterDelay:0.5];
+       // [LLShowHUD showHUD:controller.navigationController.view Message:@"正在努力加载数据..." AfterDelay:0.5];
         NSURLSession *session = [NSURLSession sharedSession];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]];
         if (type == POST) {
