@@ -96,10 +96,10 @@
 
 - (IBAction)whatsWeather:(id)sender {
     self.weatherView.hidden = NO;
-    [UIView animateWithDuration:3.0     //动画时长
+    [UIView animateWithDuration:1.5     //动画时长
                           delay:0.0     //动画延时
          usingSpringWithDamping:1    //类似弹簧振动效果  阻尼系数 0 ~ 1 0没阻力 停不下来 1最大 停的最快
-          initialSpringVelocity:50.0  //初始速度
+          initialSpringVelocity:200.0  //初始速度
                         options:UIViewAnimationOptionCurveEaseInOut animations:^{
                             
                             CGPoint point = self.view.center;
