@@ -16,6 +16,7 @@
                 <outlet property="countLabelX" destination="zLh-aW-1aA" id="dxn-6s-6xu"/>
                 <outlet property="descLabel" destination="WGm-IJ-Ie8" id="f1b-xM-pmO"/>
                 <outlet property="imageV" destination="KOc-7U-fEa" id="58T-OW-Ffy"/>
+                <outlet property="playImageView" destination="TaH-MO-ckY" id="JpA-0V-s2n"/>
                 <outlet property="progressView" destination="T75-cg-b8u" id="3gy-7R-Z1c"/>
                 <outlet property="progressViewX" destination="xae-WB-ECZ" id="oce-w3-nQ9"/>
                 <outlet property="shareBtn" destination="v2D-8Y-mx0" id="0dr-Az-vCv"/>

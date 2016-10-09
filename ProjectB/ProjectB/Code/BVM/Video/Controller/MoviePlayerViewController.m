@@ -235,9 +235,7 @@
         [_activity stopAnimating];
     } else {
         [_activity startAnimating];
-        
-        
-        
+   
     }
     
 }
@@ -302,8 +300,6 @@
 {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
     [self.view addGestureRecognizer:tap];
-    
-    
     
     //获取系统音量
     MPVolumeView *volumeView = [[MPVolumeView alloc] init];
@@ -380,7 +376,7 @@
             }
         }
         //亮度调节
-        //        [UIScreen mainScreen].brightness = (float) dx/self.view.bounds.size.width;
+       // [UIScreen mainScreen].brightness = (float) dx/self.view.bounds.size.width;
     }
 }
 
@@ -391,7 +387,6 @@
     
     [self dismissViewControllerAnimated:YES completion:^{
         
-        
     }];
     
 }
@@ -399,8 +394,6 @@
 {
     [_player pause];
     [self dismissViewControllerAnimated:YES completion:^{
-        
-        
     }];
 }
 

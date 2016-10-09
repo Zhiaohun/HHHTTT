@@ -24,7 +24,7 @@
 #define URL_MusicListMore  @"http://mobile.ximalaya.com/mobile/v1/album/track?albumId"  //=3726515&device=iPhone&isAsc=true&pageId=2&pageSize=20&statEvent=pageview%2Falbum%403726515&statModule=&statPage=categorytag%40%E9%9F%B3%E4%B9%90_%E5%85%A8%E9%83%A8&statPosition=2
 
 //播放界面
-#define URL_Play   @"http://mobileapi.5sing.kugou.com/song/newget?songtype=yc&songid=3177252&songfields=ID%2CSN%2CSK%2CSW%2CSS%2CST%2CSI%2CCT%2CM%2CS%2CZQ%2CWO%2CZC%2CHY%2CYG%2CCK%2CD%2CRQ%2CDD%2CE%2CR%2CRC%2CSG%2CC%2CCS%2CLV%2CLG%2CSY%2CUID%2CPT%2CSCSR%2CSC%2CKM5&userfields=ID%2CNN%2CI"
+#define URL_Play   @"http://mobile.ximalaya.com/v1/track/ca/playpage"  // 19456060?albumId=243032&device=iPhone&trackUid=7178199
 
 //下载
 #define URL_DownLoad   @"http://mobile.ximalaya.com/mobile/download/7178199/track/17484646"
@@ -69,15 +69,15 @@
 
 //资讯
 //推荐
-#define URL_Recommend   @"http://c.m.163.com/nc/article/list/T1467284926140/0-20.html"
+#define URL_Recommend   @"http://c.m.163.com/nc/article/list/T1467284926140"   ///0-20.html
 //娱乐
-#define URL_Amusement  @"http://c.m.163.com/nc/article/list/T1348648517839/0-20.html"
+#define URL_Amusement  @"http://c.m.163.com/nc/article/list/T1348648517839"  // /0-20.html
 //科技
-#define URL_Technology   @"http://c.m.163.com/nc/article/list/T1348649580692/0-20.html"
+#define URL_Technology   @"http://c.m.163.com/nc/article/list/T1348649580692"   ///0-20.html
 //游戏
-#define URL_Game   @"http://c.m.163.com/nc/article/list/T1348654151579/0-20.html"
+#define URL_Game   @"http://c.m.163.com/nc/article/list/T1348654151579"  ///0-20.html
 //段子
-#define URL_Joke   @"http://ic.snssdk.com/neihan/stream/mix/v1/?content_type=-102&iid=5643787819&os_version=8.3&os_api=18&app_name=joke_essay&channel=App%20Store&device_platform=iphone&idfa=51D9267D-D8DA-4E03-BFE8-74268A090173&live_sdk_version=130&vid=58F1D3DF-BA17-44EC-A91D-672F594EE1B0&openudid=00a575f72ecf898c2896f3bae7bf817bcba0f105&device_type=iPhone%205S&version_code=5.5.5&ac=WIFI&screen_width=640&device_id=13015784666&aid=7&content_type=-102&count=30&essence=1&message_cursor=0&min_time=1474955472&mpic=1"
+#define URL_Joke   @"http://c.3g.163.com/recommend/getChanRecomNews?channel=duanzi&passport=&devId=Y6sxCyRt%2BvjK%2FmFpSwESnjRhGN7WOwirzF%2BT4OIZTiEDW32gKNZ8DN6eQj4%2F1ABH&offset"  //=0&size=20&version=15.1&spever=false&net=wifi&lat=&lon=&ts=1475758453&sign=F%2Budf9G%2FjoIsCyTRiS7QYYPJoiSkQa%2FaZ2VAgVdej2B48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=appstore
 
 //详情
 #define URL_Detail   @"http://c.m.163.com/nc/article/C1VI2L8B00011229/full.html"

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NewsWebViewController : UIViewController
+@property (nonatomic, strong) NSString *URLHtml;
 
 @end

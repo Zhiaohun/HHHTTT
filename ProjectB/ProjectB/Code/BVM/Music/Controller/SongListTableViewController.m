@@ -10,6 +10,8 @@
 #import "SongListHeaderView.h"
 #import "SongListTableViewCell.h"
 #import "MusicListDataModels.h"
+#import "SongPlayTableViewController.h"
+
 @interface SongListTableViewController ()
 @property (nonatomic, strong) SongListHeaderView *headerView;
 @property (nonatomic, strong) MusicListBaseClass *listBaseModel;
@@ -57,7 +59,7 @@
     [_headerView.songListHeaderViewImageView sd_setImageWithURL:[NSURL URLWithString:self.listBaseModel.data.album.coverOrigin] placeholderImage:PlaceholderImage];
     _headerView.songListHeaderViewTitleLabel.text = self.listBaseModel.data.album.title;
     _headerView.songListHeaderViewNickNameLabel.text = self.listBaseModel.data.user.nickname;
-    _headerView.songListHeaderViewPlayCountsLabel.text = [NSString stringWithFormat:@"%0.1f万",self.listBaseModel.data.album.playTimes / 1000];
+    _headerView.songListHeaderViewPlayCountsLabel.text = [NSString stringWithFormat:@"%0.1f万",self.listBaseModel.data.album.playTimes / 10000];
     
     
 }
@@ -138,9 +140,22 @@
     MusicListList *listModel = self.musicListArray[indexPath.row];
     cell.listModel = listModel;
     
+    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SongPlayTableViewController *songPlayVC = [[SongPlayTableViewController alloc] init];
+    //songPlayVC.listModel = [[MusicListList alloc] init];
+    songPlayVC.musicListArray = [NSMutableArray array];
+   // MusicListList *listModel = self.musicListArray[indexPath.row];
+   // songPlayVC.listModel = listModel;
+    songPlayVC.selectIndex = indexPath.row;
+    songPlayVC.musicListArray = self.musicListArray;
+    [self.navigationController pushViewController:songPlayVC animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.

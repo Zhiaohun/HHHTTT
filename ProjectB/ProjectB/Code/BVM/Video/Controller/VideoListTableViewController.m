@@ -39,9 +39,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.title = @"视频列表";
-    [self headerView];
-    self.tableView.frame = CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT-40);
+    if ([@"#" containsString:self.listModel.data.title]) {
+        self.title = [self.listModel.data.title substringFromIndex:1];
+    }else{
+        self.title = @"360全景";
+    }
+    
+   // [self headerView];
+   // self.tableView.frame = CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT);
     UINib *videoListNib = [UINib nibWithNibName:@"VideoListTableViewCell" bundle:nil];
     [self.tableView registerNib:videoListNib forCellReuseIdentifier:@"videolistcell"];
     
@@ -107,6 +112,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self footerRefresh];
+            [self headerView];
         });
         
     } Fail:^(NSError *error) {
@@ -176,6 +182,9 @@
         VideoListItemList *listModel = self.shareArray[indexPath.row];
         cell.listModel = listModel;
     }
+    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     return cell;
 }
 

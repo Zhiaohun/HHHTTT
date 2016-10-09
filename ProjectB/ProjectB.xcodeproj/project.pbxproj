@@ -51,6 +51,42 @@
 		3F272F8E1DA7681300CA7E8F /* MusicListUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F671DA7681300CA7E8F /* MusicListUser.m */; };
 		3F272F9F1DA77AA300CA7E8F /* SongListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F272F9E1DA77AA300CA7E8F /* SongListHeaderView.m */; };
 		3F272FA11DA77AAD00CA7E8F /* SongListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F272FA01DA77AAD00CA7E8F /* SongListHeaderView.xib */; };
+		3F2961511DAA37D4001934A9 /* SongPlayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29614F1DAA37D4001934A9 /* SongPlayTableViewController.m */; };
+		3F2961521DAA37D4001934A9 /* SongPlayTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961501DAA37D4001934A9 /* SongPlayTableViewController.xib */; };
+		3F2961801DAA384E001934A9 /* NewsConcentrationBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961561DAA384E001934A9 /* NewsConcentrationBaseClass.m */; };
+		3F2961811DAA384E001934A9 /* NewsConcentrationImgextra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961591DAA384E001934A9 /* NewsConcentrationImgextra.m */; };
+		3F2961821DAA384E001934A9 /* NewsConcentrationT1467284926140.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29615B1DAA384E001934A9 /* NewsConcentrationT1467284926140.m */; };
+		3F2961831DAA384E001934A9 /* NewsEntertainmentAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29615E1DAA384E001934A9 /* NewsEntertainmentAds.m */; };
+		3F2961841DAA384E001934A9 /* NewsEntertainmentBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961601DAA384E001934A9 /* NewsEntertainmentBaseClass.m */; };
+		3F2961851DAA384E001934A9 /* NewsEntertainmentImgextra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961631DAA384E001934A9 /* NewsEntertainmentImgextra.m */; };
+		3F2961861DAA384E001934A9 /* NewsEntertainmentT1348648517839.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961651DAA384E001934A9 /* NewsEntertainmentT1348648517839.m */; };
+		3F2961871DAA384E001934A9 /* NewsGameBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961681DAA384E001934A9 /* NewsGameBaseClass.m */; };
+		3F2961881DAA384E001934A9 /* NewsGameImgextra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29616B1DAA384E001934A9 /* NewsGameImgextra.m */; };
+		3F2961891DAA384E001934A9 /* NewsGameT1348654151579.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29616D1DAA384E001934A9 /* NewsGameT1348654151579.m */; };
+		3F29618A1DAA384E001934A9 /* NewsGameWapPortal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29616F1DAA384E001934A9 /* NewsGameWapPortal.m */; };
+		3F29618B1DAA384E001934A9 /* NewsJokeBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961721DAA384E001934A9 /* NewsJokeBaseClass.m */; };
+		3F29618C1DAA384E001934A9 /* NewsJokeInternalBaseClass1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961751DAA384E001934A9 /* NewsJokeInternalBaseClass1.m */; };
+		3F29618D1DAA384E001934A9 /* NewsTechnologyAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961781DAA384E001934A9 /* NewsTechnologyAds.m */; };
+		3F29618E1DAA384E001934A9 /* NewsTechnologyBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29617A1DAA384E001934A9 /* NewsTechnologyBaseClass.m */; };
+		3F29618F1DAA384E001934A9 /* NewsTechnologyImgextra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29617D1DAA384E001934A9 /* NewsTechnologyImgextra.m */; };
+		3F2961901DAA384E001934A9 /* NewsTechnologyT1348649580692.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29617F1DAA384E001934A9 /* NewsTechnologyT1348649580692.m */; };
+		3F2961941DAA38CA001934A9 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961931DAA38CA001934A9 /* CommentModel.m */; };
+		3F2961A41DAA38F3001934A9 /* KNBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961971DAA38F3001934A9 /* KNBannerView.m */; };
+		3F2961A51DAA38F3001934A9 /* KNCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961991DAA38F3001934A9 /* KNCollectionViewCell.m */; };
+		3F2961A61DAA38F3001934A9 /* KNCollectionViewTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29619B1DAA38F3001934A9 /* KNCollectionViewTextView.m */; };
+		3F2961A71DAA38F3001934A9 /* KNJudgementTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29619D1DAA38F3001934A9 /* KNJudgementTool.m */; };
+		3F2961A81DAA38F3001934A9 /* NSData+KNCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29619F1DAA38F3001934A9 /* NSData+KNCache.m */; };
+		3F2961A91DAA38F3001934A9 /* NSString+hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961A11DAA38F3001934A9 /* NSString+hash.m */; };
+		3F2961AA1DAA38F3001934A9 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961A31DAA38F3001934A9 /* UIView+Extension.m */; };
+		3F2961AD1DAA3944001934A9 /* SongPlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961AC1DAA3944001934A9 /* SongPlayManager.m */; };
+		3F2961B11DAA3A40001934A9 /* MusicPlayHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961AF1DAA3A40001934A9 /* MusicPlayHeaderView.m */; };
+		3F2961B21DAA3A40001934A9 /* MusicPlayHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961B01DAA3A40001934A9 /* MusicPlayHeaderView.xib */; };
+		3F2961B61DAA3A6F001934A9 /* SongPlayCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961B41DAA3A6F001934A9 /* SongPlayCommentTableViewCell.m */; };
+		3F2961B71DAA3A6F001934A9 /* SongPlayCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961B51DAA3A6F001934A9 /* SongPlayCommentTableViewCell.xib */; };
+		3F2961BB1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961B91DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m */; };
+		3F2961BC1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961BA1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib */; };
+		3F2961C01DAA3BF2001934A9 /* NewsJokeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961BE1DAA3BF2001934A9 /* NewsJokeTableViewCell.m */; };
+		3F2961C11DAA3BF2001934A9 /* NewsJokeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961BF1DAA3BF2001934A9 /* NewsJokeTableViewCell.xib */; };
 		3F844A871D9E0D4A00AE9B3B /* BaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A811D9E0D4A00AE9B3B /* BaseClass.m */; };
 		3F844A881D9E0D4A00AE9B3B /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A831D9E0D4A00AE9B3B /* Data.m */; };
 		3F844A891D9E0D4A00AE9B3B /* ItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A851D9E0D4A00AE9B3B /* ItemList.m */; };
@@ -91,8 +127,6 @@
 		3FA5EE3B1D9DFC230020E8CC /* VideoRankingListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE341D9DFC230020E8CC /* VideoRankingListTableViewController.xib */; };
 		3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5EE3D1D9DFD120020E8CC /* SongMenuTableViewCell.m */; };
 		3FA5EE401D9DFD120020E8CC /* SongMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5EE3E1D9DFD120020E8CC /* SongMenuTableViewCell.xib */; };
-		3FA716061DA8858B00B21C3F /* SongPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA716041DA8858B00B21C3F /* SongPlayViewController.m */; };
-		3FA716071DA8858B00B21C3F /* SongPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA716051DA8858B00B21C3F /* SongPlayViewController.xib */; };
 		3FA92D961DA6361F007E622E /* MoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA92D951DA6361F007E622E /* MoviePlayerViewController.m */; };
 		3FA92D981DA63AE2007E622E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA92D971DA63AE2007E622E /* MediaPlayer.framework */; };
 		3FC1BB201D9CF32000C834D8 /* NewsWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB1F1D9CF32000C834D8 /* NewsWebViewController.m */; };
@@ -132,7 +166,6 @@
 		5DA8EB311D9BB48C006DAECD /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB2F1D9BB48C006DAECD /* LeftViewController.m */; };
 		5DA8EB321D9BB48C006DAECD /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB301D9BB48C006DAECD /* LeftViewController.xib */; };
 		5DA8EB3D1D9BC028006DAECD /* LLNetWorkingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB381D9BC028006DAECD /* LLNetWorkingRequest.m */; };
-		5DA8EB3E1D9BC028006DAECD /* LLRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB3A1D9BC028006DAECD /* LLRefresh.m */; };
 		5DA8EB3F1D9BC028006DAECD /* LLShowHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB3C1D9BC028006DAECD /* LLShowHUD.m */; };
 		5DA8EB431D9BC1EB006DAECD /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB411D9BC1EB006DAECD /* MineViewController.m */; };
 		5DA8EB441D9BC1EB006DAECD /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB421D9BC1EB006DAECD /* MineViewController.xib */; };
@@ -249,6 +282,78 @@
 		3F272F9D1DA77AA300CA7E8F /* SongListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongListHeaderView.h; sourceTree = "<group>"; };
 		3F272F9E1DA77AA300CA7E8F /* SongListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongListHeaderView.m; sourceTree = "<group>"; };
 		3F272FA01DA77AAD00CA7E8F /* SongListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListHeaderView.xib; sourceTree = "<group>"; };
+		3F29614E1DAA37D4001934A9 /* SongPlayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongPlayTableViewController.h; sourceTree = "<group>"; };
+		3F29614F1DAA37D4001934A9 /* SongPlayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongPlayTableViewController.m; sourceTree = "<group>"; };
+		3F2961501DAA37D4001934A9 /* SongPlayTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongPlayTableViewController.xib; sourceTree = "<group>"; };
+		3F2961551DAA384E001934A9 /* NewsConcentrationBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsConcentrationBaseClass.h; sourceTree = "<group>"; };
+		3F2961561DAA384E001934A9 /* NewsConcentrationBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsConcentrationBaseClass.m; sourceTree = "<group>"; };
+		3F2961571DAA384E001934A9 /* NewsConcentrationDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsConcentrationDataModels.h; sourceTree = "<group>"; };
+		3F2961581DAA384E001934A9 /* NewsConcentrationImgextra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsConcentrationImgextra.h; sourceTree = "<group>"; };
+		3F2961591DAA384E001934A9 /* NewsConcentrationImgextra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsConcentrationImgextra.m; sourceTree = "<group>"; };
+		3F29615A1DAA384E001934A9 /* NewsConcentrationT1467284926140.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsConcentrationT1467284926140.h; sourceTree = "<group>"; };
+		3F29615B1DAA384E001934A9 /* NewsConcentrationT1467284926140.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsConcentrationT1467284926140.m; sourceTree = "<group>"; };
+		3F29615D1DAA384E001934A9 /* NewsEntertainmentAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsEntertainmentAds.h; sourceTree = "<group>"; };
+		3F29615E1DAA384E001934A9 /* NewsEntertainmentAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsEntertainmentAds.m; sourceTree = "<group>"; };
+		3F29615F1DAA384E001934A9 /* NewsEntertainmentBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsEntertainmentBaseClass.h; sourceTree = "<group>"; };
+		3F2961601DAA384E001934A9 /* NewsEntertainmentBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsEntertainmentBaseClass.m; sourceTree = "<group>"; };
+		3F2961611DAA384E001934A9 /* NewsEntertainmentDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsEntertainmentDataModels.h; sourceTree = "<group>"; };
+		3F2961621DAA384E001934A9 /* NewsEntertainmentImgextra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsEntertainmentImgextra.h; sourceTree = "<group>"; };
+		3F2961631DAA384E001934A9 /* NewsEntertainmentImgextra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsEntertainmentImgextra.m; sourceTree = "<group>"; };
+		3F2961641DAA384E001934A9 /* NewsEntertainmentT1348648517839.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsEntertainmentT1348648517839.h; sourceTree = "<group>"; };
+		3F2961651DAA384E001934A9 /* NewsEntertainmentT1348648517839.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsEntertainmentT1348648517839.m; sourceTree = "<group>"; };
+		3F2961671DAA384E001934A9 /* NewsGameBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsGameBaseClass.h; sourceTree = "<group>"; };
+		3F2961681DAA384E001934A9 /* NewsGameBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsGameBaseClass.m; sourceTree = "<group>"; };
+		3F2961691DAA384E001934A9 /* NewsGameDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsGameDataModels.h; sourceTree = "<group>"; };
+		3F29616A1DAA384E001934A9 /* NewsGameImgextra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsGameImgextra.h; sourceTree = "<group>"; };
+		3F29616B1DAA384E001934A9 /* NewsGameImgextra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsGameImgextra.m; sourceTree = "<group>"; };
+		3F29616C1DAA384E001934A9 /* NewsGameT1348654151579.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsGameT1348654151579.h; sourceTree = "<group>"; };
+		3F29616D1DAA384E001934A9 /* NewsGameT1348654151579.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsGameT1348654151579.m; sourceTree = "<group>"; };
+		3F29616E1DAA384E001934A9 /* NewsGameWapPortal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsGameWapPortal.h; sourceTree = "<group>"; };
+		3F29616F1DAA384E001934A9 /* NewsGameWapPortal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsGameWapPortal.m; sourceTree = "<group>"; };
+		3F2961711DAA384E001934A9 /* NewsJokeBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsJokeBaseClass.h; sourceTree = "<group>"; };
+		3F2961721DAA384E001934A9 /* NewsJokeBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsJokeBaseClass.m; sourceTree = "<group>"; };
+		3F2961731DAA384E001934A9 /* NewsJokeDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsJokeDataModels.h; sourceTree = "<group>"; };
+		3F2961741DAA384E001934A9 /* NewsJokeInternalBaseClass1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsJokeInternalBaseClass1.h; sourceTree = "<group>"; };
+		3F2961751DAA384E001934A9 /* NewsJokeInternalBaseClass1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsJokeInternalBaseClass1.m; sourceTree = "<group>"; };
+		3F2961771DAA384E001934A9 /* NewsTechnologyAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTechnologyAds.h; sourceTree = "<group>"; };
+		3F2961781DAA384E001934A9 /* NewsTechnologyAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTechnologyAds.m; sourceTree = "<group>"; };
+		3F2961791DAA384E001934A9 /* NewsTechnologyBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTechnologyBaseClass.h; sourceTree = "<group>"; };
+		3F29617A1DAA384E001934A9 /* NewsTechnologyBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTechnologyBaseClass.m; sourceTree = "<group>"; };
+		3F29617B1DAA384E001934A9 /* NewsTechnologyDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTechnologyDataModels.h; sourceTree = "<group>"; };
+		3F29617C1DAA384E001934A9 /* NewsTechnologyImgextra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTechnologyImgextra.h; sourceTree = "<group>"; };
+		3F29617D1DAA384E001934A9 /* NewsTechnologyImgextra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTechnologyImgextra.m; sourceTree = "<group>"; };
+		3F29617E1DAA384E001934A9 /* NewsTechnologyT1348649580692.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTechnologyT1348649580692.h; sourceTree = "<group>"; };
+		3F29617F1DAA384E001934A9 /* NewsTechnologyT1348649580692.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTechnologyT1348649580692.m; sourceTree = "<group>"; };
+		3F2961921DAA38CA001934A9 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		3F2961931DAA38CA001934A9 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		3F2961961DAA38F3001934A9 /* KNBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNBannerView.h; sourceTree = "<group>"; };
+		3F2961971DAA38F3001934A9 /* KNBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNBannerView.m; sourceTree = "<group>"; };
+		3F2961981DAA38F3001934A9 /* KNCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNCollectionViewCell.h; sourceTree = "<group>"; };
+		3F2961991DAA38F3001934A9 /* KNCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNCollectionViewCell.m; sourceTree = "<group>"; };
+		3F29619A1DAA38F3001934A9 /* KNCollectionViewTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNCollectionViewTextView.h; sourceTree = "<group>"; };
+		3F29619B1DAA38F3001934A9 /* KNCollectionViewTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNCollectionViewTextView.m; sourceTree = "<group>"; };
+		3F29619C1DAA38F3001934A9 /* KNJudgementTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KNJudgementTool.h; sourceTree = "<group>"; };
+		3F29619D1DAA38F3001934A9 /* KNJudgementTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KNJudgementTool.m; sourceTree = "<group>"; };
+		3F29619E1DAA38F3001934A9 /* NSData+KNCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+KNCache.h"; sourceTree = "<group>"; };
+		3F29619F1DAA38F3001934A9 /* NSData+KNCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+KNCache.m"; sourceTree = "<group>"; };
+		3F2961A01DAA38F3001934A9 /* NSString+hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+hash.h"; sourceTree = "<group>"; };
+		3F2961A11DAA38F3001934A9 /* NSString+hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+hash.m"; sourceTree = "<group>"; };
+		3F2961A21DAA38F3001934A9 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		3F2961A31DAA38F3001934A9 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		3F2961AB1DAA3944001934A9 /* SongPlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongPlayManager.h; sourceTree = "<group>"; };
+		3F2961AC1DAA3944001934A9 /* SongPlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongPlayManager.m; sourceTree = "<group>"; };
+		3F2961AE1DAA3A40001934A9 /* MusicPlayHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicPlayHeaderView.h; sourceTree = "<group>"; };
+		3F2961AF1DAA3A40001934A9 /* MusicPlayHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicPlayHeaderView.m; sourceTree = "<group>"; };
+		3F2961B01DAA3A40001934A9 /* MusicPlayHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicPlayHeaderView.xib; sourceTree = "<group>"; };
+		3F2961B31DAA3A6F001934A9 /* SongPlayCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongPlayCommentTableViewCell.h; sourceTree = "<group>"; };
+		3F2961B41DAA3A6F001934A9 /* SongPlayCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongPlayCommentTableViewCell.m; sourceTree = "<group>"; };
+		3F2961B51DAA3A6F001934A9 /* SongPlayCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongPlayCommentTableViewCell.xib; sourceTree = "<group>"; };
+		3F2961B81DAA3BE2001934A9 /* NewsScrollViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsScrollViewTableViewCell.h; sourceTree = "<group>"; };
+		3F2961B91DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsScrollViewTableViewCell.m; sourceTree = "<group>"; };
+		3F2961BA1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsScrollViewTableViewCell.xib; sourceTree = "<group>"; };
+		3F2961BD1DAA3BF2001934A9 /* NewsJokeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsJokeTableViewCell.h; sourceTree = "<group>"; };
+		3F2961BE1DAA3BF2001934A9 /* NewsJokeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsJokeTableViewCell.m; sourceTree = "<group>"; };
+		3F2961BF1DAA3BF2001934A9 /* NewsJokeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsJokeTableViewCell.xib; sourceTree = "<group>"; };
 		3F844A801D9E0D4A00AE9B3B /* BaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseClass.h; sourceTree = "<group>"; };
 		3F844A811D9E0D4A00AE9B3B /* BaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseClass.m; sourceTree = "<group>"; };
 		3F844A821D9E0D4A00AE9B3B /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
@@ -322,9 +427,6 @@
 		3FA5EE3C1D9DFD120020E8CC /* SongMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongMenuTableViewCell.h; sourceTree = "<group>"; };
 		3FA5EE3D1D9DFD120020E8CC /* SongMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongMenuTableViewCell.m; sourceTree = "<group>"; };
 		3FA5EE3E1D9DFD120020E8CC /* SongMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongMenuTableViewCell.xib; sourceTree = "<group>"; };
-		3FA716031DA8858B00B21C3F /* SongPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongPlayViewController.h; sourceTree = "<group>"; };
-		3FA716041DA8858B00B21C3F /* SongPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongPlayViewController.m; sourceTree = "<group>"; };
-		3FA716051DA8858B00B21C3F /* SongPlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongPlayViewController.xib; sourceTree = "<group>"; };
 		3FA92D941DA6361F007E622E /* MoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviePlayerViewController.h; sourceTree = "<group>"; };
 		3FA92D951DA6361F007E622E /* MoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviePlayerViewController.m; sourceTree = "<group>"; };
 		3FA92D971DA63AE2007E622E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -387,8 +489,6 @@
 		5DA8EB301D9BB48C006DAECD /* LeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
 		5DA8EB371D9BC028006DAECD /* LLNetWorkingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLNetWorkingRequest.h; sourceTree = "<group>"; };
 		5DA8EB381D9BC028006DAECD /* LLNetWorkingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLNetWorkingRequest.m; sourceTree = "<group>"; };
-		5DA8EB391D9BC028006DAECD /* LLRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLRefresh.h; sourceTree = "<group>"; };
-		5DA8EB3A1D9BC028006DAECD /* LLRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLRefresh.m; sourceTree = "<group>"; };
 		5DA8EB3B1D9BC028006DAECD /* LLShowHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLShowHUD.h; sourceTree = "<group>"; };
 		5DA8EB3C1D9BC028006DAECD /* LLShowHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLShowHUD.m; sourceTree = "<group>"; };
 		5DA8EB401D9BC1EB006DAECD /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -489,6 +589,12 @@
 				3F0470A81D9C0AC500DAD187 /* NewsTableViewCell.h */,
 				3F0470A91D9C0AC500DAD187 /* NewsTableViewCell.m */,
 				3F0470AA1D9C0AC500DAD187 /* NewsTableViewCell.xib */,
+				3F2961B81DAA3BE2001934A9 /* NewsScrollViewTableViewCell.h */,
+				3F2961B91DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m */,
+				3F2961BA1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib */,
+				3F2961BD1DAA3BF2001934A9 /* NewsJokeTableViewCell.h */,
+				3F2961BE1DAA3BF2001934A9 /* NewsJokeTableViewCell.m */,
+				3F2961BF1DAA3BF2001934A9 /* NewsJokeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -568,9 +674,9 @@
 				3F04BF9C1D9B7551005CCA03 /* SongListTableViewController.h */,
 				3F04BF9D1D9B7551005CCA03 /* SongListTableViewController.m */,
 				3F04BF9E1D9B7551005CCA03 /* SongListTableViewController.xib */,
-				3FA716031DA8858B00B21C3F /* SongPlayViewController.h */,
-				3FA716041DA8858B00B21C3F /* SongPlayViewController.m */,
-				3FA716051DA8858B00B21C3F /* SongPlayViewController.xib */,
+				3F29614E1DAA37D4001934A9 /* SongPlayTableViewController.h */,
+				3F29614F1DAA37D4001934A9 /* SongPlayTableViewController.m */,
+				3F2961501DAA37D4001934A9 /* SongPlayTableViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -578,6 +684,9 @@
 		3F04BF5D1D9B702B005CCA03 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F2961AE1DAA3A40001934A9 /* MusicPlayHeaderView.h */,
+				3F2961AF1DAA3A40001934A9 /* MusicPlayHeaderView.m */,
+				3F2961B01DAA3A40001934A9 /* MusicPlayHeaderView.xib */,
 				3FA5EE3C1D9DFD120020E8CC /* SongMenuTableViewCell.h */,
 				3FA5EE3D1D9DFD120020E8CC /* SongMenuTableViewCell.m */,
 				3FA5EE3E1D9DFD120020E8CC /* SongMenuTableViewCell.xib */,
@@ -587,6 +696,9 @@
 				3F272F9D1DA77AA300CA7E8F /* SongListHeaderView.h */,
 				3F272F9E1DA77AA300CA7E8F /* SongListHeaderView.m */,
 				3F272FA01DA77AAD00CA7E8F /* SongListHeaderView.xib */,
+				3F2961B31DAA3A6F001934A9 /* SongPlayCommentTableViewCell.h */,
+				3F2961B41DAA3A6F001934A9 /* SongPlayCommentTableViewCell.m */,
+				3F2961B51DAA3A6F001934A9 /* SongPlayCommentTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -698,9 +810,9 @@
 		3F04BF661D9B7038005CCA03 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				3F2961531DAA384E001934A9 /* Model */,
 				3FC1BB271D9CF4BD00C834D8 /* NewsBaseController */,
 				3F04BF671D9B7038005CCA03 /* Controller */,
-				3F04BF681D9B7038005CCA03 /* Model */,
 				3F0470A11D9C0AC500DAD187 /* View */,
 			);
 			path = News;
@@ -731,13 +843,6 @@
 				3FC1BB231D9CF33B00C834D8 /* NewsImageViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		3F04BF681D9B7038005CCA03 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		3F04BF6A1D9B703E005CCA03 /* Mine */ = {
@@ -818,6 +923,7 @@
 		3F272F4F1DA767FA00CA7E8F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F2961911DAA38CA001934A9 /* CommentModel */,
 				3F272F501DA7681300CA7E8F /* MusicCategoryModel */,
 				3F272F561DA7681300CA7E8F /* MusicDownloadModel */,
 				3F272F5A1DA7681300CA7E8F /* MusicListModel */,
@@ -865,6 +971,122 @@
 				3F272F671DA7681300CA7E8F /* MusicListUser.m */,
 			);
 			path = MusicListModel;
+			sourceTree = "<group>";
+		};
+		3F2961531DAA384E001934A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F2961541DAA384E001934A9 /* NewsConcentrationModel */,
+				3F29615C1DAA384E001934A9 /* NewsEntertainmentModel */,
+				3F2961661DAA384E001934A9 /* NewsGameModel */,
+				3F2961701DAA384E001934A9 /* NewsJokeModel */,
+				3F2961761DAA384E001934A9 /* NewsTechnologyModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F2961541DAA384E001934A9 /* NewsConcentrationModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F2961551DAA384E001934A9 /* NewsConcentrationBaseClass.h */,
+				3F2961561DAA384E001934A9 /* NewsConcentrationBaseClass.m */,
+				3F2961571DAA384E001934A9 /* NewsConcentrationDataModels.h */,
+				3F2961581DAA384E001934A9 /* NewsConcentrationImgextra.h */,
+				3F2961591DAA384E001934A9 /* NewsConcentrationImgextra.m */,
+				3F29615A1DAA384E001934A9 /* NewsConcentrationT1467284926140.h */,
+				3F29615B1DAA384E001934A9 /* NewsConcentrationT1467284926140.m */,
+			);
+			path = NewsConcentrationModel;
+			sourceTree = "<group>";
+		};
+		3F29615C1DAA384E001934A9 /* NewsEntertainmentModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F29615D1DAA384E001934A9 /* NewsEntertainmentAds.h */,
+				3F29615E1DAA384E001934A9 /* NewsEntertainmentAds.m */,
+				3F29615F1DAA384E001934A9 /* NewsEntertainmentBaseClass.h */,
+				3F2961601DAA384E001934A9 /* NewsEntertainmentBaseClass.m */,
+				3F2961611DAA384E001934A9 /* NewsEntertainmentDataModels.h */,
+				3F2961621DAA384E001934A9 /* NewsEntertainmentImgextra.h */,
+				3F2961631DAA384E001934A9 /* NewsEntertainmentImgextra.m */,
+				3F2961641DAA384E001934A9 /* NewsEntertainmentT1348648517839.h */,
+				3F2961651DAA384E001934A9 /* NewsEntertainmentT1348648517839.m */,
+			);
+			path = NewsEntertainmentModel;
+			sourceTree = "<group>";
+		};
+		3F2961661DAA384E001934A9 /* NewsGameModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F2961671DAA384E001934A9 /* NewsGameBaseClass.h */,
+				3F2961681DAA384E001934A9 /* NewsGameBaseClass.m */,
+				3F2961691DAA384E001934A9 /* NewsGameDataModels.h */,
+				3F29616A1DAA384E001934A9 /* NewsGameImgextra.h */,
+				3F29616B1DAA384E001934A9 /* NewsGameImgextra.m */,
+				3F29616C1DAA384E001934A9 /* NewsGameT1348654151579.h */,
+				3F29616D1DAA384E001934A9 /* NewsGameT1348654151579.m */,
+				3F29616E1DAA384E001934A9 /* NewsGameWapPortal.h */,
+				3F29616F1DAA384E001934A9 /* NewsGameWapPortal.m */,
+			);
+			path = NewsGameModel;
+			sourceTree = "<group>";
+		};
+		3F2961701DAA384E001934A9 /* NewsJokeModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F2961711DAA384E001934A9 /* NewsJokeBaseClass.h */,
+				3F2961721DAA384E001934A9 /* NewsJokeBaseClass.m */,
+				3F2961731DAA384E001934A9 /* NewsJokeDataModels.h */,
+				3F2961741DAA384E001934A9 /* NewsJokeInternalBaseClass1.h */,
+				3F2961751DAA384E001934A9 /* NewsJokeInternalBaseClass1.m */,
+			);
+			path = NewsJokeModel;
+			sourceTree = "<group>";
+		};
+		3F2961761DAA384E001934A9 /* NewsTechnologyModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F2961771DAA384E001934A9 /* NewsTechnologyAds.h */,
+				3F2961781DAA384E001934A9 /* NewsTechnologyAds.m */,
+				3F2961791DAA384E001934A9 /* NewsTechnologyBaseClass.h */,
+				3F29617A1DAA384E001934A9 /* NewsTechnologyBaseClass.m */,
+				3F29617B1DAA384E001934A9 /* NewsTechnologyDataModels.h */,
+				3F29617C1DAA384E001934A9 /* NewsTechnologyImgextra.h */,
+				3F29617D1DAA384E001934A9 /* NewsTechnologyImgextra.m */,
+				3F29617E1DAA384E001934A9 /* NewsTechnologyT1348649580692.h */,
+				3F29617F1DAA384E001934A9 /* NewsTechnologyT1348649580692.m */,
+			);
+			path = NewsTechnologyModel;
+			sourceTree = "<group>";
+		};
+		3F2961911DAA38CA001934A9 /* CommentModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F2961921DAA38CA001934A9 /* CommentModel.h */,
+				3F2961931DAA38CA001934A9 /* CommentModel.m */,
+			);
+			path = CommentModel;
+			sourceTree = "<group>";
+		};
+		3F2961951DAA38F3001934A9 /* KNBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				3F2961961DAA38F3001934A9 /* KNBannerView.h */,
+				3F2961971DAA38F3001934A9 /* KNBannerView.m */,
+				3F2961981DAA38F3001934A9 /* KNCollectionViewCell.h */,
+				3F2961991DAA38F3001934A9 /* KNCollectionViewCell.m */,
+				3F29619A1DAA38F3001934A9 /* KNCollectionViewTextView.h */,
+				3F29619B1DAA38F3001934A9 /* KNCollectionViewTextView.m */,
+				3F29619C1DAA38F3001934A9 /* KNJudgementTool.h */,
+				3F29619D1DAA38F3001934A9 /* KNJudgementTool.m */,
+				3F29619E1DAA38F3001934A9 /* NSData+KNCache.h */,
+				3F29619F1DAA38F3001934A9 /* NSData+KNCache.m */,
+				3F2961A01DAA38F3001934A9 /* NSString+hash.h */,
+				3F2961A11DAA38F3001934A9 /* NSString+hash.m */,
+				3F2961A21DAA38F3001934A9 /* UIView+Extension.h */,
+				3F2961A31DAA38F3001934A9 /* UIView+Extension.m */,
+			);
+			path = KNBannerView;
 			sourceTree = "<group>";
 		};
 		3F844A7F1D9E0D4A00AE9B3B /* VideoCategoryModel */ = {
@@ -973,6 +1195,7 @@
 		3FA4E6071D9AB1510090AC78 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3F2961951DAA38F3001934A9 /* KNBannerView */,
 				3FA4E6081D9AB1510090AC78 /* Reachability.h */,
 				3FA4E6091D9AB1510090AC78 /* Reachability.m */,
 				3FA4E60A1D9AB1510090AC78 /* ScrollImage.h */,
@@ -997,10 +1220,10 @@
 		3FA4E60F1D9AB1580090AC78 /* ToolsClass */ = {
 			isa = PBXGroup;
 			children = (
+				3F2961AB1DAA3944001934A9 /* SongPlayManager.h */,
+				3F2961AC1DAA3944001934A9 /* SongPlayManager.m */,
 				5DA8EB371D9BC028006DAECD /* LLNetWorkingRequest.h */,
 				5DA8EB381D9BC028006DAECD /* LLNetWorkingRequest.m */,
-				5DA8EB391D9BC028006DAECD /* LLRefresh.h */,
-				5DA8EB3A1D9BC028006DAECD /* LLRefresh.m */,
 				5DA8EB3B1D9BC028006DAECD /* LLShowHUD.h */,
 				5DA8EB3C1D9BC028006DAECD /* LLShowHUD.m */,
 			);
@@ -1438,6 +1661,7 @@
 				3FA4E5EF1D9AB1070090AC78 /* Assets.xcassets in Resources */,
 				3FA5EE3B1D9DFC230020E8CC /* VideoRankingListTableViewController.xib in Resources */,
 				3F04BFAA1D9B7576005CCA03 /* SongListTableViewCell.xib in Resources */,
+				3F2961521DAA37D4001934A9 /* SongPlayTableViewController.xib in Resources */,
 				3FA4E5ED1D9AB1070090AC78 /* Main.storyboard in Resources */,
 				3FC1BB501D9D0C0800C834D8 /* VideoCategoryCollectionViewController.xib in Resources */,
 				3FC1BB461D9D089D00C834D8 /* VideoHeaderCollectionViewCell.xib in Resources */,
@@ -1446,10 +1670,12 @@
 				5DA8EB491D9BC2B1006DAECD /* TotalTableViewCell.xib in Resources */,
 				5DA8EB321D9BB48C006DAECD /* LeftViewController.xib in Resources */,
 				3F844A981D9E262D00AE9B3B /* VideoListHeaderView.xib in Resources */,
+				3F2961B21DAA3A40001934A9 /* MusicPlayHeaderView.xib in Resources */,
 				5DF554951DA893E100DFCBEC /* ReaderListHeaderView.xib in Resources */,
 				3F04BF581D9B6FE3005CCA03 /* MainViewController.xib in Resources */,
 				3FA5EE401D9DFD120020E8CC /* SongMenuTableViewCell.xib in Resources */,
 				3F04707E1D9C09EA00DAD187 /* RecommendTableViewController.xib in Resources */,
+				3F2961B71DAA3A6F001934A9 /* SongPlayCommentTableViewCell.xib in Resources */,
 				5D29EA221D9D19DE00213A82 /* SystemInfoTableViewCell.xib in Resources */,
 				3F272FA11DA77AAD00CA7E8F /* SongListHeaderView.xib in Resources */,
 				3F0470AE1D9C0AC500DAD187 /* NewsImageTableViewCell.xib in Resources */,
@@ -1462,10 +1688,11 @@
 				3F04BF8C1D9B73E6005CCA03 /* TotalViewController.xib in Resources */,
 				3FC1BB3C1D9D036900C834D8 /* VideoNormalCollectionViewCell.xib in Resources */,
 				5DA8EB5B1D9BF399006DAECD /* HotVideoTableViewCell.xib in Resources */,
-				3FA716071DA8858B00B21C3F /* SongPlayViewController.xib in Resources */,
 				3F04BFA01D9B7551005CCA03 /* SongListTableViewController.xib in Resources */,
+				3F2961C11DAA3BF2001934A9 /* NewsJokeTableViewCell.xib in Resources */,
 				3F0470771D9C09EA00DAD187 /* EntertainmentTableViewController.xib in Resources */,
 				3F04BFBE1D9B7735005CCA03 /* ReaderListTableViewCell.xib in Resources */,
+				3F2961BC1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib in Resources */,
 				3FA5EE1A1D9DF9A70020E8CC /* NewsImageMoreTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1528,10 +1755,11 @@
 				3FC1BB3B1D9D036900C834D8 /* VideoNormalCollectionViewCell.m in Sources */,
 				3F272F8B1DA7681300CA7E8F /* MusicListData.m in Sources */,
 				3F272F8E1DA7681300CA7E8F /* MusicListUser.m in Sources */,
-				5DA8EB3E1D9BC028006DAECD /* LLRefresh.m in Sources */,
 				3F272F8C1DA7681300CA7E8F /* MusicListList.m in Sources */,
 				5DF554851DA893BC00DFCBEC /* ReadMotivationBaseClass.m in Sources */,
 				3FC1BB241D9CF33B00C834D8 /* NewsImageViewController.m in Sources */,
+				3F2961871DAA384E001934A9 /* NewsGameBaseClass.m in Sources */,
+				3F2961A61DAA38F3001934A9 /* KNCollectionViewTextView.m in Sources */,
 				3F844A881D9E0D4A00AE9B3B /* Data.m in Sources */,
 				5DA8EB481D9BC2B1006DAECD /* TotalTableViewCell.m in Sources */,
 				5DF554B91DA8E1AD00DFCBEC /* MyTracksDBManager.m in Sources */,
@@ -1544,6 +1772,7 @@
 				3F844AE31D9E3E2300AE9B3B /* VideoListProvider.m in Sources */,
 				5DA8EB121D9B8089006DAECD /* HotListViewController.m in Sources */,
 				5DA8EB1A1D9B80EF006DAECD /* RankingListViewController.m in Sources */,
+				3F2961B61DAA3A6F001934A9 /* SongPlayCommentTableViewCell.m in Sources */,
 				3FC1BB451D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m in Sources */,
 				3FA5EE3A1D9DFC230020E8CC /* VideoRankingListTableViewController.m in Sources */,
 				3F272F8A1DA7681300CA7E8F /* MusicListBaseClass.m in Sources */,
@@ -1551,25 +1780,36 @@
 				3F0470781D9C09EA00DAD187 /* GameTableViewController.m in Sources */,
 				5DA8EB431D9BC1EB006DAECD /* MineViewController.m in Sources */,
 				3F844ADB1D9E3E2300AE9B3B /* VideoListAuthor.m in Sources */,
+				3F2961861DAA384E001934A9 /* NewsEntertainmentT1348648517839.m in Sources */,
 				3F272F891DA7681300CA7E8F /* MusicListAlbum.m in Sources */,
 				3F272F8D1DA7681300CA7E8F /* MusicListTracks.m in Sources */,
 				3F844A891D9E0D4A00AE9B3B /* ItemList.m in Sources */,
 				3F272F9F1DA77AA300CA7E8F /* SongListHeaderView.m in Sources */,
 				3F844AE21D9E3E2300AE9B3B /* VideoListPlayInfo.m in Sources */,
 				3F844AE11D9E3E2300AE9B3B /* VideoListLabel.m in Sources */,
+				3F2961A71DAA38F3001934A9 /* KNJudgementTool.m in Sources */,
 				3FA5EE231D9DFB120020E8CC /* VideoListTableViewController.m in Sources */,
+				3F2961841DAA384E001934A9 /* NewsEntertainmentBaseClass.m in Sources */,
 				5D29EA611D9E396A00213A82 /* CollectionViewController.m in Sources */,
 				5D29E9F71D9CB61E00213A82 /* MyselfPageViewController.m in Sources */,
+				3F2961A91DAA38F3001934A9 /* NSString+hash.m in Sources */,
 				3F272F881DA7681300CA7E8F /* MusicDownloadBaseClass.m in Sources */,
 				3F0470761D9C09EA00DAD187 /* EntertainmentTableViewController.m in Sources */,
-				3FA716061DA8858B00B21C3F /* SongPlayViewController.m in Sources */,
 				5DF554BD1DA8E23400DFCBEC /* UserInfoModel.m in Sources */,
 				3FA4E5E71D9AB1070090AC78 /* AppDelegate.m in Sources */,
 				5DF554C61DA8E27D00DFCBEC /* MyTracksInfoModel.m in Sources */,
+				3F2961AA1DAA38F3001934A9 /* UIView+Extension.m in Sources */,
+				3F2961C01DAA3BF2001934A9 /* NewsJokeTableViewCell.m in Sources */,
 				3F04707F1D9C09EA00DAD187 /* ScienceTableViewController.m in Sources */,
 				3F0470AD1D9C0AC500DAD187 /* NewsImageTableViewCell.m in Sources */,
+				3F29618A1DAA384E001934A9 /* NewsGameWapPortal.m in Sources */,
+				3F2961B11DAA3A40001934A9 /* MusicPlayHeaderView.m in Sources */,
+				3F2961881DAA384E001934A9 /* NewsGameImgextra.m in Sources */,
 				3F844AE41D9E3E2300AE9B3B /* VideoListTag.m in Sources */,
+				3F29618F1DAA384E001934A9 /* NewsTechnologyImgextra.m in Sources */,
+				3F2961511DAA37D4001934A9 /* SongPlayTableViewController.m in Sources */,
 				3F844A921D9E20BB00AE9B3B /* VideoListTableViewCell.m in Sources */,
+				3F2961801DAA384E001934A9 /* NewsConcentrationBaseClass.m in Sources */,
 				5DA8EB3F1D9BC028006DAECD /* LLShowHUD.m in Sources */,
 				5DF554C31DA8E26D00DFCBEC /* DownloadInfoModel.m in Sources */,
 				5DF554831DA893BC00DFCBEC /* ReadCommentStars.m in Sources */,
@@ -1591,42 +1831,58 @@
 				5DF554881DA893BC00DFCBEC /* ReadMotivationPage.m in Sources */,
 				5DF554B81DA8E1AD00DFCBEC /* DownloadDBManager.m in Sources */,
 				5D29EA5C1D9E395400213A82 /* DownloadViewController.m in Sources */,
+				3F2961831DAA384E001934A9 /* NewsEntertainmentAds.m in Sources */,
 				3F0470AF1D9C0AC500DAD187 /* NewsTableViewCell.m in Sources */,
 				5DF5548A1DA893BC00DFCBEC /* ReadMotivationProducts.m in Sources */,
+				3F2961851DAA384E001934A9 /* NewsEntertainmentImgextra.m in Sources */,
 				5D29E9F31D9CB0DC00213A82 /* DWSwipeGestures.m in Sources */,
 				5DA8EB311D9BB48C006DAECD /* LeftViewController.m in Sources */,
 				3FA4E60C1D9AB1510090AC78 /* Reachability.m in Sources */,
 				3FA5EE351D9DFC230020E8CC /* MusicRankingListTableViewController.m in Sources */,
 				5DF554841DA893BC00DFCBEC /* ReadCommentSummary.m in Sources */,
 				5DF5547F1DA893BC00DFCBEC /* ReadCommentBaseClass.m in Sources */,
+				3F29618B1DAA384E001934A9 /* NewsJokeBaseClass.m in Sources */,
+				3F2961BB1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m in Sources */,
 				5DF554801DA893BC00DFCBEC /* ReadCommentPageinfo.m in Sources */,
+				3F2961A81DAA38F3001934A9 /* NSData+KNCache.m in Sources */,
+				3F2961811DAA384E001934A9 /* NewsConcentrationImgextra.m in Sources */,
 				5DA8EB3D1D9BC028006DAECD /* LLNetWorkingRequest.m in Sources */,
 				3FC1BB2A1D9CF4BD00C834D8 /* NewsBaseViewController.m in Sources */,
 				3FA4E60D1D9AB1510090AC78 /* ScrollImage.m in Sources */,
 				3F844AE61D9E3E2300AE9B3B /* VideoListWebUrl.m in Sources */,
+				3F29618E1DAA384E001934A9 /* NewsTechnologyBaseClass.m in Sources */,
 				3FA5EE371D9DFC230020E8CC /* RankingBaseViewController.m in Sources */,
 				3F04BF571D9B6FE3005CCA03 /* MainViewController.m in Sources */,
 				5DF554821DA893BC00DFCBEC /* ReadCommentReviewList.m in Sources */,
+				3F2961891DAA384E001934A9 /* NewsGameT1348654151579.m in Sources */,
 				5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */,
 				5DA8EB251D9B9C5B006DAECD /* RegisterViewController.m in Sources */,
 				3FA92D961DA6361F007E622E /* MoviePlayerViewController.m in Sources */,
+				3F29618D1DAA384E001934A9 /* NewsTechnologyAds.m in Sources */,
 				3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */,
 				3FC1BB4F1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.m in Sources */,
 				3F272F861DA7681300CA7E8F /* MusicCategoryBaseClass.m in Sources */,
 				3F04707A1D9C09EA00DAD187 /* JokeTableViewController.m in Sources */,
 				3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */,
+				3F2961821DAA384E001934A9 /* NewsConcentrationT1467284926140.m in Sources */,
 				3F04BFBD1D9B7735005CCA03 /* ReaderListTableViewCell.m in Sources */,
 				3FC1BB201D9CF32000C834D8 /* NewsWebViewController.m in Sources */,
 				5DF554941DA893E100DFCBEC /* ReaderListHeaderView.m in Sources */,
+				3F2961A41DAA38F3001934A9 /* KNBannerView.m in Sources */,
+				3F2961901DAA384E001934A9 /* NewsTechnologyT1348649580692.m in Sources */,
 				5DF5548B1DA893BC00DFCBEC /* ReadMotivationStars.m in Sources */,
+				3F2961941DAA38CA001934A9 /* CommentModel.m in Sources */,
 				3F272F871DA7681300CA7E8F /* MusicCategoryList.m in Sources */,
 				3F04BF9A1D9B7518005CCA03 /* SongMenuTableViewController.m in Sources */,
+				3F2961A51DAA38F3001934A9 /* KNCollectionViewCell.m in Sources */,
 				5DA8EB521D9BC960006DAECD /* HotListTableViewCell.m in Sources */,
 				3F0470AB1D9C0AC500DAD187 /* NewsImageMoreTableViewCell.m in Sources */,
 				3F04BFB31D9B76AB005CCA03 /* ReaderListTableViewController.m in Sources */,
 				5DF554891DA893BC00DFCBEC /* ReadMotivationParrentCat.m in Sources */,
 				5DF554871DA893BC00DFCBEC /* ReadMotivationCurrentCat.m in Sources */,
+				3F2961AD1DAA3944001934A9 /* SongPlayManager.m in Sources */,
 				3F04BFB81D9B7701005CCA03 /* ReaderDetailViewController.m in Sources */,
+				3F29618C1DAA384E001934A9 /* NewsJokeInternalBaseClass1.m in Sources */,
 				3F844ADF1D9E3E2300AE9B3B /* VideoListData.m in Sources */,
 				5D29EA211D9D19DE00213A82 /* SystemInfoTableViewCell.m in Sources */,
 				3F04BF731D9B7204005CCA03 /* TableViewCell.m in Sources */,

@@ -7,23 +7,81 @@
 //
 
 #import "JokeTableViewController.h"
+#import "NewsJokeTableViewCell.h"
+#import "NewsJokeDataModels.h"
 
 @interface JokeTableViewController ()
+@property (nonatomic, assign) NSInteger offset;
+@property (nonatomic, strong) NewsJokeBaseClass *jokeBaseModel;
+@property (nonatomic, strong) NSMutableArray *jokeArray;
 
 @end
 
 @implementation JokeTableViewController
 
+-(NSMutableArray *)jokeArray{
+    if (!_jokeArray) {
+        _jokeArray = [NSMutableArray array];
+    }
+    return _jokeArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 50;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.offset = 0;
+    [self headerRefresh];
+    
+    UINib *jokeNib = [UINib nibWithNibName:@"NewsJokeTableViewCell" bundle:nil];
+    [self.tableView registerNib:jokeNib forCellReuseIdentifier:@"jokecell"];
 }
 
+-(void)dataRequest{
+    NSString *str = @"size=20&spever=false&net=wifi&lat=&lon=&ts=1475758453&sign=F%2Budf9G%2FjoIsCyTRiS7QYYPJoiSkQa%2FaZ2VAgVdej2B48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=appstore";
+    NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_Joke,self.offset,str];
+    
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+        
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        
+        self.jokeBaseModel = [NewsJokeBaseClass modelObjectWithDictionary:dic];
+        for (NewsJokeInternalBaseClass1 *model in self.jokeBaseModel.myProperty1) {
+            [self.jokeArray addObject:model];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self footerRefresh];
+            
+        });
+    } Fail:^(NSError *error) {
+        NSLog(@">>>>%@",error);
+    }];
+}
+
+
+-(void)headerRefresh{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self dataRequest];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+}
+
+-(void)footerRefresh{
+    self.offset += 1;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self dataRequest];
+    }];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -32,22 +90,37 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.jokeArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NewsJokeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"jokecell" forIndexPath:indexPath];
+    NewsJokeInternalBaseClass1 *model = self.jokeArray[indexPath.row];
+    cell.model = model;
     
-    // Configure the cell...
+    
+    __weak typeof(cell) weakCell = cell;
+    cell.upBtnBlock = ^{
+        [weakCell.upBtn setImage:[UIImage imageNamed:@"duanzi_up_selected"] forState:UIControlStateSelected];
+        [weakCell.upBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.upTimes + 1] forState:UIControlStateSelected];
+    };
+    
+    cell.downBtnBlock = ^{
+        [weakCell.downBtn setImage:[UIImage imageNamed:@"duanzi_down_selected"] forState:UIControlStateSelected];
+        [weakCell.downBtn setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
+        [weakCell.downBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.downTimes + 1] forState:UIControlStateSelected];
+    };
+    
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
