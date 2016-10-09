@@ -174,6 +174,9 @@
 		5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB551D9BF369006DAECD /* HotVideoViewController.m */; };
 		5DA8EB5A1D9BF399006DAECD /* HotVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */; };
 		5DA8EB5B1D9BF399006DAECD /* HotVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */; };
+		5DEEB5781DAA6258004FD1FA /* UserInfoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */; };
+		5DEEB5791DAA6258004FD1FA /* UserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB5761DAA6258004FD1FA /* UserInfoData.m */; };
+		5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB57B1DAA6C7F004FD1FA /* UserInfoManager.m */; };
 		5DF5547F1DA893BC00DFCBEC /* ReadCommentBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554631DA893BC00DFCBEC /* ReadCommentBaseClass.m */; };
 		5DF554801DA893BC00DFCBEC /* ReadCommentPageinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554661DA893BC00DFCBEC /* ReadCommentPageinfo.m */; };
 		5DF554811DA893BC00DFCBEC /* ReadCommentProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554681DA893BC00DFCBEC /* ReadCommentProduct.m */; };
@@ -500,6 +503,13 @@
 		5DA8EB571D9BF399006DAECD /* HotVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotVideoTableViewCell.h; sourceTree = "<group>"; };
 		5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotVideoTableViewCell.m; sourceTree = "<group>"; };
 		5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotVideoTableViewCell.xib; sourceTree = "<group>"; };
+		5DEEB5731DAA6258004FD1FA /* UserInfoBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoBaseClass.h; sourceTree = "<group>"; };
+		5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoBaseClass.m; sourceTree = "<group>"; };
+		5DEEB5751DAA6258004FD1FA /* UserInfoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoData.h; sourceTree = "<group>"; };
+		5DEEB5761DAA6258004FD1FA /* UserInfoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoData.m; sourceTree = "<group>"; };
+		5DEEB5771DAA6258004FD1FA /* UserInfoDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoDataModels.h; sourceTree = "<group>"; };
+		5DEEB57A1DAA6C7F004FD1FA /* UserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoManager.h; sourceTree = "<group>"; };
+		5DEEB57B1DAA6C7F004FD1FA /* UserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoManager.m; sourceTree = "<group>"; };
 		5DF554621DA893BC00DFCBEC /* ReadCommentBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentBaseClass.h; sourceTree = "<group>"; };
 		5DF554631DA893BC00DFCBEC /* ReadCommentBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentBaseClass.m; sourceTree = "<group>"; };
 		5DF554641DA893BC00DFCBEC /* ReadCommentDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentDataModels.h; sourceTree = "<group>"; };
@@ -1267,6 +1277,7 @@
 		5D29EA231D9D2EDB00213A82 /* LoginAndRegisterVC */ = {
 			isa = PBXGroup;
 			children = (
+				5DEEB5721DAA6258004FD1FA /* UserInfoModel */,
 				5DA8EB1D1D9B9C5B006DAECD /* LoginViewController.h */,
 				5DA8EB1E1D9B9C5B006DAECD /* LoginViewController.m */,
 				5DA8EB1F1D9B9C5B006DAECD /* LoginViewController.xib */,
@@ -1462,6 +1473,18 @@
 			path = AnimationOfDrawer;
 			sourceTree = "<group>";
 		};
+		5DEEB5721DAA6258004FD1FA /* UserInfoModel */ = {
+			isa = PBXGroup;
+			children = (
+				5DEEB5731DAA6258004FD1FA /* UserInfoBaseClass.h */,
+				5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */,
+				5DEEB5751DAA6258004FD1FA /* UserInfoData.h */,
+				5DEEB5761DAA6258004FD1FA /* UserInfoData.m */,
+				5DEEB5771DAA6258004FD1FA /* UserInfoDataModels.h */,
+			);
+			path = UserInfoModel;
+			sourceTree = "<group>";
+		};
 		5DF554611DA893BC00DFCBEC /* ReadCommentModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1507,6 +1530,8 @@
 		5DF554961DA8CB8100DFCBEC /* Defaults */ = {
 			isa = PBXGroup;
 			children = (
+				5DEEB57A1DAA6C7F004FD1FA /* UserInfoManager.h */,
+				5DEEB57B1DAA6C7F004FD1FA /* UserInfoManager.m */,
 				5DF5549A1DA8CCA200DFCBEC /* JudgeManager.h */,
 				5DF5549B1DA8CCA200DFCBEC /* JudgeManager.m */,
 			);
@@ -1849,16 +1874,19 @@
 				5DA8EB251D9B9C5B006DAECD /* RegisterViewController.m in Sources */,
 				3FA92D961DA6361F007E622E /* MoviePlayerViewController.m in Sources */,
 				3F29618D1DAA384E001934A9 /* NewsTechnologyAds.m in Sources */,
+				5DEEB5781DAA6258004FD1FA /* UserInfoBaseClass.m in Sources */,
 				3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */,
 				3FC1BB4F1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.m in Sources */,
 				3F272F861DA7681300CA7E8F /* MusicCategoryBaseClass.m in Sources */,
 				3F04707A1D9C09EA00DAD187 /* JokeTableViewController.m in Sources */,
 				3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */,
+				5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */,
 				3F2961821DAA384E001934A9 /* NewsConcentrationT1467284926140.m in Sources */,
 				3F04BFBD1D9B7735005CCA03 /* ReaderListTableViewCell.m in Sources */,
 				3FC1BB201D9CF32000C834D8 /* NewsWebViewController.m in Sources */,
 				5DF554941DA893E100DFCBEC /* ReaderListHeaderView.m in Sources */,
 				3F2961A41DAA38F3001934A9 /* KNBannerView.m in Sources */,
+				5DEEB5791DAA6258004FD1FA /* UserInfoData.m in Sources */,
 				3F2961901DAA384E001934A9 /* NewsTechnologyT1348649580692.m in Sources */,
 				5DF5548B1DA893BC00DFCBEC /* ReadMotivationStars.m in Sources */,
 				3F2961941DAA38CA001934A9 /* CommentModel.m in Sources */,

@@ -33,6 +33,7 @@
     
     self.userImg.layer.cornerRadius = 30;
     self.userImg.layer.borderColor = [UIColor cyanColor].CGColor;
+    
     self.userImg.layer.borderWidth = 3;
     
 }

@@ -38,15 +38,15 @@
     MineViewController *mineVC =[MineViewController new];
     UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mineVC];
     //tableBar
-    UITabBarController *tabBar = [[UITabBarController alloc] init];
+    _tabBar = [[UITabBarController alloc] init];
     mainNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"首页" image:[UIImage imageNamed:@"首页-选中"] tag:21];
     totalNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"书影音" image:[UIImage imageNamed:@"功能"] tag:22];
     newsNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"资讯" image:[UIImage imageNamed:@"资讯2"] tag:23];
     mineNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"我的" image:[UIImage imageNamed:@"我的"] tag:24];
-    tabBar.viewControllers = @[mainNav,totalNav,newsNav,mineNav];
+    _tabBar.viewControllers = @[mainNav,totalNav,newsNav,mineNav];
 
     //抽屉
-    self.drawerC = [[MMDrawerController alloc]initWithCenterViewController:tabBar leftDrawerViewController:leftVC];
+    self.drawerC = [[MMDrawerController alloc]initWithCenterViewController:_tabBar leftDrawerViewController:leftVC];
     [_drawerC setMaximumLeftDrawerWidth:VIEW_WIDTH-100];
     [_drawerC setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [_drawerC setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];

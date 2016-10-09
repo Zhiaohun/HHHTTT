@@ -27,19 +27,18 @@
     self.titleSizeNormal = 15;
     self.titleSizeSelected = 15;
     self.menuViewStyle = WMMenuViewStyleTriangle;
-    self.titleColorNormal = [UIColor cyanColor];
+    self.titleColorNormal = [JudgeManager defaultManager].originColor;
     self.progressColor = [UIColor colorWithRed:158.0/255.0 green:234.0/235.0 blue:4/255.0 alpha:1];
     self.menuViewLayoutMode = WMMenuViewLayoutModeCenter;
     self.menuItemWidth = 75;
     self.menuHeight = 40;
     self.viewFrame = CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     [super viewDidLoad];
+    [self initUI];
 }
 
 #pragma mark - private Method -
 -(void)initUI{
-    //[self showMsg];
-    self.title = @"资讯";
     [self goback];
 }
 

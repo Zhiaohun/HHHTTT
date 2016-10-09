@@ -14,5 +14,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,strong) MMDrawerController *drawerC;
 
+@property (nonatomic,strong) UITabBarController *tabBar;
 @end
 

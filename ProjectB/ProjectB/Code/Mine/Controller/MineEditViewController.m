@@ -51,7 +51,10 @@
 -(void)initUI{
     self.userImg.layer.cornerRadius = 50;
     self.userImg.layer.borderWidth = 3;
-    self.userImg.layer.borderColor = [UIColor cyanColor].CGColor;
+    self.userImg.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    
+    
 }
 
 /*

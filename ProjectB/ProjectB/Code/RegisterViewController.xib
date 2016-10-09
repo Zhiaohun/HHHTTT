@@ -8,6 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController">
             <connections>
+                <outlet property="password" destination="lrx-9D-EP4" id="26i-kQ-fkl"/>
+                <outlet property="phoneNumOrEmail" destination="psx-k0-oGA" id="gBE-wa-zQw"/>
+                <outlet property="username" destination="Gmf-De-2cF" id="Tc5-V8-Krt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -53,9 +56,12 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="p7J-wZ-dzE"/>
                     </constraints>
-                    <state key="normal" title="下一步">
+                    <state key="normal" title="注册">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="register:" destination="-1" eventType="touchUpInside" id="4ae-h8-Q4a"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

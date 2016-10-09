@@ -24,7 +24,7 @@
                                 <constraint firstAttribute="height" constant="35" id="t7G-wg-QtC"/>
                                 <constraint firstAttribute="width" constant="35" id="tEQ-NX-O1W"/>
                             </constraints>
-                            <state key="normal" image="返回"/>
+                            <state key="normal" image="返回(1)"/>
                             <connections>
                                 <action selector="backToView:" destination="-1" eventType="touchUpInside" id="QBI-PC-9AS"/>
                             </connections>
@@ -51,7 +51,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.68634136150000002" green="1" blue="0.1032342074" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.49161776680000002" green="0.82868637089999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="5bF-qv-eKq" firstAttribute="leading" secondItem="983-Iu-zMk" secondAttribute="leading" constant="6" id="3tn-TI-hRp"/>
                         <constraint firstAttribute="bottom" secondItem="gY4-AD-xUY" secondAttribute="bottom" constant="8" id="Khw-Eu-aiT"/>
@@ -86,7 +86,9 @@
                                 <constraint firstAttribute="height" constant="30" id="XYj-Z4-8Dk"/>
                                 <constraint firstAttribute="width" constant="100" id="ftd-lj-9at"/>
                             </constraints>
-                            <state key="normal" title="编辑个人主页"/>
+                            <state key="normal" title="编辑个人主页">
+                                <color key="titleColor" red="0.49161776680000002" green="0.82868637089999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="editYouyselfPage:" destination="-1" eventType="touchUpInside" id="gj0-3j-QwB"/>
                             </connections>
@@ -176,6 +178,6 @@
     </objects>
     <resources>
         <image name="left_nologin" width="26" height="26"/>
-        <image name="返回" width="32" height="32"/>
+        <image name="返回(1)" width="32" height="32"/>
     </resources>
 </document>

@@ -12,7 +12,7 @@
 
 +(instancetype)defaultManager;
 
-
+@property (nonatomic,strong) UIColor *originColor;
 @property (nonatomic,assign) BOOL isLogin;
 
 

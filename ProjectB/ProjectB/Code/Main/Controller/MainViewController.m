@@ -17,9 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.title = @"首页";
     
+    [self initUI];
 }
 
 
@@ -32,7 +31,7 @@
 #pragma mark - private Method -
 -(void)initUI{
     self.title = @"首页";
-
+    [JudgeManager defaultManager].originColor = _headerView.backgroundColor;
 }
 
 

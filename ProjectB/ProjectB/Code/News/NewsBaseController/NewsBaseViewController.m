@@ -52,7 +52,7 @@
     self.titleSizeNormal = 15;
     self.titleSizeSelected = 15;
     self.menuViewStyle = WMMenuViewStyleFlood;
-    self.titleColorNormal = [UIColor cyanColor];
+    self.titleColorNormal = [JudgeManager defaultManager].originColor;
     self.progressColor = [UIColor colorWithRed:158.0/255.0 green:234.0/235.0 blue:4/255.0 alpha:1];
     self.menuViewLayoutMode = WMMenuViewLayoutModeCenter;
     self.menuItemWidth = 75;
@@ -92,7 +92,7 @@
     _ImgView.layer.cornerRadius = 20;
     _ImgView.clipsToBounds = YES;
     CALayer *layer = [_ImgView layer];
-    layer.borderColor = [UIColor cyanColor].CGColor;
+    layer.borderColor = [JudgeManager defaultManager].originColor.CGColor;
     layer.borderWidth = 2.0f;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_ImgView];
     

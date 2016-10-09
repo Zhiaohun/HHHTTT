@@ -84,6 +84,10 @@
 
 //我的
 
+//  登录注册
+#define URL_Login            @"http://api2.pianke.me/user/login" //登录接口的地址
+#define URL_Register           @"http://api2.pianke.me/user/reg"   //注册接口的地址
+
 
 
 #endif /* URLMacroDefine_h */
