@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSArray *categoriesArray;
 @property (nonatomic, strong) NSArray *viewControllerArray;
 
+
+@property (nonatomic,strong) UIImageView *ImgView;
 @end
 
 @implementation NewsBaseViewController
@@ -85,7 +87,18 @@
 }
 //自定义侧边栏按键
 -(void)showMsg{
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"头像"] style:UIBarButtonItemStyleDone target:self action:@selector(leftDrawerButtonPress:)];
+    _ImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    _ImgView.image = [UIImage imageNamed:@"left_nologin"];
+    _ImgView.layer.cornerRadius = 20;
+    _ImgView.clipsToBounds = YES;
+    CALayer *layer = [_ImgView layer];
+    layer.borderColor = [UIColor cyanColor].CGColor;
+    layer.borderWidth = 2.0f;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_ImgView];
+    
+    DWSwipeGestures *click = [[DWSwipeGestures alloc]init];
+    [click dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(leftDrawerButtonPress:) AddView:_ImgView BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
+    }];
     
 }
 

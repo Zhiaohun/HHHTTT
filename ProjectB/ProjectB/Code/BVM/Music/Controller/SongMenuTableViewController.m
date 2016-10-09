@@ -30,23 +30,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    [self initUI];
+}
+#pragma mark - private Method -
+-(void)initUI{
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 50;
 
-   
     self.pageId = 1;
     [self headerRefresh];
     
     UINib *songMenuNib = [UINib nibWithNibName:@"SongMenuTableViewCell" bundle:nil];
     [self.tableView registerNib:songMenuNib forCellReuseIdentifier:@"songmenucell"];
+    
+    [self goback];
 }
-
+//自定义返回键
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 //网络请求
 -(void)dataRequest{

@@ -38,6 +38,8 @@
 }
 #pragma mark - private Method -
 -(void)initUI{
+    
+    [self goback];
     self.title = @"图书列表";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.rowHeight = 120;
@@ -69,6 +71,16 @@
             [weakSelf requestData];
         }
     } ;
+}
+
+//自定义返回键
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)requestData{

@@ -20,21 +20,6 @@
 
 @implementation RankingBaseViewController
 
--(NSArray *)categoriesArray{
-    if (!_categoriesArray) {
-        _categoriesArray = @[@"音乐", @"视频", @"阅读"];
-    }
-    return _categoriesArray;
-}
--(NSArray *)viewControllerArray{
-    if (!_viewControllerArray) {
-        MusicRankingListTableViewController *musicVC = [[MusicRankingListTableViewController alloc] init];
-        VideoRankingListTableViewController *videoVC = [[VideoRankingListTableViewController alloc] init];
-        ReadRankingListTableViewController *readVC = [[ReadRankingListTableViewController alloc] init];
-        _viewControllerArray = @[musicVC,videoVC,readVC];
-    }
-    return _viewControllerArray;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -51,20 +36,49 @@
     [super viewDidLoad];
 }
 
-
+#pragma mark - private Method -
 -(void)initUI{
-    [self showMsg];
+    //[self showMsg];
     self.title = @"资讯";
-}
-//自定义侧边栏按键
--(void)showMsg{
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"头像"] style:UIBarButtonItemStyleDone target:self action:@selector(leftDrawerButtonPress:)];
-    
+    [self goback];
 }
 
--(void)leftDrawerButtonPress:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+
+-(NSArray *)categoriesArray{
+    if (!_categoriesArray) {
+        _categoriesArray = @[@"音乐", @"视频", @"阅读"];
+    }
+    return _categoriesArray;
 }
+-(NSArray *)viewControllerArray{
+    if (!_viewControllerArray) {
+        MusicRankingListTableViewController *musicVC = [[MusicRankingListTableViewController alloc] init];
+        VideoRankingListTableViewController *videoVC = [[VideoRankingListTableViewController alloc] init];
+        ReadRankingListTableViewController *readVC = [[ReadRankingListTableViewController alloc] init];
+        _viewControllerArray = @[musicVC,videoVC,readVC];
+    }
+    return _viewControllerArray;
+}
+
+//自定义返回键
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+////自定义侧边栏按键
+//-(void)showMsg{
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"头像"] style:UIBarButtonItemStyleDone target:self action:@selector(leftDrawerButtonPress:)];
+//    
+//}
+//
+//-(void)leftDrawerButtonPress:(id)sender{
+//    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

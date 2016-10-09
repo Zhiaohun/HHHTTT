@@ -157,8 +157,6 @@
 		5D29EA6A1D9E3A6E00213A82 /* TimingCloseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D29EA681D9E3A6E00213A82 /* TimingCloseTableViewCell.xib */; };
 		5DA8EB121D9B8089006DAECD /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB101D9B8089006DAECD /* HotListViewController.m */; };
 		5DA8EB131D9B8089006DAECD /* HotListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB111D9B8089006DAECD /* HotListViewController.xib */; };
-		5DA8EB1A1D9B80EF006DAECD /* RankingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB181D9B80EF006DAECD /* RankingListViewController.m */; };
-		5DA8EB1B1D9B80EF006DAECD /* RankingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB191D9B80EF006DAECD /* RankingListViewController.xib */; };
 		5DA8EB231D9B9C5B006DAECD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB1E1D9B9C5B006DAECD /* LoginViewController.m */; };
 		5DA8EB241D9B9C5B006DAECD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB1F1D9B9C5B006DAECD /* LoginViewController.xib */; };
 		5DA8EB251D9B9C5B006DAECD /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB211D9B9C5B006DAECD /* RegisterViewController.m */; };
@@ -475,9 +473,6 @@
 		5DA8EB0F1D9B8089006DAECD /* HotListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
 		5DA8EB101D9B8089006DAECD /* HotListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotListViewController.m; sourceTree = "<group>"; };
 		5DA8EB111D9B8089006DAECD /* HotListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotListViewController.xib; sourceTree = "<group>"; };
-		5DA8EB171D9B80EF006DAECD /* RankingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingListViewController.h; sourceTree = "<group>"; };
-		5DA8EB181D9B80EF006DAECD /* RankingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingListViewController.m; sourceTree = "<group>"; };
-		5DA8EB191D9B80EF006DAECD /* RankingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankingListViewController.xib; sourceTree = "<group>"; };
 		5DA8EB1D1D9B9C5B006DAECD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../../LoginViewController.h; sourceTree = "<group>"; };
 		5DA8EB1E1D9B9C5B006DAECD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../../LoginViewController.m; sourceTree = "<group>"; };
 		5DA8EB1F1D9B9C5B006DAECD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../../LoginViewController.xib; sourceTree = "<group>"; };
@@ -1408,9 +1403,6 @@
 		5DA8EB161D9B80A4006DAECD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5DA8EB171D9B80EF006DAECD /* RankingListViewController.h */,
-				5DA8EB181D9B80EF006DAECD /* RankingListViewController.m */,
-				5DA8EB191D9B80EF006DAECD /* RankingListViewController.xib */,
 				3FA5EE2A1D9DFC230020E8CC /* MusicRankingListTableViewController.h */,
 				3FA5EE2B1D9DFC230020E8CC /* MusicRankingListTableViewController.m */,
 				3FA5EE2C1D9DFC230020E8CC /* MusicRankingListTableViewController.xib */,
@@ -1652,7 +1644,6 @@
 				5D29E9F81D9CB61E00213A82 /* MyselfPageViewController.xib in Resources */,
 				3FA5EE391D9DFC230020E8CC /* ReadRankingListTableViewController.xib in Resources */,
 				3F0470B01D9C0AC500DAD187 /* NewsTableViewCell.xib in Resources */,
-				5DA8EB1B1D9B80EF006DAECD /* RankingListViewController.xib in Resources */,
 				3F04BFB41D9B76AB005CCA03 /* ReaderListTableViewController.xib in Resources */,
 				3F04BFB91D9B7701005CCA03 /* ReaderDetailViewController.xib in Resources */,
 				3F04BF741D9B7204005CCA03 /* TableViewCell.xib in Resources */,
@@ -1771,7 +1762,6 @@
 				3F844A871D9E0D4A00AE9B3B /* BaseClass.m in Sources */,
 				3F844AE31D9E3E2300AE9B3B /* VideoListProvider.m in Sources */,
 				5DA8EB121D9B8089006DAECD /* HotListViewController.m in Sources */,
-				5DA8EB1A1D9B80EF006DAECD /* RankingListViewController.m in Sources */,
 				3F2961B61DAA3A6F001934A9 /* SongPlayCommentTableViewCell.m in Sources */,
 				3FC1BB451D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m in Sources */,
 				3FA5EE3A1D9DFC230020E8CC /* VideoRankingListTableViewController.m in Sources */,
