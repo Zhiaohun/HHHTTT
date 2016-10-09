@@ -47,12 +47,25 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 3;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     HotListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotCell" forIndexPath:indexPath];
-    [cell.requestMoreBtn addTarget:self action:@selector(requestMore) forControlEvents:UIControlEventTouchUpInside];
+    //[cell.requestMoreBtn addTarget:self action:@selector(requestMore) forControlEvents:UIControlEventTouchUpInside];
     
+    if (indexPath.row == 0) {
+        cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
+        cell.view1Title.text = @"一";
+    }
+    else if (indexPath.row == 1){
+        cell.headImg.image = [UIImage imageNamed:@"friend_sex_femal"];
+        cell.view1Title.text = @"二";
+    }
+    else{
+        cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
+        cell.view1Title.text = @"三";
+    }
+
     return cell;
 }
 

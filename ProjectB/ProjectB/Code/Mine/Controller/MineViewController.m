@@ -37,7 +37,7 @@
 
 -(void)toSelfEdit{
     
-    if (_unLogin.hidden == NO) {
+    if (![JudgeManager defaultManager].isLogin) {
         NSLog(@"未登录");
         LoginViewController *loginVC = [LoginViewController new];
         UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:loginVC];
@@ -57,9 +57,23 @@
 -(void)initUI{
     self.title = @"我的";
     //用户信息
-    self.userImg.layer.cornerRadius = 40;
-//    _unLogin.hidden = YES;
-//    _username.hidden = NO;
+    self.LoginImg.layer.cornerRadius = 40;
+    self.LoginImg.layer.borderWidth = 3;
+    self.LoginImg.layer.borderColor = [UIColor cyanColor].CGColor;
+    
+    self.unLoginImg.layer.cornerRadius = 40;
+    self.unLoginImg.layer.borderColor = [UIColor redColor].CGColor;
+    self.unLoginImg.layer.borderWidth = 3;
+    
+    [JudgeManager defaultManager].isLogin = YES;
+    if (![JudgeManager defaultManager].isLogin) {
+        _LoginView.hidden = YES;
+    }
+    else{
+        _LoginView.hidden = NO;
+        _signOutView.hidden = NO;
+    }
+
     
     /********手势方法一******/
 //    DWSwipeGestures *click = [[DWSwipeGestures alloc]init];
@@ -68,7 +82,7 @@
     /********手势方法二********/
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(toSelfEdit)];
     gesture.numberOfTapsRequired = 1;
-    [self.userInfoView addGestureRecognizer:gesture];
+    [self.LoginView addGestureRecognizer:gesture];
     
     //系统信息
     [self.systemInfoTableView registerNib:[UINib nibWithNibName:@"SystemInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"systemCell"];

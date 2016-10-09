@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    CGRect rect = _usernameLogin.frame;
+    rect.size.height = 50;
+    _usernameLogin.frame = rect;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

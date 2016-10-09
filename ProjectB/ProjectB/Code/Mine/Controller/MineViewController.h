@@ -10,16 +10,13 @@
 
 @interface MineViewController : BaseViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *userImg;
-
-@property (weak, nonatomic) IBOutlet UIView *userInfoView;
-@property (weak, nonatomic) IBOutlet UILabel *username;
-@property (weak, nonatomic) IBOutlet UILabel *personalSentence;
-
-@property (weak, nonatomic) IBOutlet UIView *cutLine;
+@property (weak, nonatomic) IBOutlet UIView *unLoginView;
+@property (weak, nonatomic) IBOutlet UIImageView *unLoginImg;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *unLogin;
+@property (weak, nonatomic) IBOutlet UIView *LoginView;
+@property (weak, nonatomic) IBOutlet UIView *LoginImg;
+
 
 @property (weak, nonatomic) IBOutlet UITableView *systemInfoTableView;
 @property (weak, nonatomic) IBOutlet UIView *signOutView;

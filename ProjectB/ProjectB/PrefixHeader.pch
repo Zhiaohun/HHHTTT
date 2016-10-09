@@ -9,18 +9,24 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-
+//基类
 #import "BaseViewController.h"
+//Tools
 #import "ToolMacroDefine.h"
 #import "URLMacroDefine.h"
 #import "DWSwipeGestures.h"
+#import "JudgeManager.h"
 
+//第三方库
 #import "LLNetWorkingRequest.h"
 #import "ScrollImage.h"
 #import "MJRefresh.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MBProgressHUD.h"
 #import "FMDB.h"
+
+
+
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
