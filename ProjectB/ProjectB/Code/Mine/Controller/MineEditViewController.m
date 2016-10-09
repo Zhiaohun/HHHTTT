@@ -21,14 +21,6 @@
     self.tabBarController.tabBar.hidden = YES;
 }
 
-//-(void)viewDidDisappear:(BOOL)animated{
-//        self.navigationController.navigationBarHidden = NO;
-//        self.tabBarController.tabBar.hidden = NO;
-//}
--(void)viewWillDisappear:(BOOL)animated{
-//    self.navigationController.navigationBarHidden = NO;
-//    self.tabBarController.tabBar.hidden = NO;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];  
 
@@ -58,6 +50,8 @@
 #pragma mark - private Method -
 -(void)initUI{
     self.userImg.layer.cornerRadius = 50;
+    self.userImg.layer.borderWidth = 3;
+    self.userImg.layer.borderColor = [UIColor cyanColor].CGColor;
 }
 
 /*

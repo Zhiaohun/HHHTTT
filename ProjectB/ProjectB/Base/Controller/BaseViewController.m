@@ -46,7 +46,7 @@
     _ImgView.layer.cornerRadius = 20;
     _ImgView.clipsToBounds = YES;
     CALayer *layer = [_ImgView layer];
-    layer.borderColor = [UIColor yellowColor].CGColor;
+    layer.borderColor = [UIColor cyanColor].CGColor;
     layer.borderWidth = 2.0f;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_ImgView];
     
@@ -62,7 +62,7 @@
 
 //自定义返回键
 -(void)goback{
-    UIImage *image = [[UIImage imageNamed:@"goback"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
 }
 -(void)TapLeftAction
