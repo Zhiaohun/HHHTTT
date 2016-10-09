@@ -113,13 +113,13 @@
     SongMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songmenucell" forIndexPath:indexPath];
     MusicCategoryList *listModel = self.musicCategoryArray[indexPath.row];
     cell.listModel = listModel;
-    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     return cell;
 }
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
- //   return 90;
-//}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 90;
+}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     

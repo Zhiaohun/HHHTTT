@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="429" height="177"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="429" height="177"/>
+                <frame key="frameInset" width="429" height="176"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgM-Mz-zdS">
@@ -27,8 +28,8 @@
                             <constraint firstAttribute="height" constant="21" id="fUn-Gd-V19"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="mzL-9S-dkf"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.64893071339999997" green="0.64893071339999997" blue="0.64893071339999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLj-74-eB6">
@@ -36,11 +37,16 @@
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="BYf-eF-x2n"/>
                             <constraint firstAttribute="height" constant="21" id="ZAo-3M-KQs"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="llx-ex-0rV"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="llx-ex-0rV">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="413" id="Pfm-X4-8bu"/>
+                            <constraint firstAttribute="height" constant="102.5" id="Z2d-Yk-COm"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="DLj-74-eB6" secondAttribute="trailing" constant="8" id="1gD-aX-cJp"/>
@@ -56,6 +62,12 @@
                     <constraint firstItem="DLj-74-eB6" firstAttribute="top" secondItem="llx-ex-0rV" secondAttribute="bottom" constant="8" id="zva-Fh-Lpz"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="imageV" destination="llx-ex-0rV" id="hyh-Nu-CiK"/>
+                <outlet property="priorityLabel" destination="DLj-74-eB6" id="RUP-9C-8rU"/>
+                <outlet property="sourceLabel" destination="scj-4K-Rrf" id="Tzw-5p-EiF"/>
+                <outlet property="titleLabel" destination="KgM-Mz-zdS" id="fZa-Mk-B0R"/>
+            </connections>
             <point key="canvasLocation" x="191.5" y="147.5"/>
         </tableViewCell>
     </objects>

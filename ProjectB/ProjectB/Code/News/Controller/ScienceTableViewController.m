@@ -12,22 +12,85 @@
 #import "NewsTableViewCell.h"
 #import "NewsWebViewController.h"
 #import "NewsImageViewController.h"
-@interface ScienceTableViewController ()
+#import "NewsTechnologyDataModels.h"
+#import "NewsScrollViewTableViewCell.h"
+
+#import "KNBannerView.h"
+#import "NSData+KNCache.h"
+@interface ScienceTableViewController ()<KNBannerViewDelegate>
+@property (nonatomic, assign) NSInteger countStart;
+@property (nonatomic, strong) NewsTechnologyBaseClass *technologyBaseModel;
+@property (nonatomic, strong) NSMutableArray *dataArray;
+
+@property (nonatomic, strong) NSMutableArray *imgArray;
+@property (nonatomic, strong) NSMutableArray *titleArray;
+@property (nonatomic, strong) KNBannerView *bannerView;
 
 @end
 
 @implementation ScienceTableViewController
 
+-(NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
+   // self.tableView.rowHeight = UITableViewAutomaticDimension;
+   // self.tableView.estimatedRowHeight = 50;
+    
+    
+         // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.countStart = 0;
+    [self headerRefresh];
     [self cellResigest];
+    
+  
+  
+   
+
+    
+   
+}
+
+-(void)dataRequest{
+    NSString *URLStr = [NSString stringWithFormat:@"%@/%lu-20.html",URL_Technology,self.countStart];
+    
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+        NSLog(@"++++++++++++++%@",dic);
+        self.technologyBaseModel = [NewsTechnologyBaseClass modelObjectWithDictionary:dic];
+        _imgArray = [NSMutableArray array];
+        _titleArray = [NSMutableArray array];
+        
+        NewsTechnologyT1348649580692 *model = self.technologyBaseModel.t1348649580692[0];
+        [_imgArray addObject:model.imgsrc];
+        [_titleArray addObject:model.title];
+        for (NewsTechnologyT1348649580692 *adsModel in model.ads) {
+            
+            [_imgArray addObject:adsModel.imgsrc];
+            [_titleArray addObject:adsModel.title];
+        }
+        for (NewsTechnologyT1348649580692 *model in self.technologyBaseModel.t1348649580692) {
+                [self.dataArray addObject:model];
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self footerRefresh];
+        });
+    } Fail:^(NSError *error) {
+        NSLog(@">>>%@",error);
+    }];
 }
 
 -(void)cellResigest{
@@ -39,6 +102,24 @@
     
     UINib *newsImageMoewCellNib = [UINib nibWithNibName:@"NewsImageMoreTableViewCell" bundle:nil];
     [self.tableView registerNib:newsImageMoewCellNib forCellReuseIdentifier:@"newsimagemorecell"];
+    
+    UINib *newsScrollViewCellNib = [UINib nibWithNibName:@"NewsScrollViewTableViewCell" bundle:nil];
+    [self.tableView registerNib:newsScrollViewCellNib forCellReuseIdentifier:@"newsscrollcell"];
+    
+}
+
+-(void)headerRefresh{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self dataRequest];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+}
+
+-(void)footerRefresh{
+    self.countStart += 20;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self dataRequest];
+    }];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -53,45 +134,82 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dataArray.count - 1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    
-        if (indexPath.row == 0) {
-             NewsTableViewCell *newsCell = [tableView dequeueReusableCellWithIdentifier:@"newscell" forIndexPath:indexPath];
-            return newsCell;
-        }else if (indexPath.row == 1){
-            NewsImageTableViewCell *newsImageCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagecell" forIndexPath:indexPath];
-            return newsImageCell;
-        }else{
-             NewsImageMoreTableViewCell *newsImagemoreCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagemorecell" forIndexPath:indexPath];
-            return newsImagemoreCell;
-        }
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NewsTechnologyT1348649580692 *model = self.dataArray[indexPath.row];
     if (indexPath.row == 0) {
-        return 80;
-    }else if(indexPath.row == 1){
+        NewsScrollViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsscrollcell" forIndexPath:indexPath];
+        _bannerView = [KNBannerView bannerViewWithNetWorkImagesArr:_imgArray frame:CGRectMake(0, 0, VIEW_WIDTH, 150)];
+        _bannerView.delegate = self;
+        _bannerView.IntroduceStringArr = _titleArray;
+        _bannerView.textShowStyle = KNTextShowStyleStay;
+        _bannerView.tag = 100;
+        [cell addSubview:_bannerView];
+        return cell;
+    }else{
+        if (model.imgextra.count > 0) {
+            NewsImageMoreTableViewCell *newsImagemoreCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagemorecell" forIndexPath:indexPath];
+            newsImagemoreCell.tmodel = model;
+            return newsImagemoreCell;
+            
+        }else if (model.imgType){
+            NewsImageTableViewCell *newsImageCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagecell" forIndexPath:indexPath];
+            newsImageCell.tmodel = model;
+            return newsImageCell;
+            
+        }else{
+            NewsTableViewCell *newsCell = [tableView dequeueReusableCellWithIdentifier:@"newscell" forIndexPath:indexPath];
+            newsCell.tmodel = model;
+            return newsCell;
+            
+            
+        }
+ 
+    }
+    
+    
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NewsTechnologyT1348649580692 *model = self.dataArray[indexPath.row];
+
+    if (indexPath.row == 0 || model.imgextra.count>0 || model.imgType) {
         return 150;
     }else{
-        return 150;
+        return 90;
     }
+    
 }
+
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.row > 1) {
-        NewsWebViewController *webVC = [[NewsWebViewController alloc] init];
-        [self.navigationController pushViewController:webVC animated:YES];
-    }else{
+    NewsTechnologyT1348649580692 *model = self.dataArray[indexPath.row];
+
+    if (model.imgextra.count>0) {
         NewsImageViewController *imageVC = [[NewsImageViewController alloc] init];
         [self.navigationController pushViewController:imageVC animated:YES];
+    }else{
+        NewsWebViewController *webVC = [[NewsWebViewController alloc] init];
+        webVC.URLHtml = model.url;
+        [self.navigationController pushViewController:webVC animated:YES];
     }
+}
+
+- (void)bannerView:(KNBannerView *)bannerView collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSInteger)index{
+     NewsTechnologyT1348649580692 *model = self.dataArray[0];
+    NewsWebViewController *webVC = [[NewsWebViewController alloc] init];
+    if (index == 0) {
+        webVC.URLHtml = model.url;
+    }else{
+        webVC.URLHtml = @"http://3g.163.com/tech/16/1008/16/C2RDK5ND00097U7V.html";
+ 
+    }
+    [self.navigationController pushViewController:webVC animated:YES];
+
 }
 /*
 // Override to support conditional editing of the table view.

@@ -14,6 +14,7 @@
 @property (nonatomic, strong) VideoListItemList *listModel;
 @property (nonatomic, assign) NSInteger index;
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
+@property (weak, nonatomic) IBOutlet UIImageView *playImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *blurImageView;
@@ -53,26 +54,32 @@
     //手势初始化
     DWSwipeGestures *gesture = [[DWSwipeGestures alloc] init];
     gesture.numberOfTouchesRequired = 1;
+    /*
     //左滑手势
     [gesture dw_SwipeGestureType:DWLeftSwipeGestures Target:self Action:@selector(leftGestureAction) AddView:self.imageV BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
         NSLog(@"%@",backSwipeGestureTypeString);
     }];
     
+ 
     //右滑手势
     [gesture dw_SwipeGestureType:DWRightSwipeGestures Target:self Action:@selector(rightGestureAction) AddView:self.imageV BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
         NSLog(@"%@",backSwipeGestureTypeString);
     }];
-    
+     */
     //点击手势
     [gesture dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(tapAction) AddView:self.imageV BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
         NSLog(@"%@",backSwipeGestureTypeString);
     }];
-    
+    [gesture dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(tapAction) AddView:self.playImageView BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
+        NSLog(@"%@",backSwipeGestureTypeString);
+    }];
+   
     //
     [self upDateUI];
     
 }
 
+/*
 -(void)leftGestureAction{
     NSLog(@"left.....");
     self.index++;
@@ -85,7 +92,7 @@
     [self upDateUI];
     
 }
-
+*/
 -(void)tapAction{
     self.listModel = self.dataArray[self.index];
    

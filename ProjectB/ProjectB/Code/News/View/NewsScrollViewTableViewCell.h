@@ -1,5 +1,5 @@
 //
-//  SongPlayViewController.h
+//  NewsScrollViewTableViewCell.h
 //  ProjectB
 //
 //  Created by long on 2016/10/8.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SongPlayViewController : UIViewController
+@interface NewsScrollViewTableViewCell : UITableViewCell
 
 @end

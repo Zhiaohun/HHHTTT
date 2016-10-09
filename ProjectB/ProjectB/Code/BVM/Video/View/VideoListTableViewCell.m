@@ -25,7 +25,7 @@
     [self.videoImageView sd_setImageWithURL:[NSURL URLWithString:listModel.data.cover.feed] placeholderImage:PlaceholderImage];
     self.titleLabel.text = listModel.data.title;
     
-    NSString *time = [NSString stringWithFormat:@"%d'%d''",(int)listModel.data.duration / 60,(int)listModel.data.duration % 60];
+    NSString *time = [NSString stringWithFormat:@"%02d'%02d''",(int)listModel.data.duration / 60,(int)listModel.data.duration % 60];
     self.descLabel.text = [NSString stringWithFormat:@"#%@ / %@",listModel.data.category,time];
     if (IsEmptyString(listModel.data.title)) {
         self.label360.text = listModel.data.label.text;
