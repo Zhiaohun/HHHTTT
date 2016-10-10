@@ -52,11 +52,7 @@
     [self.tableView registerNib:commentNib forCellReuseIdentifier:@"commentcell"];
     
     [self loadData];
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> a127eae8112396b6641252092ba5fe12d725ae82
+
 
     [self goback];
 }
