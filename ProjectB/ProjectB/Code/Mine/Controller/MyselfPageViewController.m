@@ -32,6 +32,8 @@
     self.userImg.layer.cornerRadius = 50;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(editBack)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveBack)];
+    self.navigationItem.leftBarButtonItem.tintColor = [JudgeManager defaultManager].originColor;
+    self.navigationItem.rightBarButtonItem.tintColor = [JudgeManager defaultManager].originColor;
 }
 -(void)editBack{
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];

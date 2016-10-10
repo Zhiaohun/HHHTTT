@@ -22,7 +22,8 @@
 -(void)deleteDataWithUsername:(NSString *)username;
 //查询
 -(NSArray<UserInfoModel *> *)selectData;
-
+//根据昵称查询
+-(UserInfoModel *)selectDataWithUsername:(NSString *)username;
 
 
 @end

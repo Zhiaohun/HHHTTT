@@ -20,6 +20,29 @@
 
 @implementation RankingBaseViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    self.titleSizeNormal = 15;
+    self.titleSizeSelected = 15;
+    self.menuViewStyle = WMMenuViewStyleTriangle;
+    self.titleColorNormal = [JudgeManager defaultManager].originColor;
+    self.progressColor = [UIColor colorWithRed:158.0/255.0 green:234.0/235.0 blue:4/255.0 alpha:1];
+    self.menuViewLayoutMode = WMMenuViewLayoutModeCenter;
+    self.menuItemWidth = 75;
+    self.menuHeight = 40;
+    self.viewFrame = CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    [super viewDidLoad];
+    [self initUI];
+}
+
+#pragma mark - private Method -
+-(void)initUI{
+    [self goback];
+}
+
+
 -(NSArray *)categoriesArray{
     if (!_categoriesArray) {
         _categoriesArray = @[@"音乐", @"视频", @"阅读"];
@@ -35,36 +58,26 @@
     }
     return _viewControllerArray;
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    self.titleSizeNormal = 15;
-    self.titleSizeSelected = 15;
-    self.menuViewStyle = WMMenuViewStyleTriangle;
-    self.titleColorNormal = [UIColor cyanColor];
-    self.progressColor = [UIColor colorWithRed:158.0/255.0 green:234.0/235.0 blue:4/255.0 alpha:1];
-    self.menuViewLayoutMode = WMMenuViewLayoutModeCenter;
-    self.menuItemWidth = 75;
-    self.menuHeight = 40;
-    self.viewFrame = CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    [super viewDidLoad];
+
+//自定义返回键
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-
--(void)initUI{
-    [self showMsg];
-    self.title = @"资讯";
-}
-//自定义侧边栏按键
--(void)showMsg{
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"头像"] style:UIBarButtonItemStyleDone target:self action:@selector(leftDrawerButtonPress:)];
-    
-}
-
--(void)leftDrawerButtonPress:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
+////自定义侧边栏按键
+//-(void)showMsg{
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"头像"] style:UIBarButtonItemStyleDone target:self action:@selector(leftDrawerButtonPress:)];
+//    
+//}
+//
+//-(void)leftDrawerButtonPress:(id)sender{
+//    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -32,12 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     NSLog(@"_+_+_+%lu",self.albumId);
     self.pageId = 1;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -48,6 +42,17 @@
     
     UINib *songListNib = [UINib nibWithNibName:@"SongListTableViewCell" bundle:nil];
     [self.tableView registerNib:songListNib forCellReuseIdentifier:@"songlistcell"];
+    
+    [self goback];
+}
+//自定义返回键
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //tableView的头视图

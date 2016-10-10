@@ -101,6 +101,24 @@
     return arr;
 }
 
+//根据昵称查询
+-(UserInfoModel *)selectDataWithUsername:(NSString *)username{
+    [_db open];
+    NSString *sqlstr = [NSString stringWithFormat:@"select *from UserInfo where username = '%@'",username];
+    FMResultSet *set = [_db executeQuery:sqlstr];
+    UserInfoModel *model = [UserInfoModel new];
+    while ([set next]) {
+        model.username = [set objectForColumnName:@"username"];
+        model.personalSentence = [set objectForColumnName:@"personalSentence"];
+        model.userImg = [set objectForColumnName:@"userImg"];
+        model.gender = [set objectForColumnName:@"gender"];
+        model.city = [set objectForColumnName:@"city"];
+        model.birthday = [set objectForColumnName:@"birthday"];
+    }
+    [_db close];
+    return model;
+}
+
 
 
 @end

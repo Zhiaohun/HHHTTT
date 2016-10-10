@@ -10,6 +10,7 @@
 #import "MineEditViewController.h"
 #import "LoginViewController.h"
 #import "SystemInfoTableViewCell.h"
+#import "MainViewController.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -22,6 +23,18 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = NO;
     self.tabBarController.tabBar.hidden = NO;
+    
+    if (![JudgeManager defaultManager].isLogin) {
+        _LoginView.hidden = YES;
+        _signOutView.hidden = YES;
+    }
+    else{
+        _LoginView.hidden = NO;
+        _signOutView.hidden = NO;
+        _username.text = [UserInfoManager getUname];
+    }
+    
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +43,7 @@
 
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -37,12 +51,15 @@
 
 -(void)toSelfEdit{
     
+    NSLog(@"----------%d",[JudgeManager defaultManager].isLogin);
     if (![JudgeManager defaultManager].isLogin) {
         NSLog(@"未登录");
         LoginViewController *loginVC = [LoginViewController new];
         UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:loginVC];
         navi.navigationBarHidden = YES;
         [self presentViewController:navi animated:YES completion:nil];
+        
+        
     }
     else{
         NSLog(@"已登录");
@@ -59,14 +76,14 @@
     //用户信息
     self.LoginImg.layer.cornerRadius = 40;
     self.LoginImg.layer.borderWidth = 3;
-    self.LoginImg.layer.borderColor = [UIColor cyanColor].CGColor;
+    self.LoginImg.layer.borderColor = [UIColor whiteColor].CGColor;
     
     self.unLoginImg.layer.cornerRadius = 40;
-    self.unLoginImg.layer.borderColor = [UIColor redColor].CGColor;
+    self.unLoginImg.layer.borderColor = [UIColor whiteColor].CGColor;
     self.unLoginImg.layer.borderWidth = 3;
     
-    [JudgeManager defaultManager].isLogin = YES;
-    if (![JudgeManager defaultManager].isLogin) {
+
+    if ([JudgeManager defaultManager].isLogin == 0) {
         _LoginView.hidden = YES;
     }
     else{
@@ -82,7 +99,7 @@
     /********手势方法二********/
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(toSelfEdit)];
     gesture.numberOfTapsRequired = 1;
-    [self.LoginView addGestureRecognizer:gesture];
+    [self.unLoginView addGestureRecognizer:gesture];
     
     //系统信息
     [self.systemInfoTableView registerNib:[UINib nibWithNibName:@"SystemInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"systemCell"];
@@ -116,6 +133,19 @@
 #pragma mark - TapClick -
 - (IBAction)signOUt:(id)sender {
     
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否退出" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [UserInfoManager saveAuth:nil];
+        NSLog(@"++++%@",[UserInfoManager getAuth]);
+        [JudgeManager defaultManager].isLogin = NO;
+        //退出登录后跳转到首页
+        self.navigationController.tabBarController.selectedIndex = 0;
+    }];
+    [alert addAction:ok];
+    
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancle];
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 

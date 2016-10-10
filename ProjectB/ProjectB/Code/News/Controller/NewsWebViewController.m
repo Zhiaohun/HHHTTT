@@ -18,6 +18,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initUI];
+    
+    
+    
+}
+#pragma mark - private Method -
+-(void)initUI{
     WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT)];
 
     
@@ -25,8 +32,16 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLHtml]];
     [webView loadRequest:request];
     
-    
-    
+    [self goback];
+}
+//自定义返回键
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

@@ -18,6 +18,10 @@
 
 #import "KNBannerView.h"
 #import "NSData+KNCache.h"
+
+#import "UIViewController+MMDrawerController.h"
+
+
 @interface RecommendTableViewController ()<KNBannerViewDelegate>
 @property (nonatomic, assign) NSInteger countStart;
 @property (nonatomic, strong) NewsConcentrationBaseClass *concentrationBaseModel;
@@ -26,6 +30,8 @@
 @property (nonatomic, strong) NSMutableArray *imgArray;
 @property (nonatomic, strong) NSMutableArray *titleArray;
 @property (nonatomic, strong) KNBannerView *bannerView;
+
+@property (nonatomic,strong) UIImageView *ImgView;
 @end
 
 @implementation RecommendTableViewController
@@ -38,18 +44,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     self.countStart = 0;
     [self headerRefresh];
     [self cellResigest];
-  
     
 }
+
+#pragma mark - private Method -
+
 -(void)dataRequest{
     NSString *URLStr = [NSString stringWithFormat:@"%@/%lu-20.html",URL_Recommend,self.countStart];
     
@@ -113,7 +115,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table view data source -
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;

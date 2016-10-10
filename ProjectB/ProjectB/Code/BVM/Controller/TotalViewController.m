@@ -47,6 +47,7 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [_tableView registerNib:[UINib nibWithNibName:@"TotalTableViewCell" bundle:nil] forCellReuseIdentifier:@"totalCell"];
+     [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.view addSubview:_tableView];
     
 }

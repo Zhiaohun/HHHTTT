@@ -10,10 +10,12 @@
             <connections>
                 <outlet property="LoginImg" destination="bHO-e9-MD4" id="dqM-0X-INe"/>
                 <outlet property="LoginView" destination="sOj-6l-WLV" id="gVT-mm-8KS"/>
+                <outlet property="personalSentence" destination="Zd0-vX-pkw" id="SeD-VU-Nn2"/>
                 <outlet property="signOutView" destination="lxh-K6-tQd" id="3oe-Il-i4y"/>
                 <outlet property="systemInfoTableView" destination="hSl-b4-j3i" id="boi-kP-GCH"/>
                 <outlet property="unLoginImg" destination="fWv-fI-YFB" id="2cj-L2-PLa"/>
                 <outlet property="unLoginView" destination="GLm-o8-hW7" id="9zc-55-l9R"/>
+                <outlet property="username" destination="Ffg-6Y-HBG" id="8eT-Xw-4eP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,8 +33,9 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxh-K6-tQd">
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jg-WE-vvZ">
+                            <color key="backgroundColor" red="0.49161776680000002" green="0.82868637089999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="退出登录">
-                                <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="signOUt:" destination="-1" eventType="touchUpInside" id="PCX-fH-03J"/>
@@ -108,7 +111,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.2484143046" green="1" blue="0.31878581560000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.49161776680000002" green="0.82868637089999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Zd0-vX-pkw" secondAttribute="trailing" constant="8" id="2Bh-dz-uUY"/>
                                 <constraint firstItem="Zd0-vX-pkw" firstAttribute="leading" secondItem="bHO-e9-MD4" secondAttribute="trailing" constant="8" id="6SY-yH-8Wa"/>
@@ -125,7 +128,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.68634136150000002" green="1" blue="0.1032342074" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.49161776680000002" green="0.82868637089999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="3gm-ET-Pj8"/>
                         <constraint firstItem="sOj-6l-WLV" firstAttribute="top" secondItem="GLm-o8-hW7" secondAttribute="top" id="I8T-nk-unr"/>

@@ -160,8 +160,6 @@
 		5D29EA6A1D9E3A6E00213A82 /* TimingCloseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D29EA681D9E3A6E00213A82 /* TimingCloseTableViewCell.xib */; };
 		5DA8EB121D9B8089006DAECD /* HotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB101D9B8089006DAECD /* HotListViewController.m */; };
 		5DA8EB131D9B8089006DAECD /* HotListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB111D9B8089006DAECD /* HotListViewController.xib */; };
-		5DA8EB1A1D9B80EF006DAECD /* RankingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB181D9B80EF006DAECD /* RankingListViewController.m */; };
-		5DA8EB1B1D9B80EF006DAECD /* RankingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB191D9B80EF006DAECD /* RankingListViewController.xib */; };
 		5DA8EB231D9B9C5B006DAECD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB1E1D9B9C5B006DAECD /* LoginViewController.m */; };
 		5DA8EB241D9B9C5B006DAECD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB1F1D9B9C5B006DAECD /* LoginViewController.xib */; };
 		5DA8EB251D9B9C5B006DAECD /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB211D9B9C5B006DAECD /* RegisterViewController.m */; };
@@ -179,6 +177,9 @@
 		5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB551D9BF369006DAECD /* HotVideoViewController.m */; };
 		5DA8EB5A1D9BF399006DAECD /* HotVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */; };
 		5DA8EB5B1D9BF399006DAECD /* HotVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */; };
+		5DEEB5781DAA6258004FD1FA /* UserInfoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */; };
+		5DEEB5791DAA6258004FD1FA /* UserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB5761DAA6258004FD1FA /* UserInfoData.m */; };
+		5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB57B1DAA6C7F004FD1FA /* UserInfoManager.m */; };
 		5DF5547F1DA893BC00DFCBEC /* ReadCommentBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554631DA893BC00DFCBEC /* ReadCommentBaseClass.m */; };
 		5DF554801DA893BC00DFCBEC /* ReadCommentPageinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554661DA893BC00DFCBEC /* ReadCommentPageinfo.m */; };
 		5DF554811DA893BC00DFCBEC /* ReadCommentProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554681DA893BC00DFCBEC /* ReadCommentProduct.m */; };
@@ -483,9 +484,6 @@
 		5DA8EB0F1D9B8089006DAECD /* HotListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotListViewController.h; sourceTree = "<group>"; };
 		5DA8EB101D9B8089006DAECD /* HotListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotListViewController.m; sourceTree = "<group>"; };
 		5DA8EB111D9B8089006DAECD /* HotListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotListViewController.xib; sourceTree = "<group>"; };
-		5DA8EB171D9B80EF006DAECD /* RankingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingListViewController.h; sourceTree = "<group>"; };
-		5DA8EB181D9B80EF006DAECD /* RankingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingListViewController.m; sourceTree = "<group>"; };
-		5DA8EB191D9B80EF006DAECD /* RankingListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankingListViewController.xib; sourceTree = "<group>"; };
 		5DA8EB1D1D9B9C5B006DAECD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../../LoginViewController.h; sourceTree = "<group>"; };
 		5DA8EB1E1D9B9C5B006DAECD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../../LoginViewController.m; sourceTree = "<group>"; };
 		5DA8EB1F1D9B9C5B006DAECD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../../LoginViewController.xib; sourceTree = "<group>"; };
@@ -513,6 +511,13 @@
 		5DA8EB571D9BF399006DAECD /* HotVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotVideoTableViewCell.h; sourceTree = "<group>"; };
 		5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotVideoTableViewCell.m; sourceTree = "<group>"; };
 		5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotVideoTableViewCell.xib; sourceTree = "<group>"; };
+		5DEEB5731DAA6258004FD1FA /* UserInfoBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoBaseClass.h; sourceTree = "<group>"; };
+		5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoBaseClass.m; sourceTree = "<group>"; };
+		5DEEB5751DAA6258004FD1FA /* UserInfoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoData.h; sourceTree = "<group>"; };
+		5DEEB5761DAA6258004FD1FA /* UserInfoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoData.m; sourceTree = "<group>"; };
+		5DEEB5771DAA6258004FD1FA /* UserInfoDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoDataModels.h; sourceTree = "<group>"; };
+		5DEEB57A1DAA6C7F004FD1FA /* UserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoManager.h; sourceTree = "<group>"; };
+		5DEEB57B1DAA6C7F004FD1FA /* UserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoManager.m; sourceTree = "<group>"; };
 		5DF554621DA893BC00DFCBEC /* ReadCommentBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentBaseClass.h; sourceTree = "<group>"; };
 		5DF554631DA893BC00DFCBEC /* ReadCommentBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCommentBaseClass.m; sourceTree = "<group>"; };
 		5DF554641DA893BC00DFCBEC /* ReadCommentDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCommentDataModels.h; sourceTree = "<group>"; };
@@ -1293,6 +1298,7 @@
 		5D29EA231D9D2EDB00213A82 /* LoginAndRegisterVC */ = {
 			isa = PBXGroup;
 			children = (
+				5DEEB5721DAA6258004FD1FA /* UserInfoModel */,
 				5DA8EB1D1D9B9C5B006DAECD /* LoginViewController.h */,
 				5DA8EB1E1D9B9C5B006DAECD /* LoginViewController.m */,
 				5DA8EB1F1D9B9C5B006DAECD /* LoginViewController.xib */,
@@ -1429,9 +1435,6 @@
 		5DA8EB161D9B80A4006DAECD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5DA8EB171D9B80EF006DAECD /* RankingListViewController.h */,
-				5DA8EB181D9B80EF006DAECD /* RankingListViewController.m */,
-				5DA8EB191D9B80EF006DAECD /* RankingListViewController.xib */,
 				3FA5EE2A1D9DFC230020E8CC /* MusicRankingListTableViewController.h */,
 				3FA5EE2B1D9DFC230020E8CC /* MusicRankingListTableViewController.m */,
 				3FA5EE2C1D9DFC230020E8CC /* MusicRankingListTableViewController.xib */,
@@ -1491,6 +1494,18 @@
 			path = AnimationOfDrawer;
 			sourceTree = "<group>";
 		};
+		5DEEB5721DAA6258004FD1FA /* UserInfoModel */ = {
+			isa = PBXGroup;
+			children = (
+				5DEEB5731DAA6258004FD1FA /* UserInfoBaseClass.h */,
+				5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */,
+				5DEEB5751DAA6258004FD1FA /* UserInfoData.h */,
+				5DEEB5761DAA6258004FD1FA /* UserInfoData.m */,
+				5DEEB5771DAA6258004FD1FA /* UserInfoDataModels.h */,
+			);
+			path = UserInfoModel;
+			sourceTree = "<group>";
+		};
 		5DF554611DA893BC00DFCBEC /* ReadCommentModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1536,6 +1551,8 @@
 		5DF554961DA8CB8100DFCBEC /* Defaults */ = {
 			isa = PBXGroup;
 			children = (
+				5DEEB57A1DAA6C7F004FD1FA /* UserInfoManager.h */,
+				5DEEB57B1DAA6C7F004FD1FA /* UserInfoManager.m */,
 				5DF5549A1DA8CCA200DFCBEC /* JudgeManager.h */,
 				5DF5549B1DA8CCA200DFCBEC /* JudgeManager.m */,
 			);
@@ -1633,7 +1650,11 @@
 				TargetAttributes = {
 					3FA4E5DE1D9AB1070090AC78 = {
 						CreatedOnToolsVersion = 7.0.1;
+<<<<<<< HEAD
 						DevelopmentTeam = H3C2H2Z8NB;
+=======
+						DevelopmentTeam = S2CRPD33DC;
+>>>>>>> a127eae8112396b6641252092ba5fe12d725ae82
 					};
 				};
 			};
@@ -1673,7 +1694,6 @@
 				5D29E9F81D9CB61E00213A82 /* MyselfPageViewController.xib in Resources */,
 				3FA5EE391D9DFC230020E8CC /* ReadRankingListTableViewController.xib in Resources */,
 				3F0470B01D9C0AC500DAD187 /* NewsTableViewCell.xib in Resources */,
-				5DA8EB1B1D9B80EF006DAECD /* RankingListViewController.xib in Resources */,
 				3F04BFB41D9B76AB005CCA03 /* ReaderListTableViewController.xib in Resources */,
 				3F04BFB91D9B7701005CCA03 /* ReaderDetailViewController.xib in Resources */,
 				3F04BF741D9B7204005CCA03 /* TableViewCell.xib in Resources */,
@@ -1793,7 +1813,6 @@
 				3F844A871D9E0D4A00AE9B3B /* BaseClass.m in Sources */,
 				3F844AE31D9E3E2300AE9B3B /* VideoListProvider.m in Sources */,
 				5DA8EB121D9B8089006DAECD /* HotListViewController.m in Sources */,
-				5DA8EB1A1D9B80EF006DAECD /* RankingListViewController.m in Sources */,
 				3F2961B61DAA3A6F001934A9 /* SongPlayCommentTableViewCell.m in Sources */,
 				3FC1BB451D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m in Sources */,
 				3FA5EE3A1D9DFC230020E8CC /* VideoRankingListTableViewController.m in Sources */,
@@ -1882,16 +1901,19 @@
 				5DA8EB251D9B9C5B006DAECD /* RegisterViewController.m in Sources */,
 				3FA92D961DA6361F007E622E /* MoviePlayerViewController.m in Sources */,
 				3F29618D1DAA384E001934A9 /* NewsTechnologyAds.m in Sources */,
+				5DEEB5781DAA6258004FD1FA /* UserInfoBaseClass.m in Sources */,
 				3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */,
 				3FC1BB4F1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.m in Sources */,
 				3F272F861DA7681300CA7E8F /* MusicCategoryBaseClass.m in Sources */,
 				3F04707A1D9C09EA00DAD187 /* JokeTableViewController.m in Sources */,
 				3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */,
+				5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */,
 				3F2961821DAA384E001934A9 /* NewsConcentrationT1467284926140.m in Sources */,
 				3F04BFBD1D9B7735005CCA03 /* ReaderListTableViewCell.m in Sources */,
 				3FC1BB201D9CF32000C834D8 /* NewsWebViewController.m in Sources */,
 				5DF554941DA893E100DFCBEC /* ReaderListHeaderView.m in Sources */,
 				3F2961A41DAA38F3001934A9 /* KNBannerView.m in Sources */,
+				5DEEB5791DAA6258004FD1FA /* UserInfoData.m in Sources */,
 				3F2961901DAA384E001934A9 /* NewsTechnologyT1348649580692.m in Sources */,
 				3F2961D71DAA826D001934A9 /* SongCommentsTableViewController.m in Sources */,
 				5DF5548B1DA893BC00DFCBEC /* ReadMotivationStars.m in Sources */,
@@ -2028,7 +2050,11 @@
 			baseConfigurationReference = A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = H3C2H2Z8NB;
+=======
+				DEVELOPMENT_TEAM = S2CRPD33DC;
+>>>>>>> a127eae8112396b6641252092ba5fe12d725ae82
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -2044,7 +2070,11 @@
 			baseConfigurationReference = FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = H3C2H2Z8NB;
+=======
+				DEVELOPMENT_TEAM = S2CRPD33DC;
+>>>>>>> a127eae8112396b6641252092ba5fe12d725ae82
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

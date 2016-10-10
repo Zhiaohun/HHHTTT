@@ -16,6 +16,7 @@
 #import "URLMacroDefine.h"
 #import "DWSwipeGestures.h"
 #import "JudgeManager.h"
+#import "UserInfoManager.h"
 
 //第三方库
 #import "LLNetWorkingRequest.h"

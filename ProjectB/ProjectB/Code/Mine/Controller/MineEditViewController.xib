@@ -24,7 +24,7 @@
                                 <constraint firstAttribute="height" constant="35" id="t7G-wg-QtC"/>
                                 <constraint firstAttribute="width" constant="35" id="tEQ-NX-O1W"/>
                             </constraints>
-                            <state key="normal" image="goback"/>
+                            <state key="normal" image="返回(1)"/>
                             <connections>
                                 <action selector="backToView:" destination="-1" eventType="touchUpInside" id="QBI-PC-9AS"/>
                             </connections>
@@ -57,9 +57,9 @@
                         <constraint firstAttribute="bottom" secondItem="gY4-AD-xUY" secondAttribute="bottom" constant="8" id="Khw-Eu-aiT"/>
                         <constraint firstAttribute="bottom" secondItem="P4s-CC-LAI" secondAttribute="bottom" constant="8" id="NaO-NV-koO"/>
                         <constraint firstAttribute="height" constant="174" id="Ogn-r0-d8G"/>
-                        <constraint firstItem="5bF-qv-eKq" firstAttribute="top" secondItem="983-Iu-zMk" secondAttribute="top" constant="6" id="RXE-mH-rfv"/>
+                        <constraint firstItem="5bF-qv-eKq" firstAttribute="top" secondItem="983-Iu-zMk" secondAttribute="top" constant="20" id="RXE-mH-rfv"/>
                         <constraint firstItem="gY4-AD-xUY" firstAttribute="centerX" secondItem="983-Iu-zMk" secondAttribute="centerX" id="UFc-7u-0Po"/>
-                        <constraint firstItem="obM-nu-7rg" firstAttribute="top" secondItem="983-Iu-zMk" secondAttribute="top" constant="13" id="aa6-bN-h1V"/>
+                        <constraint firstItem="obM-nu-7rg" firstAttribute="top" secondItem="983-Iu-zMk" secondAttribute="top" constant="20" id="aa6-bN-h1V"/>
                         <constraint firstItem="P4s-CC-LAI" firstAttribute="leading" secondItem="983-Iu-zMk" secondAttribute="leading" constant="8" id="i19-oa-Jpg"/>
                         <constraint firstItem="obM-nu-7rg" firstAttribute="centerX" secondItem="983-Iu-zMk" secondAttribute="centerX" id="wW0-zD-bIO"/>
                     </constraints>
@@ -86,7 +86,9 @@
                                 <constraint firstAttribute="height" constant="30" id="XYj-Z4-8Dk"/>
                                 <constraint firstAttribute="width" constant="100" id="ftd-lj-9at"/>
                             </constraints>
-                            <state key="normal" title="编辑个人主页"/>
+                            <state key="normal" title="编辑个人主页">
+                                <color key="titleColor" red="0.49161776680000002" green="0.82868637089999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                             <connections>
                                 <action selector="editYouyselfPage:" destination="-1" eventType="touchUpInside" id="gj0-3j-QwB"/>
                             </connections>
@@ -175,7 +177,7 @@
         </view>
     </objects>
     <resources>
-        <image name="goback" width="35" height="35"/>
         <image name="left_nologin" width="26" height="26"/>
+        <image name="返回(1)" width="32" height="32"/>
     </resources>
 </document>
