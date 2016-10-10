@@ -21,6 +21,7 @@
 @property (nonatomic,assign) NSInteger page;
 
 @property (nonatomic,strong) ReadCommentBaseClass *base;
+@property (nonatomic,strong) NSMutableArray *moreCommentDataArr;
 @end
 
 @implementation ReaderDetailViewController
@@ -41,21 +42,21 @@
 #pragma mark - private Method -
 -(void)initUI{
     //self.title = @"图书详情";
-    
+    _moreCommentDataArr = [NSMutableArray array];
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
     
     _btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btn1.frame = CGRectMake(0, 0, 50, 30);
     [_btn1 setTitle:@"详情" forState:UIControlStateNormal];
     [_btn1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [_btn1 addTarget:self action:@selector(readDetail) forControlEvents:UIControlEventTouchUpInside];
+    [_btn1 addTarget:self action:@selector(readerDetail) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:_btn1];
     
     _btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btn2.frame = CGRectMake(50, 0, 50, 30);
     [_btn2 setTitle:@"评论" forState:UIControlStateNormal];
     [_btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [_btn2 addTarget:self action:@selector(readComment) forControlEvents:UIControlEventTouchUpInside];
+    [_btn2 addTarget:self action:@selector(readerComment) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:_btn2];
     self.navigationItem.titleView = view;
     
@@ -81,16 +82,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)readDetail{
+-(void)readerDetail{
     [_btn1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [_btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     
     self.tableView.hidden = YES;
 }
-
-
-
--(void)readComment{
+-(void)readerComment{
     [_btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_btn2 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     
@@ -99,6 +97,7 @@
     
 }
 -(void)creatCommentTabView{
+    _page = 1;
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, VIEW_WIDTH, VIEW_HEIGHT-64)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
@@ -108,10 +107,10 @@
     [self.view addSubview:_tableView];
     
     [self requestCommentData];
+    [self refreshUI];
 }
 
 -(void)requestCommentData{
-    _page = 1;
     NSString *url = [NSString stringWithFormat:@"%@&product_id=%@&page=%lu",URL_BookComment,_productID,_page];
     NSLog(@"url_____%@",url);
     
@@ -119,8 +118,22 @@
         
         _base = [ReadCommentBaseClass modelObjectWithDictionary:dic];
         
+        if (_page == 1) {
+            //下拉刷新
+            [_moreCommentDataArr removeAllObjects];
+            [_moreCommentDataArr addObjectsFromArray:_base.reviewList];
+        }
+        else{
+            //上拉加载
+            [_moreCommentDataArr addObjectsFromArray:_base.reviewList];
+            
+        }
+        
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer endRefreshing];
         });
         
     } Fail:^(NSError *error) {
@@ -128,18 +141,32 @@
     }];
     
 }
+-(void)refreshUI{
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _page = 1;
+        [self requestCommentData];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+    
+    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        _page ++;
+        [self requestCommentData];
+    }];
+}
 
 #pragma mark - tableView Delegate -
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _base.reviewList.count;
+    return _moreCommentDataArr.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ReadCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"readCommentCell" forIndexPath:indexPath];
     
-    ReadCommentReviewList *list = _base.reviewList[indexPath.row];
+    ReadCommentReviewList *list = _moreCommentDataArr[indexPath.row];
     
     cell.username.text = list.custName;
     cell.commentTime.text = list.creationDate;
@@ -162,6 +189,9 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 /*
 #pragma mark - Navigation
 

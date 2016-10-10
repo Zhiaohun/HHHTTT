@@ -110,7 +110,7 @@
     __weak typeof(cell) weakCell = cell;
     cell.upBtnBlock = ^{
         [weakCell.upBtn setImage:[UIImage imageNamed:@"duanzi_up_selected"] forState:UIControlStateSelected];
-        [weakCell.upBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        [weakCell.upBtn setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateSelected];
         [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.upTimes + 1] forState:UIControlStateSelected];
     };
     
