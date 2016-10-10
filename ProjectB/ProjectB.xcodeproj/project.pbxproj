@@ -1650,11 +1650,7 @@
 				TargetAttributes = {
 					3FA4E5DE1D9AB1070090AC78 = {
 						CreatedOnToolsVersion = 7.0.1;
-<<<<<<< HEAD
-						DevelopmentTeam = H3C2H2Z8NB;
-=======
-						DevelopmentTeam = S2CRPD33DC;
->>>>>>> a127eae8112396b6641252092ba5fe12d725ae82
+
 					};
 				};
 			};
@@ -2050,11 +2046,8 @@
 			baseConfigurationReference = A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = H3C2H2Z8NB;
-=======
-				DEVELOPMENT_TEAM = S2CRPD33DC;
->>>>>>> a127eae8112396b6641252092ba5fe12d725ae82
+
+
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -2070,11 +2063,7 @@
 			baseConfigurationReference = FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = H3C2H2Z8NB;
-=======
-				DEVELOPMENT_TEAM = S2CRPD33DC;
->>>>>>> a127eae8112396b6641252092ba5fe12d725ae82
+
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
