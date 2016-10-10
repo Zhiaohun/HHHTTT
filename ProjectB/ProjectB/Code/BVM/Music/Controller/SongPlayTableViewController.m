@@ -11,12 +11,15 @@
 #import "CommentModel.h"
 #import "SongPlayCommentTableViewCell.h"
 #import "SongPlayManager.h"
+#import "UIImageView+imageViewAnimation.h"
+#import "SongCommentsTableViewController.h"
 
 @interface SongPlayTableViewController ()
 @property (nonatomic, strong) MusicPlayHeaderView *headerView;
 @property (nonatomic, strong) NSMutableArray *commentArray;
 @property (nonatomic, assign) BOOL isPlay;
 @property (nonatomic, strong) MusicListList *listModel;
+@property (nonatomic, strong) NSMutableArray  *contentArray;
 
 
 
@@ -50,6 +53,7 @@
     
     [self loadData];
 
+
     [self goback];
 }
 
@@ -82,19 +86,23 @@
     self.commentArray = nil;
     
     NSString *URLStr = [NSString stringWithFormat:@"%@/%d?albumId=%d&device=iPhone&trackUid=%d",URL_Play,(int)self.listModel.trackId,(int)self.listModel.albumId,(int)self.listModel.uid];
-    NSLog(@"_+_______%@",URLStr);
+   // NSLog(@"_+_______%@",URLStr);
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
-        NSLog(@"+++++++++%@",dic);
+       // NSLog(@"+++++++++%@",dic);
         NSArray *array = dic[@"commentInfo"][@"list"];
         for (NSDictionary *dic in array) {
             CommentModel *model = [[CommentModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [self.commentArray addObject:model];
+            
+            
         }
+      
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self tableViewHeaderView];
+            [self tableViewFooterView];
             
         });
     } Fail:^(NSError *error) {
@@ -113,13 +121,15 @@
     
     [_headerView.musicPlayImageView sd_setImageWithURL:[NSURL URLWithString:self.listModel.coverLarge] placeholderImage:PlaceholderImage];
 
+    [_headerView.musicPlayImageView backgroundImageAnimation];
+    
     _headerView.durationLabel.text = [NSString stringWithFormat:@"%02d:%02d",(int)self.listModel.duration/60,(int)self.listModel.duration%60];
     _headerView.musicPlayTitleLabel.text = self.listModel.title;
     _headerView.musicPlayPlayTimesLabel.text = [NSString stringWithFormat:@"%d次播放",(int)self.listModel.playtimes];
     
     NSString *timeStr = [self timeWithTimeIntervalString:[NSString stringWithFormat:@"%f",self.listModel.createdAt]];
     _headerView.musicPlayCreatedTimeLabel.text = timeStr;
-    
+
 
     SongPlayManager *manager = [SongPlayManager defaultManager];
     //音乐的播放与暂停
@@ -169,14 +179,31 @@
     };
 }
 
+
+-(void)tableViewFooterView{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, VIEW_WIDTH, 30);
+    [self.view addSubview:btn];
+    [btn setBackgroundColor:[UIColor cyanColor]];
+    [btn setTitle:@"点击查看更多评论" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(tapBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    self.tableView.tableFooterView = btn;
+}
 -(void)loadSlider{
-    NSLog(@">>>");
+    //NSLog(@">>>");
     SongPlayManager *manager = [SongPlayManager defaultManager];
     _headerView.slider.maximumValue = manager.totalTime;
     _headerView.slider.value = manager.currentTime;
     
 }
 
+-(void)tapBtnAction{
+    SongCommentsTableViewController *songCommentVC = [[SongCommentsTableViewController alloc] init];
+    MusicListList *model = self.musicListArray[_selectIndex];
+    songCommentVC.trackId = (int)model.trackId;
+    
+    [self.navigationController pushViewController:songCommentVC animated:YES];
+}
 //时间戳转化为时间NSDate
 - (NSString *)timeWithTimeIntervalString:(NSString *)timeString
 {

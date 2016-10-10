@@ -10,7 +10,6 @@
 #import <WebKit/WebKit.h>
 
 @interface NewsWebViewController ()
-
 @end
 
 @implementation NewsWebViewController
@@ -27,6 +26,8 @@
 #pragma mark - private Method -
 -(void)initUI{
     WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT)];
+
+    
     [self.view addSubview:webView];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLHtml]];
     [webView loadRequest:request];
@@ -42,6 +43,7 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
