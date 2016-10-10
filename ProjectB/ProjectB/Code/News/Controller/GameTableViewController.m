@@ -14,6 +14,8 @@
 #import "NewsImageViewController.h"
 #import "NewsScrollViewTableViewCell.h"
 #import "NewsGameDataModels.h"
+#import "UIView+ShadowView.h"
+
 
 
 #import "KNBannerView.h"
@@ -130,6 +132,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     NewsGameT1348654151579 *model = self.dataArray[indexPath.row];
     if (indexPath.row == 0) {
@@ -145,16 +148,22 @@
         if (model.imgextra.count > 0) {
             NewsImageMoreTableViewCell *newsImagemoreCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagemorecell" forIndexPath:indexPath];
             newsImagemoreCell.gmodel = model;
+            
+            [UIView shadowView:newsImagemoreCell];
             return newsImagemoreCell;
             
         }else if (model.imgType){
             NewsImageTableViewCell *newsImageCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagecell" forIndexPath:indexPath];
             newsImageCell.gmodel = model;
+            
+            [UIView shadowView:newsImageCell];
             return newsImageCell;
             
         }else{
             NewsTableViewCell *newsCell = [tableView dequeueReusableCellWithIdentifier:@"newscell" forIndexPath:indexPath];
             newsCell.gmodel = model;
+            
+            [UIView shadowView:newsCell];
             return newsCell;
             
             

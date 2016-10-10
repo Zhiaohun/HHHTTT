@@ -9,6 +9,7 @@
 #import "SayingTableViewController.h"
 #import "NewsSayingModel.h"
 #import "SayingTableViewCell.h"
+#import "UIImageView+imageViewAnimation.h"
 
 @interface SayingTableViewController ()
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
@@ -102,6 +103,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     SayingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sayingcell" forIndexPath:indexPath];
     
 
@@ -114,22 +117,20 @@
     cell.cellView.layer.shadowOffset = CGSizeMake(1,1);
     cell.cellView.layer.shadowOpacity = 0.3;
     cell.cellView.layer.shadowColor = [UIColor blackColor].CGColor;
-    
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    
-    
+  
     __weak typeof(cell) weakCell = cell;
     cell.upBtnActionBlock = ^{
-        [weakCell.upBtn setImage:[UIImage imageNamed:@"duanzi_up_selected"] forState:UIControlStateSelected];
-        [weakCell.upBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-        [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.digg_count + 1] forState:UIControlStateSelected];
+        [weakCell.upBtn setImage:[UIImage imageNamed:@"duanzi_up_selected"] forState:UIControlStateNormal];
+        [weakCell.upBtn.imageView spotAnimation];
+        [weakCell.upBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.digg_count + 1] forState:UIControlStateNormal];
         };
     
     cell.downBtnActionBlock = ^{
-        [weakCell.downBtn setImage:[UIImage imageNamed:@"duanzi_down_selected"] forState:UIControlStateSelected];
-        [weakCell.downBtn setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
-        [weakCell.downBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.bury_count + 1] forState:UIControlStateSelected];
+        [weakCell.downBtn setImage:[UIImage imageNamed:@"duanzi_down_selected"] forState:UIControlStateNormal];
+        [weakCell.downBtn.imageView spotAnimation];
+        [weakCell.downBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [weakCell.downBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.bury_count + 1] forState:UIControlStateNormal];
     };
     
     

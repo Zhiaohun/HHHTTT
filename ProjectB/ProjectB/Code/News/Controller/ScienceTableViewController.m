@@ -14,6 +14,8 @@
 #import "NewsImageViewController.h"
 #import "NewsTechnologyDataModels.h"
 #import "NewsScrollViewTableViewCell.h"
+#import "UIView+ShadowView.h"
+
 
 #import "KNBannerView.h"
 #import "NSData+KNCache.h"
@@ -140,6 +142,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     NewsTechnologyT1348649580692 *model = self.dataArray[indexPath.row];
     if (indexPath.row == 0) {
         NewsScrollViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsscrollcell" forIndexPath:indexPath];
@@ -154,16 +158,22 @@
         if (model.imgextra.count > 0) {
             NewsImageMoreTableViewCell *newsImagemoreCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagemorecell" forIndexPath:indexPath];
             newsImagemoreCell.tmodel = model;
+            
+            [UIView shadowView:newsImagemoreCell];
             return newsImagemoreCell;
             
         }else if (model.imgType){
             NewsImageTableViewCell *newsImageCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagecell" forIndexPath:indexPath];
             newsImageCell.tmodel = model;
+            
+            [UIView shadowView:newsImageCell];
             return newsImageCell;
             
         }else{
             NewsTableViewCell *newsCell = [tableView dequeueReusableCellWithIdentifier:@"newscell" forIndexPath:indexPath];
             newsCell.tmodel = model;
+            
+            [UIView shadowView:newsCell];
             return newsCell;
             
             
