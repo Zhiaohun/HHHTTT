@@ -14,6 +14,8 @@
 #import "NewsImageViewController.h"
 #import "NewsEntertainmentDataModels.h"
 #import "NewsScrollViewTableViewCell.h"
+#import "UIView+ShadowView.h"
+
 
 
 #import "KNBannerView.h"
@@ -127,7 +129,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
    
     NewsEntertainmentT1348648517839 *model = self.dataArray[indexPath.row];
     if (indexPath.row == 0) {
@@ -143,16 +145,22 @@
         if (model.imgextra.count > 0) {
             NewsImageMoreTableViewCell *newsImagemoreCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagemorecell" forIndexPath:indexPath];
             newsImagemoreCell.emodel = model;
+            
+            [UIView shadowView:newsImagemoreCell];
             return newsImagemoreCell;
             
         }else if (model.hasImg){
             NewsImageTableViewCell *newsImageCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagecell" forIndexPath:indexPath];
             newsImageCell.emodel = model;
+            
+            [UIView shadowView:newsImageCell];
             return newsImageCell;
             
         }else{
             NewsTableViewCell *newsCell = [tableView dequeueReusableCellWithIdentifier:@"newscell" forIndexPath:indexPath];
             newsCell.emodel = model;
+            
+            [UIView shadowView:newsCell];
             return newsCell;
             
             

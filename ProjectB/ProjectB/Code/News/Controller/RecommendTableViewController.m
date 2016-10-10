@@ -20,6 +20,8 @@
 #import "NSData+KNCache.h"
 
 #import "UIViewController+MMDrawerController.h"
+#import "UIView+ShadowView.h"
+
 
 
 @interface RecommendTableViewController ()<KNBannerViewDelegate>
@@ -115,6 +117,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source -
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -127,6 +131,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     NewsConcentrationT1467284926140 *model = self.dataArray[indexPath.row];
     if (indexPath.row == 0) {
@@ -142,16 +148,23 @@
         if (model.imgextra.count > 0) {
             NewsImageMoreTableViewCell *newsImagemoreCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagemorecell" forIndexPath:indexPath];
             newsImagemoreCell.cmodel = model;
+            
+            [UIView shadowView:newsImagemoreCell];
             return newsImagemoreCell;
             
         }else if (model.hasImg){
             NewsImageTableViewCell *newsImageCell= [tableView dequeueReusableCellWithIdentifier:@"newsimagecell" forIndexPath:indexPath];
             newsImageCell.cmodel = model;
+            
+            [UIView shadowView:newsImageCell];
             return newsImageCell;
             
         }else{
             NewsTableViewCell *newsCell = [tableView dequeueReusableCellWithIdentifier:@"newscell" forIndexPath:indexPath];
             newsCell.cmodel = model;
+            
+            [UIView shadowView:newsCell];
+            
             return newsCell;
             
             

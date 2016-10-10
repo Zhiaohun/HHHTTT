@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView3;
 @property (weak, nonatomic) IBOutlet UILabel *scourceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priorityLabel;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
 
 @property (nonatomic, strong) NewsTechnologyT1348649580692 *tmodel;
 @property (nonatomic, strong) NewsEntertainmentT1348648517839 *emodel;

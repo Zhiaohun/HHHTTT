@@ -83,8 +83,6 @@
 		3F2961B71DAA3A6F001934A9 /* SongPlayCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961B51DAA3A6F001934A9 /* SongPlayCommentTableViewCell.xib */; };
 		3F2961BB1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961B91DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m */; };
 		3F2961BC1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961BA1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib */; };
-		3F2961C01DAA3BF2001934A9 /* NewsJokeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961BE1DAA3BF2001934A9 /* NewsJokeTableViewCell.m */; };
-		3F2961C11DAA3BF2001934A9 /* NewsJokeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961BF1DAA3BF2001934A9 /* NewsJokeTableViewCell.xib */; };
 		3F2961C91DAA43C8001934A9 /* UIImageView+imageViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961C81DAA43C8001934A9 /* UIImageView+imageViewAnimation.m */; };
 		3F2961D71DAA826D001934A9 /* SongCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961D51DAA826D001934A9 /* SongCommentsTableViewController.m */; };
 		3F2961D81DAA826D001934A9 /* SongCommentsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961D61DAA826D001934A9 /* SongCommentsTableViewController.xib */; };
@@ -94,6 +92,7 @@
 		3F3978641DAB47BF009979BB /* SayingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3978621DAB47BF009979BB /* SayingTableViewCell.m */; };
 		3F3978651DAB47BF009979BB /* SayingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3978631DAB47BF009979BB /* SayingTableViewCell.xib */; };
 		3F3978681DAB671C009979BB /* CacheDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3978671DAB671C009979BB /* CacheDelete.m */; };
+		3F39786E1DABA3E1009979BB /* UIView+ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F39786D1DABA3E1009979BB /* UIView+ShadowView.m */; };
 		3F844A871D9E0D4A00AE9B3B /* BaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A811D9E0D4A00AE9B3B /* BaseClass.m */; };
 		3F844A881D9E0D4A00AE9B3B /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A831D9E0D4A00AE9B3B /* Data.m */; };
 		3F844A891D9E0D4A00AE9B3B /* ItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A851D9E0D4A00AE9B3B /* ItemList.m */; };
@@ -355,9 +354,6 @@
 		3F2961B81DAA3BE2001934A9 /* NewsScrollViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsScrollViewTableViewCell.h; sourceTree = "<group>"; };
 		3F2961B91DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsScrollViewTableViewCell.m; sourceTree = "<group>"; };
 		3F2961BA1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsScrollViewTableViewCell.xib; sourceTree = "<group>"; };
-		3F2961BD1DAA3BF2001934A9 /* NewsJokeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsJokeTableViewCell.h; sourceTree = "<group>"; };
-		3F2961BE1DAA3BF2001934A9 /* NewsJokeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsJokeTableViewCell.m; sourceTree = "<group>"; };
-		3F2961BF1DAA3BF2001934A9 /* NewsJokeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsJokeTableViewCell.xib; sourceTree = "<group>"; };
 		3F2961C71DAA43C8001934A9 /* UIImageView+imageViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+imageViewAnimation.h"; sourceTree = "<group>"; };
 		3F2961C81DAA43C8001934A9 /* UIImageView+imageViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+imageViewAnimation.m"; sourceTree = "<group>"; };
 		3F2961D41DAA826D001934A9 /* SongCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCommentsTableViewController.h; sourceTree = "<group>"; };
@@ -373,6 +369,8 @@
 		3F3978631DAB47BF009979BB /* SayingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SayingTableViewCell.xib; sourceTree = "<group>"; };
 		3F3978661DAB671C009979BB /* CacheDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheDelete.h; sourceTree = "<group>"; };
 		3F3978671DAB671C009979BB /* CacheDelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheDelete.m; sourceTree = "<group>"; };
+		3F39786C1DABA3E1009979BB /* UIView+ShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ShadowView.h"; sourceTree = "<group>"; };
+		3F39786D1DABA3E1009979BB /* UIView+ShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ShadowView.m"; sourceTree = "<group>"; };
 		3F844A801D9E0D4A00AE9B3B /* BaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseClass.h; sourceTree = "<group>"; };
 		3F844A811D9E0D4A00AE9B3B /* BaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseClass.m; sourceTree = "<group>"; };
 		3F844A821D9E0D4A00AE9B3B /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
@@ -613,9 +611,6 @@
 				3F2961B81DAA3BE2001934A9 /* NewsScrollViewTableViewCell.h */,
 				3F2961B91DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m */,
 				3F2961BA1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib */,
-				3F2961BD1DAA3BF2001934A9 /* NewsJokeTableViewCell.h */,
-				3F2961BE1DAA3BF2001934A9 /* NewsJokeTableViewCell.m */,
-				3F2961BF1DAA3BF2001934A9 /* NewsJokeTableViewCell.xib */,
 				3F3978611DAB47BF009979BB /* SayingTableViewCell.h */,
 				3F3978621DAB47BF009979BB /* SayingTableViewCell.m */,
 				3F3978631DAB47BF009979BB /* SayingTableViewCell.xib */,
@@ -1122,6 +1117,8 @@
 			children = (
 				3F2961C71DAA43C8001934A9 /* UIImageView+imageViewAnimation.h */,
 				3F2961C81DAA43C8001934A9 /* UIImageView+imageViewAnimation.m */,
+				3F39786C1DABA3E1009979BB /* UIView+ShadowView.h */,
+				3F39786D1DABA3E1009979BB /* UIView+ShadowView.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1748,7 +1745,6 @@
 				3FC1BB3C1D9D036900C834D8 /* VideoNormalCollectionViewCell.xib in Resources */,
 				5DA8EB5B1D9BF399006DAECD /* HotVideoTableViewCell.xib in Resources */,
 				3F04BFA01D9B7551005CCA03 /* SongListTableViewController.xib in Resources */,
-				3F2961C11DAA3BF2001934A9 /* NewsJokeTableViewCell.xib in Resources */,
 				3F0470771D9C09EA00DAD187 /* EntertainmentTableViewController.xib in Resources */,
 				3F04BFBE1D9B7735005CCA03 /* ReaderListTableViewCell.xib in Resources */,
 				3F2961BC1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib in Resources */,
@@ -1858,7 +1854,6 @@
 				3FA4E5E71D9AB1070090AC78 /* AppDelegate.m in Sources */,
 				5DF554C61DA8E27D00DFCBEC /* MyTracksInfoModel.m in Sources */,
 				3F2961AA1DAA38F3001934A9 /* UIView+Extension.m in Sources */,
-				3F2961C01DAA3BF2001934A9 /* NewsJokeTableViewCell.m in Sources */,
 				3F04707F1D9C09EA00DAD187 /* ScienceTableViewController.m in Sources */,
 				3F3978681DAB671C009979BB /* CacheDelete.m in Sources */,
 				3F0470AD1D9C0AC500DAD187 /* NewsImageTableViewCell.m in Sources */,
@@ -1925,6 +1920,7 @@
 				3FC1BB4F1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.m in Sources */,
 				3F272F861DA7681300CA7E8F /* MusicCategoryBaseClass.m in Sources */,
 				3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */,
+				3F39786E1DABA3E1009979BB /* UIView+ShadowView.m in Sources */,
 				5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */,
 				3F2961821DAA384E001934A9 /* NewsConcentrationT1467284926140.m in Sources */,
 				3F04BFBD1D9B7735005CCA03 /* ReaderListTableViewCell.m in Sources */,

@@ -8,13 +8,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsimagecell" rowHeight="177" id="KGk-i7-Jjw" customClass="NewsImageTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="429" height="177"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsimagecell" rowHeight="192" id="KGk-i7-Jjw" customClass="NewsImageTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="429" height="192"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="429" height="176"/>
+                <frame key="frameInset" width="429" height="191"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXQ-iM-g4j"/>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgM-Mz-zdS">
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="cuD-cq-65l"/>
@@ -25,8 +26,8 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scj-4K-Rrf">
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="fUn-Gd-V19"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="mzL-9S-dkf"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="H3a-u8-QBK"/>
+                            <constraint firstAttribute="height" constant="20" id="aCh-NL-Mq0"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.64893071339999997" green="0.64893071339999997" blue="0.64893071339999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,8 +35,8 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLj-74-eB6">
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="BYf-eF-x2n"/>
-                            <constraint firstAttribute="height" constant="21" id="ZAo-3M-KQs"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="wgd-xh-gVs"/>
+                            <constraint firstAttribute="height" constant="20" id="xwa-sL-5KO"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,26 +50,30 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="DLj-74-eB6" secondAttribute="trailing" constant="8" id="1gD-aX-cJp"/>
                     <constraint firstItem="KgM-Mz-zdS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1hj-KG-MC3"/>
+                    <constraint firstItem="fXQ-iM-g4j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="6yX-ud-eZG"/>
+                    <constraint firstItem="scj-4K-Rrf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="9Fm-bt-tE2"/>
                     <constraint firstItem="llx-ex-0rV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="J6n-Xx-nm2"/>
-                    <constraint firstItem="scj-4K-Rrf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="NIb-mW-r57"/>
+                    <constraint firstItem="scj-4K-Rrf" firstAttribute="top" secondItem="fXQ-iM-g4j" secondAttribute="bottom" constant="-32" id="Lyg-y9-1ri"/>
+                    <constraint firstAttribute="trailing" secondItem="fXQ-iM-g4j" secondAttribute="trailing" constant="8" id="SN1-NQ-or3"/>
                     <constraint firstAttribute="trailing" secondItem="KgM-Mz-zdS" secondAttribute="trailing" constant="8" id="V7t-dc-vx8"/>
+                    <constraint firstAttribute="trailing" secondItem="DLj-74-eB6" secondAttribute="trailing" constant="8" id="W2L-6E-nE8"/>
                     <constraint firstItem="llx-ex-0rV" firstAttribute="top" secondItem="KgM-Mz-zdS" secondAttribute="bottom" constant="8" id="WM3-mr-Va2"/>
-                    <constraint firstAttribute="bottom" secondItem="DLj-74-eB6" secondAttribute="bottom" constant="8" id="bYG-Wh-MQU"/>
                     <constraint firstAttribute="trailing" secondItem="llx-ex-0rV" secondAttribute="trailing" constant="8" id="c1j-up-gOp"/>
+                    <constraint firstItem="fXQ-iM-g4j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="kXz-IV-CAv"/>
                     <constraint firstItem="KgM-Mz-zdS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="pl0-dT-S7H"/>
-                    <constraint firstAttribute="bottom" secondItem="scj-4K-Rrf" secondAttribute="bottom" constant="8" id="v0T-SB-br9"/>
-                    <constraint firstItem="DLj-74-eB6" firstAttribute="top" secondItem="llx-ex-0rV" secondAttribute="bottom" constant="8" id="zva-Fh-Lpz"/>
+                    <constraint firstAttribute="bottom" secondItem="fXQ-iM-g4j" secondAttribute="bottom" constant="8" id="qig-XD-BID"/>
+                    <constraint firstItem="DLj-74-eB6" firstAttribute="top" secondItem="fXQ-iM-g4j" secondAttribute="bottom" constant="-32" id="rfu-Gv-dix"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="cellView" destination="fXQ-iM-g4j" id="8LK-es-trZ"/>
                 <outlet property="imageV" destination="llx-ex-0rV" id="hyh-Nu-CiK"/>
                 <outlet property="priorityLabel" destination="DLj-74-eB6" id="RUP-9C-8rU"/>
                 <outlet property="sourceLabel" destination="scj-4K-Rrf" id="Tzw-5p-EiF"/>
                 <outlet property="titleLabel" destination="KgM-Mz-zdS" id="fZa-Mk-B0R"/>
             </connections>
-            <point key="canvasLocation" x="191.5" y="147.5"/>
+            <point key="canvasLocation" x="317.5" y="71"/>
         </tableViewCell>
     </objects>
     <resources>
