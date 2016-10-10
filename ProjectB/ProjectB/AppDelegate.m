@@ -16,11 +16,40 @@
 #import "MMExampleDrawerVisualStateManager.h"
 
 @interface AppDelegate ()
+@property (nonatomic, strong) UIView *nightView;
 
 @end
 
 @implementation AppDelegate
 
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center addObserver:self selector:@selector(receiveNotifica:) name:@"night" object:nil];
+        
+        NSNotificationCenter *center2 = [NSNotificationCenter defaultCenter];
+        [center2 addObserver:self selector:@selector(receiveNotifica2:) name:@"day" object:nil];
+        
+    }
+    return self;
+}
+
+- (void)receiveNotifica:(NSNotification *)center
+{
+    self.nightView.hidden = NO;
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"value",@"key", nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"day___" object:@"projectB" userInfo: dic];
+}
+
+
+- (void)receiveNotifica2:(NSNotification *)center
+{
+    self.nightView.hidden = YES;
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"value",@"key", nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"night___" object:@"projectB" userInfo: dic];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -63,7 +92,18 @@
     self.window.rootViewController = _drawerC;
 
     [self.window makeKeyAndVisible];
-
+    
+    
+    
+    
+    
+    self.nightView = [[UIView alloc] initWithFrame:self.window.bounds];
+    self.nightView.userInteractionEnabled = NO;
+    self.nightView.hidden = YES;
+    self.nightView.backgroundColor = [UIColor blackColor];
+    self.nightView.alpha = 0.7;
+    [self.window addSubview:self.nightView];
+   
     return YES;
 }
 

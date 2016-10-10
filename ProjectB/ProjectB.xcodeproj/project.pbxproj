@@ -11,8 +11,6 @@
 		3F0470771D9C09EA00DAD187 /* EntertainmentTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0470671D9C09EA00DAD187 /* EntertainmentTableViewController.xib */; };
 		3F0470781D9C09EA00DAD187 /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0470691D9C09EA00DAD187 /* GameTableViewController.m */; };
 		3F0470791D9C09EA00DAD187 /* GameTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04706A1D9C09EA00DAD187 /* GameTableViewController.xib */; };
-		3F04707A1D9C09EA00DAD187 /* JokeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F04706C1D9C09EA00DAD187 /* JokeTableViewController.m */; };
-		3F04707B1D9C09EA00DAD187 /* JokeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F04706D1D9C09EA00DAD187 /* JokeTableViewController.xib */; };
 		3F04707D1D9C09EA00DAD187 /* RecommendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0470711D9C09EA00DAD187 /* RecommendTableViewController.m */; };
 		3F04707E1D9C09EA00DAD187 /* RecommendTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0470721D9C09EA00DAD187 /* RecommendTableViewController.xib */; };
 		3F04707F1D9C09EA00DAD187 /* ScienceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0470741D9C09EA00DAD187 /* ScienceTableViewController.m */; };
@@ -90,6 +88,12 @@
 		3F2961C91DAA43C8001934A9 /* UIImageView+imageViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961C81DAA43C8001934A9 /* UIImageView+imageViewAnimation.m */; };
 		3F2961D71DAA826D001934A9 /* SongCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961D51DAA826D001934A9 /* SongCommentsTableViewController.m */; };
 		3F2961D81DAA826D001934A9 /* SongCommentsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961D61DAA826D001934A9 /* SongCommentsTableViewController.xib */; };
+		3F39785B1DAB3692009979BB /* NewsSayingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F39785A1DAB3692009979BB /* NewsSayingModel.m */; };
+		3F39785F1DAB47A0009979BB /* SayingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F39785D1DAB47A0009979BB /* SayingTableViewController.m */; };
+		3F3978601DAB47A0009979BB /* SayingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F39785E1DAB47A0009979BB /* SayingTableViewController.xib */; };
+		3F3978641DAB47BF009979BB /* SayingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3978621DAB47BF009979BB /* SayingTableViewCell.m */; };
+		3F3978651DAB47BF009979BB /* SayingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3978631DAB47BF009979BB /* SayingTableViewCell.xib */; };
+		3F3978681DAB671C009979BB /* CacheDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3978671DAB671C009979BB /* CacheDelete.m */; };
 		3F844A871D9E0D4A00AE9B3B /* BaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A811D9E0D4A00AE9B3B /* BaseClass.m */; };
 		3F844A881D9E0D4A00AE9B3B /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A831D9E0D4A00AE9B3B /* Data.m */; };
 		3F844A891D9E0D4A00AE9B3B /* ItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A851D9E0D4A00AE9B3B /* ItemList.m */; };
@@ -136,7 +140,6 @@
 		3FC1BB241D9CF33B00C834D8 /* NewsImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB221D9CF33B00C834D8 /* NewsImageViewController.m */; };
 		3FC1BB251D9CF33B00C834D8 /* NewsImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FC1BB231D9CF33B00C834D8 /* NewsImageViewController.xib */; };
 		3FC1BB2A1D9CF4BD00C834D8 /* NewsBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB291D9CF4BD00C834D8 /* NewsBaseViewController.m */; };
-		3FC1BB2D1D9CF4D600C834D8 /* NewsBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB2C1D9CF4D600C834D8 /* NewsBaseTableViewController.m */; };
 		3FC1BB3B1D9D036900C834D8 /* VideoNormalCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB391D9D036900C834D8 /* VideoNormalCollectionViewCell.m */; };
 		3FC1BB3C1D9D036900C834D8 /* VideoNormalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FC1BB3A1D9D036900C834D8 /* VideoNormalCollectionViewCell.xib */; };
 		3FC1BB451D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB431D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m */; };
@@ -217,9 +220,6 @@
 		3F0470681D9C09EA00DAD187 /* GameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewController.h; sourceTree = "<group>"; };
 		3F0470691D9C09EA00DAD187 /* GameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewController.m; sourceTree = "<group>"; };
 		3F04706A1D9C09EA00DAD187 /* GameTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewController.xib; sourceTree = "<group>"; };
-		3F04706B1D9C09EA00DAD187 /* JokeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JokeTableViewController.h; sourceTree = "<group>"; };
-		3F04706C1D9C09EA00DAD187 /* JokeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JokeTableViewController.m; sourceTree = "<group>"; };
-		3F04706D1D9C09EA00DAD187 /* JokeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JokeTableViewController.xib; sourceTree = "<group>"; };
 		3F0470701D9C09EA00DAD187 /* RecommendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendTableViewController.h; sourceTree = "<group>"; };
 		3F0470711D9C09EA00DAD187 /* RecommendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendTableViewController.m; sourceTree = "<group>"; };
 		3F0470721D9C09EA00DAD187 /* RecommendTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendTableViewController.xib; sourceTree = "<group>"; };
@@ -363,6 +363,16 @@
 		3F2961D41DAA826D001934A9 /* SongCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCommentsTableViewController.h; sourceTree = "<group>"; };
 		3F2961D51DAA826D001934A9 /* SongCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCommentsTableViewController.m; sourceTree = "<group>"; };
 		3F2961D61DAA826D001934A9 /* SongCommentsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongCommentsTableViewController.xib; sourceTree = "<group>"; };
+		3F3978591DAB3692009979BB /* NewsSayingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsSayingModel.h; sourceTree = "<group>"; };
+		3F39785A1DAB3692009979BB /* NewsSayingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsSayingModel.m; sourceTree = "<group>"; };
+		3F39785C1DAB47A0009979BB /* SayingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SayingTableViewController.h; sourceTree = "<group>"; };
+		3F39785D1DAB47A0009979BB /* SayingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SayingTableViewController.m; sourceTree = "<group>"; };
+		3F39785E1DAB47A0009979BB /* SayingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SayingTableViewController.xib; sourceTree = "<group>"; };
+		3F3978611DAB47BF009979BB /* SayingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SayingTableViewCell.h; sourceTree = "<group>"; };
+		3F3978621DAB47BF009979BB /* SayingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SayingTableViewCell.m; sourceTree = "<group>"; };
+		3F3978631DAB47BF009979BB /* SayingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SayingTableViewCell.xib; sourceTree = "<group>"; };
+		3F3978661DAB671C009979BB /* CacheDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheDelete.h; sourceTree = "<group>"; };
+		3F3978671DAB671C009979BB /* CacheDelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheDelete.m; sourceTree = "<group>"; };
 		3F844A801D9E0D4A00AE9B3B /* BaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseClass.h; sourceTree = "<group>"; };
 		3F844A811D9E0D4A00AE9B3B /* BaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseClass.m; sourceTree = "<group>"; };
 		3F844A821D9E0D4A00AE9B3B /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
@@ -446,8 +456,6 @@
 		3FC1BB231D9CF33B00C834D8 /* NewsImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsImageViewController.xib; sourceTree = "<group>"; };
 		3FC1BB281D9CF4BD00C834D8 /* NewsBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsBaseViewController.h; sourceTree = "<group>"; };
 		3FC1BB291D9CF4BD00C834D8 /* NewsBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsBaseViewController.m; sourceTree = "<group>"; };
-		3FC1BB2B1D9CF4D600C834D8 /* NewsBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsBaseTableViewController.h; sourceTree = "<group>"; };
-		3FC1BB2C1D9CF4D600C834D8 /* NewsBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsBaseTableViewController.m; sourceTree = "<group>"; };
 		3FC1BB381D9D036900C834D8 /* VideoNormalCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoNormalCollectionViewCell.h; sourceTree = "<group>"; };
 		3FC1BB391D9D036900C834D8 /* VideoNormalCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoNormalCollectionViewCell.m; sourceTree = "<group>"; };
 		3FC1BB3A1D9D036900C834D8 /* VideoNormalCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoNormalCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -608,6 +616,9 @@
 				3F2961BD1DAA3BF2001934A9 /* NewsJokeTableViewCell.h */,
 				3F2961BE1DAA3BF2001934A9 /* NewsJokeTableViewCell.m */,
 				3F2961BF1DAA3BF2001934A9 /* NewsJokeTableViewCell.xib */,
+				3F3978611DAB47BF009979BB /* SayingTableViewCell.h */,
+				3F3978621DAB47BF009979BB /* SayingTableViewCell.m */,
+				3F3978631DAB47BF009979BB /* SayingTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -849,9 +860,9 @@
 				3F0470681D9C09EA00DAD187 /* GameTableViewController.h */,
 				3F0470691D9C09EA00DAD187 /* GameTableViewController.m */,
 				3F04706A1D9C09EA00DAD187 /* GameTableViewController.xib */,
-				3F04706B1D9C09EA00DAD187 /* JokeTableViewController.h */,
-				3F04706C1D9C09EA00DAD187 /* JokeTableViewController.m */,
-				3F04706D1D9C09EA00DAD187 /* JokeTableViewController.xib */,
+				3F39785C1DAB47A0009979BB /* SayingTableViewController.h */,
+				3F39785D1DAB47A0009979BB /* SayingTableViewController.m */,
+				3F39785E1DAB47A0009979BB /* SayingTableViewController.xib */,
 				3FC1BB1E1D9CF32000C834D8 /* NewsWebViewController.h */,
 				3FC1BB1F1D9CF32000C834D8 /* NewsWebViewController.m */,
 				3FC1BB211D9CF33B00C834D8 /* NewsImageViewController.h */,
@@ -992,6 +1003,7 @@
 		3F2961531DAA384E001934A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F3978581DAB3648009979BB /* NewsSayingModel */,
 				3F2961541DAA384E001934A9 /* NewsConcentrationModel */,
 				3F29615C1DAA384E001934A9 /* NewsEntertainmentModel */,
 				3F2961661DAA384E001934A9 /* NewsGameModel */,
@@ -1112,6 +1124,15 @@
 				3F2961C81DAA43C8001934A9 /* UIImageView+imageViewAnimation.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		3F3978581DAB3648009979BB /* NewsSayingModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F3978591DAB3692009979BB /* NewsSayingModel.h */,
+				3F39785A1DAB3692009979BB /* NewsSayingModel.m */,
+			);
+			path = NewsSayingModel;
 			sourceTree = "<group>";
 		};
 		3F844A7F1D9E0D4A00AE9B3B /* VideoCategoryModel */ = {
@@ -1252,6 +1273,8 @@
 				5DA8EB381D9BC028006DAECD /* LLNetWorkingRequest.m */,
 				5DA8EB3B1D9BC028006DAECD /* LLShowHUD.h */,
 				5DA8EB3C1D9BC028006DAECD /* LLShowHUD.m */,
+				3F3978661DAB671C009979BB /* CacheDelete.h */,
+				3F3978671DAB671C009979BB /* CacheDelete.m */,
 			);
 			path = ToolsClass;
 			sourceTree = "<group>";
@@ -1280,8 +1303,6 @@
 			children = (
 				3FC1BB281D9CF4BD00C834D8 /* NewsBaseViewController.h */,
 				3FC1BB291D9CF4BD00C834D8 /* NewsBaseViewController.m */,
-				3FC1BB2B1D9CF4D600C834D8 /* NewsBaseTableViewController.h */,
-				3FC1BB2C1D9CF4D600C834D8 /* NewsBaseTableViewController.m */,
 			);
 			path = NewsBaseController;
 			sourceTree = "<group>";
@@ -1650,7 +1671,6 @@
 				TargetAttributes = {
 					3FA4E5DE1D9AB1070090AC78 = {
 						CreatedOnToolsVersion = 7.0.1;
-
 					};
 				};
 			};
@@ -1694,7 +1714,6 @@
 				3F04BFB91D9B7701005CCA03 /* ReaderDetailViewController.xib in Resources */,
 				3F04BF741D9B7204005CCA03 /* TableViewCell.xib in Resources */,
 				5DF554931DA893E100DFCBEC /* ReadCommentTableViewCell.xib in Resources */,
-				3F04707B1D9C09EA00DAD187 /* JokeTableViewController.xib in Resources */,
 				3FA4E5EF1D9AB1070090AC78 /* Assets.xcassets in Resources */,
 				3FA5EE3B1D9DFC230020E8CC /* VideoRankingListTableViewController.xib in Resources */,
 				3F04BFAA1D9B7576005CCA03 /* SongListTableViewCell.xib in Resources */,
@@ -1706,6 +1725,7 @@
 				5D29EA621D9E396A00213A82 /* CollectionViewController.xib in Resources */,
 				5DA8EB491D9BC2B1006DAECD /* TotalTableViewCell.xib in Resources */,
 				5DA8EB321D9BB48C006DAECD /* LeftViewController.xib in Resources */,
+				3F3978651DAB47BF009979BB /* SayingTableViewCell.xib in Resources */,
 				3F844A981D9E262D00AE9B3B /* VideoListHeaderView.xib in Resources */,
 				3F2961B21DAA3A40001934A9 /* MusicPlayHeaderView.xib in Resources */,
 				5DF554951DA893E100DFCBEC /* ReaderListHeaderView.xib in Resources */,
@@ -1716,6 +1736,7 @@
 				5D29EA221D9D19DE00213A82 /* SystemInfoTableViewCell.xib in Resources */,
 				3F272FA11DA77AAD00CA7E8F /* SongListHeaderView.xib in Resources */,
 				3F0470AE1D9C0AC500DAD187 /* NewsImageTableViewCell.xib in Resources */,
+				3F3978601DAB47A0009979BB /* SayingTableViewController.xib in Resources */,
 				3F2961D81DAA826D001934A9 /* SongCommentsTableViewController.xib in Resources */,
 				5D29EA6A1D9E3A6E00213A82 /* TimingCloseTableViewCell.xib in Resources */,
 				3F0470801D9C09EA00DAD187 /* ScienceTableViewController.xib in Resources */,
@@ -1817,6 +1838,7 @@
 				3F0470781D9C09EA00DAD187 /* GameTableViewController.m in Sources */,
 				5DA8EB431D9BC1EB006DAECD /* MineViewController.m in Sources */,
 				3F844ADB1D9E3E2300AE9B3B /* VideoListAuthor.m in Sources */,
+				3F39785F1DAB47A0009979BB /* SayingTableViewController.m in Sources */,
 				3F2961861DAA384E001934A9 /* NewsEntertainmentT1348648517839.m in Sources */,
 				3F272F891DA7681300CA7E8F /* MusicListAlbum.m in Sources */,
 				3F272F8D1DA7681300CA7E8F /* MusicListTracks.m in Sources */,
@@ -1838,7 +1860,9 @@
 				3F2961AA1DAA38F3001934A9 /* UIView+Extension.m in Sources */,
 				3F2961C01DAA3BF2001934A9 /* NewsJokeTableViewCell.m in Sources */,
 				3F04707F1D9C09EA00DAD187 /* ScienceTableViewController.m in Sources */,
+				3F3978681DAB671C009979BB /* CacheDelete.m in Sources */,
 				3F0470AD1D9C0AC500DAD187 /* NewsImageTableViewCell.m in Sources */,
+				3F3978641DAB47BF009979BB /* SayingTableViewCell.m in Sources */,
 				3F29618A1DAA384E001934A9 /* NewsGameWapPortal.m in Sources */,
 				3F2961B11DAA3A40001934A9 /* MusicPlayHeaderView.m in Sources */,
 				3F2961881DAA384E001934A9 /* NewsGameImgextra.m in Sources */,
@@ -1862,7 +1886,6 @@
 				3F844AE01D9E3E2300AE9B3B /* VideoListItemList.m in Sources */,
 				3F04BF4F1D9B68DF005CCA03 /* BaseViewController.m in Sources */,
 				5DF554921DA893E100DFCBEC /* ReadCommentTableViewCell.m in Sources */,
-				3FC1BB2D1D9CF4D600C834D8 /* NewsBaseTableViewController.m in Sources */,
 				5DF5549C1DA8CCA200DFCBEC /* JudgeManager.m in Sources */,
 				5D29EA691D9E3A6E00213A82 /* TimingCloseTableViewCell.m in Sources */,
 				5DA8EB5A1D9BF399006DAECD /* HotVideoTableViewCell.m in Sources */,
@@ -1901,7 +1924,6 @@
 				3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */,
 				3FC1BB4F1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.m in Sources */,
 				3F272F861DA7681300CA7E8F /* MusicCategoryBaseClass.m in Sources */,
-				3F04707A1D9C09EA00DAD187 /* JokeTableViewController.m in Sources */,
 				3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */,
 				5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */,
 				3F2961821DAA384E001934A9 /* NewsConcentrationT1467284926140.m in Sources */,
@@ -1933,6 +1955,7 @@
 				5DF554861DA893BC00DFCBEC /* ReadMotivationCategories.m in Sources */,
 				5DF554B71DA8E1AD00DFCBEC /* CollectionInfoDBManager.m in Sources */,
 				3F844ADC1D9E3E2300AE9B3B /* VideoListBaseClass.m in Sources */,
+				3F39785B1DAB3692009979BB /* NewsSayingModel.m in Sources */,
 				3F844AEA1D9E523400AE9B3B /* VideoDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2046,8 +2069,6 @@
 			baseConfigurationReference = A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-
-
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -2063,7 +2084,6 @@
 			baseConfigurationReference = FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

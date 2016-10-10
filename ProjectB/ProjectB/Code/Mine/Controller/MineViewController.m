@@ -11,6 +11,8 @@
 #import "LoginViewController.h"
 #import "SystemInfoTableViewCell.h"
 #import "MainViewController.h"
+#import "CacheDelete.h"
+#import "LLShowHUD.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -164,6 +166,11 @@
     cell.label1.text = arr[indexPath.row];
     if(indexPath.row == 0){
         cell.label2.hidden = NO;
+    }else if (indexPath.row == 1){
+        NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+        float size = [CacheDelete folderSizeAtPath:path];
+        cell.label2.hidden = NO;
+        cell.label2.text = [NSString stringWithFormat:@"%0.1fM",size];
     }
     return cell;
 }
@@ -176,7 +183,10 @@
     }
     else if (indexPath.row == 1) {
         //清除缓存
-        [self showQusHUDWithMessage:@"有问题"];
+        //[self showQusHUDWithMessage:@"有问题"];
+         NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+        float size = [CacheDelete folderSizeAtPath:path];
+        [self cacheDeleteAlert:size];
     }
     else if (indexPath.row == 2){
         //功能介绍
@@ -191,6 +201,29 @@
 }
 
 
+
+//清除缓存的alert
+-(void)cacheDeleteAlert:(float)size{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"缓存大小为%0.1f.确定需要清除缓存吗?",size] preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+        
+        [CacheDelete clearCache:path];
+        [LLShowHUD showCustomViewHUD:self.view ImageName:@"yes" Message:@"缓存清除成功!" AfterDelay:0.5];
+
+        [self.systemInfoTableView reloadData];
+    }];
+    
+    [alert addAction:ok];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 
 /*
