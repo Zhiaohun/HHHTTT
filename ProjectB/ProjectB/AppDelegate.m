@@ -68,12 +68,30 @@
     UINavigationController *mineNav = [[UINavigationController alloc]initWithRootViewController:mineVC];
     //tableBar
     _tabBar = [[UITabBarController alloc] init];
-    mainNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"首页" image:[UIImage imageNamed:@"首页-选中"] tag:21];
+    
+    mainNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"首页" image:[UIImage imageNamed:@"首页-首页"] tag:21];
+    UIImage *img1 = [UIImage imageNamed:@"首页-首页(1)"];
+    img1 = [img1 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mainNav.tabBarItem.selectedImage = img1;
+    
     totalNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"书影音" image:[UIImage imageNamed:@"功能"] tag:22];
-    newsNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"资讯" image:[UIImage imageNamed:@"资讯2"] tag:23];
+    UIImage *img2 = [UIImage imageNamed:@"功能(1)"];
+    img2 = [img2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    totalNav.tabBarItem.selectedImage = img2;
+    
+    newsNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"资讯" image:[UIImage imageNamed:@"资讯"] tag:23];
+    UIImage *img3 = [UIImage imageNamed:@"资讯(1)"];
+    img3 = [img3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    newsNav.tabBarItem.selectedImage = img3;
+    
     mineNav.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"我的" image:[UIImage imageNamed:@"我的"] tag:24];
+    UIImage *img4 = [UIImage imageNamed:@"我的(1)"];
+    img4 = [img4 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    mineNav.tabBarItem.selectedImage = img4;
+    
     _tabBar.viewControllers = @[mainNav,totalNav,newsNav,mineNav];
 
+    
     //抽屉
     self.drawerC = [[MMDrawerController alloc]initWithCenterViewController:_tabBar leftDrawerViewController:leftVC];
     [_drawerC setMaximumLeftDrawerWidth:VIEW_WIDTH-100];
