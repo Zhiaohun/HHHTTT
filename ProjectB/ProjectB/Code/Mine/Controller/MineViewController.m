@@ -34,6 +34,8 @@
         _username.text = [UserInfoManager getUname];
     }
     
+    UserInfoModel *model = [[UserInfoDBManager defaultManager] selectDataWithUsername:[NSString stringWithFormat:@"%@",_username.text]];
+    _personalSentence.text = model.personalSentence;
     
 }
 - (void)viewDidLoad {
@@ -64,6 +66,7 @@
     else{
         NSLog(@"已登录");
         MineEditViewController *mineEidtVC = [MineEditViewController new];
+        mineEidtVC.userNa = _username.text;
         [self.navigationController pushViewController:mineEidtVC animated:YES];
     }
     
@@ -91,6 +94,7 @@
         _signOutView.hidden = NO;
     }
 
+    
     
     /********手势方法一******/
 //    DWSwipeGestures *click = [[DWSwipeGestures alloc]init];
@@ -136,7 +140,9 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否退出" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [UserInfoManager saveAuth:nil];
+        [UserInfoManager saveUName:nil];
         NSLog(@"++++%@",[UserInfoManager getAuth]);
+        NSLog(@"++++%@",[UserInfoManager getUname]);
         [JudgeManager defaultManager].isLogin = NO;
         //退出登录后跳转到首页
         self.navigationController.tabBarController.selectedIndex = 0;

@@ -11,10 +11,13 @@
 @interface UserInfoModel : NSObject
 
 @property (nonatomic,strong) NSString *username;
+//@property (nonatomic,strong) NSString *password;
+//@property (nonatomic,strong) NSString *email;
 @property (nonatomic,strong) NSString *personalSentence;
 @property (nonatomic,strong) NSString *userImg;
 @property (nonatomic,strong) NSString *gender;
 @property (nonatomic,strong) NSString *city;
 @property (nonatomic,strong) NSString *birthday;
+
 
 @end

@@ -18,6 +18,12 @@
 #import "JudgeManager.h"
 #import "UserInfoManager.h"
 
+//数据库
+#import "UserInfoDBManager.h"
+#import "UserInfoModel.h"
+
+
+
 //第三方库
 #import "LLNetWorkingRequest.h"
 #import "ScrollImage.h"

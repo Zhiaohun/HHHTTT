@@ -11,5 +11,8 @@
 @interface MineEditViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *userImg;
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UILabel *personalSen;
 
+@property (nonatomic,strong) NSString *userNa;
 @end

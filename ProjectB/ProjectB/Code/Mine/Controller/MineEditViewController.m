@@ -19,6 +19,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = YES;
+    
+    UserInfoModel *model = [[UserInfoDBManager defaultManager] selectDataWithUsername:[NSString stringWithFormat:@"%@",_username.text]];
+    _personalSen.text = model.personalSentence;
 }
 
 - (void)viewDidLoad {
@@ -53,6 +56,7 @@
     self.userImg.layer.borderWidth = 3;
     self.userImg.layer.borderColor = [UIColor whiteColor].CGColor;
     
+    self.username.text = _userNa;
     
     
 }

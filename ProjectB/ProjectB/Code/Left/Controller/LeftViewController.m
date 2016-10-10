@@ -16,6 +16,30 @@
 
 @implementation LeftViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    if (!IsEmptyString([UserInfoManager getUname])) {
+        self.username.text = [UserInfoManager getUname];
+    }
+    else{
+        self.username.text = @"游客(请先登录)";
+    }
+    UserInfoModel *model = [[UserInfoDBManager defaultManager] selectDataWithUsername:[NSString stringWithFormat:@"%@",[UserInfoManager getUname]]];
+    
+    if (!IsEmptyString(model.userImg)) {
+        [self.userImg sd_setImageWithURL:[NSURL URLWithString:model.userImg]];
+    }
+    else{
+        self.userImg.image = [UIImage imageNamed:@"left_nologin"];
+    }
+    NSLog(@"personal++++%@",model.personalSentence);
+    if (!IsEmptyString(model.personalSentence)) {
+        self.personalSentence.text = model.personalSentence;
+    }
+    else{
+         self.personalSentence.text = @"这个人很懒,什么都没有留下";
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -33,8 +57,11 @@
     
     self.userImg.layer.cornerRadius = 30;
     self.userImg.layer.borderColor = [UIColor cyanColor].CGColor;
-    
     self.userImg.layer.borderWidth = 3;
+    
+    
+    
+   
     
 }
 

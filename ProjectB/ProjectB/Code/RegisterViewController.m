@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "UserInfoModel.h"
 
 @interface RegisterViewController ()
 
@@ -81,6 +82,9 @@
 
 #pragma mark - TapClick -
 - (IBAction)register:(id)sender {
+
+    [[UserInfoDBManager defaultManager] createTable];
+    
     if(IsEmptyString(_phoneNumOrEmail.text) || IsEmptyString(_password.text) || IsEmptyString(_username.text)){
         
         [self showQusHUDWithMessage:@"您填写的信息不完整!"];
@@ -95,6 +99,9 @@
             
             NSNumber *result = dic[@"result"];
             if ([result integerValue] == 1) {
+                UserInfoModel *model = [UserInfoModel new];
+                model.username = _username.text;
+                [[UserInfoDBManager defaultManager] insertDataWithModel:model]; 
                 //注册成功
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self showSucHUDWithMessage:@"注册成功"];
