@@ -10,5 +10,7 @@
 
 @interface MyselfPageViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *userImg;
+@property (weak, nonatomic) IBOutlet UITextField *personalSen;
+@property (weak, nonatomic) IBOutlet UILabel *username;
 
 @end

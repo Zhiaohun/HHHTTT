@@ -89,7 +89,7 @@
                         <constraint firstAttribute="width" constant="60" id="zWy-0P-WuM"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="心落天川" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-pg-Nx1">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9v3-pg-Nx1">
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="4Y0-tr-GLk"/>
                         <constraint firstAttribute="width" constant="224" id="wNH-nS-GYm"/>
@@ -98,7 +98,7 @@
                     <color key="textColor" red="0.97680382020000001" green="0.97680382020000001" blue="0.97680382020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="路过有你的唐宋元明清" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyy-Mw-dDP">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这个人很懒,什么都没有留下" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyy-Mw-dDP">
                     <constraints>
                         <constraint firstAttribute="width" constant="265" id="4Qz-dD-rMs"/>
                         <constraint firstAttribute="height" constant="21" id="Cp0-WY-Typ"/>

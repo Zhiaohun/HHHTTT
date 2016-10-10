@@ -8,7 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineEditViewController">
             <connections>
+                <outlet property="personalSen" destination="97d-Fm-DmD" id="Asf-Au-WEO"/>
                 <outlet property="userImg" destination="gY4-AD-xUY" id="ifi-w4-AMF"/>
+                <outlet property="username" destination="Svd-2Q-BXD" id="GEk-rl-B5c"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -72,7 +74,7 @@
                                 <constraint firstAttribute="height" constant="1" id="7PM-l0-rgr"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="芏小川" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svd-2Q-BXD">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svd-2Q-BXD">
                             <constraints>
                                 <constraint firstAttribute="width" constant="204" id="Bem-oO-IlB"/>
                                 <constraint firstAttribute="height" constant="40" id="XWV-vL-dKw"/>
@@ -93,7 +95,7 @@
                                 <action selector="editYouyselfPage:" destination="-1" eventType="touchUpInside" id="gj0-3j-QwB"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="路过有你的唐宋元明清" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97d-Fm-DmD">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这个人很懒,什么都没有留下" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97d-Fm-DmD">
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="O29-3l-Q7W"/>
                             </constraints>

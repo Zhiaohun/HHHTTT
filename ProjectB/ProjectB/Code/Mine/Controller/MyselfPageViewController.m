@@ -29,6 +29,12 @@
 #pragma mark - private Method -
 -(void)initUI{
     
+    _username.text = [UserInfoManager getUname];
+    UserInfoModel *model = [[UserInfoDBManager defaultManager] selectDataWithUsername:[NSString stringWithFormat:@"%@",_username.text]];
+    _personalSen.text = model.personalSentence;
+    
+    [JudgeManager defaultManager].currentAbsract = model.personalSentence;
+    
     self.userImg.layer.cornerRadius = 50;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(editBack)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveBack)];
@@ -36,10 +42,16 @@
     self.navigationItem.rightBarButtonItem.tintColor = [JudgeManager defaultManager].originColor;
 }
 -(void)editBack{
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)saveBack{
 
+    [[UserInfoDBManager defaultManager] updateWithUsername:_username.text TOPersonalSten:_personalSen.text userImg:nil gender:nil city:nil birthday:nil];
+    
+    UserInfoModel *model = [[UserInfoDBManager defaultManager] selectDataWithUsername:[NSString stringWithFormat:@"%@",_username.text]];
+    [JudgeManager defaultManager].currentAbsract = model.personalSentence;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 

@@ -46,7 +46,7 @@
 }
 
 - (IBAction)login:(id)sender {
-    
+
     if (!IsEmptyString(_usernameLogin.text) && !IsEmptyString(_passwordLogin.text)) {
         NSDictionary *dic = @{@"email":_usernameLogin.text,@"passwd":_passwordLogin.text};
         
@@ -55,7 +55,7 @@
                 
                 _base = [UserInfoBaseClass modelObjectWithDictionary:dic];
                 
-                if (_base.result == 1) {
+                if (_base.result == 1) { 
                     [self showSucHUDWithMessage:@"登录成功!"];
                     [self performSelector:@selector(backToRoot) withObject:nil afterDelay:2.0f];
                     [JudgeManager defaultManager].isLogin = YES;
@@ -103,6 +103,7 @@
 -(void)saveLocalUserInfo{
     UserInfoData *userData = _base.data;
     [UserInfoManager saveAuth:userData.auth UID:[NSString stringWithFormat:@"%f",userData.uid] UName:userData.uname Coverimg:userData.coverimg];
+    [JudgeManager defaultManager].currentID = [UserInfoManager getUname];
 }
 
 //HUD纯文字

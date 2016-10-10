@@ -15,7 +15,8 @@
 @property (nonatomic,strong) UIColor *originColor;
 @property (nonatomic,assign) BOOL isLogin;
 
-
+@property (nonatomic,strong) NSString *currentID;
+@property (nonatomic,strong) NSString *currentAbsract;
 
 
 @end

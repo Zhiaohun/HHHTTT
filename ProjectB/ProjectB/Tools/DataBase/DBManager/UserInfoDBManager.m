@@ -119,6 +119,25 @@
     return model;
 }
 
+//更新
+-(void)updateWithUsername:(NSString *)username TOPersonalSten:(NSString *)sentence userImg:(NSString *)userImg gender:(NSString *)gender city:(NSString *)city birthday:(NSString *)birthday{
+    
+    [_db open];
+    NSString *sqlstr = [NSString stringWithFormat:@"update UserInfo set personalSentence = '%@' ,userImg = '%@',gender = '%@',city = '%@',birthday = '%@' where username = '%@'",sentence,userImg,gender,city,birthday,username];
+    
+    BOOL result = [_db executeUpdate:sqlstr];
+    if (result) {
+        NSLog(@"更新成功");
+    }
+    else{
+        NSLog(@"更新失败");
+    }
+    
+    
+    
+    [_db close];
+}
+
 
 
 @end
