@@ -10,7 +10,6 @@
 #import <WebKit/WebKit.h>
 
 @interface NewsWebViewController ()
-
 @end
 
 @implementation NewsWebViewController
@@ -20,6 +19,8 @@
     // Do any additional setup after loading the view.
     
     WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT)];
+
+    
     [self.view addSubview:webView];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLHtml]];
     [webView loadRequest:request];
@@ -27,6 +28,7 @@
     
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

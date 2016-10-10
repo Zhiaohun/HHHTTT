@@ -26,6 +26,9 @@
 //播放界面
 #define URL_Play   @"http://mobile.ximalaya.com/v1/track/ca/playpage"  // 19456060?albumId=243032&device=iPhone&trackUid=7178199
 
+//更多评论
+#define URL_CommentMore @"http://mobile.ximalaya.com/mobile/track/comment?device=iPhone&pageId" //=1&pageSize=30&trackId=21794260
+
 //下载
 #define URL_DownLoad   @"http://mobile.ximalaya.com/mobile/download/7178199/track/17484646"
 ////评论

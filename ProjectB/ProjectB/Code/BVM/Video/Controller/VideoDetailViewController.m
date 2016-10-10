@@ -9,6 +9,7 @@
 #import "VideoDetailViewController.h"
 #import "VideoListDataModels.h"
 #import "MoviePlayerViewController.h"
+#import "UIImageView+imageViewAnimation.h"
 
 @interface VideoDetailViewController ()
 @property (nonatomic, strong) VideoListItemList *listModel;
@@ -74,7 +75,8 @@
         NSLog(@"%@",backSwipeGestureTypeString);
     }];
    
-    //
+    
+    
     [self upDateUI];
     
 }
@@ -109,6 +111,9 @@
     
     self.listModel = self.dataArray[self.index];
     [self.imageV sd_setImageWithURL:[NSURL URLWithString:_listModel.data.cover.feed] placeholderImage:PlaceholderImage];
+    
+    [self.imageV backgroundImageAnimation];
+
     [self.blurImageView sd_setImageWithURL:[NSURL URLWithString:_listModel.data.cover.blurred]];
     self.titleLabel.text = _listModel.data.title;
     

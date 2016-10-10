@@ -87,6 +87,9 @@
 		3F2961BC1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961BA1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.xib */; };
 		3F2961C01DAA3BF2001934A9 /* NewsJokeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961BE1DAA3BF2001934A9 /* NewsJokeTableViewCell.m */; };
 		3F2961C11DAA3BF2001934A9 /* NewsJokeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961BF1DAA3BF2001934A9 /* NewsJokeTableViewCell.xib */; };
+		3F2961C91DAA43C8001934A9 /* UIImageView+imageViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961C81DAA43C8001934A9 /* UIImageView+imageViewAnimation.m */; };
+		3F2961D71DAA826D001934A9 /* SongCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961D51DAA826D001934A9 /* SongCommentsTableViewController.m */; };
+		3F2961D81DAA826D001934A9 /* SongCommentsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961D61DAA826D001934A9 /* SongCommentsTableViewController.xib */; };
 		3F844A871D9E0D4A00AE9B3B /* BaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A811D9E0D4A00AE9B3B /* BaseClass.m */; };
 		3F844A881D9E0D4A00AE9B3B /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A831D9E0D4A00AE9B3B /* Data.m */; };
 		3F844A891D9E0D4A00AE9B3B /* ItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844A851D9E0D4A00AE9B3B /* ItemList.m */; };
@@ -354,6 +357,11 @@
 		3F2961BD1DAA3BF2001934A9 /* NewsJokeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsJokeTableViewCell.h; sourceTree = "<group>"; };
 		3F2961BE1DAA3BF2001934A9 /* NewsJokeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsJokeTableViewCell.m; sourceTree = "<group>"; };
 		3F2961BF1DAA3BF2001934A9 /* NewsJokeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsJokeTableViewCell.xib; sourceTree = "<group>"; };
+		3F2961C71DAA43C8001934A9 /* UIImageView+imageViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+imageViewAnimation.h"; sourceTree = "<group>"; };
+		3F2961C81DAA43C8001934A9 /* UIImageView+imageViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+imageViewAnimation.m"; sourceTree = "<group>"; };
+		3F2961D41DAA826D001934A9 /* SongCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCommentsTableViewController.h; sourceTree = "<group>"; };
+		3F2961D51DAA826D001934A9 /* SongCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCommentsTableViewController.m; sourceTree = "<group>"; };
+		3F2961D61DAA826D001934A9 /* SongCommentsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongCommentsTableViewController.xib; sourceTree = "<group>"; };
 		3F844A801D9E0D4A00AE9B3B /* BaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseClass.h; sourceTree = "<group>"; };
 		3F844A811D9E0D4A00AE9B3B /* BaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseClass.m; sourceTree = "<group>"; };
 		3F844A821D9E0D4A00AE9B3B /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
@@ -677,6 +685,9 @@
 				3F29614E1DAA37D4001934A9 /* SongPlayTableViewController.h */,
 				3F29614F1DAA37D4001934A9 /* SongPlayTableViewController.m */,
 				3F2961501DAA37D4001934A9 /* SongPlayTableViewController.xib */,
+				3F2961D41DAA826D001934A9 /* SongCommentsTableViewController.h */,
+				3F2961D51DAA826D001934A9 /* SongCommentsTableViewController.m */,
+				3F2961D61DAA826D001934A9 /* SongCommentsTableViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1089,6 +1100,15 @@
 			path = KNBannerView;
 			sourceTree = "<group>";
 		};
+		3F2961C61DAA434D001934A9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3F2961C71DAA43C8001934A9 /* UIImageView+imageViewAnimation.h */,
+				3F2961C81DAA43C8001934A9 /* UIImageView+imageViewAnimation.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		3F844A7F1D9E0D4A00AE9B3B /* VideoCategoryModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1207,6 +1227,7 @@
 		3FA4E60E1D9AB1580090AC78 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3F2961C61DAA434D001934A9 /* Category */,
 				5DF5549D1DA8DE9A00DFCBEC /* DataBase */,
 				5DF554961DA8CB8100DFCBEC /* Defaults */,
 				5D29E9F01D9CB0BC00213A82 /* Gesture */,
@@ -1612,7 +1633,7 @@
 				TargetAttributes = {
 					3FA4E5DE1D9AB1070090AC78 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 62ZJEL5GTJ;
+						DevelopmentTeam = H3C2H2Z8NB;
 					};
 				};
 			};
@@ -1679,6 +1700,7 @@
 				5D29EA221D9D19DE00213A82 /* SystemInfoTableViewCell.xib in Resources */,
 				3F272FA11DA77AAD00CA7E8F /* SongListHeaderView.xib in Resources */,
 				3F0470AE1D9C0AC500DAD187 /* NewsImageTableViewCell.xib in Resources */,
+				3F2961D81DAA826D001934A9 /* SongCommentsTableViewController.xib in Resources */,
 				5D29EA6A1D9E3A6E00213A82 /* TimingCloseTableViewCell.xib in Resources */,
 				3F0470801D9C09EA00DAD187 /* ScienceTableViewController.xib in Resources */,
 				3F844AEB1D9E523400AE9B3B /* VideoDetailViewController.xib in Resources */,
@@ -1807,6 +1829,7 @@
 				3F2961881DAA384E001934A9 /* NewsGameImgextra.m in Sources */,
 				3F844AE41D9E3E2300AE9B3B /* VideoListTag.m in Sources */,
 				3F29618F1DAA384E001934A9 /* NewsTechnologyImgextra.m in Sources */,
+				3F2961C91DAA43C8001934A9 /* UIImageView+imageViewAnimation.m in Sources */,
 				3F2961511DAA37D4001934A9 /* SongPlayTableViewController.m in Sources */,
 				3F844A921D9E20BB00AE9B3B /* VideoListTableViewCell.m in Sources */,
 				3F2961801DAA384E001934A9 /* NewsConcentrationBaseClass.m in Sources */,
@@ -1870,6 +1893,7 @@
 				5DF554941DA893E100DFCBEC /* ReaderListHeaderView.m in Sources */,
 				3F2961A41DAA38F3001934A9 /* KNBannerView.m in Sources */,
 				3F2961901DAA384E001934A9 /* NewsTechnologyT1348649580692.m in Sources */,
+				3F2961D71DAA826D001934A9 /* SongCommentsTableViewController.m in Sources */,
 				5DF5548B1DA893BC00DFCBEC /* ReadMotivationStars.m in Sources */,
 				3F2961941DAA38CA001934A9 /* CommentModel.m in Sources */,
 				3F272F871DA7681300CA7E8F /* MusicCategoryList.m in Sources */,
@@ -2004,7 +2028,7 @@
 			baseConfigurationReference = A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 62ZJEL5GTJ;
+				DEVELOPMENT_TEAM = H3C2H2Z8NB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -2020,7 +2044,7 @@
 			baseConfigurationReference = FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 62ZJEL5GTJ;
+				DEVELOPMENT_TEAM = H3C2H2Z8NB;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

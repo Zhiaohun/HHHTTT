@@ -55,7 +55,7 @@
     [self.tableView.mj_footer endRefreshing];
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
-        NSLog(@"++++++++++++++%@",dic);
+       // NSLog(@"++++++++++++++%@",dic);
         self.entertainmentBaseModel = [NewsEntertainmentBaseClass modelObjectWithDictionary:dic];
         _imgArray = [NSMutableArray array];
         _titleArray = [NSMutableArray array];
