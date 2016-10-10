@@ -17,6 +17,9 @@
 @property (nonatomic,strong) ReadMotivationBaseClass *base;
 @property (nonatomic,strong) ReaderListHeaderView *readerView;
 @property (nonatomic,assign) NSInteger page;
+
+@property (nonatomic,strong) NSMutableArray *moreDataArr;
+
 @end
 
 @implementation ReaderListTableViewController
@@ -26,7 +29,7 @@
     
     [self initUI];
     [self requestData];
-    
+    [self refreshUI];
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = YES;
@@ -40,16 +43,18 @@
 -(void)initUI{
     
     [self goback];
+    _page = 1;
+    _moreDataArr = [NSMutableArray array];
     self.title = @"图书列表";
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    //self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.rowHeight = 120;
     [self.tableView registerNib:[UINib nibWithNibName:@"ReaderListTableViewCell" bundle:nil] forCellReuseIdentifier:@"readerListCell"];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     _readerView = [[NSBundle mainBundle]loadNibNamed:@"ReaderListHeaderView" owner:nil options:nil][0];
     self.tableView.tableHeaderView = _readerView;
-    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 161-64);
-    [_readerView.movition setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97-64);
+    [_readerView.movition setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateNormal];
     _url = URL_MovitionBook;
     
     __weak typeof (self)weakSelf = self;
@@ -73,6 +78,21 @@
     } ;
 }
 
+-(void)refreshUI{
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _page = 1;
+        [self requestData];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+    
+    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        _page ++;
+        [self requestData];
+    }];
+}
+
 //自定义返回键
 -(void)goback{
     UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -85,28 +105,45 @@
 
 -(void)requestData{
    // NSDictionary *dic = @{@"page":@"1"};
-    NSString *dataUrl = [NSString stringWithFormat:@"%@&page=1",_url];
+    NSString *dataUrl = [NSString stringWithFormat:@"%@&page=%lu",_url,_page];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:dataUrl Parameter:nil Success:^(NSDictionary *dic) {
         _base = [ReadMotivationBaseClass modelObjectWithDictionary:dic];
+        
+        if (_page == 1) {
+                //下拉刷新
+            [_moreDataArr removeAllObjects];
+            [_moreDataArr addObjectsFromArray:_base.products];
+        }
+        else{
+            //上拉加载
+            [_moreDataArr addObjectsFromArray:_base.products];
+        
+        }
+        
+        
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer endRefreshing];
+            
         });
     } Fail:^(NSError *error) {
         NSLog(@"失败");
     }];
 }
 
--(void)requestMoreData{
-    NSString *dataUrl = [NSString stringWithFormat:@"%@&page=%lu",_url,_page];
-    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:dataUrl Parameter:nil Success:^(NSDictionary *dic) {
-        _base = [ReadMotivationBaseClass modelObjectWithDictionary:dic];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    } Fail:^(NSError *error) {
-        NSLog(@"失败");
-    }];
-}
+//-(void)requestMoreData{
+//    NSString *dataUrl = [NSString stringWithFormat:@"%@&page=%lu",_url,_page];
+//    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:dataUrl Parameter:nil Success:^(NSDictionary *dic) {
+//        _base = [ReadMotivationBaseClass modelObjectWithDictionary:dic];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.tableView reloadData];
+//        });
+//    } Fail:^(NSError *error) {
+//        NSLog(@"失败");
+//    }];
+//}
 
 #pragma mark - Table view data source
 
@@ -114,15 +151,11 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.base.products.count;
+    return _moreDataArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ReadMotivationProducts *products = _base.products[indexPath.row];
-    
-   // NSLog(@"_base++++%@",_base);
-    NSLog(@"products+++%@",products.name);
-    
+    ReadMotivationProducts *products = _moreDataArr[indexPath.row];
     
     ReaderListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"readerListCell" forIndexPath:indexPath];
     cell.BookName.text = products.name;

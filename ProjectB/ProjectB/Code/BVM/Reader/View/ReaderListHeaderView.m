@@ -12,27 +12,27 @@
 
 - (IBAction)Motivation:(id)sender {
     [self getColor];
-    [self.movition setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.movition setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateNormal];
     self.BookTypeLb.text = @"励志";
     [self useBlock];
     
 }
 - (IBAction)Psychology:(id)sender {
     [self getColor];
-    [self.psychology setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.psychology setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateNormal];
     self.BookTypeLb.text = @"心理学";
     [self useBlock];
     
 }
 - (IBAction)novel:(id)sender {
     [self getColor];
-    [self.novel setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.novel setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateNormal];
     self.BookTypeLb.text = @"小说";
     [self useBlock];
 }
 - (IBAction)Art:(id)sender {
     [self getColor];
-    [self.art setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.art setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateNormal];
     self.BookTypeLb.text = @"文艺";
     [self useBlock];
 }
