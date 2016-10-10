@@ -53,11 +53,13 @@
 -(void)dataRequest{
     NSString *URLStr = [NSString stringWithFormat:@"%@/%lu-20.html",URL_Game,self.countStart];
     
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
+    
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
        // NSLog(@"++++++++++++++%@",dic);
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        
         self.gameBaseModel = [NewsGameBaseClass modelObjectWithDictionary:dic];
         _imgArray = [NSMutableArray array];
         _titleArray = [NSMutableArray array];

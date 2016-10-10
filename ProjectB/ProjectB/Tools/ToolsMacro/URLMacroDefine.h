@@ -81,7 +81,8 @@
 #define URL_Game   @"http://c.m.163.com/nc/article/list/T1348654151579"  ///0-20.html
 //段子
 #define URL_Joke   @"http://c.3g.163.com/recommend/getChanRecomNews?channel=duanzi&passport=&devId=Y6sxCyRt%2BvjK%2FmFpSwESnjRhGN7WOwirzF%2BT4OIZTiEDW32gKNZ8DN6eQj4%2F1ABH&offset"  //=0&size=20&version=15.1&spever=false&net=wifi&lat=&lon=&ts=1475758453&sign=F%2Budf9G%2FjoIsCyTRiS7QYYPJoiSkQa%2FaZ2VAgVdej2B48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=appstore
-
+//语录
+#define URL_Saying  @"http://ic.snssdk.com/2/essay/v10/recent/?tag=criticism&iid=5786207384&count=50&max_behot_time"  //=1463949620&ac=wifi&channel=App%20Store&app_name=criticism_essay&version_code=2.4.1&device_platform=iphone&os_version=8.3&device_type=Unknown%20iPhone&vid=58F1D3DF-BA17-44EC-A91D-672F594EE1B0&openudid=00a575f72ecf898c2896f3bae7bf817bcba0f105&idfa=51D9267D-D8DA-4E03-BFE8-74268A090173
 //详情
 #define URL_Detail   @"http://c.m.163.com/nc/article/C1VI2L8B00011229/full.html"
 

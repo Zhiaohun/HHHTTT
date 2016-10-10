@@ -11,8 +11,8 @@
 #import "RecommendTableViewController.h"
 #import "ScienceTableViewController.h"
 #import "EntertainmentTableViewController.h"
-#import "JokeTableViewController.h"
 #import "UIViewController+MMDrawerController.h"
+#import "SayingTableViewController.h"
 
 
 @interface NewsBaseViewController ()
@@ -26,7 +26,7 @@
 @implementation NewsBaseViewController
 -(NSArray *)categoriesArray{
     if (!_categoriesArray) {
-        _categoriesArray = @[@"推荐", @"科技", @"娱乐",@"游戏",@"笑话"];
+        _categoriesArray = @[@"推荐", @"科技", @"娱乐",@"游戏",@"语录"];
     }
     return _categoriesArray;
 }
@@ -36,8 +36,8 @@
         ScienceTableViewController *scienceVC = [[ScienceTableViewController alloc] init];
         EntertainmentTableViewController *entertainmentVC = [[EntertainmentTableViewController alloc] init];
         GameTableViewController *gameVC = [[GameTableViewController alloc] init];
-        JokeTableViewController *jokeVC = [[JokeTableViewController alloc] init];
-        _viewControllerArray = @[RecommendVC,scienceVC,entertainmentVC,gameVC,jokeVC];
+        SayingTableViewController *sayingVC = [[SayingTableViewController alloc] init];
+        _viewControllerArray = @[RecommendVC,scienceVC,entertainmentVC,gameVC,sayingVC];
     }
     return _viewControllerArray;
 }

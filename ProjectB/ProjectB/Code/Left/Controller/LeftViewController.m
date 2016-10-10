@@ -10,6 +10,7 @@
 #import "TimingCloseTableViewController.h"
 
 @interface LeftViewController ()
+@property (nonatomic, assign) BOOL state; //夜间 state=YES  白天 state=NO
 
 
 @end
@@ -42,6 +43,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.state = YES;
     
     [self initUI];
     
@@ -117,7 +120,31 @@
 
 
 - (IBAction)goodNight:(id)sender {
-    
+    /*
+    if (self.state) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"value",@"key", nil];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"night" object:@"projectB" userInfo: dic];
+        self.state = NO;
+    }else {
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"value",@"key", nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"day" object:@"projectB" userInfo: dic];
+        self.state = YES;
+    }
+     */
+   // UIButton *btn = (UIButton *)sender;
+    if (self.state) {
+        //        NSLog(@"是");
+        
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"value",@"key", nil];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"night" object:@"projectB" userInfo: dic];
+        self.state = NO;
+    }else {
+        
+        
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"value",@"key", nil];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"day" object:@"projectB" userInfo: dic];
+        self.state = YES;
+    }
     
 }
 

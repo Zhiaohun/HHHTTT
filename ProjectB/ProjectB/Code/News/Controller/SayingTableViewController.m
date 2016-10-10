@@ -1,75 +1,74 @@
 //
-//  JokeTableViewController.m
+//  SayingTableViewController.m
 //  ProjectB
 //
-//  Created by long on 2016/9/28.
+//  Created by long on 2016/10/10.
 //  Copyright © 2016年 long. All rights reserved.
 //
 
-#import "JokeTableViewController.h"
-#import "NewsJokeTableViewCell.h"
-#import "NewsJokeDataModels.h"
+#import "SayingTableViewController.h"
+#import "NewsSayingModel.h"
+#import "SayingTableViewCell.h"
 
-@interface JokeTableViewController ()
-@property (nonatomic, assign) NSInteger offset;
-@property (nonatomic, strong) NewsJokeBaseClass *jokeBaseModel;
-@property (nonatomic, strong) NSMutableArray *jokeArray;
-
+@interface SayingTableViewController ()
+@property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, strong) NSMutableArray *newsSayingArray;
+@property (nonatomic, assign) NSInteger maxBehotTime;
 @end
 
-@implementation JokeTableViewController
-
--(NSMutableArray *)jokeArray{
-    if (!_jokeArray) {
-        _jokeArray = [NSMutableArray array];
+@implementation SayingTableViewController
+-(NSMutableArray *)newsSayingArray{
+    if (!_newsSayingArray) {
+        _newsSayingArray = [NSMutableArray array];
     }
-    return _jokeArray;
+    return _newsSayingArray;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 50;
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.offset = 0;
+    NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];
+    self.maxBehotTime = (int)[date timeIntervalSince1970];
     [self headerRefresh];
     
-    UINib *jokeNib = [UINib nibWithNibName:@"NewsJokeTableViewCell" bundle:nil];
-    [self.tableView registerNib:jokeNib forCellReuseIdentifier:@"jokecell"];
+    UINib *sayingNib = [UINib nibWithNibName:@"SayingTableViewCell" bundle:nil];
+    [self.tableView registerNib:sayingNib forCellReuseIdentifier:@"sayingcell"];
+    
 }
 
+
 -(void)dataRequest{
-    NSString *str = @"size=20&spever=false&net=wifi&lat=&lon=&ts=1475758453&sign=F%2Budf9G%2FjoIsCyTRiS7QYYPJoiSkQa%2FaZ2VAgVdej2B48ErR02zJ6%2FKXOnxX046I&encryption=1&canal=appstore";
-    
-    
-    NSString *str1 = @"http://119.29.47.97/article/list/suggest?count=30&readarticles=%5B117705097%2C117710114%2C117705669%2C117704838%5D&page=1&AdID=1476010505874651D9267D";
-    NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_Joke,self.offset,str];
-    
-    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:str1 Parameter:nil Success:^(NSDictionary *dic) {
+    NSString *str = @"ac=wifi&channel=App%20Store&app_name=criticism_essay&version_code=2.4.1&device_platform=iphone&os_version=8.3&device_type=Unknown%20iPhone&vid=58F1D3DF-BA17-44EC-A91D-672F594EE1B0&openudid=00a575f72ecf898c2896f3bae7bf817bcba0f105&idfa=51D9267D-D8DA-4E03-BFE8-74268A090173";
+    NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_Saying,self.maxBehotTime,str];
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+        //  NSLog(@">>>>>>>%@",dic);
         
-        NSLog(@"_+_+_+_+_+_+_+_+__+_+_+_%@",dic);
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         
-        self.jokeBaseModel = [NewsJokeBaseClass modelObjectWithDictionary:dic];
-        for (NewsJokeInternalBaseClass1 *model in self.jokeBaseModel.myProperty1) {
-            [self.jokeArray addObject:model];
+        NSLog(@">>>>>>>>>>>>>>>>>>>>>>%@",dic[@"data"]);
+        NSArray *array = dic[@"data"];
+        for (NSDictionary *dic in array) {
+            NewsSayingModel *model = [[NewsSayingModel alloc] init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.newsSayingArray addObject:model];
+            NSLog(@"_+_+_+_+_+_+_+_+%@",model);
         }
+        NSLog(@"<<<<<<<<<<<%lu",self.newsSayingArray.count);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self footerRefresh];
-            
         });
     } Fail:^(NSError *error) {
         NSLog(@">>>>%@",error);
     }];
 }
-
 
 -(void)headerRefresh{
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -79,12 +78,13 @@
 }
 
 -(void)footerRefresh{
-    self.offset += 1;
+    self.maxBehotTime = (int)[[self.newsSayingArray lastObject] behot_time];
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [self dataRequest];
     }];
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -97,28 +97,49 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.jokeArray.count;
+    return self.newsSayingArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NewsJokeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"jokecell" forIndexPath:indexPath];
-    NewsJokeInternalBaseClass1 *model = self.jokeArray[indexPath.row];
+    SayingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sayingcell" forIndexPath:indexPath];
+    
+
+    NewsSayingModel *model = self.newsSayingArray[indexPath.row];
     cell.model = model;
+  
+    //给cell加上一层阴影,实现浮动效果
+    cell.cellView.backgroundColor = [UIColor whiteColor];
+    //给cellView边框设置阴影
+    cell.cellView.layer.shadowOffset = CGSizeMake(1,1);
+    cell.cellView.layer.shadowOpacity = 0.3;
+    cell.cellView.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     
     
     __weak typeof(cell) weakCell = cell;
-    cell.upBtnBlock = ^{
+    cell.upBtnActionBlock = ^{
         [weakCell.upBtn setImage:[UIImage imageNamed:@"duanzi_up_selected"] forState:UIControlStateSelected];
-        [weakCell.upBtn setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateSelected];
-        [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.upTimes + 1] forState:UIControlStateSelected];
-    };
+        [weakCell.upBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.digg_count + 1] forState:UIControlStateSelected];
+        };
     
-    cell.downBtnBlock = ^{
+    cell.downBtnActionBlock = ^{
         [weakCell.downBtn setImage:[UIImage imageNamed:@"duanzi_down_selected"] forState:UIControlStateSelected];
         [weakCell.downBtn setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
-        [weakCell.downBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.downTimes + 1] forState:UIControlStateSelected];
+        [weakCell.downBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.bury_count + 1] forState:UIControlStateSelected];
     };
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     return cell;
