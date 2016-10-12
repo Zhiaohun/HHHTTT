@@ -13,11 +13,15 @@
 #import "VideoCategoryCollectionViewController.h"
 #import "SongMenuTableViewController.h"
 #import "RankingBaseViewController.h"
+#import "UIImageEffects.h"
+
 
 
 @interface TotalViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) UIImageView *barImageView;
+
 @end
 
 @implementation TotalViewController
@@ -42,6 +46,10 @@
 -(void)initUI{
     self.title = @"书影音";
     
+    [self changeNavigation];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     _tableView.rowHeight = 100.0;
     _tableView.dataSource = self;
@@ -50,6 +58,33 @@
      [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.view addSubview:_tableView];
     
+}
+-(void)changeNavigation{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    _barImageView = self.navigationController.navigationBar.subviews.firstObject;
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat minAlphaOffset = - 64;
+    
+    CGFloat maxAlphaOffset = 200;
+    
+    CGFloat offset = scrollView.contentOffset.y;
+    
+    CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
+    
+    _barImageView.alpha = alpha;
+    
+}
+
+
+- (UIImage *)blurViewByLightEffectWithImage:(UIImage *)screenImage
+{
+    UIImage * blurImage = [UIImageEffects imageByApplyingLightEffectToImage:screenImage];
+    return blurImage;
 }
 
 #pragma mark - tableView Delegate -
@@ -64,6 +99,7 @@
     NSArray *arr = @[@"热门",@"图书",@"电影",@"音乐",@"排行榜"];
     cell.totalName.text = arr[indexPath.row];
     
+    cell.totalImg.image  = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]] ;
 //    int a = arc4random() % 255;
 //    int b = arc4random() % 255;
 //    int c = arc4random() % 255;

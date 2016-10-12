@@ -9,6 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeftViewController">
             <connections>
                 <outlet property="TMaxAndMin" destination="d2V-IB-wz5" id="xXs-Wf-mdE"/>
+                <outlet property="bgImg" destination="piu-YB-WNI" id="ZdV-Gg-j89"/>
                 <outlet property="currentTemperature" destination="m8D-CS-qJn" id="7hd-BI-E8G"/>
                 <outlet property="currentTime" destination="qgC-BW-hwh" id="0hV-Y1-bT6"/>
                 <outlet property="localCity" destination="qKj-l1-pJh" id="Wa7-xQ-uW2"/>
@@ -144,7 +145,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="天气" translatesAutoresizingMaskIntoConstraints="NO" id="Ggh-EE-AgT">
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="6Ro-za-hrA"/>
-                                <constraint firstAttribute="width" constant="47" id="tZD-En-1JN"/>
+                                <constraint firstAttribute="width" constant="36" id="tZD-En-1JN"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[08:44更新]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9p-VF-goF">
@@ -158,7 +159,7 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阴    22/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2V-IB-wz5">
                             <constraints>
-                                <constraint firstAttribute="width" constant="86" id="JZh-ZJ-SJS"/>
+                                <constraint firstAttribute="width" constant="93" id="JZh-ZJ-SJS"/>
                                 <constraint firstAttribute="height" constant="21" id="oKo-mx-eSn"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -187,8 +188,8 @@
                         <constraint firstItem="yoQ-B8-pYe" firstAttribute="leading" secondItem="YKe-Ca-RUP" secondAttribute="leading" id="4Rc-bp-Fmp"/>
                         <constraint firstItem="yoQ-B8-pYe" firstAttribute="leading" secondItem="YKe-Ca-RUP" secondAttribute="leading" id="55x-lC-JRE"/>
                         <constraint firstItem="e9p-VF-goF" firstAttribute="top" secondItem="F9u-2m-AaR" secondAttribute="bottom" id="7KO-7L-cqY"/>
-                        <constraint firstItem="d2V-IB-wz5" firstAttribute="leading" secondItem="Ggh-EE-AgT" secondAttribute="trailing" constant="15" id="81P-5x-Qu4"/>
-                        <constraint firstItem="d2V-IB-wz5" firstAttribute="centerX" secondItem="YKe-Ca-RUP" secondAttribute="centerX" constant="11.5" id="9np-Ap-La8"/>
+                        <constraint firstItem="d2V-IB-wz5" firstAttribute="leading" secondItem="Ggh-EE-AgT" secondAttribute="trailing" constant="19" id="81P-5x-Qu4"/>
+                        <constraint firstItem="d2V-IB-wz5" firstAttribute="centerX" secondItem="YKe-Ca-RUP" secondAttribute="centerX" constant="8" id="9np-Ap-La8"/>
                         <constraint firstItem="m8D-CS-qJn" firstAttribute="centerX" secondItem="YKe-Ca-RUP" secondAttribute="centerX" id="Cxa-zv-5C8"/>
                         <constraint firstAttribute="bottom" secondItem="d2V-IB-wz5" secondAttribute="bottom" constant="10" id="Dh2-ei-DL7"/>
                         <constraint firstItem="qgC-BW-hwh" firstAttribute="leading" secondItem="YKe-Ca-RUP" secondAttribute="leading" constant="18" id="GJY-5V-q8p"/>

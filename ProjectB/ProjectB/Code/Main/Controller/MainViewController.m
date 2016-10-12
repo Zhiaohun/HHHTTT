@@ -88,13 +88,7 @@
     self.imageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.view addSubview:self.imageView];
     self.imageView.backgroundColor = [UIColor lightGrayColor];
-    
-    self.itmeArray = [@[@"nimacghdsjghkjahsgkjhsakghsdjh",@"woqu",@"hello"]mutableCopy];
-    
-//    for (NSInteger i = 0; i < 8; i++) {
-//        
-//        [self.itmeArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)i]]];
-//    }
+
     
     self.imageView.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
     

@@ -12,6 +12,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *userImg;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *personalSentence;
