@@ -39,11 +39,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    if ([@"#" containsString:self.listModel.data.title]) {
+   // if ([@"#" containsString:self.listModel.data.title]) {
         self.title = [self.listModel.data.title substringFromIndex:1];
-    }else{
-        self.title = @"360全景";
-    }
+    //}else{
+    //    self.title = @"360全景";
+   // }
     
    // [self headerView];
    // self.tableView.frame = CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT);
@@ -55,6 +55,7 @@
 
     [self headerRefresh];
     [self goback];
+    [self headerView];
 }
 
 //自定义返回键
@@ -69,16 +70,16 @@
 
 -(void)headerView{
     VideoListHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"VideoListHeaderView" owner:nil options:nil][0];
-    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 40);
+    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 0);
     [headerView insertSubview:headerView.backgroundView atIndex:0];
     headerView.rightBtnView1.hidden = YES;
     headerView.rightBtnView2.hidden = YES;
     headerView.leftBtnView1.hidden = NO;
     headerView.leftBtnView2.hidden = NO;
     self.tableView.tableHeaderView = headerView;
-    
-    
+   
     headerView.dateBtnBlock = ^{
+
         self.startCount = 0;
         self.strategyType = @"date";
         [self headerRefresh];
@@ -86,6 +87,7 @@
     
     
     headerView.shareBtnBlock = ^{
+        
         self.startCount = 0;
         self.strategyType = @"shareCount";
         [self headerRefresh];
@@ -123,7 +125,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self footerRefresh];
-            [self headerView];
+            
         });
         
     } Fail:^(NSError *error) {

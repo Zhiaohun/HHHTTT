@@ -13,17 +13,21 @@
 #import "VideoCategoryDataModels.h"
 #import "VideoListDataModels.h"
 #import "YYScrollView.h"
+#import "MoviePlayerViewController.h"
 
 
-@interface VideoCategoryCollectionViewController ()<scrollViewClick>
+#import "NewPagedFlowView.h"
+#import "PGIndexBannerSubiew.h"
+
+@interface VideoCategoryCollectionViewController ()<NewPagedFlowViewDelegate, NewPagedFlowViewDataSource>
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) BaseClass *baseModel;
 @property (nonatomic, strong) NSMutableArray *videoDataArray;
 @property (nonatomic, strong) NSMutableArray *headerImageArray;
 @property (nonatomic, strong) NSMutableArray *headerDataArray;
 @property (nonatomic, strong) UIImageView *headerImageView;
+@property (nonatomic, strong) NewPagedFlowView *pageFlowView;
 
-@property (nonatomic, strong) YYScrollView *yyScroll;
 @end
 
 @implementation VideoCategoryCollectionViewController
@@ -61,7 +65,8 @@
     // Register cell classes
    
     
-   // [self headerDataRequest];
+     [self headerDataRequest];
+
     [self dataRequest];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -73,6 +78,11 @@
     
     [self goback];
     
+}
+
+-(void)setUpUI{
+    
+   
 }
 //自定义返回键
 -(void)goback{
@@ -87,9 +97,10 @@
 -(UICollectionViewFlowLayout *)flowLayout{
     if(!_flowLayout){
         _flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        _flowLayout.itemSize = CGSizeMake((VIEW_WIDTH-10)/2,140);
-        _flowLayout.minimumLineSpacing = 5;
-        _flowLayout.sectionInset = UIEdgeInsetsMake(5, 0, 5, 0);
+        _flowLayout.itemSize = CGSizeMake((VIEW_WIDTH-3)/2,140);
+        _flowLayout.minimumLineSpacing = 3;
+        _flowLayout.minimumInteritemSpacing = 3;
+        _flowLayout.sectionInset = UIEdgeInsetsMake(3, 0, 3, 0);
         _flowLayout.headerReferenceSize = CGSizeMake(VIEW_WIDTH, 180);
     }
     return _flowLayout;
@@ -106,8 +117,11 @@
            }
        }
        dispatch_async(dispatch_get_main_queue(), ^{
+          
            [self.collectionView reloadData];
-       });
+
+           
+        });
        
    } Fail:^(NSError *error) {
        NSLog(@">>>>>%@",error);
@@ -123,19 +137,21 @@
         
         NSArray *listArray = [NSArray array];
         listArray = sectionArray[0][@"itemList"];
-        
         for (NSDictionary *dic in listArray) {
-            VideoListItemList *model = [[VideoListItemList alloc] init];
-            [model setValuesForKeysWithDictionary:dic];
-            [self.headerDataArray addObject:model];
-            NSString *str = dic[@"data"][@"cover"][@"feed"];
-            [self.headerImageArray addObject:str];
-            NSLog(@">?>?>?>?>?>%@",self.headerImageArray);
-        
+            if ([dic[@"type"] isEqualToString:@"video"]) {
+                VideoListItemList *model = [[VideoListItemList alloc] init];
+                model = [VideoListItemList modelObjectWithDictionary:dic];
+                NSLog(@"++++++++++++++++++++++++++++++++%@",model);
+                [self.headerDataArray addObject:model];
+                NSString *str = dic[@"data"][@"cover"][@"feed"];
+                [self.headerImageArray addObject:str];
+          
+            }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.collectionView reloadData];
-            //_yyScroll = [YYScrollView initWithImages:self.headerDataArray];
+          [self.collectionView reloadData];
+           // [self setUpUI];
+
         });
         
     } Fail:^(NSError *error) {
@@ -174,10 +190,7 @@
 
 #pragma mark <UICollectionViewDataSource>
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -206,19 +219,31 @@
   
     
     
-    NSLog(@">>>>>>>>%lu",self.headerImageArray.count);
-   // [headerView addSubview:self.pageFlowView];
-    headerView.listModel = self.baseModel.itemList[3];
-    
-   //
-   //_yyScroll.delegate = self;
-   // [headerView addSubview:_yyScroll];
+  //  NSLog(@">>>>>>>>%lu",self.headerImageArray.count);
     
     
-    DWSwipeGestures *gesture = [[DWSwipeGestures alloc] init];
-    [gesture dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(tapHeaderViewAction) AddView:headerView BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
-        NSLog(@"%@",backSwipeGestureTypeString);
-    }];
+    _pageFlowView = [[NewPagedFlowView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, (VIEW_WIDTH - 84) * 9 / 16 + 24)];
+    _pageFlowView.backgroundColor = [UIColor whiteColor];
+    _pageFlowView.delegate = self;
+    _pageFlowView.dataSource = self;
+    _pageFlowView.minimumPageAlpha = 0.1;
+    _pageFlowView.minimumPageScale = 0.85;
+    _pageFlowView.orientation = NewPagedFlowViewOrientationHorizontal;
+    
+    //提前告诉有多少页
+    //    pageFlowView.orginPageCount = self.imageArray.count;
+    
+    _pageFlowView.isOpenAutoScroll = YES;
+    
+    //初始化pageControl
+    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _pageFlowView.frame.size.height - 24 - 8, VIEW_WIDTH, 8)];
+    _pageFlowView.pageControl = pageControl;
+    [_pageFlowView addSubview:pageControl];
+    
+    [_pageFlowView reloadData];
+    
+    
+    [headerView addSubview:_pageFlowView];
     
     return headerView;
     
@@ -262,6 +287,59 @@
 	
 }
 */
+
+
+#pragma mark NewPagedFlowView Delegate
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    
+   // return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return YES;
+}
+
+- (CGSize)sizeForPageInFlowView:(NewPagedFlowView *)flowView {
+    return CGSizeMake(VIEW_WIDTH - 84, (VIEW_WIDTH - 84) * 9 / 16);
+}
+
+- (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
+    
+    NSLog(@"点击了第%ld张图",(long)subIndex + 1);
+    
+    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
+    moviePlayVC.dataArray = [NSArray array];
+    moviePlayVC.dataArray = self.headerDataArray;
+    moviePlayVC.selectIndex = (long)subIndex + 1;
+    [self.navigationController pushViewController:moviePlayVC animated:YES];
+   
+}
+
+#pragma mark NewPagedFlowView Datasource
+- (NSInteger)numberOfPagesInFlowView:(NewPagedFlowView *)flowView {
+    NSLog(@"____________%lu",self.headerImageArray.count);
+    return self.headerImageArray.count;
+    
+}
+
+- (UIView *)flowView:(NewPagedFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
+    PGIndexBannerSubiew *bannerView = (PGIndexBannerSubiew *)[flowView dequeueReusableCell];
+    if (!bannerView) {
+        bannerView = [[PGIndexBannerSubiew alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH - 84, (VIEW_WIDTH - 84) * 9 / 16)];
+        bannerView.layer.cornerRadius = 4;
+        bannerView.layer.masksToBounds = YES;
+    }
+    //在这里下载网络图片
+    if (self.headerDataArray) {
+        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
+    }
+    
+    return bannerView;
+}
+
+- (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(NewPagedFlowView *)flowView {
+    
+    NSLog(@"ViewController 滚动到了第%ld页",pageNumber);
+}
+
 
 
 @end
