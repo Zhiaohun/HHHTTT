@@ -10,6 +10,7 @@
 
 @interface TotalTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *totalImg;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalName;
 @end

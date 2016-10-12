@@ -48,7 +48,7 @@
     _btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
     _btn1.frame = CGRectMake(0, 0, 50, 30);
     [_btn1 setTitle:@"详情" forState:UIControlStateNormal];
-    [_btn1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [_btn1 setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateNormal];
     [_btn1 addTarget:self action:@selector(readerDetail) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:_btn1];
     
@@ -83,14 +83,14 @@
 }
 
 -(void)readerDetail{
-    [_btn1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [_btn1 setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateNormal];
     [_btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     
     self.tableView.hidden = YES;
 }
 -(void)readerComment{
     [_btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [_btn2 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [_btn2 setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateNormal];
     
     self.tableView.hidden = NO;
     
@@ -104,6 +104,7 @@
     [_tableView registerNib:[UINib nibWithNibName:@"ReadCommentTableViewCell" bundle:nil] forCellReuseIdentifier:@"readCommentCell"];
     _tableView.estimatedRowHeight = 100;
     _tableView.rowHeight = UITableViewAutomaticDimension;
+    [_tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.view addSubview:_tableView];
     
     [self requestCommentData];
@@ -186,6 +187,13 @@
     else {
         cell.scoreStar.image = [UIImage imageNamed:@"五星"];
     }
+    
+    cell.cellView.backgroundColor = [UIColor whiteColor];
+    //给cellView边框设置阴影
+    cell.cellView.layer.shadowOffset = CGSizeMake(1,1);
+    cell.cellView.layer.shadowOpacity = 0.3;
+    cell.cellView.layer.shadowColor = [UIColor blackColor].CGColor;
+    
     return cell;
 }
 

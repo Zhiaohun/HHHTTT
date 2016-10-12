@@ -56,7 +56,9 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     LeftViewController *leftVC = [LeftViewController new];
-    MainViewController *mainVC = [MainViewController new];
+    
+    
+    MainViewController *mainVC = [[MainViewController alloc]init];
     UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     TotalViewController *totalVC = [TotalViewController new];
     UINavigationController *totalNav = [[UINavigationController alloc]initWithRootViewController:totalVC];

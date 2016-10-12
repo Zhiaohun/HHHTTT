@@ -52,8 +52,8 @@
     self.titleSizeNormal = 15;
     self.titleSizeSelected = 15;
     self.menuViewStyle = WMMenuViewStyleFlood;
-    self.titleColorNormal = [JudgeManager defaultManager].originColor;
-    self.progressColor = [UIColor colorWithRed:158.0/255.0 green:234.0/235.0 blue:4/255.0 alpha:1];
+    self.titleColorNormal = [UIColor grayColor];
+    self.progressColor = [JudgeManager defaultManager].originColor;
     self.menuViewLayoutMode = WMMenuViewLayoutModeCenter;
     self.menuItemWidth = 75;
     self.menuHeight = 40;

@@ -51,7 +51,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     HotListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotCell" forIndexPath:indexPath];
-    //[cell.requestMoreBtn addTarget:self action:@selector(requestMore) forControlEvents:UIControlEventTouchUpInside];
+    [cell.requestMoreBtn addTarget:self action:@selector(requestMore) forControlEvents:UIControlEventTouchUpInside];
     
     if (indexPath.row == 0) {
         cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
@@ -65,12 +65,12 @@
         cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
         cell.view1Title.text = @"三";
     }
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     
 }

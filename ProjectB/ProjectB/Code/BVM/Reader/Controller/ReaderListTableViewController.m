@@ -163,6 +163,14 @@
     cell.BookScore.text = [NSString stringWithFormat:@"%@%%",products.highCommonRate];
     [cell.BookImg sd_setImageWithURL:[NSURL URLWithString:products.imageUrl]];
     
+    //给cell加上一层阴影,实现浮动效果
+    cell.cellView.backgroundColor = [UIColor whiteColor];
+    //给cellView边框设置阴影
+    cell.cellView.layer.shadowOffset = CGSizeMake(1,1);
+    cell.cellView.layer.shadowOpacity = 0.3;
+    cell.cellView.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

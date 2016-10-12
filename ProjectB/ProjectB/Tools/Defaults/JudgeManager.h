@@ -19,4 +19,5 @@
 @property (nonatomic,strong) NSString *currentAbsract;
 
 
+@property (nonatomic,strong) NSString *content;
 @end

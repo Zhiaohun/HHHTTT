@@ -17,7 +17,10 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2A-b5-aIA">
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGV-3e-VbR">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XH-Mm-CMB">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGV-3e-VbR">
                                 <color key="backgroundColor" red="0.49161776680000002" green="0.82868637089999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="j37-JQ-jpp"/>
@@ -56,12 +59,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7XH-Mm-CMB" secondAttribute="trailing" constant="8" id="4sr-Mo-MLl"/>
                             <constraint firstAttribute="bottom" secondItem="VGV-3e-VbR" secondAttribute="bottom" id="92N-pg-55I"/>
+                            <constraint firstItem="7XH-Mm-CMB" firstAttribute="leading" secondItem="L2A-b5-aIA" secondAttribute="leading" constant="8" id="K0P-hU-0MX"/>
                             <constraint firstItem="omE-1B-oo8" firstAttribute="leading" secondItem="9G6-IY-iqK" secondAttribute="trailing" constant="8" id="LjD-nc-d3Z"/>
                             <constraint firstItem="E04-QS-5S7" firstAttribute="leading" secondItem="9G6-IY-iqK" secondAttribute="trailing" constant="8" id="LqT-Ue-DHq"/>
                             <constraint firstItem="9G6-IY-iqK" firstAttribute="leading" secondItem="L2A-b5-aIA" secondAttribute="leading" constant="8" id="Os6-fM-7fl"/>
                             <constraint firstAttribute="trailing" secondItem="Jms-bA-xiE" secondAttribute="trailing" constant="8" id="RUI-Gf-DJi"/>
+                            <constraint firstAttribute="bottom" secondItem="7XH-Mm-CMB" secondAttribute="bottom" constant="4" id="TAE-7c-dWL"/>
                             <constraint firstItem="9G6-IY-iqK" firstAttribute="top" secondItem="L2A-b5-aIA" secondAttribute="top" constant="8" id="VGt-3i-a0o"/>
+                            <constraint firstItem="7XH-Mm-CMB" firstAttribute="top" secondItem="L2A-b5-aIA" secondAttribute="top" constant="8" id="XLn-qk-kHp"/>
                             <constraint firstAttribute="trailing" secondItem="VGV-3e-VbR" secondAttribute="trailing" id="YXH-NP-g1J"/>
                             <constraint firstItem="VGV-3e-VbR" firstAttribute="leading" secondItem="L2A-b5-aIA" secondAttribute="leading" id="bDE-oy-Sxe"/>
                             <constraint firstItem="E04-QS-5S7" firstAttribute="top" secondItem="Jms-bA-xiE" secondAttribute="bottom" constant="3" id="ccs-eT-SGD"/>
@@ -85,6 +92,7 @@
                 <outlet property="BookName" destination="omE-1B-oo8" id="4Ll-De-D7Q"/>
                 <outlet property="BookScore" destination="E04-QS-5S7" id="rla-dM-bTY"/>
                 <outlet property="BookWriter" destination="Jms-bA-xiE" id="24f-hd-LDN"/>
+                <outlet property="cellView" destination="7XH-Mm-CMB" id="0cg-en-dOC"/>
             </connections>
             <point key="canvasLocation" x="1.5" y="51"/>
         </tableViewCell>

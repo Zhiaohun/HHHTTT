@@ -36,7 +36,7 @@
     
     
     [self.tableView registerNib:[UINib nibWithNibName:@"TimingCloseTableViewCell" bundle:nil] forCellReuseIdentifier:@"timingCell"];
-    UIImage *image = [[UIImage imageNamed:@"goback"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(goback)];
     self.tableView.tableFooterView = [[UIView alloc]init];
 }

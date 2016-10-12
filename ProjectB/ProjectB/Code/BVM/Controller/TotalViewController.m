@@ -64,10 +64,16 @@
     NSArray *arr = @[@"热门",@"图书",@"电影",@"音乐",@"排行榜"];
     cell.totalName.text = arr[indexPath.row];
     
-    int a = arc4random() % 255;
-    int b = arc4random() % 255;
-    int c = arc4random() % 255;
-    cell.backgroundColor = [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:1];
+//    int a = arc4random() % 255;
+//    int b = arc4random() % 255;
+//    int c = arc4random() % 255;
+//    cell.backgroundColor = [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:1];
+    
+    cell.cellView.backgroundColor = [UIColor whiteColor];
+    //给cellView边框设置阴影
+    cell.cellView.layer.shadowOffset = CGSizeMake(1,1);
+    cell.cellView.layer.shadowOpacity = 0.3;
+    cell.cellView.layer.shadowColor = [UIColor blackColor].CGColor;
     
     return cell;
 }

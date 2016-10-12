@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *commentTime;
 @property (weak, nonatomic) IBOutlet UIImageView *scoreStar;
 @property (weak, nonatomic) IBOutlet UILabel *commentContent;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
 
 @end

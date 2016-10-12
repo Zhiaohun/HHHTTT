@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *BookName;
 @property (weak, nonatomic) IBOutlet UILabel *BookWriter;
 @property (weak, nonatomic) IBOutlet UILabel *BookScore;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
 
 @end
