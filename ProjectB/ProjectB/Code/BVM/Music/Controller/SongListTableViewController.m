@@ -154,7 +154,7 @@
             SongDownloadManager *manager = [SongDownloadManager defaultManager];
             if (!self.isDownloading) {
                 
-                [LLShowHUD showHUD:self.view Message:@"正在下载..." AfterDelay:0.5];
+                [LLShowHUD showHUD:self.navigationController.view Message:@"正在下载..." AfterDelay:1];
                 
                 DownLoad *download = [manager addDownloadTaskWithURL:self.downloadBaseModel.downloadUrl];
                 [download startDownLoad];
@@ -172,7 +172,8 @@
                     [manager createTable];
                     [manager insertSongWithModel:model];
                     
-                    [LLShowHUD showHUD:self.view Message:@"下载完成!" AfterDelay:0];
+                    
+                    [LLShowHUD showCustomViewHUD:self.navigationController.view ImageName:@"yes" Message:@"下载完成!" AfterDelay:1];
 
                     
                 };
@@ -211,6 +212,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SongListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songlistcell" forIndexPath:indexPath];
+    
+    
+  /*  //cell重用
+    if (cell.downloadBtn.tag-100 != indexPath.row) {
+        [cell.downloadBtn setImage:[UIImage imageNamed:@"download_normal"] forState:UIControlStateNormal];
+    }else{
+       
+        [cell.downloadBtn setImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
+    }
+    
+    */
+    
     
     MusicListList *listModel = self.musicListArray[indexPath.row];
     cell.listModel = listModel;
