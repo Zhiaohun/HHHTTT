@@ -30,6 +30,11 @@
     
     DownloadDBManager *manager = [DownloadDBManager defaultManager];
     self.dataArray = [manager selectAllSong];
+    if (self.dataArray.count <= 0) {
+        self.tableView.startTip = YES;
+        self.tableView.tipTitle = @"您暂无下载内容!";
+        self.tableView.tipImage = [UIImage imageNamed:@"nomessage"];
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

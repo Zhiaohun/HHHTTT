@@ -117,6 +117,8 @@
     CommentModel *model = self.commentArray[indexPath.row];
     cell.model = model;
     
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     return cell;
 }
 

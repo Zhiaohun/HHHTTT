@@ -18,6 +18,9 @@
 #import "LLShowHUD.h"
 
 @interface SongListTableViewController ()
+{
+    int _maxPageId;
+}
 @property (nonatomic, strong) SongListHeaderView *headerView;
 @property (nonatomic, strong) MusicListBaseClass *listBaseModel;
 @property (nonatomic, strong) NSMutableArray *musicListArray;
@@ -82,8 +85,15 @@
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         
         [self.tableView.mj_footer endRefreshing];
+       // NSLog(@">>>>>>>%@",dic);
+       
         
         
+       // NSDictionary *d =dic[@"data"][@"tracks"];
+        NSDictionary *d = [NSDictionary dictionary];
+        d = dic[@"data"][@"tracks"];
+       NSLog(@">>>>>>>>>++++++++++%@",d);
+        NSLog(@"_+_+_++_+_+_+%d",(int)d[@"maxPageId"]);
         self.listBaseModel = [MusicListBaseClass modelObjectWithDictionary:dic];
         for (MusicListList *listModel in self.listBaseModel.data.tracks.list) {
             [self.musicListArray addObject:listModel];
@@ -105,10 +115,10 @@
     
     NSLog(@"%@",URLStr);
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
-    
-        [self.tableView.mj_footer endRefreshing];
+        
         NSArray *array = dic[@"data"][@"list"];
-        NSLog(@"_+_+_+_+_+_%@",dic);
+        
+      
         for (NSDictionary *dic in array) {
             MusicListList *listModel = [MusicListList modelObjectWithDictionary:dic];
             [self.musicListArray addObject:listModel];
@@ -116,6 +126,7 @@
    
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
+           [self.tableView.mj_footer endRefreshing];
             [self footerRefresh];
         });
     } Fail:^(NSError *error) {
@@ -125,9 +136,9 @@
 
 -(void)dataRequestDownloadWithUid:(int)uid Track:(int)track{
     NSString *URLStr = [NSString stringWithFormat:@"%@/%d/track/%d",URL_DownLoad,uid,track];
-    NSLog(@">>>>>>>>>>>>>>>>>%@",URLStr);
+   // NSLog(@">>>>>>>>>>>>>>>>>%@",URLStr);
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
-        NSLog(@">>>>>>>>>%@",dic);
+      //  NSLog(@">>>>>>>>>%@",dic);
         self.downloadBaseModel = [MusicDownloadBaseClass modelObjectWithDictionary:dic];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -167,10 +178,14 @@
 }
 
 -(void)footerRefresh{
-    self.pageId++;
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [self dataRequestMore];
-    }];
+   
+    //if (self.pageId <= _maxPageId) {
+        self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+             self.pageId++;
+            [self dataRequestMore];
+        }];
+    //}
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
