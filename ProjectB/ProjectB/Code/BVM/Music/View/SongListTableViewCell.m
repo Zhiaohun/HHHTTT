@@ -31,6 +31,15 @@
     self.songListTitleLabel.text = listModel.title;
     self.songListPlayTimesLabel.text = [NSString stringWithFormat:@"%d",(int)listModel.playtimes];
     self.songListDurationLabel.text = [NSString stringWithFormat:@"%02d:%02d",(int)listModel.duration/60,(int)listModel.duration%60];
+    
+    
 }
+- (IBAction)downloadBtnAction:(id)sender {
+    UIButton *btn = (UIButton *)sender;
+    if (self.downloadSongBlock) {
+        self.downloadSongBlock(btn.tag);
+    }
+}
+
 
 @end

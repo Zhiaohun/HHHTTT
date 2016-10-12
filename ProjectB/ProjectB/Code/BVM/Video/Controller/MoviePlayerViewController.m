@@ -120,7 +120,7 @@
 #pragma mark - 创建UISlider
 - (void)createSlider
 {
-    self.slider = [[UISlider alloc]initWithFrame:CGRectMake(100, _height-38, _width * 0.7, 15)];
+    self.slider = [[UISlider alloc]initWithFrame:CGRectMake(52, _height-38, _width * 0.78, 15)];
     [self.backView addSubview:_slider];
     [_slider setThumbImage:[UIImage imageNamed:@"iconfont-yuan.png"] forState:UIControlStateNormal];
     [_slider addTarget:self action:@selector(progressSlider:) forControlEvents:UIControlEventValueChanged];
@@ -160,7 +160,7 @@
 #pragma mark - 创建UIProgressView
 - (void)createProgress
 {
-    self.progress = [[UIProgressView alloc]initWithFrame:CGRectMake(98, _height-32, _width * 0.69, 15)];
+    self.progress = [[UIProgressView alloc]initWithFrame:CGRectMake(50, _height-32, _width * 0.78, 15)];
     [_backView addSubview:_progress];
 }
 #pragma mark -
@@ -253,12 +253,13 @@
 
     }
     [startButton addTarget:self action:@selector(startAction:) forControlEvents:UIControlEventTouchUpInside];
-    
+   
+    /*
     UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
     nextButton.frame = CGRectMake(55, _height-47, 32, 32);
     [self.backView addSubview:nextButton];
     [nextButton setBackgroundImage:[UIImage imageNamed:@"nextPlayer"] forState:UIControlStateNormal];
-    
+    */
     
 }
 #pragma mark - 播放暂停按钮方法

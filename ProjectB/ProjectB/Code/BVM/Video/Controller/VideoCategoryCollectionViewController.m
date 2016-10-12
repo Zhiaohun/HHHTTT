@@ -11,16 +11,45 @@
 #import "VideoHeaderCollectionViewCell.h"
 #import "VideoListTableViewController.h"
 #import "VideoCategoryDataModels.h"
-@interface VideoCategoryCollectionViewController ()
+#import "VideoListDataModels.h"
+#import "YYScrollView.h"
+
+
+@interface VideoCategoryCollectionViewController ()<scrollViewClick>
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) BaseClass *baseModel;
 @property (nonatomic, strong) NSMutableArray *videoDataArray;
+@property (nonatomic, strong) NSMutableArray *headerImageArray;
+@property (nonatomic, strong) NSMutableArray *headerDataArray;
+@property (nonatomic, strong) UIImageView *headerImageView;
+
+@property (nonatomic, strong) YYScrollView *yyScroll;
 @end
 
 @implementation VideoCategoryCollectionViewController
 
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = YES;
+}
+
+-(NSMutableArray *)videoDataArray{
+    if (!_videoDataArray) {
+        _videoDataArray = [NSMutableArray array];
+    }
+    return _videoDataArray;
+}
+-(NSMutableArray *)headerImageArray{
+    if (!_headerImageArray) {
+        _headerImageArray = [NSMutableArray array];
+    }
+    return _headerImageArray;
+}
+
+-(NSMutableArray *)headerDataArray{
+    if (!_headerDataArray) {
+        _headerDataArray = [NSMutableArray array];
+    }
+    return _headerDataArray;
 }
 
 - (void)viewDidLoad {
@@ -31,6 +60,8 @@
     
     // Register cell classes
    
+    
+   // [self headerDataRequest];
     [self dataRequest];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -64,16 +95,11 @@
     return _flowLayout;
 }
 
--(NSMutableArray *)videoDataArray{
-    if (!_videoDataArray) {
-        _videoDataArray = [NSMutableArray array];
-    }
-    return _videoDataArray;
-}
+
 -(void)dataRequest{
    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_VideoList Parameter:nil Success:^(NSDictionary *dic) {
        self.baseModel = [BaseClass modelObjectWithDictionary:dic];
-       NSLog(@"%@",self.baseModel);
+      // NSLog(@"%@",self.baseModel);
        for (int i= 0; i < self.baseModel.itemList.count; i++) {
            if (i > 3) {
                [self.videoDataArray addObject:self.baseModel.itemList[i]];
@@ -89,6 +115,35 @@
 }
 
 
+-(void)headerDataRequest{
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_VideoHeader Parameter:nil Success:^(NSDictionary *dic) {
+        
+        NSArray *sectionArray = [NSArray array];
+        sectionArray = dic[@"sectionList"];
+        
+        NSArray *listArray = [NSArray array];
+        listArray = sectionArray[0][@"itemList"];
+        
+        for (NSDictionary *dic in listArray) {
+            VideoListItemList *model = [[VideoListItemList alloc] init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.headerDataArray addObject:model];
+            NSString *str = dic[@"data"][@"cover"][@"feed"];
+            [self.headerImageArray addObject:str];
+            NSLog(@">?>?>?>?>?>%@",self.headerImageArray);
+        
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+            //_yyScroll = [YYScrollView initWithImages:self.headerDataArray];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@"_+_+_+_+%@",error);
+    }];
+    
+    
+}
 
 
 
@@ -98,6 +153,10 @@
     videoListVC.listModel = self.baseModel.itemList[3];
     [self.navigationController pushViewController:videoListVC animated:YES];
 }
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -114,6 +173,11 @@
 */
 
 #pragma mark <UICollectionViewDataSource>
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -139,8 +203,17 @@
     
     
     VideoHeaderCollectionViewCell *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind  withReuseIdentifier:@"videoheadercell" forIndexPath:indexPath];
+  
     
+    
+    NSLog(@">>>>>>>>%lu",self.headerImageArray.count);
+   // [headerView addSubview:self.pageFlowView];
     headerView.listModel = self.baseModel.itemList[3];
+    
+   //
+   //_yyScroll.delegate = self;
+   // [headerView addSubview:_yyScroll];
+    
     
     DWSwipeGestures *gesture = [[DWSwipeGestures alloc] init];
     [gesture dw_SwipeGestureType:DWTapGesture Target:self Action:@selector(tapHeaderViewAction) AddView:headerView BackSwipeGestureTypeString:^(NSString * _Nonnull backSwipeGestureTypeString) {
@@ -189,5 +262,6 @@
 	
 }
 */
+
 
 @end

@@ -7,7 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FMDB.h"
+#import "DownloadModel.h"
 
 @interface DownloadDBManager : NSObject
+
+@property (nonatomic, strong) FMDatabase *db;
+
++(instancetype)defaultManager;
+
+-(void)createTable;
+
+-(void)insertSongWithModel:(DownloadModel *)model;
+
+-(void)deleteSongWithSongName:(NSString *)songName;
+
+-(NSArray<DownloadModel *> *)selectAllSong;
+
+
+
+
+
 
 @end

@@ -23,7 +23,7 @@
     self = [super init];
     if (self) {
         //让数据库操作对象唯一
-        NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/Project-B.sqlite"];
+        NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/UserInfoDB.sqlite"];
         NSLog(@"dbPath____%@",dbPath);
         _db = [FMDatabase databaseWithPath:dbPath];
         if (![_db open]) {
