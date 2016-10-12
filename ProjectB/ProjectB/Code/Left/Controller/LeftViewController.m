@@ -64,7 +64,8 @@
     self.userImg.layer.borderColor = [UIColor cyanColor].CGColor;
     self.userImg.layer.borderWidth = 3;
     
-    self.bgImg.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
+    //毛玻璃效果
+//    self.bgImg.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
     
    
     

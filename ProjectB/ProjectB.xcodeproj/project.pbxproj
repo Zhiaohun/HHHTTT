@@ -227,6 +227,8 @@
 		5DF67D121DAE53F700A1B9D5 /* MainTextcardlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D0E1DAE53F700A1B9D5 /* MainTextcardlist.m */; };
 		5DF67D161DAE544300A1B9D5 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D141DAE544300A1B9D5 /* MainView.m */; };
 		5DF67D171DAE544300A1B9D5 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF67D151DAE544300A1B9D5 /* MainView.xib */; };
+		5DF67D1F1DAE697900A1B9D5 /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D1B1DAE697900A1B9D5 /* PGIndexBannerSubiew.m */; };
+		5DF67D201DAE697900A1B9D5 /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D1E1DAE697900A1B9D5 /* NewPagedFlowView.m */; };
 		A08776C5486BA27496832BBC /* libPods-ProjectB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC06D34C79C8B06836926D6 /* libPods-ProjectB.a */; };
 /* End PBXBuildFile section */
 
@@ -630,6 +632,10 @@
 		5DF67D131DAE544300A1B9D5 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		5DF67D141DAE544300A1B9D5 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 		5DF67D151DAE544300A1B9D5 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		5DF67D1A1DAE697900A1B9D5 /* PGIndexBannerSubiew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGIndexBannerSubiew.h; sourceTree = "<group>"; };
+		5DF67D1B1DAE697900A1B9D5 /* PGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGIndexBannerSubiew.m; sourceTree = "<group>"; };
+		5DF67D1D1DAE697900A1B9D5 /* NewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPagedFlowView.h; sourceTree = "<group>"; };
+		5DF67D1E1DAE697900A1B9D5 /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
 		A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.debug.xcconfig"; sourceTree = "<group>"; };
 		BFC06D34C79C8B06836926D6 /* libPods-ProjectB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.release.xcconfig"; sourceTree = "<group>"; };
@@ -1308,6 +1314,7 @@
 		3FA4E6071D9AB1510090AC78 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				5DF67D181DAE697900A1B9D5 /* Classes */,
 				3F6C40401DAD2137005CC6B0 /* YYScrollView */,
 				3F2961951DAA38F3001934A9 /* KNBannerView */,
 				3FA4E6081D9AB1510090AC78 /* Reachability.h */,
@@ -1726,6 +1733,33 @@
 			path = MainModel;
 			sourceTree = "<group>";
 		};
+		5DF67D181DAE697900A1B9D5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5DF67D191DAE697900A1B9D5 /* CustomeView */,
+				5DF67D1C1DAE697900A1B9D5 /* NewPagedFlowView */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5DF67D191DAE697900A1B9D5 /* CustomeView */ = {
+			isa = PBXGroup;
+			children = (
+				5DF67D1A1DAE697900A1B9D5 /* PGIndexBannerSubiew.h */,
+				5DF67D1B1DAE697900A1B9D5 /* PGIndexBannerSubiew.m */,
+			);
+			path = CustomeView;
+			sourceTree = "<group>";
+		};
+		5DF67D1C1DAE697900A1B9D5 /* NewPagedFlowView */ = {
+			isa = PBXGroup;
+			children = (
+				5DF67D1D1DAE697900A1B9D5 /* NewPagedFlowView.h */,
+				5DF67D1E1DAE697900A1B9D5 /* NewPagedFlowView.m */,
+			);
+			path = NewPagedFlowView;
+			sourceTree = "<group>";
+		};
 		CB33ABD8255A0628C7C6E333 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1778,7 +1812,7 @@
 				TargetAttributes = {
 					3FA4E5DE1D9AB1070090AC78 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = H3C2H2Z8NB;
+						DevelopmentTeam = S2CRPD33DC;
 					};
 				};
 			};
@@ -1935,6 +1969,7 @@
 				5DA8EB481D9BC2B1006DAECD /* TotalTableViewCell.m in Sources */,
 				5DF554B91DA8E1AD00DFCBEC /* MyTracksDBManager.m in Sources */,
 				3F04BF9F1D9B7551005CCA03 /* SongListTableViewController.m in Sources */,
+				5DF67D1F1DAE697900A1B9D5 /* PGIndexBannerSubiew.m in Sources */,
 				3FA5EE381D9DFC230020E8CC /* ReadRankingListTableViewController.m in Sources */,
 				3F04707D1D9C09EA00DAD187 /* RecommendTableViewController.m in Sources */,
 				5DF67D161DAE544300A1B9D5 /* MainView.m in Sources */,
@@ -2013,6 +2048,7 @@
 				3F2961851DAA384E001934A9 /* NewsEntertainmentImgextra.m in Sources */,
 				5D29E9F31D9CB0DC00213A82 /* DWSwipeGestures.m in Sources */,
 				5DA8EB311D9BB48C006DAECD /* LeftViewController.m in Sources */,
+				5DF67D201DAE697900A1B9D5 /* NewPagedFlowView.m in Sources */,
 				3FB7B86A1DADE033006C9B6B /* DownloadModel.m in Sources */,
 				3FA4E60C1D9AB1510090AC78 /* Reachability.m in Sources */,
 				3FA5EE351D9DFC230020E8CC /* MusicRankingListTableViewController.m in Sources */,
@@ -2194,7 +2230,7 @@
 			baseConfigurationReference = A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3C2H2Z8NB;
+				DEVELOPMENT_TEAM = S2CRPD33DC;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -2210,7 +2246,7 @@
 			baseConfigurationReference = FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3C2H2Z8NB;
+				DEVELOPMENT_TEAM = S2CRPD33DC;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

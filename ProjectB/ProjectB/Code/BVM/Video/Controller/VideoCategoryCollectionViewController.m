@@ -35,6 +35,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = YES;
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear: YES];
+    [self.navigationController setValue:[UINavigationBar new] forKey:@"navigationBar"];
+}
 
 -(NSMutableArray *)videoDataArray{
     if (!_videoDataArray) {
@@ -64,6 +68,8 @@
     
     // Register cell classes
    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
     
      [self headerDataRequest];
 

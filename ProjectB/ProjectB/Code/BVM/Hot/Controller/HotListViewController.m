@@ -24,6 +24,12 @@
 
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear: YES];
+    
+    [self.navigationController setValue:[UINavigationBar new] forKey:@"navigationBar"];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -32,6 +38,9 @@
 #pragma mark - private Menthod -
 -(void)initUI{
     self.title = @"热门";
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    
     self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     _tableView.rowHeight = 342;
     _tableView.dataSource = self;

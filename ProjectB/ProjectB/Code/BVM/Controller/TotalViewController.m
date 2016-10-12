@@ -45,8 +45,8 @@
 #pragma mark - private Method -
 -(void)initUI{
     self.title = @"书影音";
-    
-    [self changeNavigation];
+    //设置导航栏透明
+    //[self changeNavigation];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -62,23 +62,8 @@
 -(void)changeNavigation{
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
-    _barImageView = self.navigationController.navigationBar.subviews.firstObject;
 }
 
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
-    CGFloat minAlphaOffset = - 64;
-    
-    CGFloat maxAlphaOffset = 200;
-    
-    CGFloat offset = scrollView.contentOffset.y;
-    
-    CGFloat alpha = (offset - minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
-    
-    _barImageView.alpha = alpha;
-    
-}
 
 
 - (UIImage *)blurViewByLightEffectWithImage:(UIImage *)screenImage
