@@ -309,12 +309,12 @@
 
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     
-    NSLog(@"点击了第%ld张图",(long)subIndex + 1);
+    NSLog(@"点击了第%ld张图",(long)subIndex+1);
     
     MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
     moviePlayVC.dataArray = [NSArray array];
     moviePlayVC.dataArray = self.headerDataArray;
-    moviePlayVC.selectIndex = (long)subIndex + 1;
+    moviePlayVC.selectIndex = (long)subIndex;
     [self.navigationController pushViewController:moviePlayVC animated:YES];
    
 }
