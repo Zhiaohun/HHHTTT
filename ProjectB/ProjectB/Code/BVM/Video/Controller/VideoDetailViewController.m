@@ -10,6 +10,7 @@
 #import "VideoListDataModels.h"
 #import "MoviePlayerViewController.h"
 #import "UIImageView+imageViewAnimation.h"
+#import "LLShowHUD.h"
 
 @interface VideoDetailViewController ()
 @property (nonatomic, strong) VideoListItemList *listModel;
@@ -29,6 +30,8 @@
 @property (nonatomic, assign) CGFloat offSet;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *countLabelX;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressViewX;
+
+@property (nonatomic, assign) BOOL isCollectionBtnSelected;
 
 
 
@@ -144,6 +147,24 @@
     
     
     
+}
+- (IBAction)shareBtnAction:(id)sender {
+}
+- (IBAction)cacheBtnAction:(id)sender {
+}
+- (IBAction)cololectionAction:(id)sender {
+    
+    if (!self.isCollectionBtnSelected) {
+        [self.collectionBtn setTitle:[NSString stringWithFormat:@"%d",(int)self.listModel.data.consumption.collectionCount + 1] forState:UIControlStateNormal];
+        [self.collectionBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [self.collectionBtn setImage:[UIImage imageNamed:@"global_comment_praised"] forState:UIControlStateNormal];
+        [self.collectionBtn.imageView spotAnimation];
+        self.isCollectionBtnSelected = YES;
+        
+    }else{
+        [LLShowHUD showHUD:self.view Message:@"你已经赞过了!" AfterDelay:0.5];
+    }
+   
 }
 
 

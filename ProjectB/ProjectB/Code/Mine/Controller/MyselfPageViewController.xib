@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyselfPageViewController">
             <connections>
-                <outlet property="personalSen" destination="FQ8-yH-1Ff" id="5bY-H2-ECK"/>
+                <outlet property="birth" destination="7aA-Fv-ekf" id="pHT-8q-ICG"/>
+                <outlet property="city" destination="vQO-8Q-PaI" id="G5A-MH-Psv"/>
+                <outlet property="nickName" destination="F7A-cR-H1J" id="0JL-1V-LGd"/>
+                <outlet property="personal" destination="FQ8-yH-1Ff" id="Vjc-zq-OYn"/>
+                <outlet property="selfImageView" destination="9kn-nL-l7C" id="0kV-Em-CdN"/>
+                <outlet property="sex" destination="t8t-bx-4TW" id="MvI-Vi-Mdh"/>
                 <outlet property="userImg" destination="9kn-nL-l7C" id="5e7-aF-pd0"/>
                 <outlet property="username" destination="F7A-cR-H1J" id="zHD-tF-3vB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -120,7 +125,7 @@
                         <constraint firstItem="XSY-qo-ErU" firstAttribute="leading" secondItem="39P-1A-2IW" secondAttribute="leading" constant="14" id="zCe-g6-t8C"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="9kn-nL-l7C">
+                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="9kn-nL-l7C">
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="B43-Ob-Qgz"/>
                         <constraint firstAttribute="height" constant="100" id="ZGH-5v-7nI"/>

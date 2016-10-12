@@ -32,6 +32,10 @@
 #import "MBProgressHUD.h"
 #import "FMDB.h"
 
+//分类
+#import "UIView+CellAnimation.h"
+#import "UIImageView+imageViewAnimation.h"
+#import "UIView+ShadowView.h"
 
 
 

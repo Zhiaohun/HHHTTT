@@ -30,7 +30,7 @@
 #define URL_CommentMore @"http://mobile.ximalaya.com/mobile/track/comment?device=iPhone&pageId" //=1&pageSize=30&trackId=21794260
 
 //下载
-#define URL_DownLoad   @"http://mobile.ximalaya.com/mobile/download/7178199/track/17484646"
+#define URL_DownLoad   @"http://mobile.ximalaya.com/mobile/download"  ///7178199/track/17484646
 ////评论
 //#define URL_Comment  @"http://mobileapi.5sing.kugou.com/comments/list?rootId=15214293&rootKind=fc&maxId=0&limit=30"
 ////新歌排行榜
@@ -41,6 +41,7 @@
 
 //视频
 //视频类别
+#define URL_VideoHeader  @"http://baobab.wandoujia.com/api/v3/tabs/selected"
 #define URL_VideoList   @"http://baobab.wandoujia.com/api/v3/discovery"
 //视频列表
 #define URL_NORMAL  @"http://baobab.wandoujia.com/api/v3/videos" //normal  GET

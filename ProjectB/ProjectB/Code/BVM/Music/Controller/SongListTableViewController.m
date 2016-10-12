@@ -11,12 +11,19 @@
 #import "SongListTableViewCell.h"
 #import "MusicListDataModels.h"
 #import "SongPlayTableViewController.h"
+#import "MusicDownloadDataModels.h"
+#import "SongDownloadManager.h"
+#import "DownloadModel.h"
+#import "DownloadDBManager.h"
+#import "LLShowHUD.h"
 
 @interface SongListTableViewController ()
 @property (nonatomic, strong) SongListHeaderView *headerView;
 @property (nonatomic, strong) MusicListBaseClass *listBaseModel;
 @property (nonatomic, strong) NSMutableArray *musicListArray;
 @property (nonatomic, assign) NSInteger pageId;
+@property (nonatomic, strong) MusicDownloadBaseClass *downloadBaseModel;
+@property (nonatomic, assign) BOOL isDownloading;
 
 @end
 
@@ -116,6 +123,48 @@
     }];
 }
 
+-(void)dataRequestDownloadWithUid:(int)uid Track:(int)track{
+    NSString *URLStr = [NSString stringWithFormat:@"%@/%d/track/%d",URL_DownLoad,uid,track];
+    NSLog(@">>>>>>>>>>>>>>>>>%@",URLStr);
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+        NSLog(@">>>>>>>>>%@",dic);
+        self.downloadBaseModel = [MusicDownloadBaseClass modelObjectWithDictionary:dic];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            
+            SongDownloadManager *manager = [SongDownloadManager defaultManager];
+            if (!self.isDownloading) {
+                
+                [LLShowHUD showHUD:self.view Message:@"正在下载..." AfterDelay:0.5];
+                
+                DownLoad *download = [manager addDownloadTaskWithURL:self.downloadBaseModel.downloadUrl];
+                [download startDownLoad];
+                download.downLoadProgressBlock = ^(int progress){
+                    NSLog(@">>>>>>>>>>>>>>>>>%d",progress);
+                };
+                download.downLoadPathBlock = ^(NSString *path){
+                    DownloadModel *model = [[DownloadModel alloc] init];
+                    model.path = path;
+                    model.songName = self.downloadBaseModel.title;
+                    model.imageURL = self.downloadBaseModel.albumCoverMiddle;
+                    model.songDuration = [NSString stringWithFormat:@"%d",(int)self.downloadBaseModel.duration];
+                    model.albumTitle = self.downloadBaseModel.albumTitle;
+                    DownloadDBManager *manager = [DownloadDBManager defaultManager];
+                    [manager createTable];
+                    [manager insertSongWithModel:model];
+                    
+                    [LLShowHUD showHUD:self.view Message:@"下载完成!" AfterDelay:0];
+
+                    
+                };
+
+            }
+          
+                   });
+    } Fail:^(NSError *error) {
+        NSLog(@">>>>>%@",error);
+    }];
+}
 
 -(void)footerRefresh{
     self.pageId++;
@@ -144,11 +193,27 @@
     
     MusicListList *listModel = self.musicListArray[indexPath.row];
     cell.listModel = listModel;
-    
+    cell.downloadBtn.tag = 100+indexPath.row;
     
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    
+   
+    __weak typeof(cell) weakCell = cell;
+    cell.downloadSongBlock = ^(NSInteger tag){
+       // SongListTableViewCell *selectCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:tag-100 inSection:0]];
+         MusicListList *selectModel = self.musicListArray[tag-100];
+        [self dataRequestDownloadWithUid:(int)selectModel.uid Track:(int)selectModel.trackId];
+        [weakCell.downloadBtn setImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
+    };
+    
+   
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [UIView cellAnimationTwo:cell];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

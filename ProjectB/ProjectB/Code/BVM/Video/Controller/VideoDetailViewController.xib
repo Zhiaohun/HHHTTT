@@ -45,6 +45,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="缓存" image="download"/>
+                    <connections>
+                        <action selector="cacheBtnAction:" destination="-1" eventType="touchUpInside" id="ldn-Gl-c8v"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrT-t2-QKC">
                     <constraints>
@@ -86,7 +89,10 @@
                         <constraint firstAttribute="height" constant="17" id="L4a-fD-2tk"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" image="collection"/>
+                    <state key="normal" image="global_comment_praise"/>
+                    <connections>
+                        <action selector="cololectionAction:" destination="-1" eventType="touchUpInside" id="e0a-il-dqv"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2D-8Y-mx0">
                     <constraints>
@@ -95,6 +101,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" image="share"/>
+                    <connections>
+                        <action selector="shareBtnAction:" destination="-1" eventType="touchUpInside" id="NcH-Sc-pll"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXh-JK-8lz">
                     <constraints>
@@ -141,8 +150,8 @@
     </objects>
     <resources>
         <image name="20121214223818_CmWuM" width="1920" height="1200"/>
-        <image name="collection" width="16" height="16"/>
         <image name="download" width="16" height="16"/>
+        <image name="global_comment_praise" width="20" height="20"/>
         <image name="play" width="64" height="64"/>
         <image name="share" width="16" height="16"/>
     </resources>

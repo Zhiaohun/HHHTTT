@@ -52,7 +52,10 @@
                             <constraint firstAttribute="width" constant="25" id="Gmf-7U-v6E"/>
                             <constraint firstAttribute="height" constant="25" id="kKo-mT-WTT"/>
                         </constraints>
-                        <state key="normal" image="download"/>
+                        <state key="normal" image="download_normal"/>
+                        <connections>
+                            <action selector="downloadBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PsC-Ez-lJX"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="scE-n8-RfW">
                         <constraints>
@@ -94,6 +97,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="downloadBtn" destination="BfE-2v-aUY" id="a0d-yd-IYh"/>
                 <outlet property="songListDurationLabel" destination="s0j-WR-KwB" id="KZQ-1q-pvw"/>
                 <outlet property="songListImageView" destination="4VG-sY-4Go" id="APZ-jx-5QB"/>
                 <outlet property="songListPlayTimesLabel" destination="8M1-2J-ayb" id="Dza-V3-rTk"/>
@@ -103,7 +107,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="download" width="16" height="16"/>
+        <image name="download_normal" width="16" height="16"/>
         <image name="play" width="64" height="64"/>
         <image name="playBtn" width="36" height="36"/>
         <image name="time" width="16" height="16"/>

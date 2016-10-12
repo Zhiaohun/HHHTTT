@@ -15,23 +15,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="387" height="130"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="137-14042QA320-50" translatesAutoresizingMaskIntoConstraints="NO" id="v6d-xx-KCH"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ml-qp-Evq"/>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="v6d-xx-KCH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AE1-dm-TfY"/>
-                <constraint firstAttribute="trailing" secondItem="v6d-xx-KCH" secondAttribute="trailing" id="erA-N3-tbR"/>
-                <constraint firstAttribute="bottom" secondItem="v6d-xx-KCH" secondAttribute="bottom" id="o5T-VM-R80"/>
-                <constraint firstItem="v6d-xx-KCH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vkG-wb-Vad"/>
+                <constraint firstItem="2ml-qp-Evq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5Fi-Oh-qzb"/>
+                <constraint firstAttribute="trailing" secondItem="2ml-qp-Evq" secondAttribute="trailing" id="L8l-RO-8YE"/>
+                <constraint firstAttribute="bottom" secondItem="2ml-qp-Evq" secondAttribute="bottom" id="Vyf-cN-6eO"/>
+                <constraint firstItem="2ml-qp-Evq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vKp-Ts-3QS"/>
             </constraints>
             <size key="customSize" width="387" height="130"/>
             <connections>
-                <outlet property="headerImageView" destination="v6d-xx-KCH" id="1K7-ii-NJ2"/>
+                <outlet property="headerImageView" destination="2ml-qp-Evq" id="7nH-NL-LBp"/>
             </connections>
             <point key="canvasLocation" x="39.5" y="8"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="137-14042QA320-50" width="1280" height="800"/>
-    </resources>
 </document>

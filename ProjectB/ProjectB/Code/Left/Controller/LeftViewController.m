@@ -8,6 +8,7 @@
 
 #import "LeftViewController.h"
 #import "TimingCloseTableViewController.h"
+#import "DownloadTableViewController.h"
 
 @interface LeftViewController ()
 @property (nonatomic, assign) BOOL state; //夜间 state=YES  白天 state=NO
@@ -107,7 +108,9 @@
 }
 - (IBAction)ThirdBtn:(id)sender {
     //我的下载
-    
+    DownloadTableViewController *downloadVC = [[DownloadTableViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:downloadVC];
+    [self presentViewController:navi animated:YES completion:nil];
 }
 - (IBAction)forthBtn:(id)sender {
     //定时关闭
