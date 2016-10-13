@@ -96,6 +96,14 @@
         //NSLog(@"thread___%@ mainthread__%@",[NSThread currentThread],[NSThread mainThread]);
         
         _view = [[NSBundle mainBundle]loadNibNamed:@"MainView" owner:nil options:nil][0];
+        
+        __weak typeof (self)weakself = self;
+        _view.hideBlock = ^(){
+            weakself.imageView.hidden = YES;
+        } ;
+        
+        
+        
         _view.frame = CGRectMake(0, 0, _imageView.frame.size.width, _imageView.frame.size.height);
         _view.layer.cornerRadius = 40;
         
@@ -113,6 +121,10 @@
         _view.type.text = @"#文学";
         _view.collection.text = [NSString stringWithFormat:@"收藏%@ 感悟%@",_list.rec,_list.priv];
         _view.from.text = [NSString stringWithFormat:@"来自 %@的文集[%@]",_list.creator.username,_list.originbook.bookname];
+        
+        _view.bigImg.layer.shadowOffset = CGSizeMake(2, 2);
+        _view.bigImg.layer.shadowOpacity = 0.9;
+        _view.bigImg.layer.shadowColor = [UIColor blackColor].CGColor;
         
         
         if ([_list.commentcnt isEqualToString:@"1"] && _list.picpath) {

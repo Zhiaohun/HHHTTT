@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^HideBlock)();
+
 @interface MainView : UIView
 
 
@@ -22,5 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *collection;
 @property (weak, nonatomic) IBOutlet UILabel *from;
 @property (weak, nonatomic) IBOutlet UILabel *onlytxt;
+
+@property (nonatomic,copy) HideBlock hideBlock;
 
 @end

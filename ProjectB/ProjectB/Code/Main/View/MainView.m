@@ -14,7 +14,7 @@
 
 -(void)awakeFromNib
 {
-   // [super awakeFromNib];
+    [super awakeFromNib];
     self.layer.cornerRadius = 40;
     self.clipsToBounds= YES;
 }
@@ -26,6 +26,13 @@
     // Drawing code
 }
 */
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if (_hideBlock) {
+        _hideBlock();
+    }
+}
 
 
 -(void)drawRect:(CGRect)rect{
