@@ -71,6 +71,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"视频类别";
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -92,24 +93,8 @@
     
     [self goback];
     
-    
-    
-    
-    //图片轮播;
-    _array = [NSArray array];
-    _array = @[@"1.png",@"2.png",@"3.png",@"4.png",@"5.png",@"6.png",@"7.png"];
-    
-    
-    
-    
-    
-   
 }
 
--(void)setUpUI{
-    
-   
-}
 //自定义返回键
 -(void)goback{
     
@@ -188,17 +173,6 @@
 }
 
 
-
-//-(void)tapHeaderViewAction{
-//    VideoListTableViewController *videoListVC = [[VideoListTableViewController alloc] init];
-//    videoListVC.listModel = [[ItemList alloc] init];
-//    videoListVC.listModel = self.baseModel.itemList[3];
-//    [self.navigationController pushViewController:videoListVC animated:YES];
-//}
-
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -243,11 +217,7 @@
     
     VideoHeaderCollectionViewCell *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind  withReuseIdentifier:@"videoheadercell" forIndexPath:indexPath];
   
-    
-    
-  //  NSLog(@">>>>>>>>%lu",self.headerImageArray.count);
-    
- 
+
     _pageFlowView = [[NewPagedFlowView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, (VIEW_WIDTH - 84) * 9 / 16 + 24)];
     _pageFlowView.backgroundColor = [UIColor whiteColor];
     _pageFlowView.delegate = self;
@@ -255,9 +225,6 @@
     _pageFlowView.minimumPageAlpha = 0.4;
     _pageFlowView.minimumPageScale = 0.85;
     _pageFlowView.orientation = NewPagedFlowViewOrientationHorizontal;
-    
-    
-    
     _pageFlowView.isOpenAutoScroll = NO;
     
     //初始化pageControl
@@ -270,15 +237,6 @@
     
     [headerView addSubview:_pageFlowView];
     
-     
-    
-    
-    
-  /*
-    _scroll = [YYScrollView initWithImages:_array];
-    _scroll.delegate = self;
-    [self.view addSubview:_scroll];
-   */
     return headerView;
     
     
@@ -333,7 +291,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    //return YES;
 }
 
 - (CGSize)sizeForPageInFlowView:(NewPagedFlowView *)flowView {
@@ -343,7 +300,7 @@
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     
     NSLog(@"点击了第%ld张图",(long)subIndex+1);
-//    
+    
     MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
     moviePlayVC.dataArray = [NSArray array];
     moviePlayVC.dataArray = self.headerDataArray;
@@ -359,8 +316,6 @@
 #pragma mark NewPagedFlowView Datasource
 - (NSInteger)numberOfPagesInFlowView:(NewPagedFlowView *)flowView {
     NSLog(@"____________%lu",self.headerImageArray.count);
-   // NSLog(@">>>>>>>>>>>>>%lu",_array.count);
-   // return _array.count;
     return self.headerImageArray.count;
     
 }
@@ -373,14 +328,9 @@
         bannerView.layer.masksToBounds = YES;
     }
     //在这里下载网络图片
-//    if (self.headerDataArray) {
-        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
-//    }
-    
-    
-    
-     //  bannerView.mainImageView.image = [UIImage imageNamed:_array[index]];
-    
+
+    [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
+  
     return bannerView;
 }
 

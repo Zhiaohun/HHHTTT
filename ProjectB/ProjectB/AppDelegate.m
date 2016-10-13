@@ -15,6 +15,12 @@
 
 #import "MMExampleDrawerVisualStateManager.h"
 
+
+//#import <ShareSDK/ShareSDK.h>
+///#import <ShareSDKConnector/ShareSDKConnector.h>
+//#import "WeiboSDK.h"
+//新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
+
 @interface AppDelegate ()
 @property (nonatomic, strong) UIView *nightView;
 
@@ -125,6 +131,10 @@
     
     [self.window addSubview:self.nightView];
    
+    
+    
+   // [self shareWeiBo];
+    
     return YES;
 }
 
@@ -150,4 +160,40 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+/*
+-(void)shareWeiBo{
+    
+    [ShareSDK registerApp:@"17df0ccd24358"
+     
+          activePlatforms:@[
+                            @(SSDKPlatformTypeSinaWeibo)]
+                 onImport:^(SSDKPlatformType platformType)
+     {
+         switch (platformType)
+         {
+            
+             case SSDKPlatformTypeSinaWeibo:
+                 [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                 break;
+             default:
+                 break;
+         }
+     }
+          onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
+     {
+         
+         switch (platformType)
+         {
+             case SSDKPlatformTypeSinaWeibo:
+                 //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                 [appInfo SSDKSetupSinaWeiboByAppKey:@"568898243"
+                                           appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
+                                         redirectUri:@"http://www.sharesdk.cn"
+                                            authType:SSDKAuthTypeBoth];
+                default:
+                 break;
+         }
+     }];
+}
+*/
 @end

@@ -12,6 +12,7 @@
 #import "UIImageView+imageViewAnimation.h"
 
 @interface SayingTableViewController ()
+
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) NSMutableArray *newsSayingArray;
 @property (nonatomic, assign) NSInteger maxBehotTime;
@@ -107,7 +108,7 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     SayingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sayingcell" forIndexPath:indexPath];
     
-
+    
     NewsSayingModel *model = self.newsSayingArray[indexPath.row];
     cell.model = model;
   

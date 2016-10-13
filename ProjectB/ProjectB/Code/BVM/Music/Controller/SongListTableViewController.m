@@ -20,6 +20,7 @@
 @interface SongListTableViewController ()
 {
     int _maxPageId;
+    
 }
 @property (nonatomic, strong) SongListHeaderView *headerView;
 @property (nonatomic, strong) MusicListBaseClass *listBaseModel;
@@ -27,6 +28,7 @@
 @property (nonatomic, assign) NSInteger pageId;
 @property (nonatomic, strong) MusicDownloadBaseClass *downloadBaseModel;
 @property (nonatomic, assign) BOOL isDownloading;
+@property (nonatomic, assign) NSInteger selectCell;
 
 @end
 
@@ -41,6 +43,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.selectCell = -1;
     
     NSLog(@"_+_+_+%lu",self.albumId);
     self.pageId = 1;
@@ -214,15 +218,15 @@
     SongListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songlistcell" forIndexPath:indexPath];
     
     
-    /*
+    
     //cell重用
-    if (cell.downloadBtn.tag-100 != indexPath.row) {
-        [cell.downloadBtn setImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
+    if (self.selectCell != indexPath.row) {
+        [cell.downloadBtn setImage:[UIImage imageNamed:@"download_normal"] forState:UIControlStateNormal];
     }else{
        
-        [cell.downloadBtn setImage:[UIImage imageNamed:@"download_normal"] forState:UIControlStateNormal];
+        [cell.downloadBtn setImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
     }
-    */
+    
     
     
     
@@ -237,6 +241,7 @@
     __weak typeof(cell) weakCell = cell;
     cell.downloadSongBlock = ^(NSInteger tag){
        // SongListTableViewCell *selectCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:tag-100 inSection:0]];
+        self.selectCell = tag-100;
          MusicListList *selectModel = self.musicListArray[tag-100];
         [self dataRequestDownloadWithUid:(int)selectModel.uid Track:(int)selectModel.trackId];
         [weakCell.downloadBtn setImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
@@ -253,10 +258,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SongPlayTableViewController *songPlayVC = [[SongPlayTableViewController alloc] init];
-    //songPlayVC.listModel = [[MusicListList alloc] init];
     songPlayVC.musicListArray = [NSMutableArray array];
-   // MusicListList *listModel = self.musicListArray[indexPath.row];
-   // songPlayVC.listModel = listModel;
     songPlayVC.selectIndex = indexPath.row;
     songPlayVC.musicListArray = self.musicListArray;
     [self.navigationController pushViewController:songPlayVC animated:YES];

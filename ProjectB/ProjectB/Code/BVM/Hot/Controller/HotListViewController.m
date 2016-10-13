@@ -11,6 +11,8 @@
 #import "HotVideoViewController.h"
 #import "ReadHotDataModels.h"
 #import "HotReadTableViewController.h"
+#import "VideoListDataModels.h"
+#import "HOtMusicTableViewController.h"
 
 
 @interface HotListViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -18,6 +20,7 @@
 @property (nonatomic,strong) UITableView *tableView;
 
 @property (nonatomic,strong) ReadHotBaseClass *readBase;
+@property (nonatomic, strong) VideoListBaseClass *videoBaseModel;
 
 
 @end
@@ -74,7 +77,21 @@
     
     
     //视频
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_hot Parameter:nil Success:^(NSDictionary *dic) {
+        
+        self.videoBaseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
+       // NSLog(@">>>>>%@",dic);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@">>%@",error);
+    }];
+    
     //音乐
+    
     
     
 }
@@ -96,7 +113,7 @@
     if (indexPath.row == 0) {
         //视频
         cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
-        cell.view1Title.text = @"一";
+        cell.view1Title.text = @"热门视频";
         
         [cell.requestMoreBtn addTarget:self action:@selector(requestMoreVideo) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -123,7 +140,7 @@
     else{
         //音乐
         cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
-        cell.view1Title.text = @"三";
+        cell.view1Title.text = @"热门音乐";
         
         
         [cell.requestMoreBtn addTarget:self action:@selector(requestMoreMusic) forControlEvents:UIControlEventTouchUpInside];
@@ -146,7 +163,8 @@
 }
 
 -(void)requestMoreMusic{
-
+    HOtMusicTableViewController *hotMusicVC = [HOtMusicTableViewController new];
+    [self.navigationController pushViewController:hotMusicVC animated:YES];
 }
 
 /*

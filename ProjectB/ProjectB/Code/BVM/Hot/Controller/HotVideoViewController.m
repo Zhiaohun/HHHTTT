@@ -8,9 +8,12 @@
 
 #import "HotVideoViewController.h"
 #import "HotVideoTableViewCell.h"
+#import "VideoListDataModels.h"
+#import "MoviePlayerViewController.h"
 
 @interface HotVideoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic, strong) VideoListBaseClass *videoBaseModel;
 
 @end
 
@@ -20,6 +23,7 @@
     [super viewDidLoad];
     
     [self initUI];
+    [self requestMovieData];
     
 }
 
@@ -41,6 +45,18 @@
 
 -(void)requestMovieData{
     
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_hot Parameter:nil Success:^(NSDictionary *dic) {
+        
+        self.videoBaseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
+        NSLog(@">>>>>%@",dic);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@">>%@",error);
+    }];
     
     
     
@@ -52,12 +68,26 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.videoBaseModel.itemList.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotVideoCell" forIndexPath:indexPath];
+    HotVideoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotVideoCell" forIndexPath:indexPath];
+    VideoListItemList *model = self.videoBaseModel.itemList[indexPath.row];
+    [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:model.data.cover.feed] placeholderImage:PlaceholderImage];
+    cell.videoTitle.text = model.data.title;
+    
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MoviePlayerViewController *movieVC = [[MoviePlayerViewController alloc] init];
+    movieVC.dataArray = [NSArray array];
+    movieVC.dataArray = self.videoBaseModel.itemList;
+    movieVC.selectIndex = indexPath.row;
+    
+    [self.navigationController pushViewController:movieVC animated:YES];
 }
 
 /*

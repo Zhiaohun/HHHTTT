@@ -7,8 +7,12 @@
 //
 
 #import "VideoRankingListTableViewController.h"
+#import "HotVideoTableViewCell.h"
+#import "VideoListDataModels.h"
+#import "MoviePlayerViewController.h"
 
 @interface VideoRankingListTableViewController ()
+@property (nonatomic, strong) VideoListBaseClass *videoBaseModel;
 
 @end
 
@@ -22,6 +26,27 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     [self.tableView registerNib:[UINib nibWithNibName:@"HotVideoTableViewCell" bundle:nil] forCellReuseIdentifier:@"hotVideoCell"];
+    [self requestMovieData];
+    
+}
+-(void)requestMovieData{
+    
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_hot Parameter:nil Success:^(NSDictionary *dic) {
+        
+        self.videoBaseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
+        NSLog(@">>>>>%@",dic);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@">>%@",error);
+    }];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,22 +57,32 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.videoBaseModel.itemList.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    HotVideoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotVideoCell" forIndexPath:indexPath];
+    VideoListItemList *model = self.videoBaseModel.itemList[indexPath.row];
+    [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:model.data.cover.feed] placeholderImage:PlaceholderImage];
+    cell.videoTitle.text = model.data.title;
     
-    // Configure the cell...
     
     return cell;
 }
-*/
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MoviePlayerViewController *movieVC = [[MoviePlayerViewController alloc] init];
+    movieVC.dataArray = [NSArray array];
+    movieVC.dataArray = self.videoBaseModel.itemList;
+    movieVC.selectIndex = indexPath.row;
+    
+    [self.navigationController pushViewController:movieVC animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.
