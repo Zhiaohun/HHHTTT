@@ -34,6 +34,13 @@
 
 //下载
 #define URL_DownLoad   @"http://mobile.ximalaya.com/mobile/download"  ///7178199/track/17484646
+
+
+//热门
+#define URL_HotMusic   @"http://mobile.ximalaya.com/mobile/discovery/v3/rankingList/album?device=iPhone&pageId" //=1&pageSize=20&rankingListId=68&scale=2&target=category&version=5.4.33
+
+//排行榜
+#define URL_RankListMusic  @"http://mobile.ximalaya.com/mobile/discovery/v3/rankingList/album?device=iPhone&pageId"  //=1&pageSize=20&rankingListId=99&scale=2&target=category&version=5.4.33
 ////评论
 //#define URL_Comment  @"http://mobileapi.5sing.kugou.com/comments/list?rootId=15214293&rootKind=fc&maxId=0&limit=30"
 ////新歌排行榜
@@ -51,6 +58,8 @@
 #define URL_360  @"http://baobab.wandoujia.com/api/v3/tag/videos" //360  GET
 //视频播放
 #define URL_VideoPlay   @"http://baobab.wandoujia.com/api/v3/video/9176/detail/related"
+//视频热门
+#define URL_hot   @"http://baobab.wandoujia.com/api/v3/ranklist?strategy=weekly"  
 //视频排行榜
 #define URL_VideoRankingList   @"http://baobab.wandoujia.com/api/v3/ranklist?strategy=weekly"   //更改weekly
 

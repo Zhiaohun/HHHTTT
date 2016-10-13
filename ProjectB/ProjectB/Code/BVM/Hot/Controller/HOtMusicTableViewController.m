@@ -7,17 +7,31 @@
 //
 
 #import "HOtMusicTableViewController.h"
+#import "MusicHotListModel.h"
+#import "HotMusicTableViewCell.h"
+#import "SongPlayTableViewController.h"
+
 
 @interface HOtMusicTableViewController ()
+@property (nonatomic, assign) NSInteger pageId;
+@property (nonatomic, strong) NSMutableArray *dataArray;
+
 
 @end
 
 @implementation HOtMusicTableViewController
 
+
+-(NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    [self initUI];
+    [self requestMusicData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,11 +42,30 @@
 #pragma mark - private Method - 
 -(void)initUI{
 
+    UINib *nib = [UINib nibWithNibName:@"HotMusicTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"cell"];
 }
 
 -(void)requestMusicData{
-    
-    
+    NSString *str = @"pageSize=20&rankingListId=68&scale=2&target=category&version=5.4.33";
+    NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_HotMusic,_pageId,str];
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+        NSLog(@">>>>>%@",dic);
+        
+        NSArray *arr = [NSArray array];
+        arr = dic[@"list"];
+        for (NSDictionary *dic in arr) {
+            MusicHotListModel *model = [[MusicHotListModel alloc] init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.dataArray addObject:model];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@">>>%@",error);
+    }];
 }
 
 
@@ -40,22 +73,33 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.dataArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    HotMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    MusicHotListModel *model = self.dataArray[indexPath.row];
+    cell.model = model;
+
     return cell;
 }
-*/
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SongPlayTableViewController *songVC = [[SongPlayTableViewController alloc] init];
+    songVC.musicListArray = [NSMutableArray array];
+    songVC.musicListArray = self.dataArray;
+    songVC.selectIndex = indexPath.row;
+    [self.navigationController pushViewController:songVC animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.

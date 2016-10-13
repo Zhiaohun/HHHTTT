@@ -95,6 +95,12 @@
 		3F39786E1DABA3E1009979BB /* UIView+ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F39786D1DABA3E1009979BB /* UIView+ShadowView.m */; };
 		3F576D041DAF358F00397323 /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F576D001DAF358F00397323 /* PGIndexBannerSubiew.m */; };
 		3F576D051DAF358F00397323 /* NewPagedFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F576D031DAF358F00397323 /* NewPagedFlowView.m */; };
+		3F576D601DAF6FDD00397323 /* HOtMusicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F576D5C1DAF6FDD00397323 /* HOtMusicTableViewController.m */; };
+		3F576D661DAF706200397323 /* HotVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F576D641DAF706200397323 /* HotVideoTableViewCell.m */; };
+		3F576D671DAF706200397323 /* HotVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F576D651DAF706200397323 /* HotVideoTableViewCell.xib */; };
+		3F576D6C1DAF7C6700397323 /* MusicHotListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F576D6B1DAF7C6700397323 /* MusicHotListModel.m */; };
+		3F576D741DAF840C00397323 /* HotMusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F576D731DAF840C00397323 /* HotMusicTableViewCell.m */; };
+		3F576D761DAF841F00397323 /* HotMusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F576D751DAF841F00397323 /* HotMusicTableViewCell.xib */; };
 		3F6C40311DACF76B005CC6B0 /* VideoCategoryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C40301DACF76B005CC6B0 /* VideoCategoryCollectionViewController.m */; };
 		3F6C40331DACFC2D005CC6B0 /* VideoHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F6C40321DACFC2D005CC6B0 /* VideoHeaderCollectionViewCell.xib */; };
 		3F6C403F1DAD1321005CC6B0 /* UIViewController+XHPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C403E1DAD1321005CC6B0 /* UIViewController+XHPhoto.m */; };
@@ -190,8 +196,6 @@
 		5DA8EB521D9BC960006DAECD /* HotListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB501D9BC960006DAECD /* HotListTableViewCell.m */; };
 		5DA8EB531D9BC960006DAECD /* HotListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB511D9BC960006DAECD /* HotListTableViewCell.xib */; };
 		5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB551D9BF369006DAECD /* HotVideoViewController.m */; };
-		5DA8EB5A1D9BF399006DAECD /* HotVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */; };
-		5DA8EB5B1D9BF399006DAECD /* HotVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */; };
 		5DB7FB001DAF5B44001407FE /* ReadRankListBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FAF91DAF5B44001407FE /* ReadRankListBaseClass.m */; };
 		5DB7FB011DAF5B44001407FE /* ReadRankListPageinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FAFB1DAF5B44001407FE /* ReadRankListPageinfo.m */; };
 		5DB7FB021DAF5B44001407FE /* ReadRankListPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FAFD1DAF5B44001407FE /* ReadRankListPrice.m */; };
@@ -408,6 +412,16 @@
 		3F576D001DAF358F00397323 /* PGIndexBannerSubiew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGIndexBannerSubiew.m; sourceTree = "<group>"; };
 		3F576D021DAF358F00397323 /* NewPagedFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPagedFlowView.h; sourceTree = "<group>"; };
 		3F576D031DAF358F00397323 /* NewPagedFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPagedFlowView.m; sourceTree = "<group>"; };
+		3F576D5B1DAF6FDD00397323 /* HOtMusicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HOtMusicTableViewController.h; sourceTree = "<group>"; };
+		3F576D5C1DAF6FDD00397323 /* HOtMusicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HOtMusicTableViewController.m; sourceTree = "<group>"; };
+		3F576D631DAF706200397323 /* HotVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotVideoTableViewCell.h; sourceTree = "<group>"; };
+		3F576D641DAF706200397323 /* HotVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotVideoTableViewCell.m; sourceTree = "<group>"; };
+		3F576D651DAF706200397323 /* HotVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotVideoTableViewCell.xib; sourceTree = "<group>"; };
+		3F576D6A1DAF7C6700397323 /* MusicHotListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicHotListModel.h; sourceTree = "<group>"; };
+		3F576D6B1DAF7C6700397323 /* MusicHotListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicHotListModel.m; sourceTree = "<group>"; };
+		3F576D721DAF840C00397323 /* HotMusicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotMusicTableViewCell.h; sourceTree = "<group>"; };
+		3F576D731DAF840C00397323 /* HotMusicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotMusicTableViewCell.m; sourceTree = "<group>"; };
+		3F576D751DAF841F00397323 /* HotMusicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotMusicTableViewCell.xib; sourceTree = "<group>"; };
 		3F6C40301DACF76B005CC6B0 /* VideoCategoryCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCategoryCollectionViewController.m; sourceTree = "<group>"; };
 		3F6C40321DACFC2D005CC6B0 /* VideoHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		3F6C403D1DAD1321005CC6B0 /* UIViewController+XHPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XHPhoto.h"; sourceTree = "<group>"; };
@@ -571,9 +585,6 @@
 		5DA8EB511D9BC960006DAECD /* HotListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotListTableViewCell.xib; sourceTree = "<group>"; };
 		5DA8EB541D9BF369006DAECD /* HotVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotVideoViewController.h; sourceTree = "<group>"; };
 		5DA8EB551D9BF369006DAECD /* HotVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotVideoViewController.m; sourceTree = "<group>"; };
-		5DA8EB571D9BF399006DAECD /* HotVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotVideoTableViewCell.h; path = ../Controller/HotVideoTableViewCell.h; sourceTree = "<group>"; };
-		5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotVideoTableViewCell.m; path = ../Controller/HotVideoTableViewCell.m; sourceTree = "<group>"; };
-		5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotVideoTableViewCell.xib; path = ../Controller/HotVideoTableViewCell.xib; sourceTree = "<group>"; };
 		5DB7FAF71DAF5B44001407FE /* ReadRankList DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ReadRankList DataModels.h"; sourceTree = "<group>"; };
 		5DB7FAF81DAF5B44001407FE /* ReadRankListBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadRankListBaseClass.h; sourceTree = "<group>"; };
 		5DB7FAF91DAF5B44001407FE /* ReadRankListBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadRankListBaseClass.m; sourceTree = "<group>"; };
@@ -1263,6 +1274,15 @@
 			path = NewPagedFlowView;
 			sourceTree = "<group>";
 		};
+		3F576D691DAF7C3300397323 /* MusicHotListModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F576D6A1DAF7C6700397323 /* MusicHotListModel.h */,
+				3F576D6B1DAF7C6700397323 /* MusicHotListModel.m */,
+			);
+			path = MusicHotListModel;
+			sourceTree = "<group>";
+		};
 		3F6C40401DAD2137005CC6B0 /* YYScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1563,6 +1583,7 @@
 		5DA8EB071D9B8012006DAECD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3F576D691DAF7C3300397323 /* MusicHotListModel */,
 				5DB7FB091DAF621F001407FE /* ReadHotModel */,
 			);
 			path = Model;
@@ -1574,12 +1595,15 @@
 				5DA8EB4F1D9BC960006DAECD /* HotListTableViewCell.h */,
 				5DA8EB501D9BC960006DAECD /* HotListTableViewCell.m */,
 				5DA8EB511D9BC960006DAECD /* HotListTableViewCell.xib */,
-				5DA8EB571D9BF399006DAECD /* HotVideoTableViewCell.h */,
-				5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */,
-				5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */,
 				5DB7FB1A1DAF66F5001407FE /* HotReadTableViewCell.h */,
 				5DB7FB1B1DAF66F5001407FE /* HotReadTableViewCell.m */,
 				5DB7FB1C1DAF66F5001407FE /* HotReadTableViewCell.xib */,
+				3F576D631DAF706200397323 /* HotVideoTableViewCell.h */,
+				3F576D641DAF706200397323 /* HotVideoTableViewCell.m */,
+				3F576D651DAF706200397323 /* HotVideoTableViewCell.xib */,
+				3F576D721DAF840C00397323 /* HotMusicTableViewCell.h */,
+				3F576D731DAF840C00397323 /* HotMusicTableViewCell.m */,
+				3F576D751DAF841F00397323 /* HotMusicTableViewCell.xib */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -1594,6 +1618,8 @@
 				5DA8EB551D9BF369006DAECD /* HotVideoViewController.m */,
 				5DB7FB171DAF66DF001407FE /* HotReadTableViewController.h */,
 				5DB7FB181DAF66DF001407FE /* HotReadTableViewController.m */,
+				3F576D5B1DAF6FDD00397323 /* HOtMusicTableViewController.h */,
+				3F576D5C1DAF6FDD00397323 /* HOtMusicTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1931,6 +1957,7 @@
 				3FA5EE241D9DFB120020E8CC /* VideoListTableViewController.xib in Resources */,
 				5DF67D171DAE544300A1B9D5 /* MainView.xib in Resources */,
 				3F04BF9B1D9B7518005CCA03 /* SongMenuTableViewController.xib in Resources */,
+				3F576D671DAF706200397323 /* HotVideoTableViewCell.xib in Resources */,
 				3F844A931D9E20BB00AE9B3B /* VideoListTableViewCell.xib in Resources */,
 				5D29E9F81D9CB61E00213A82 /* MyselfPageViewController.xib in Resources */,
 				3F6C40331DACFC2D005CC6B0 /* VideoHeaderCollectionViewCell.xib in Resources */,
@@ -1959,6 +1986,7 @@
 				3F04BF581D9B6FE3005CCA03 /* MainViewController.xib in Resources */,
 				3FA5EE401D9DFD120020E8CC /* SongMenuTableViewCell.xib in Resources */,
 				3F04707E1D9C09EA00DAD187 /* RecommendTableViewController.xib in Resources */,
+				3F576D761DAF841F00397323 /* HotMusicTableViewCell.xib in Resources */,
 				3F2961B71DAA3A6F001934A9 /* SongPlayCommentTableViewCell.xib in Resources */,
 				5D29EA221D9D19DE00213A82 /* SystemInfoTableViewCell.xib in Resources */,
 				3F272FA11DA77AAD00CA7E8F /* SongListHeaderView.xib in Resources */,
@@ -1974,7 +2002,6 @@
 				5DA8EB131D9B8089006DAECD /* HotListViewController.xib in Resources */,
 				3F04BF8C1D9B73E6005CCA03 /* TotalViewController.xib in Resources */,
 				3FC1BB3C1D9D036900C834D8 /* VideoNormalCollectionViewCell.xib in Resources */,
-				5DA8EB5B1D9BF399006DAECD /* HotVideoTableViewCell.xib in Resources */,
 				3F04BFA01D9B7551005CCA03 /* SongListTableViewController.xib in Resources */,
 				3F0470771D9C09EA00DAD187 /* EntertainmentTableViewController.xib in Resources */,
 				3F04BFBE1D9B7735005CCA03 /* ReaderListTableViewCell.xib in Resources */,
@@ -2057,9 +2084,11 @@
 				3F04BF9F1D9B7551005CCA03 /* SongListTableViewController.m in Sources */,
 				3F576D041DAF358F00397323 /* PGIndexBannerSubiew.m in Sources */,
 				3FA5EE381D9DFC230020E8CC /* ReadRankingListTableViewController.m in Sources */,
+				3F576D601DAF6FDD00397323 /* HOtMusicTableViewController.m in Sources */,
 				3F04707D1D9C09EA00DAD187 /* RecommendTableViewController.m in Sources */,
 				5DF67D161DAE544300A1B9D5 /* MainView.m in Sources */,
 				5DB7FB131DAF621F001407FE /* ReadHotBaseClass.m in Sources */,
+				3F576D6C1DAF7C6700397323 /* MusicHotListModel.m in Sources */,
 				3F844ADD1D9E3E2300AE9B3B /* VideoListConsumption.m in Sources */,
 				5DF554991DA8CC0C00DFCBEC /* MMExampleDrawerVisualStateManager.m in Sources */,
 				3F6C40451DAD2137005CC6B0 /* Water.m in Sources */,
@@ -2086,6 +2115,7 @@
 				3F844AE11D9E3E2300AE9B3B /* VideoListLabel.m in Sources */,
 				3F2961A71DAA38F3001934A9 /* KNJudgementTool.m in Sources */,
 				3FA5EE231D9DFB120020E8CC /* VideoListTableViewController.m in Sources */,
+				3F576D741DAF840C00397323 /* HotMusicTableViewCell.m in Sources */,
 				3F2961841DAA384E001934A9 /* NewsEntertainmentBaseClass.m in Sources */,
 				5D29EA611D9E396A00213A82 /* CollectionViewController.m in Sources */,
 				5D29E9F71D9CB61E00213A82 /* MyselfPageViewController.m in Sources */,
@@ -2129,7 +2159,6 @@
 				3FB7B8731DADFF80006C9B6B /* DownloadListTableViewCell.m in Sources */,
 				5DF5549C1DA8CCA200DFCBEC /* JudgeManager.m in Sources */,
 				5D29EA691D9E3A6E00213A82 /* TimingCloseTableViewCell.m in Sources */,
-				5DA8EB5A1D9BF399006DAECD /* HotVideoTableViewCell.m in Sources */,
 				5DF554881DA893BC00DFCBEC /* ReadMotivationPage.m in Sources */,
 				5DF554B81DA8E1AD00DFCBEC /* DownloadDBManager.m in Sources */,
 				5DB7FB021DAF5B44001407FE /* ReadRankListPrice.m in Sources */,
@@ -2157,6 +2186,7 @@
 				5DA8EB3D1D9BC028006DAECD /* LLNetWorkingRequest.m in Sources */,
 				3FC1BB2A1D9CF4BD00C834D8 /* NewsBaseViewController.m in Sources */,
 				3FA4E60D1D9AB1510090AC78 /* ScrollImage.m in Sources */,
+				3F576D661DAF706200397323 /* HotVideoTableViewCell.m in Sources */,
 				3F844AE61D9E3E2300AE9B3B /* VideoListWebUrl.m in Sources */,
 				3F29618E1DAA384E001934A9 /* NewsTechnologyBaseClass.m in Sources */,
 				3FA5EE371D9DFC230020E8CC /* RankingBaseViewController.m in Sources */,
@@ -2325,10 +2355,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S2CRPD33DC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK",
+					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK/Support/Required",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.long.ProjectB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = " ${SRCROOT}/**";
@@ -2341,10 +2381,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S2CRPD33DC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK",
+					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK/Support/Required",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.long.ProjectB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = " ${SRCROOT}/**";
