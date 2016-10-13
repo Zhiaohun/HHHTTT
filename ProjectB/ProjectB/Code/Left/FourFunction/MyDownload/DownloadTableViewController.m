@@ -39,6 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"下载列表";
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 50;
     
