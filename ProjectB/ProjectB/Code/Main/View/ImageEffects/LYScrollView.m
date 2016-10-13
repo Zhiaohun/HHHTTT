@@ -122,6 +122,10 @@
         _view.collection.text = [NSString stringWithFormat:@"收藏%@ 感悟%@",_list.rec,_list.priv];
         _view.from.text = [NSString stringWithFormat:@"来自 %@的文集[%@]",_list.creator.username,_list.originbook.bookname];
         
+        _view.bigImg.layer.shadowOffset = CGSizeMake(2, 2);
+        _view.bigImg.layer.shadowOpacity = 0.9;
+        _view.bigImg.layer.shadowColor = [UIColor blackColor].CGColor;
+        
         
         if ([_list.commentcnt isEqualToString:@"1"] && _list.picpath) {
             _view.bigImg.hidden = YES;

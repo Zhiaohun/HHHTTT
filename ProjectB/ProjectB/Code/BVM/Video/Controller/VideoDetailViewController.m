@@ -151,6 +151,11 @@
 - (IBAction)shareBtnAction:(id)sender {
 }
 - (IBAction)cacheBtnAction:(id)sender {
+    
+    UIButton *btn = (UIButton *)sender;
+    [btn setImage:[UIImage imageNamed:@"cached"] forState:UIControlStateNormal];
+    [btn setTitle:@"已缓存" forState:UIControlStateNormal];
+    
 }
 - (IBAction)cololectionAction:(id)sender {
     
