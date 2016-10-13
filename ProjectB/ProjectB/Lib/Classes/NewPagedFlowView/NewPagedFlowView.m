@@ -38,7 +38,7 @@
     
     _minimumPageAlpha = 1.0;
     _minimumPageScale = 1.0;
-    _autoTime = 2.0;
+    _autoTime = 5.0;
     
     self.visibleRange = NSMakeRange(0, 0);
     

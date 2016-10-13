@@ -20,6 +20,11 @@
 #import "PGIndexBannerSubiew.h"
 
 @interface VideoCategoryCollectionViewController ()<NewPagedFlowViewDelegate, NewPagedFlowViewDataSource>
+
+{
+    NSArray *_array;
+}
+
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) BaseClass *baseModel;
 @property (nonatomic, strong) NSMutableArray *videoDataArray;
@@ -27,6 +32,9 @@
 @property (nonatomic, strong) NSMutableArray *headerDataArray;
 @property (nonatomic, strong) UIImageView *headerImageView;
 @property (nonatomic, strong) NewPagedFlowView *pageFlowView;
+
+
+@property (nonatomic, strong) YYScrollView *scroll;
 
 @end
 
@@ -84,6 +92,18 @@
     
     [self goback];
     
+    
+    
+    
+    //图片轮播;
+    _array = [NSArray array];
+    _array = @[@"1.png",@"2.png",@"3.png",@"4.png",@"5.png",@"6.png",@"7.png"];
+    
+    
+    
+    
+    
+   
 }
 
 -(void)setUpUI{
@@ -92,6 +112,7 @@
 }
 //自定义返回键
 -(void)goback{
+    
     UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
 }
@@ -227,7 +248,7 @@
     
   //  NSLog(@">>>>>>>>%lu",self.headerImageArray.count);
     
-    
+ 
     _pageFlowView = [[NewPagedFlowView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, (VIEW_WIDTH - 84) * 9 / 16 + 24)];
     _pageFlowView.backgroundColor = [UIColor whiteColor];
     _pageFlowView.delegate = self;
@@ -236,21 +257,29 @@
     _pageFlowView.minimumPageScale = 0.85;
     _pageFlowView.orientation = NewPagedFlowViewOrientationHorizontal;
     
-    //提前告诉有多少页
-    //    pageFlowView.orginPageCount = self.imageArray.count;
     
-    _pageFlowView.isOpenAutoScroll = YES;
+    
+    //_pageFlowView.isOpenAutoScroll = YES;
     
     //初始化pageControl
     UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _pageFlowView.frame.size.height - 24 - 8, VIEW_WIDTH, 8)];
     _pageFlowView.pageControl = pageControl;
     [_pageFlowView addSubview:pageControl];
-    
+   
     [_pageFlowView reloadData];
     
     
     [headerView addSubview:_pageFlowView];
     
+     
+    
+    
+    
+  /*
+    _scroll = [YYScrollView initWithImages:_array];
+    _scroll.delegate = self;
+    [self.view addSubview:_scroll];
+   */
     return headerView;
     
     
@@ -295,12 +324,17 @@
 */
 
 
+
+
+
+
+
 #pragma mark NewPagedFlowView Delegate
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     
-   // return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    return YES;
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    //return YES;
 }
 
 - (CGSize)sizeForPageInFlowView:(NewPagedFlowView *)flowView {
@@ -325,8 +359,9 @@
 
 #pragma mark NewPagedFlowView Datasource
 - (NSInteger)numberOfPagesInFlowView:(NewPagedFlowView *)flowView {
-    NSLog(@"____________%lu",self.headerImageArray.count);
-    return self.headerImageArray.count;
+   // NSLog(@"____________%lu",self.headerImageArray.count);
+    NSLog(@">>>>>>>>>>>>>%lu",_array.count);
+    return _array.count;
     
 }
 
@@ -342,8 +377,9 @@
 //        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
 //    }
     
-    NSArray *array = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
-    bannerView.mainImageView.image = array[index];
+    
+    
+       bannerView.mainImageView.image = [UIImage imageNamed:_array[index]];
     
     return bannerView;
 }
@@ -352,6 +388,32 @@
     
     NSLog(@"ViewController 滚动到了第%ld页",pageNumber);
 }
+
+#pragma mark --旋转屏幕改变newPageFlowView大小之后实现该方法
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id)coordinator {
+    
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+    {
+        [coordinator animateAlongsideTransition:^(id context) { [self.pageFlowView reloadData]; } completion:NULL];
+    }
+}
+
+- (void)dealloc {
+    
+    /****************************
+     在dealloc或者返回按钮里停止定时器
+     ****************************/
+    
+    [self.pageFlowView stopTimer];
+}
+
+
+
+-(void)imageClickWithIndex:(NSInteger)index
+{
+    NSLog(@"点击的是第%ld张图片",index+1);
+}
+
 
 
 
