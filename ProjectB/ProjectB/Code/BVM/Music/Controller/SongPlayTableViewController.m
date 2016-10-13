@@ -64,6 +64,7 @@
 }
 -(void)TapLeftAction
 {
+  
     [self.navigationController popViewControllerAnimated:YES];
 }
 

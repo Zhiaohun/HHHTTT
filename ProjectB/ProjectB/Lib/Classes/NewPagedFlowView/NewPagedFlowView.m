@@ -38,7 +38,7 @@
     
     _minimumPageAlpha = 1.0;
     _minimumPageScale = 1.0;
-    _autoTime = 2.0;
+    _autoTime = 5.0;
     
     self.visibleRange = NSMakeRange(0, 0);
     
@@ -198,7 +198,7 @@
     UIView *cell = [_cells objectAtIndex:pageIndex];
     
     if ((NSObject *)cell == [NSNull null]) {
-        cell = [_dataSource flowView:self cellForPageAtIndex:pageIndex % self.orginPageCount];
+        cell = [_dataSource flowView:self cellForPageAtIndex:pageIndex % _orginPageCount];
         NSAssert(cell!=nil, @"datasource must not return nil");
         [_cells replaceObjectAtIndex:pageIndex withObject:cell];
         

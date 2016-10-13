@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -47,8 +47,8 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6P-Db-CKA">
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="bqX-NV-oCl"/>
-                        <constraint firstAttribute="width" constant="66" id="uDV-7K-aCR"/>
+                        <constraint firstAttribute="width" constant="66" id="8jI-9U-jLu"/>
+                        <constraint firstAttribute="height" constant="30" id="w9K-HD-sIk"/>
                     </constraints>
                     <state key="normal" title="注册合川">
                         <color key="titleColor" red="0.49161776680000002" green="0.82868637089999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,8 +59,8 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPi-pQ-JQX">
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="D2N-0Q-DsC"/>
-                        <constraint firstAttribute="width" constant="66" id="dNU-MK-Prc"/>
+                        <constraint firstAttribute="height" constant="30" id="RAN-yX-LwG"/>
+                        <constraint firstAttribute="width" constant="66" id="lyl-aP-5xa"/>
                     </constraints>
                     <state key="normal" title="忘记密码">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,8 +85,8 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zka-8J-lHf">
                     <constraints>
-                        <constraint firstAttribute="width" constant="66" id="OpW-Vd-CiS"/>
-                        <constraint firstAttribute="height" constant="30" id="Q2A-5z-zdR"/>
+                        <constraint firstAttribute="height" constant="30" id="5TP-2i-ciu"/>
+                        <constraint firstAttribute="width" constant="66" id="zUd-Ri-3by"/>
                     </constraints>
                     <state key="normal" title="微信登录">
                         <color key="titleColor" red="0.60590538260000004" green="0.60590538260000004" blue="0.60590538260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -97,8 +97,8 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibz-Rz-9a0">
                     <constraints>
-                        <constraint firstAttribute="width" constant="66" id="Klz-2k-bwA"/>
-                        <constraint firstAttribute="height" constant="30" id="wB7-sx-nt4"/>
+                        <constraint firstAttribute="height" constant="30" id="F8w-y3-5gy"/>
+                        <constraint firstAttribute="width" constant="66" id="rgL-Mz-iYO"/>
                     </constraints>
                     <state key="normal" title="微博登录">
                         <color key="titleColor" red="0.60590538260000004" green="0.60590538260000004" blue="0.60590538260000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,32 +128,32 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="D6P-Db-CKA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="107" id="0Ol-XZ-hZv"/>
-                <constraint firstAttribute="bottom" secondItem="Zka-8J-lHf" secondAttribute="bottom" constant="15" id="1wv-ui-Hr7"/>
-                <constraint firstAttribute="bottom" secondItem="ibz-Rz-9a0" secondAttribute="bottom" constant="15" id="5S0-Bx-znj"/>
+                <constraint firstItem="rPi-pQ-JQX" firstAttribute="top" secondItem="FFZ-i9-60V" secondAttribute="bottom" constant="13" id="5bl-5j-5ys"/>
                 <constraint firstItem="Lhv-Ph-lYa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6XB-0e-RZ6"/>
                 <constraint firstItem="dBL-ef-D0r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6ro-Et-G9x"/>
+                <constraint firstItem="D6P-Db-CKA" firstAttribute="top" secondItem="FFZ-i9-60V" secondAttribute="bottom" constant="13" id="7hs-e5-DcA"/>
                 <constraint firstItem="Lhv-Ph-lYa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="367" id="9Bo-5w-0bv"/>
-                <constraint firstItem="rPi-pQ-JQX" firstAttribute="top" secondItem="FFZ-i9-60V" secondAttribute="bottom" constant="13" id="BGb-Iv-Gq9"/>
                 <constraint firstItem="FFZ-i9-60V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Evp-on-0ed"/>
                 <constraint firstItem="FFZ-i9-60V" firstAttribute="top" secondItem="gPF-Ce-CAN" secondAttribute="bottom" constant="21" id="GIc-Zb-mAz"/>
+                <constraint firstItem="Lhv-Ph-lYa" firstAttribute="leading" secondItem="D6P-Db-CKA" secondAttribute="trailing" constant="14" id="Jdt-NZ-rs6"/>
                 <constraint firstAttribute="bottom" secondItem="dBL-ef-D0r" secondAttribute="bottom" constant="20" id="Li4-13-u3o"/>
-                <constraint firstAttribute="trailing" secondItem="rPi-pQ-JQX" secondAttribute="trailing" constant="107" id="RzH-dw-jbp"/>
+                <constraint firstItem="Zka-8J-lHf" firstAttribute="leading" secondItem="dBL-ef-D0r" secondAttribute="trailing" constant="14" id="R0c-ol-SaY"/>
                 <constraint firstItem="bOW-g2-444" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="93" id="UFu-xS-x1X"/>
+                <constraint firstAttribute="bottom" secondItem="ibz-Rz-9a0" secondAttribute="bottom" constant="15" id="VQt-Qm-Shy"/>
                 <constraint firstItem="jjI-Cq-Lyx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="YTg-Ai-FFk"/>
                 <constraint firstItem="gPF-Ce-CAN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ZXd-L4-jiQ"/>
-                <constraint firstItem="D6P-Db-CKA" firstAttribute="top" secondItem="FFZ-i9-60V" secondAttribute="bottom" constant="13" id="a00-Qp-sMk"/>
                 <constraint firstAttribute="trailing" secondItem="jjI-Cq-Lyx" secondAttribute="trailing" constant="20" id="bMc-9A-f3K"/>
                 <constraint firstItem="jjI-Cq-Lyx" firstAttribute="top" secondItem="bOW-g2-444" secondAttribute="bottom" constant="42" id="ckG-A6-5F1"/>
+                <constraint firstItem="dBL-ef-D0r" firstAttribute="leading" secondItem="ibz-Rz-9a0" secondAttribute="trailing" constant="14" id="fpd-cT-TzN"/>
+                <constraint firstItem="rPi-pQ-JQX" firstAttribute="leading" secondItem="Lhv-Ph-lYa" secondAttribute="trailing" constant="14" id="gwc-je-5eS"/>
                 <constraint firstItem="g4T-Bx-s22" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="23" id="hbn-yB-gg1"/>
                 <constraint firstItem="bOW-g2-444" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="137" id="ied-g7-NuL"/>
+                <constraint firstAttribute="bottom" secondItem="Zka-8J-lHf" secondAttribute="bottom" constant="15" id="k9t-cK-8on"/>
                 <constraint firstItem="g4T-Bx-s22" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="kQ5-wy-8tX"/>
                 <constraint firstAttribute="trailing" secondItem="gPF-Ce-CAN" secondAttribute="trailing" constant="20" id="md3-fy-803"/>
-                <constraint firstItem="ibz-Rz-9a0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="107" id="mho-vg-yjw"/>
                 <constraint firstAttribute="trailing" secondItem="bOW-g2-444" secondAttribute="trailing" constant="94" id="oAh-mK-bmZ"/>
                 <constraint firstAttribute="trailing" secondItem="FFZ-i9-60V" secondAttribute="trailing" constant="20" id="qCL-Vf-hHQ"/>
                 <constraint firstItem="gPF-Ce-CAN" firstAttribute="top" secondItem="jjI-Cq-Lyx" secondAttribute="bottom" id="uJe-yQ-iuJ"/>
-                <constraint firstAttribute="trailing" secondItem="Zka-8J-lHf" secondAttribute="trailing" constant="107" id="ymu-do-kYg"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>

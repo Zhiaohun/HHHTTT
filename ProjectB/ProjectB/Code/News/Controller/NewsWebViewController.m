@@ -9,7 +9,7 @@
 #import "NewsWebViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface NewsWebViewController ()
+@interface NewsWebViewController ()<UIWebViewDelegate>
 @end
 
 @implementation NewsWebViewController
@@ -30,18 +30,31 @@
 }
 #pragma mark - private Method -
 -(void)initUI{
-    
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    
+/*
     WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT)];
-
-    
     [self.view addSubview:webView];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLHtml]];
+    
     [webView loadRequest:request];
     
     [self goback];
+     
+     
+  */
+   
+    self.title = @"内容概况";
+    
+
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT)];
+    webView.delegate = self;
+    
+    [self.view addSubview:webView];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLHtml]];
+    
+    [webView loadRequest:request];
+    
+    [self goback];
+
 }
 //自定义返回键
 -(void)goback{
@@ -54,6 +67,40 @@
 }
 
 
+
+
+/** 页面加载完成之后调用 */
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+
+    
+    NSArray *array = @[@"topbar",@"a_adtemp a_topad js-topad",@"relative_list js-relativelist",@"comment_list comment-list",@"hot_list content-list",@"comment_title",@"hot_news",@"relative_doc",@"more_client more-client",@"botscroll_info",@"comment_info js-replylink",@"comment_info js-replylink",@"article_holdpos article-holdpos",@"foot_nav",@"back_to_top",@"a_adtemp a_tbad js-tbad",@"go_index",@"sub_box sub-box show",@"copyright",@"content_flow"];
+    
+    
+    for (int i = 0; i < array.count; i++) {
+        NSString *str = [NSString stringWithFormat:@"document.getElementsByClassName('%@')[0].style.display='none'",array[i]];
+         [webView stringByEvaluatingJavaScriptFromString:str];
+    }
+    
+    
+}
+
+
+
+/*
+-(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+    
+    NSArray *array = @[@"topbar",@"a_adtemp a_topad js-topad",@"relative_list js-relativelist",@"comment_list comment-list",@"hot_list content-list",@"comment_title",@"hot_news",@"relative_doc",@"more_client more-client",@"botscroll_info",@"comment_info js-replylink",@"comment_info js-replylink",@"article_holdpos article-holdpos",@"foot_nav",@"back_to_top",@"a_adtemp a_tbad js-tbad",@"go_index",@"sub_box sub-box show",@"copyright",@"content_flow"];
+    
+    
+    for (int i = 0; i < array.count; i++) {
+        NSString *str = [NSString stringWithFormat:@"document.getElementsByClassName('%@')[0].style.display='none'",array[i]];
+        //[webView stringByEvaluatingJavaScriptFromString:str];
+        [webView evaluateJavaScript:str completionHandler:nil];
+    }
+}
+
+*/
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
