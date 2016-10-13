@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface HotVideoTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *videoImageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *VideoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *videoTitle;
 
 @end

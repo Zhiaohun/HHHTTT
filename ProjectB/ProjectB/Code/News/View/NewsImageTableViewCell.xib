@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="429" height="187"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="429" height="186.5"/>
+                <frame key="frameInset" width="429" height="186"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXQ-iM-g4j">
@@ -37,10 +37,10 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="DLj-74-eB6" firstAttribute="top" secondItem="fXQ-iM-g4j" secondAttribute="bottom" constant="-20" id="1Wf-MU-omq"/>
+                            <constraint firstItem="DLj-74-eB6" firstAttribute="top" secondItem="fXQ-iM-g4j" secondAttribute="bottom" constant="-28" id="1Wf-MU-omq"/>
                             <constraint firstItem="scj-4K-Rrf" firstAttribute="leading" secondItem="fXQ-iM-g4j" secondAttribute="leading" id="i48-EL-Fzt"/>
                             <constraint firstAttribute="trailing" secondItem="DLj-74-eB6" secondAttribute="trailing" id="s6a-H9-JOz"/>
-                            <constraint firstItem="scj-4K-Rrf" firstAttribute="top" secondItem="fXQ-iM-g4j" secondAttribute="bottom" constant="-20" id="wc3-l1-N9b"/>
+                            <constraint firstItem="scj-4K-Rrf" firstAttribute="top" secondItem="fXQ-iM-g4j" secondAttribute="bottom" constant="-28" id="wc3-l1-N9b"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgM-Mz-zdS">
@@ -68,7 +68,7 @@
                     <constraint firstAttribute="trailing" secondItem="llx-ex-0rV" secondAttribute="trailing" constant="8" id="c1j-up-gOp"/>
                     <constraint firstItem="fXQ-iM-g4j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="kXz-IV-CAv"/>
                     <constraint firstItem="KgM-Mz-zdS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="pl0-dT-S7H"/>
-                    <constraint firstAttribute="bottom" secondItem="fXQ-iM-g4j" secondAttribute="bottom" constant="16.5" id="qig-XD-BID"/>
+                    <constraint firstAttribute="bottom" secondItem="fXQ-iM-g4j" secondAttribute="bottom" constant="8" id="qig-XD-BID"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

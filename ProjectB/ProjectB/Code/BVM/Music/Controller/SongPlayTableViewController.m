@@ -79,7 +79,7 @@
     
     [manager playSong];
     self.isPlay = YES;
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loadSlider) userInfo:nil repeats:YES];
+   NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loadSlider) userInfo:nil repeats:YES];
 }
 
 -(void)dataRequest{

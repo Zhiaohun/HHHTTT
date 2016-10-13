@@ -13,6 +13,8 @@
 #import "HotReadTableViewController.h"
 #import "VideoListDataModels.h"
 #import "HOtMusicTableViewController.h"
+#import "MusicHotListModel.h"
+
 
 
 @interface HotListViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -21,12 +23,20 @@
 
 @property (nonatomic,strong) ReadHotBaseClass *readBase;
 @property (nonatomic, strong) VideoListBaseClass *videoBaseModel;
+@property (nonatomic, strong) MusicHotListModel *listModel;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 
 
 @end
 
 @implementation HotListViewController
 
+-(NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -80,7 +90,7 @@
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_hot Parameter:nil Success:^(NSDictionary *dic) {
         
         self.videoBaseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
-       // NSLog(@">>>>>%@",dic);
+       
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -90,9 +100,26 @@
         NSLog(@">>%@",error);
     }];
     
+    
     //音乐
-    
-    
+    NSString *str = @"pageSize=20&rankingListId=68&scale=2&target=category&version=5.4.33";
+    NSString *URLStr = [NSString stringWithFormat:@"%@=1&%@",URL_HotMusic,str];
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+        NSLog(@">>>>>%@",dic);
+        NSArray *arr = [NSArray array];
+        arr = dic[@"list"];
+        for (NSDictionary *dic in arr) {
+            MusicHotListModel *model = [[MusicHotListModel alloc] init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.dataArray addObject:model];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@">>>%@",error);
+    }];
     
 }
 
@@ -112,15 +139,30 @@
     
     if (indexPath.row == 0) {
         //视频
-        cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
+        cell.headImg.image = [UIImage imageNamed:@"video"];
         cell.view1Title.text = @"热门视频";
+        
+        VideoListItemList *list1 = _videoBaseModel.itemList[0];
+        VideoListItemList *list2 = _videoBaseModel.itemList[1];
+        VideoListItemList *list3 = _videoBaseModel.itemList[2];
+        
+        cell.view1Title.text = list1.data.title;
+        [cell.view1Img sd_setImageWithURL:[NSURL URLWithString:list1.data.cover.feed]];
+        
+        cell.view2Title.text = list2.data.title;
+        [cell.view2Img sd_setImageWithURL:[NSURL URLWithString:list2.data.cover.feed]];
+
+        cell.view3Title.text = list3.data.title;
+        [cell.view3Img sd_setImageWithURL:[NSURL URLWithString:list3.data.cover.feed]];
+       
+        
         
         [cell.requestMoreBtn addTarget:self action:@selector(requestMoreVideo) forControlEvents:UIControlEventTouchUpInside];
     }
     else if (indexPath.row == 1){
         //图书
         cell.viewTitle.text = @"畅销图书";
-        cell.headImg.image = [UIImage imageNamed:@"3839_pc"];
+        cell.headImg.image = [UIImage imageNamed:@"book"];
         
         ReadHotProducts *product1 = _readBase.products[0];
         cell.view1Title.text = product1.productName;
@@ -139,8 +181,22 @@
     }
     else{
         //音乐
-        cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
+        cell.headImg.image = [UIImage imageNamed:@"music"];
         cell.view1Title.text = @"热门音乐";
+        
+        MusicHotListModel *list1 = _dataArray[0];
+        MusicHotListModel *list2 = _dataArray[1];
+        MusicHotListModel *list3 = _dataArray[2];
+        
+        cell.view1Title.text = list1.intro;
+        [cell.view1Img sd_setImageWithURL:[NSURL URLWithString:list1.coverMiddle]];
+        
+        cell.view2Title.text = list2.intro;
+        [cell.view2Img sd_setImageWithURL:[NSURL URLWithString:list2.coverMiddle]];
+        
+        cell.view3Title.text = list3.intro;
+        [cell.view3Img sd_setImageWithURL:[NSURL URLWithString:list3.coverMiddle]];
+        
         
         
         [cell.requestMoreBtn addTarget:self action:@selector(requestMoreMusic) forControlEvents:UIControlEventTouchUpInside];

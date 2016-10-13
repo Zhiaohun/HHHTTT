@@ -20,14 +20,13 @@
 
     // Configure the view for the selected state
 }
--(void)setValue:(id)value forUndefinedKey:(NSString *)key{
-    
-}
+
 -(void)setModel:(MusicHotListModel *)model{
     
     [self.musicImageView sd_setImageWithURL:[NSURL URLWithString:model.coverMiddle] placeholderImage:PlaceholderImage];
-    self.title.text = model.title;
-    self.intro.text = model.intro;
-    self.tracksCounts.text = [NSString stringWithFormat:@"%d",(int)model.tracksCounts];
+    self.musicTitle.text = model.title;
+    self.musicIntro.text = model.intro;
+    self.musicTracksCounts.text = [NSString stringWithFormat:@"%d集",(int)model.tracksCounts];
+    
 }
 @end

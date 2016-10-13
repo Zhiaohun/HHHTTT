@@ -38,7 +38,7 @@
     _tableView.rowHeight = 100;
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    [_tableView registerNib:[UINib nibWithNibName:@"HotVideoTableViewCell" bundle:nil] forCellReuseIdentifier:@"hotVideoCell"];
+    [_tableView registerNib:[UINib nibWithNibName:@"HotVideoTableViewCell" bundle:nil] forCellReuseIdentifier:@"videocell"];
     [self.view addSubview:_tableView];
     
 }
@@ -71,9 +71,9 @@
     return self.videoBaseModel.itemList.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    HotVideoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotVideoCell" forIndexPath:indexPath];
+    HotVideoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"videocell" forIndexPath:indexPath];
     VideoListItemList *model = self.videoBaseModel.itemList[indexPath.row];
-    [cell.videoImageView sd_setImageWithURL:[NSURL URLWithString:model.data.cover.feed] placeholderImage:PlaceholderImage];
+    [cell.VideoImageView sd_setImageWithURL:[NSURL URLWithString:model.data.cover.feed] placeholderImage:PlaceholderImage];
     cell.videoTitle.text = model.data.title;
     
     
