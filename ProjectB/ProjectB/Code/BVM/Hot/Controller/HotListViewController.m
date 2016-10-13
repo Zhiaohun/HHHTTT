@@ -38,8 +38,8 @@
 #pragma mark - private Menthod -
 -(void)initUI{
     self.title = @"热门";
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
     
     self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     _tableView.rowHeight = 342;

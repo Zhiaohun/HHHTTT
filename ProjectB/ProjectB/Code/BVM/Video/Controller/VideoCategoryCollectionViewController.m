@@ -68,8 +68,8 @@
     
     // Register cell classes
    
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
     
      [self headerDataRequest];
 
@@ -169,12 +169,12 @@
 
 
 
--(void)tapHeaderViewAction{
-    VideoListTableViewController *videoListVC = [[VideoListTableViewController alloc] init];
-    videoListVC.listModel = [[ItemList alloc] init];
-    videoListVC.listModel = self.baseModel.itemList[3];
-    [self.navigationController pushViewController:videoListVC animated:YES];
-}
+//-(void)tapHeaderViewAction{
+//    VideoListTableViewController *videoListVC = [[VideoListTableViewController alloc] init];
+//    videoListVC.listModel = [[ItemList alloc] init];
+//    videoListVC.listModel = self.baseModel.itemList[3];
+//    [self.navigationController pushViewController:videoListVC animated:YES];
+//}
 
 
 
@@ -310,12 +310,12 @@
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     
     NSLog(@"点击了第%ld张图",(long)subIndex+1);
-    
-    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
-    moviePlayVC.dataArray = [NSArray array];
-    moviePlayVC.dataArray = self.headerDataArray;
-    moviePlayVC.selectIndex = (long)subIndex;
-    [self.navigationController pushViewController:moviePlayVC animated:YES];
+//    
+//    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
+//    moviePlayVC.dataArray = [NSArray array];
+//    moviePlayVC.dataArray = self.headerDataArray;
+//    moviePlayVC.selectIndex = (long)subIndex;
+//    [self.navigationController pushViewController:moviePlayVC animated:YES];
    
 }
 
