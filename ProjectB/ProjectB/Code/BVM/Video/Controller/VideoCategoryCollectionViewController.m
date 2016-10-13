@@ -316,6 +316,10 @@
 //    moviePlayVC.dataArray = self.headerDataArray;
 //    moviePlayVC.selectIndex = (long)subIndex;
 //    [self.navigationController pushViewController:moviePlayVC animated:YES];
+    
+    
+    
+    
    
 }
 
@@ -334,9 +338,12 @@
         bannerView.layer.masksToBounds = YES;
     }
     //在这里下载网络图片
-    if (self.headerDataArray) {
-        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
-    }
+//    if (self.headerDataArray) {
+//        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
+//    }
+    
+    NSArray *array = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
+    bannerView.mainImageView.image = array[index];
     
     return bannerView;
 }
