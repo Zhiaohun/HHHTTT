@@ -42,6 +42,10 @@
     return _viewControllerArray;
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear: YES];
+    [self.navigationController setValue:[UINavigationBar new] forKey:@"navigationBar"];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,15 +53,16 @@
     
     [self initUI];
     
-    self.titleSizeNormal = 15;
-    self.titleSizeSelected = 15;
-    self.menuViewStyle = WMMenuViewStyleFlood;
+//    self.menuHeight = 44;
+//    self.menuViewStyle = WMMenuViewStyleLine;
+//    self.titleSizeSelected = 15;
     self.titleColorNormal = [UIColor grayColor];
+    self.titleColorSelected = [JudgeManager defaultManager].originColor;
     self.progressColor = [JudgeManager defaultManager].originColor;
-    self.menuViewLayoutMode = WMMenuViewLayoutModeCenter;
-    self.menuItemWidth = 75;
-    self.menuHeight = 40;
-    self.viewFrame = CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    self.showOnNavigationBar = YES;
+    self.menuBGColor = [UIColor clearColor];
+    //self.menuViewLayoutMode = WMMenuViewLayoutModeScatter;
+    self.preloadPolicy = WMPageControllerPreloadPolicyNeighbour;
     [super viewDidLoad];
 }
 
@@ -85,8 +90,8 @@
     [self showMsg];
     self.title = @"资讯";
     
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
 }
 //自定义侧边栏按键
 -(void)showMsg{

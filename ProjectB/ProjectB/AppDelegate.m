@@ -116,7 +116,7 @@
     [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:MMDrawerAnimationTypeSwingingDoor];
     
     self.window.rootViewController = _drawerC;
-
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     
@@ -128,7 +128,7 @@
     self.nightView.hidden = YES;
     self.nightView.backgroundColor = [UIColor blackColor];
     self.nightView.alpha = 0.7;
-    self.window.backgroundColor = [UIColor whiteColor];
+    
     [self.window addSubview:self.nightView];
    
     

@@ -23,7 +23,7 @@
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HYd-b1-RbQ">
                             <constraints>
-                                <constraint firstAttribute="height" constant="154" id="yri-JY-Ucf"/>
+                                <constraint firstAttribute="height" constant="256" id="yri-JY-Ucf"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

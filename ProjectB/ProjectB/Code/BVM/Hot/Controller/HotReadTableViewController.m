@@ -1,26 +1,26 @@
 //
-//  ReadRankingListTableViewController.m
+//  HotReadTableViewController.m
 //  ProjectB
 //
-//  Created by long on 2016/9/29.
+//  Created by 芏小川 on 2016/10/13.
 //  Copyright © 2016年 long. All rights reserved.
 //
 
-#import "ReadRankingListTableViewController.h"
-#import "ReaderRankListTableViewCell.h"
-#import "ReadRankList DataModels.h"
+#import "HotReadTableViewController.h"
+#import "HotReadTableViewCell.h"
+#import "ReadHotDataModels.h"
 #import "ReaderDetailViewController.h"
 
-@interface ReadRankingListTableViewController ()
+
+@interface HotReadTableViewController ()
 
 @property (nonatomic,assign) NSInteger page;
 
-@property (nonatomic,strong) ReadRankListBaseClass *base;
+@property (nonatomic,strong) ReadHotBaseClass *base;
 @property (nonatomic,strong) NSMutableArray *moreDataArr;
 @end
 
-@implementation ReadRankingListTableViewController
-
+@implementation HotReadTableViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -37,7 +37,7 @@
 -(void)initUI{
     _page = 1;
     _moreDataArr = [NSMutableArray array];
-    [self.tableView registerNib:[UINib nibWithNibName:@"ReaderRankListTableViewCell" bundle:nil] forCellReuseIdentifier:@"ReaderRankListCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HotReadTableViewCell" bundle:nil] forCellReuseIdentifier:@"HotReadCell"];
     self.tableView.rowHeight = 178;
     self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
     
@@ -65,7 +65,7 @@
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:rankUrl Parameter:nil Success:^(NSDictionary *dic) {
         
-        _base = [ReadRankListBaseClass modelObjectWithDictionary:dic];
+        _base = [ReadHotBaseClass modelObjectWithDictionary:dic];
         
         if (_page == 1) {
             //下拉刷新
@@ -77,7 +77,7 @@
             [_moreDataArr addObjectsFromArray:_base.products];
             
         }
-
+        
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -107,9 +107,9 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ReaderRankListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReaderRankListCell" forIndexPath:indexPath];
+    HotReadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotReadCell" forIndexPath:indexPath];
     
-    ReadRankListProducts *products = _moreDataArr[indexPath.row];
+    ReadHotProducts *products = _moreDataArr[indexPath.row];
     cell.rankLb.text = [NSString stringWithFormat:@"%.0f",products.rank];
     cell.bookName.text = products.productName;
     cell.bookWriter.text = [NSString stringWithFormat:@"作者: %@",products.author];
@@ -126,14 +126,23 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ReaderDetailViewController *readerDetailVC = [ReaderDetailViewController new];
-    ReadRankListProducts *products = _base.products[indexPath.row];
+    ReadHotProducts *products = _base.products[indexPath.row];
     readerDetailVC.productID = products.productId;
     readerDetailVC.imgUrl = products.imgUrl;
     readerDetailVC.abstract = products.abstract;
     [self.navigationController pushViewController:readerDetailVC animated:YES
-    ];
+     ];
     
 }
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -166,22 +175,6 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 */
 

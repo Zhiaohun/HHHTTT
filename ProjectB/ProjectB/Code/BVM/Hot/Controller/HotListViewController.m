@@ -9,10 +9,17 @@
 #import "HotListViewController.h"
 #import "HotListTableViewCell.h"
 #import "HotVideoViewController.h"
+#import "ReadHotDataModels.h"
+#import "HotReadTableViewController.h"
+
 
 @interface HotListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
+
+@property (nonatomic,strong) ReadHotBaseClass *readBase;
+
+
 @end
 
 @implementation HotListViewController
@@ -21,6 +28,7 @@
     [super viewDidLoad];
     
     [self initUI];
+    [self requestDataInSimpleView];
 
 }
 
@@ -50,6 +58,29 @@
     
 }
 
+-(void)requestDataInSimpleView{
+    //图书
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_HotRead Parameter:nil Success:^(NSDictionary *dic) {
+        
+        _readBase = [ReadHotBaseClass modelObjectWithDictionary:dic];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@"请求热门图书简介界面数据失败");
+    }];
+    
+    
+    
+    //视频
+    //音乐
+    
+    
+}
+
+
+
 
 #pragma mark - tableView Delegate -
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -60,37 +91,63 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     HotListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"hotCell" forIndexPath:indexPath];
-    [cell.requestMoreBtn addTarget:self action:@selector(requestMore) forControlEvents:UIControlEventTouchUpInside];
+    
     
     if (indexPath.row == 0) {
+        //视频
         cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
         cell.view1Title.text = @"一";
+        
+        [cell.requestMoreBtn addTarget:self action:@selector(requestMoreVideo) forControlEvents:UIControlEventTouchUpInside];
     }
     else if (indexPath.row == 1){
-        cell.headImg.image = [UIImage imageNamed:@"friend_sex_femal"];
-        cell.view1Title.text = @"二";
+        //图书
+        cell.viewTitle.text = @"畅销图书";
+        cell.headImg.image = [UIImage imageNamed:@"3839_pc"];
+        
+        ReadHotProducts *product1 = _readBase.products[0];
+        cell.view1Title.text = product1.productName;
+        [cell.view1Img sd_setImageWithURL:[NSURL URLWithString:product1.imgUrl]];
+        cell.view1scoreLb.text = [NSString stringWithFormat:@"%.1f",[product1.score floatValue]];
+        ReadHotProducts *product2 = _readBase.products[1];
+        cell.view2Title.text = product2.productName;
+        [cell.view2Img sd_setImageWithURL:[NSURL URLWithString:product2.imgUrl]];
+        cell.view2Score.text = [NSString stringWithFormat:@"%.1f",[product2.score floatValue]];
+        ReadHotProducts *product3 = _readBase.products[2];
+        cell.view3Title.text = product3.productName;
+        [cell.view3Img sd_setImageWithURL:[NSURL URLWithString:product3.imgUrl]];
+        cell.view3Score.text = [NSString stringWithFormat:@"%.1f",[product3.score floatValue]];
+        
+        [cell.requestMoreBtn addTarget:self action:@selector(requestMoreRead) forControlEvents:UIControlEventTouchUpInside];
     }
     else{
+        //音乐
         cell.headImg.image = [UIImage imageNamed:@"friend_sex_male"];
         cell.view1Title.text = @"三";
+        
+        
+        [cell.requestMoreBtn addTarget:self action:@selector(requestMoreMusic) forControlEvents:UIControlEventTouchUpInside];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
-
-    
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{    
 }
 
--(void)requestMore{
-
+-(void)requestMoreVideo{
     HotVideoViewController *hotVideoVC = [HotVideoViewController new];
     [self.navigationController pushViewController:hotVideoVC animated:YES];
     
 }
+-(void)requestMoreRead{
+    HotReadTableViewController *hotreadVC = [HotReadTableViewController new];
+    [self.navigationController pushViewController:hotreadVC animated:YES];
+}
 
+-(void)requestMoreMusic{
+
+}
 
 /*
 #pragma mark - Navigation
