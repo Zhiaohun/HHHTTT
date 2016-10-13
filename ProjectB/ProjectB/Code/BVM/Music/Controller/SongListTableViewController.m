@@ -214,15 +214,16 @@
     SongListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songlistcell" forIndexPath:indexPath];
     
     
-  /*  //cell重用
+    /*
+    //cell重用
     if (cell.downloadBtn.tag-100 != indexPath.row) {
-        [cell.downloadBtn setImage:[UIImage imageNamed:@"download_normal"] forState:UIControlStateNormal];
+        [cell.downloadBtn setImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
     }else{
        
-        [cell.downloadBtn setImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
+        [cell.downloadBtn setImage:[UIImage imageNamed:@"download_normal"] forState:UIControlStateNormal];
     }
-    
     */
+    
     
     
     MusicListList *listModel = self.musicListArray[indexPath.row];
