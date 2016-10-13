@@ -177,7 +177,6 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
           [self.collectionView reloadData];
-           // [self setUpUI];
 
         });
         
@@ -253,13 +252,13 @@
     _pageFlowView.backgroundColor = [UIColor whiteColor];
     _pageFlowView.delegate = self;
     _pageFlowView.dataSource = self;
-    _pageFlowView.minimumPageAlpha = 0.1;
+    _pageFlowView.minimumPageAlpha = 0.4;
     _pageFlowView.minimumPageScale = 0.85;
     _pageFlowView.orientation = NewPagedFlowViewOrientationHorizontal;
     
     
     
-    //_pageFlowView.isOpenAutoScroll = YES;
+    _pageFlowView.isOpenAutoScroll = NO;
     
     //初始化pageControl
     UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, _pageFlowView.frame.size.height - 24 - 8, VIEW_WIDTH, 8)];
@@ -345,11 +344,11 @@
     
     NSLog(@"点击了第%ld张图",(long)subIndex+1);
 //    
-//    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
-//    moviePlayVC.dataArray = [NSArray array];
-//    moviePlayVC.dataArray = self.headerDataArray;
-//    moviePlayVC.selectIndex = (long)subIndex;
-//    [self.navigationController pushViewController:moviePlayVC animated:YES];
+    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
+    moviePlayVC.dataArray = [NSArray array];
+    moviePlayVC.dataArray = self.headerDataArray;
+    moviePlayVC.selectIndex = (long)subIndex;
+    [self.navigationController pushViewController:moviePlayVC animated:YES];
     
     
     
@@ -359,9 +358,10 @@
 
 #pragma mark NewPagedFlowView Datasource
 - (NSInteger)numberOfPagesInFlowView:(NewPagedFlowView *)flowView {
-   // NSLog(@"____________%lu",self.headerImageArray.count);
-    NSLog(@">>>>>>>>>>>>>%lu",_array.count);
-    return _array.count;
+    NSLog(@"____________%lu",self.headerImageArray.count);
+   // NSLog(@">>>>>>>>>>>>>%lu",_array.count);
+   // return _array.count;
+    return self.headerImageArray.count;
     
 }
 
@@ -374,12 +374,12 @@
     }
     //在这里下载网络图片
 //    if (self.headerDataArray) {
-//        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
+        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
 //    }
     
     
     
-       bannerView.mainImageView.image = [UIImage imageNamed:_array[index]];
+     //  bannerView.mainImageView.image = [UIImage imageNamed:_array[index]];
     
     return bannerView;
 }
