@@ -12,6 +12,7 @@
 #import "NewsBaseViewController.h"
 #import "LeftViewController.h"
 #import "MineViewController.h"
+#import "LLShowHUD.h"
 
 #import "MMExampleDrawerVisualStateManager.h"
 
@@ -23,6 +24,7 @@
 
 @interface AppDelegate ()
 @property (nonatomic, strong) UIView *nightView;
+
 
 @end
 
@@ -163,37 +165,44 @@
 
 -(void)shareWeiBo{
     
-    [ShareSDK registerApp:@"17df0ccd24358"
-     
-          activePlatforms:@[
-                            @(SSDKPlatformTypeSinaWeibo)]
-                 onImport:^(SSDKPlatformType platformType)
-     {
-         switch (platformType)
-         {
-            
-             case SSDKPlatformTypeSinaWeibo:
-                 [ShareSDKConnector connectWeibo:[WeiboSDK class]];
-                 break;
-             default:
-                 break;
-         }
-     }
-          onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
-     {
+    
+   // if ( [WeiboSDK isWeiboAppInstalled]) {
+        [ShareSDK registerApp:@"17df0ccd24358"
          
-         switch (platformType)
+              activePlatforms:@[
+                                @(SSDKPlatformTypeSinaWeibo)]
+                     onImport:^(SSDKPlatformType platformType)
          {
-             case SSDKPlatformTypeSinaWeibo:
-                 //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                 [appInfo SSDKSetupSinaWeiboByAppKey:@"568898243"
-                                           appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
-                                         redirectUri:@"http://www.sharesdk.cn"
-                                            authType:SSDKAuthTypeBoth];
-                default:
-                 break;
+             switch (platformType)
+             {
+                     
+                 case SSDKPlatformTypeSinaWeibo:
+                     [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                     break;
+                 default:
+                     break;
+             }
          }
-     }];
-}
+              onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
+         {
+             
+             switch (platformType)
+             {
+                 case SSDKPlatformTypeSinaWeibo:
+                     //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                     [appInfo SSDKSetupSinaWeiboByAppKey:@"568898243"
+                                               appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
+                                             redirectUri:@"http://www.sharesdk.cn"
+                                                authType:SSDKAuthTypeBoth];
+                 default:
+                     break;
+             }
+         }];
+
+   // }else{
+        
+   // }
+    
+  }
 
 @end

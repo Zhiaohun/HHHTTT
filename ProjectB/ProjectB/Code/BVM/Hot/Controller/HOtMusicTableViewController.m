@@ -31,6 +31,7 @@
     [super viewDidLoad];
     [self initUI];
     [self requestMusicData];
+    self.title = @"专辑列表";
 }
 
 - (void)didReceiveMemoryWarning {
