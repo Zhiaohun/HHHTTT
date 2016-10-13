@@ -46,6 +46,8 @@
     
     self.selectCell = -1;
     
+    self.title = @"专辑列表";
+    
     NSLog(@"_+_+_+%lu",self.albumId);
     self.pageId = 1;
     self.tableView.rowHeight = UITableViewAutomaticDimension;

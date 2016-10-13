@@ -135,6 +135,9 @@
     };
     
     
+    cell.shareBtnActionBlock = ^{
+        [Share shareToWeiBo:@[model.profile_image_url] Content:model.content URLStr:nil Title:nil];
+    };
     
     
     

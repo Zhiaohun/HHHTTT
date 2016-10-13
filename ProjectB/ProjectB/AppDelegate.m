@@ -16,9 +16,9 @@
 #import "MMExampleDrawerVisualStateManager.h"
 
 
-//#import <ShareSDK/ShareSDK.h>
-///#import <ShareSDKConnector/ShareSDKConnector.h>
-//#import "WeiboSDK.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+#import "WeiboSDK.h"
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
 
 @interface AppDelegate ()
@@ -133,7 +133,7 @@
    
     
     
-   // [self shareWeiBo];
+    [self shareWeiBo];
     
     return YES;
 }
@@ -160,7 +160,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-/*
+
 -(void)shareWeiBo{
     
     [ShareSDK registerApp:@"17df0ccd24358"
@@ -195,5 +195,5 @@
          }
      }];
 }
-*/
+
 @end

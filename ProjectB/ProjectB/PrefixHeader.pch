@@ -38,7 +38,7 @@
 #import "UIView+ShadowView.h"  //加阴影效果
 #import "UITableView+LSEmpty.h"  
 
-
+#import "share.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

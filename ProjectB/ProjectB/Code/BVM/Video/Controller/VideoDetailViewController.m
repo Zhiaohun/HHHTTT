@@ -149,6 +149,8 @@
     
 }
 - (IBAction)shareBtnAction:(id)sender {
+    [Share shareToWeiBo:@[self.listModel.data.cover.feed] Content:self.listModel.data.dataDescription URLStr:nil Title:_listModel.data.title];
+    
 }
 - (IBAction)cacheBtnAction:(id)sender {
 }
