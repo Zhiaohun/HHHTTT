@@ -86,8 +86,10 @@
     TotalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"totalCell" forIndexPath:indexPath];
     NSArray *arr = @[@"热门",@"图书",@"电影",@"音乐",@"排行榜"];
     cell.totalName.text = arr[indexPath.row];
+
     
-    cell.totalImg.image  = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]] ;
+    
+    cell.totalImg.image  = [self blurViewByLightEffectWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",(int)indexPath.row+10]]] ;
 //    int a = arc4random() % 255;
 //    int b = arc4random() % 255;
 //    int c = arc4random() % 255;
