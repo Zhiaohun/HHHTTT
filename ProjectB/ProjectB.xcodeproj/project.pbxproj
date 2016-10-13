@@ -62,8 +62,6 @@
 		3F2961881DAA384E001934A9 /* NewsGameImgextra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29616B1DAA384E001934A9 /* NewsGameImgextra.m */; };
 		3F2961891DAA384E001934A9 /* NewsGameT1348654151579.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29616D1DAA384E001934A9 /* NewsGameT1348654151579.m */; };
 		3F29618A1DAA384E001934A9 /* NewsGameWapPortal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29616F1DAA384E001934A9 /* NewsGameWapPortal.m */; };
-		3F29618B1DAA384E001934A9 /* NewsJokeBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961721DAA384E001934A9 /* NewsJokeBaseClass.m */; };
-		3F29618C1DAA384E001934A9 /* NewsJokeInternalBaseClass1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961751DAA384E001934A9 /* NewsJokeInternalBaseClass1.m */; };
 		3F29618D1DAA384E001934A9 /* NewsTechnologyAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961781DAA384E001934A9 /* NewsTechnologyAds.m */; };
 		3F29618E1DAA384E001934A9 /* NewsTechnologyBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29617A1DAA384E001934A9 /* NewsTechnologyBaseClass.m */; };
 		3F29618F1DAA384E001934A9 /* NewsTechnologyImgextra.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F29617D1DAA384E001934A9 /* NewsTechnologyImgextra.m */; };
@@ -360,11 +358,6 @@
 		3F29616D1DAA384E001934A9 /* NewsGameT1348654151579.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsGameT1348654151579.m; sourceTree = "<group>"; };
 		3F29616E1DAA384E001934A9 /* NewsGameWapPortal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsGameWapPortal.h; sourceTree = "<group>"; };
 		3F29616F1DAA384E001934A9 /* NewsGameWapPortal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsGameWapPortal.m; sourceTree = "<group>"; };
-		3F2961711DAA384E001934A9 /* NewsJokeBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsJokeBaseClass.h; sourceTree = "<group>"; };
-		3F2961721DAA384E001934A9 /* NewsJokeBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsJokeBaseClass.m; sourceTree = "<group>"; };
-		3F2961731DAA384E001934A9 /* NewsJokeDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsJokeDataModels.h; sourceTree = "<group>"; };
-		3F2961741DAA384E001934A9 /* NewsJokeInternalBaseClass1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsJokeInternalBaseClass1.h; sourceTree = "<group>"; };
-		3F2961751DAA384E001934A9 /* NewsJokeInternalBaseClass1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsJokeInternalBaseClass1.m; sourceTree = "<group>"; };
 		3F2961771DAA384E001934A9 /* NewsTechnologyAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTechnologyAds.h; sourceTree = "<group>"; };
 		3F2961781DAA384E001934A9 /* NewsTechnologyAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTechnologyAds.m; sourceTree = "<group>"; };
 		3F2961791DAA384E001934A9 /* NewsTechnologyBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTechnologyBaseClass.h; sourceTree = "<group>"; };
@@ -1142,7 +1135,6 @@
 				3F2961541DAA384E001934A9 /* NewsConcentrationModel */,
 				3F29615C1DAA384E001934A9 /* NewsEntertainmentModel */,
 				3F2961661DAA384E001934A9 /* NewsGameModel */,
-				3F2961701DAA384E001934A9 /* NewsJokeModel */,
 				3F2961761DAA384E001934A9 /* NewsTechnologyModel */,
 			);
 			path = Model;
@@ -1192,18 +1184,6 @@
 				3F29616F1DAA384E001934A9 /* NewsGameWapPortal.m */,
 			);
 			path = NewsGameModel;
-			sourceTree = "<group>";
-		};
-		3F2961701DAA384E001934A9 /* NewsJokeModel */ = {
-			isa = PBXGroup;
-			children = (
-				3F2961711DAA384E001934A9 /* NewsJokeBaseClass.h */,
-				3F2961721DAA384E001934A9 /* NewsJokeBaseClass.m */,
-				3F2961731DAA384E001934A9 /* NewsJokeDataModels.h */,
-				3F2961741DAA384E001934A9 /* NewsJokeInternalBaseClass1.h */,
-				3F2961751DAA384E001934A9 /* NewsJokeInternalBaseClass1.m */,
-			);
-			path = NewsJokeModel;
 			sourceTree = "<group>";
 		};
 		3F2961761DAA384E001934A9 /* NewsTechnologyModel */ = {
@@ -2244,7 +2224,6 @@
 				5DF554841DA893BC00DFCBEC /* ReadCommentSummary.m in Sources */,
 				5DB7FB071DAF5B4C001407FE /* ReaderRankListTableViewCell.m in Sources */,
 				5DF5547F1DA893BC00DFCBEC /* ReadCommentBaseClass.m in Sources */,
-				3F29618B1DAA384E001934A9 /* NewsJokeBaseClass.m in Sources */,
 				3F2961BB1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m in Sources */,
 				5DF67D0F1DAE53F700A1B9D5 /* MainBaseClass.m in Sources */,
 				5DF554801DA893BC00DFCBEC /* ReadCommentPageinfo.m in Sources */,
@@ -2297,7 +2276,6 @@
 				3F2961AD1DAA3944001934A9 /* SongPlayManager.m in Sources */,
 				3FB7B8631DADC89C006C9B6B /* SongDownloadManager.m in Sources */,
 				3F04BFB81D9B7701005CCA03 /* ReaderDetailViewController.m in Sources */,
-				3F29618C1DAA384E001934A9 /* NewsJokeInternalBaseClass1.m in Sources */,
 				3F844ADF1D9E3E2300AE9B3B /* VideoListData.m in Sources */,
 				3F6C40461DAD2137005CC6B0 /* YYScrollView.m in Sources */,
 				5D29EA211D9D19DE00213A82 /* SystemInfoTableViewCell.m in Sources */,
