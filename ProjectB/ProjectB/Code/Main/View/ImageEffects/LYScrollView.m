@@ -55,19 +55,6 @@
     [self addSubview:self.scrollView];
 }
 
-//-(void)setMainBase:(MainBaseClass *)mainBase{
-//    
-//    //NSLog(@"mainbase___%@",mainBase);
-//    _list = mainBase.textcardlist[_currIndex];
-//    NSLog(@"list++++%@",_list);
-//    
-//    
-//    
-//    
-//    
-//}
-
-
 - (void)setItmeArray:(NSMutableArray *)itmeArray
 {
     
@@ -280,15 +267,10 @@
     return NO;
 }
 
--(void)getdata{
-    }
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [self getdata];
-    NSLog(@"current___%ld",_currIndex);
-    NSLog(@"beginoffx___%f",_beginOffX);
     NSInteger index = scrollView.contentOffset.x / scrollView.frame.size.width;
     if (_delegate && [_delegate respondsToSelector:@selector(scrolIndex:)]) {
         [self.delegate scrolIndex:index];

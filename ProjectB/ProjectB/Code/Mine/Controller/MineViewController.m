@@ -13,6 +13,12 @@
 #import "MainViewController.h"
 #import "CacheDelete.h"
 #import "LLShowHUD.h"
+#import "AboutViewController.h"
+#import "IdeaTableViewController.h"
+#import "IntroduceOfFunctionViewController.h"
+#import "AcceptMsgTableViewController.h"
+
+
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -53,6 +59,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+#pragma mark - private Method -
+
+
 -(void)toSelfEdit{
     
     NSLog(@"----------%d",[JudgeManager defaultManager].isLogin);
@@ -75,7 +86,22 @@
     
 }
 
-#pragma mark - private Method -
+-(void)toMsg{
+    
+    if ([JudgeManager defaultManager].isLogin) {
+        AcceptMsgTableViewController *acceptVC = [AcceptMsgTableViewController new];
+        [self.navigationController pushViewController:acceptVC animated:YES];
+    }
+    else{
+        LoginViewController *loginVC = [LoginViewController new];
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
+    
+    
+    
+    
+}
+
 -(void)initUI{
     self.title = @"我的";
     //用户信息
@@ -113,6 +139,13 @@
     _systemInfoTableView.delegate = self;
     _systemInfoTableView.dataSource = self;
     _systemInfoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    
+    UITapGestureRecognizer *gest = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(toMsg)];
+    gest.numberOfTapsRequired = 1;
+    [self.msgView addGestureRecognizer:gest];
+    
+    
 
 }
 
@@ -185,7 +218,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         //意见反馈
-        
+        IdeaTableViewController *ideaVC = [IdeaTableViewController new];
+        [self.navigationController pushViewController:ideaVC animated:YES];
+
     }
     else if (indexPath.row == 1) {
         //清除缓存
@@ -196,11 +231,15 @@
     }
     else if (indexPath.row == 2){
         //功能介绍
-        [self showSucHUDWithMessage:@"是否清除"];
+        IntroduceOfFunctionViewController *introduceVc = [IntroduceOfFunctionViewController new];
+        [self.navigationController pushViewController:introduceVc animated:YES];
+        
+        
     }
     else{
         //关于
-        
+        AboutViewController *aboutVC = [AboutViewController new];
+        [self.navigationController pushViewController:aboutVC animated:YES];
     
     }
     

@@ -46,14 +46,31 @@
     _page = 1;
     _moreDataArr = [NSMutableArray array];
     self.title = @"图书列表";
-    //self.automaticallyAdjustsScrollViewInsets = NO;
+    //    self.automaticallyAdjustsScrollViewInsets = NO;
+    //    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView.rowHeight = 120;
     [self.tableView registerNib:[UINib nibWithNibName:@"ReaderListTableViewCell" bundle:nil] forCellReuseIdentifier:@"readerListCell"];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+//    [self viewDidLayoutSubviews];
     
     _readerView = [[NSBundle mainBundle]loadNibNamed:@"ReaderListHeaderView" owner:nil options:nil][0];
+    
+    _readerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97-64);
     self.tableView.tableHeaderView = _readerView;
-    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97-64);
+    
+    //self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97-64);
+    
+//    if ([UIScreen mainScreen].bounds.size.width == 375) {
+//        self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97-64);
+//    }
+//    else if ([UIScreen mainScreen].bounds.size.width == 414){
+//        self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97-64-64);
+//    }
+//    else{
+//        self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97);
+//    }
+    
+    
     [_readerView.movition setTitleColor:[JudgeManager defaultManager].originColor forState:UIControlStateNormal];
     _url = URL_MovitionBook;
     
@@ -78,6 +95,13 @@
     } ;
 }
 
+//-(void)viewDidLayoutSubviews
+//{
+//    _readerView = [[NSBundle mainBundle]loadNibNamed:@"ReaderListHeaderView" owner:nil options:nil][0];
+// 
+//    _readerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97);
+//
+//}
 -(void)refreshUI{
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -119,9 +143,6 @@
             [_moreDataArr addObjectsFromArray:_base.products];
         
         }
-        
-        
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self.tableView.mj_header endRefreshing];
@@ -133,17 +154,6 @@
     }];
 }
 
-//-(void)requestMoreData{
-//    NSString *dataUrl = [NSString stringWithFormat:@"%@&page=%lu",_url,_page];
-//    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:dataUrl Parameter:nil Success:^(NSDictionary *dic) {
-//        _base = [ReadMotivationBaseClass modelObjectWithDictionary:dic];
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.tableView reloadData];
-//        });
-//    } Fail:^(NSError *error) {
-//        NSLog(@"失败");
-//    }];
-//}
 
 #pragma mark - Table view data source
 
@@ -158,6 +168,7 @@
     ReadMotivationProducts *products = _moreDataArr[indexPath.row];
     
     ReaderListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"readerListCell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.BookName.text = products.name;
     cell.BookWriter.text = products.authorname;
     cell.BookScore.text = [NSString stringWithFormat:@"%@%%",products.highCommonRate];

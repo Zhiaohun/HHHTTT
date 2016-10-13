@@ -49,11 +49,11 @@
 -(void)initUI{
     self.title = @"书影音";
     //设置导航栏透明
-    [self changeNavigation];
+    //[self changeNavigation];
     
 //    self.automaticallyAdjustsScrollViewInsets = NO;
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, VIEW_WIDTH, VIEW_HEIGHT-64)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, VIEW_WIDTH, VIEW_HEIGHT-64-44)];
     _tableView.rowHeight = 100.0;
     _tableView.dataSource = self;
     _tableView.delegate = self;

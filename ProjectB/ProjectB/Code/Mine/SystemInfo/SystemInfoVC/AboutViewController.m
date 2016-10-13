@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"关于";
+    self.titleImg.layer.cornerRadius = 10;
+    self.titleImg.clipsToBounds = YES;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

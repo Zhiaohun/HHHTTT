@@ -209,6 +209,18 @@
 		5DB7FB191DAF66DF001407FE /* HotReadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB181DAF66DF001407FE /* HotReadTableViewController.m */; };
 		5DB7FB1D1DAF66F5001407FE /* HotReadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB1B1DAF66F5001407FE /* HotReadTableViewCell.m */; };
 		5DB7FB1E1DAF66F5001407FE /* HotReadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB7FB1C1DAF66F5001407FE /* HotReadTableViewCell.xib */; };
+		5DB7FB471DAF6D82001407FE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB3A1DAF6D82001407FE /* AboutViewController.m */; };
+		5DB7FB481DAF6D82001407FE /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB7FB3B1DAF6D82001407FE /* AboutViewController.xib */; };
+		5DB7FB491DAF6D82001407FE /* IdeaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB3D1DAF6D82001407FE /* IdeaTableViewCell.m */; };
+		5DB7FB4A1DAF6D82001407FE /* IdeaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB7FB3E1DAF6D82001407FE /* IdeaTableViewCell.xib */; };
+		5DB7FB4B1DAF6D82001407FE /* IdeaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB401DAF6D82001407FE /* IdeaTableViewController.m */; };
+		5DB7FB4C1DAF6D82001407FE /* IntroduceOfFunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB421DAF6D82001407FE /* IntroduceOfFunctionViewController.m */; };
+		5DB7FB4D1DAF6D82001407FE /* IntroduceOfFunctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB7FB431DAF6D82001407FE /* IntroduceOfFunctionViewController.xib */; };
+		5DB7FB4E1DAF6D82001407FE /* IntrodutionOfFunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB451DAF6D82001407FE /* IntrodutionOfFunctionViewController.m */; };
+		5DB7FB4F1DAF6D82001407FE /* IntrodutionOfFunctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB7FB461DAF6D82001407FE /* IntrodutionOfFunctionViewController.xib */; };
+		5DB7FB751DAF7C08001407FE /* AcceptMsgTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB741DAF7C08001407FE /* AcceptMsgTableViewController.m */; };
+		5DB7FB7B1DAF8148001407FE /* LYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB781DAF8148001407FE /* LYScrollView.m */; };
+		5DB7FB7C1DAF8148001407FE /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB7A1DAF8148001407FE /* UIImageEffects.m */; };
 		5DEEB5781DAA6258004FD1FA /* UserInfoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */; };
 		5DEEB5791DAA6258004FD1FA /* UserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB5761DAA6258004FD1FA /* UserInfoData.m */; };
 		5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB57B1DAA6C7F004FD1FA /* UserInfoManager.m */; };
@@ -238,8 +250,6 @@
 		5DF554BD1DA8E23400DFCBEC /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554BC1DA8E23400DFCBEC /* UserInfoModel.m */; };
 		5DF554C01DA8E25500DFCBEC /* CollectionInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554BF1DA8E25500DFCBEC /* CollectionInfoModel.m */; };
 		5DF554C61DA8E27D00DFCBEC /* MyTracksInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF554C51DA8E27D00DFCBEC /* MyTracksInfoModel.m */; };
-		5DF67D031DAE53D700A1B9D5 /* LYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D001DAE53D700A1B9D5 /* LYScrollView.m */; };
-		5DF67D041DAE53D700A1B9D5 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D021DAE53D700A1B9D5 /* UIImageEffects.m */; };
 		5DF67D0F1DAE53F700A1B9D5 /* MainBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D071DAE53F700A1B9D5 /* MainBaseClass.m */; };
 		5DF67D101DAE53F700A1B9D5 /* MainCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D091DAE53F700A1B9D5 /* MainCreator.m */; };
 		5DF67D111DAE53F700A1B9D5 /* MainOriginbook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D0C1DAE53F700A1B9D5 /* MainOriginbook.m */; };
@@ -611,6 +621,26 @@
 		5DB7FB1A1DAF66F5001407FE /* HotReadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotReadTableViewCell.h; sourceTree = "<group>"; };
 		5DB7FB1B1DAF66F5001407FE /* HotReadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotReadTableViewCell.m; sourceTree = "<group>"; };
 		5DB7FB1C1DAF66F5001407FE /* HotReadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotReadTableViewCell.xib; sourceTree = "<group>"; };
+		5DB7FB391DAF6D82001407FE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		5DB7FB3A1DAF6D82001407FE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		5DB7FB3B1DAF6D82001407FE /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		5DB7FB3C1DAF6D82001407FE /* IdeaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IdeaTableViewCell.h; path = SystemInfoVC/IdeaTableViewCell.h; sourceTree = "<group>"; };
+		5DB7FB3D1DAF6D82001407FE /* IdeaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IdeaTableViewCell.m; path = SystemInfoVC/IdeaTableViewCell.m; sourceTree = "<group>"; };
+		5DB7FB3E1DAF6D82001407FE /* IdeaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IdeaTableViewCell.xib; path = SystemInfoVC/IdeaTableViewCell.xib; sourceTree = "<group>"; };
+		5DB7FB3F1DAF6D82001407FE /* IdeaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdeaTableViewController.h; sourceTree = "<group>"; };
+		5DB7FB401DAF6D82001407FE /* IdeaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdeaTableViewController.m; sourceTree = "<group>"; };
+		5DB7FB411DAF6D82001407FE /* IntroduceOfFunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroduceOfFunctionViewController.h; sourceTree = "<group>"; };
+		5DB7FB421DAF6D82001407FE /* IntroduceOfFunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroduceOfFunctionViewController.m; sourceTree = "<group>"; };
+		5DB7FB431DAF6D82001407FE /* IntroduceOfFunctionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroduceOfFunctionViewController.xib; sourceTree = "<group>"; };
+		5DB7FB441DAF6D82001407FE /* IntrodutionOfFunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntrodutionOfFunctionViewController.h; sourceTree = "<group>"; };
+		5DB7FB451DAF6D82001407FE /* IntrodutionOfFunctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntrodutionOfFunctionViewController.m; sourceTree = "<group>"; };
+		5DB7FB461DAF6D82001407FE /* IntrodutionOfFunctionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntrodutionOfFunctionViewController.xib; sourceTree = "<group>"; };
+		5DB7FB731DAF7C08001407FE /* AcceptMsgTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptMsgTableViewController.h; sourceTree = "<group>"; };
+		5DB7FB741DAF7C08001407FE /* AcceptMsgTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptMsgTableViewController.m; sourceTree = "<group>"; };
+		5DB7FB771DAF8148001407FE /* LYScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYScrollView.h; sourceTree = "<group>"; };
+		5DB7FB781DAF8148001407FE /* LYScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYScrollView.m; sourceTree = "<group>"; };
+		5DB7FB791DAF8148001407FE /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		5DB7FB7A1DAF8148001407FE /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		5DEEB5731DAA6258004FD1FA /* UserInfoBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoBaseClass.h; sourceTree = "<group>"; };
 		5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoBaseClass.m; sourceTree = "<group>"; };
 		5DEEB5751DAA6258004FD1FA /* UserInfoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoData.h; sourceTree = "<group>"; };
@@ -670,10 +700,6 @@
 		5DF554BF1DA8E25500DFCBEC /* CollectionInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionInfoModel.m; sourceTree = "<group>"; };
 		5DF554C41DA8E27D00DFCBEC /* MyTracksInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTracksInfoModel.h; sourceTree = "<group>"; };
 		5DF554C51DA8E27D00DFCBEC /* MyTracksInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTracksInfoModel.m; sourceTree = "<group>"; };
-		5DF67CFF1DAE53D700A1B9D5 /* LYScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYScrollView.h; sourceTree = "<group>"; };
-		5DF67D001DAE53D700A1B9D5 /* LYScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYScrollView.m; sourceTree = "<group>"; };
-		5DF67D011DAE53D700A1B9D5 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
-		5DF67D021DAE53D700A1B9D5 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		5DF67D061DAE53F700A1B9D5 /* MainBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBaseClass.h; sourceTree = "<group>"; };
 		5DF67D071DAE53F700A1B9D5 /* MainBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBaseClass.m; sourceTree = "<group>"; };
 		5DF67D081DAE53F700A1B9D5 /* MainCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCreator.h; sourceTree = "<group>"; };
@@ -766,6 +792,7 @@
 		3F04BF561D9B6FE3005CCA03 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5DB7FB761DAF8148001407FE /* ImageEffects */,
 				5DF67D131DAE544300A1B9D5 /* MainView.h */,
 				5DF67D141DAE544300A1B9D5 /* MainView.m */,
 				5DF67D151DAE544300A1B9D5 /* MainView.xib */,
@@ -983,7 +1010,7 @@
 		3F04BF6A1D9B703E005CCA03 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				5D29EA241D9D2F0A00213A82 /* SystemInfoVC */,
+				5DB7FB361DAF6D3E001407FE /* SystemInfo */,
 				5D29EA231D9D2EDB00213A82 /* LoginAndRegisterVC */,
 				3F04BF6B1D9B703E005CCA03 /* Controller */,
 				3F04BF6C1D9B703E005CCA03 /* Model */,
@@ -1418,7 +1445,6 @@
 		3FA4E60E1D9AB1580090AC78 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				5DF67CFE1DAE53D700A1B9D5 /* ImageEffects */,
 				3F2961C61DAA434D001934A9 /* Category */,
 				5DF5549D1DA8DE9A00DFCBEC /* DataBase */,
 				5DF554961DA8CB8100DFCBEC /* Defaults */,
@@ -1498,13 +1524,6 @@
 				5DA8EB221D9B9C5B006DAECD /* RegisterViewController.xib */,
 			);
 			path = LoginAndRegisterVC;
-			sourceTree = "<group>";
-		};
-		5D29EA241D9D2F0A00213A82 /* SystemInfoVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SystemInfoVC;
 			sourceTree = "<group>";
 		};
 		5D29EA4D1D9E378600213A82 /* FourFunction */ = {
@@ -1736,6 +1755,57 @@
 			path = ReadHotModel;
 			sourceTree = "<group>";
 		};
+		5DB7FB361DAF6D3E001407FE /* SystemInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7FB381DAF6D82001407FE /* SystemInfoVC */,
+				5DB7FB371DAF6D55001407FE /* SystemInfoView */,
+			);
+			path = SystemInfo;
+			sourceTree = "<group>";
+		};
+		5DB7FB371DAF6D55001407FE /* SystemInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7FB3C1DAF6D82001407FE /* IdeaTableViewCell.h */,
+				5DB7FB3D1DAF6D82001407FE /* IdeaTableViewCell.m */,
+				5DB7FB3E1DAF6D82001407FE /* IdeaTableViewCell.xib */,
+			);
+			path = SystemInfoView;
+			sourceTree = "<group>";
+		};
+		5DB7FB381DAF6D82001407FE /* SystemInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7FB391DAF6D82001407FE /* AboutViewController.h */,
+				5DB7FB3A1DAF6D82001407FE /* AboutViewController.m */,
+				5DB7FB3B1DAF6D82001407FE /* AboutViewController.xib */,
+				5DB7FB3F1DAF6D82001407FE /* IdeaTableViewController.h */,
+				5DB7FB401DAF6D82001407FE /* IdeaTableViewController.m */,
+				5DB7FB411DAF6D82001407FE /* IntroduceOfFunctionViewController.h */,
+				5DB7FB421DAF6D82001407FE /* IntroduceOfFunctionViewController.m */,
+				5DB7FB431DAF6D82001407FE /* IntroduceOfFunctionViewController.xib */,
+				5DB7FB441DAF6D82001407FE /* IntrodutionOfFunctionViewController.h */,
+				5DB7FB451DAF6D82001407FE /* IntrodutionOfFunctionViewController.m */,
+				5DB7FB461DAF6D82001407FE /* IntrodutionOfFunctionViewController.xib */,
+				5DB7FB731DAF7C08001407FE /* AcceptMsgTableViewController.h */,
+				5DB7FB741DAF7C08001407FE /* AcceptMsgTableViewController.m */,
+			);
+			name = SystemInfoVC;
+			path = SystemInfoView/SystemInfoVC;
+			sourceTree = "<group>";
+		};
+		5DB7FB761DAF8148001407FE /* ImageEffects */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7FB771DAF8148001407FE /* LYScrollView.h */,
+				5DB7FB781DAF8148001407FE /* LYScrollView.m */,
+				5DB7FB791DAF8148001407FE /* UIImageEffects.h */,
+				5DB7FB7A1DAF8148001407FE /* UIImageEffects.m */,
+			);
+			path = ImageEffects;
+			sourceTree = "<group>";
+		};
 		5DEEB5721DAA6258004FD1FA /* UserInfoModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1840,17 +1910,6 @@
 			path = DBModel;
 			sourceTree = "<group>";
 		};
-		5DF67CFE1DAE53D700A1B9D5 /* ImageEffects */ = {
-			isa = PBXGroup;
-			children = (
-				5DF67CFF1DAE53D700A1B9D5 /* LYScrollView.h */,
-				5DF67D001DAE53D700A1B9D5 /* LYScrollView.m */,
-				5DF67D011DAE53D700A1B9D5 /* UIImageEffects.h */,
-				5DF67D021DAE53D700A1B9D5 /* UIImageEffects.m */,
-			);
-			path = ImageEffects;
-			sourceTree = "<group>";
-		};
 		5DF67D051DAE53F700A1B9D5 /* MainModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1952,6 +2011,7 @@
 				3FA4E5F21D9AB1070090AC78 /* LaunchScreen.storyboard in Resources */,
 				3FA5EE361D9DFC230020E8CC /* MusicRankingListTableViewController.xib in Resources */,
 				5DA8EB261D9B9C5B006DAECD /* RegisterViewController.xib in Resources */,
+				5DB7FB4A1DAF6D82001407FE /* IdeaTableViewCell.xib in Resources */,
 				5DA8EB531D9BC960006DAECD /* HotListTableViewCell.xib in Resources */,
 				3FB7B86F1DADFD42006C9B6B /* DownloadTableViewController.xib in Resources */,
 				3FA5EE241D9DFB120020E8CC /* VideoListTableViewController.xib in Resources */,
@@ -1977,6 +2037,7 @@
 				5DA8EB441D9BC1EB006DAECD /* MineViewController.xib in Resources */,
 				5D29EA621D9E396A00213A82 /* CollectionViewController.xib in Resources */,
 				5DA8EB491D9BC2B1006DAECD /* TotalTableViewCell.xib in Resources */,
+				5DB7FB481DAF6D82001407FE /* AboutViewController.xib in Resources */,
 				5DA8EB321D9BB48C006DAECD /* LeftViewController.xib in Resources */,
 				3FB7B8741DADFF80006C9B6B /* DownloadListTableViewCell.xib in Resources */,
 				3F3978651DAB47BF009979BB /* SayingTableViewCell.xib in Resources */,
@@ -1995,9 +2056,11 @@
 				5DB7FB081DAF5B4C001407FE /* ReaderRankListTableViewCell.xib in Resources */,
 				3F2961D81DAA826D001934A9 /* SongCommentsTableViewController.xib in Resources */,
 				5D29EA6A1D9E3A6E00213A82 /* TimingCloseTableViewCell.xib in Resources */,
+				5DB7FB4F1DAF6D82001407FE /* IntrodutionOfFunctionViewController.xib in Resources */,
 				5DB7FB1E1DAF66F5001407FE /* HotReadTableViewCell.xib in Resources */,
 				3F0470801D9C09EA00DAD187 /* ScienceTableViewController.xib in Resources */,
 				3F844AEB1D9E523400AE9B3B /* VideoDetailViewController.xib in Resources */,
+				5DB7FB4D1DAF6D82001407FE /* IntroduceOfFunctionViewController.xib in Resources */,
 				5D29E9EF1D9CAB8900213A82 /* MineEditViewController.xib in Resources */,
 				5DA8EB131D9B8089006DAECD /* HotListViewController.xib in Resources */,
 				3F04BF8C1D9B73E6005CCA03 /* TotalViewController.xib in Resources */,
@@ -2084,7 +2147,11 @@
 				3F04BF9F1D9B7551005CCA03 /* SongListTableViewController.m in Sources */,
 				3F576D041DAF358F00397323 /* PGIndexBannerSubiew.m in Sources */,
 				3FA5EE381D9DFC230020E8CC /* ReadRankingListTableViewController.m in Sources */,
+<<<<<<< HEAD
 				3F576D601DAF6FDD00397323 /* HOtMusicTableViewController.m in Sources */,
+=======
+				5DB7FB4B1DAF6D82001407FE /* IdeaTableViewController.m in Sources */,
+>>>>>>> 9e1df77dcf6bdad75d8390e36f18b78a604cec85
 				3F04707D1D9C09EA00DAD187 /* RecommendTableViewController.m in Sources */,
 				5DF67D161DAE544300A1B9D5 /* MainView.m in Sources */,
 				5DB7FB131DAF621F001407FE /* ReadHotBaseClass.m in Sources */,
@@ -2103,6 +2170,7 @@
 				3F272F8A1DA7681300CA7E8F /* MusicListBaseClass.m in Sources */,
 				5DF554811DA893BC00DFCBEC /* ReadCommentProduct.m in Sources */,
 				3F0470781D9C09EA00DAD187 /* GameTableViewController.m in Sources */,
+				5DB7FB4C1DAF6D82001407FE /* IntroduceOfFunctionViewController.m in Sources */,
 				5DA8EB431D9BC1EB006DAECD /* MineViewController.m in Sources */,
 				3F844ADB1D9E3E2300AE9B3B /* VideoListAuthor.m in Sources */,
 				3F39785F1DAB47A0009979BB /* SayingTableViewController.m in Sources */,
@@ -2119,7 +2187,6 @@
 				3F2961841DAA384E001934A9 /* NewsEntertainmentBaseClass.m in Sources */,
 				5D29EA611D9E396A00213A82 /* CollectionViewController.m in Sources */,
 				5D29E9F71D9CB61E00213A82 /* MyselfPageViewController.m in Sources */,
-				5DF67D041DAE53D700A1B9D5 /* UIImageEffects.m in Sources */,
 				5DB7FB001DAF5B44001407FE /* ReadRankListBaseClass.m in Sources */,
 				3F2961A91DAA38F3001934A9 /* NSString+hash.m in Sources */,
 				3F272F881DA7681300CA7E8F /* MusicDownloadBaseClass.m in Sources */,
@@ -2135,7 +2202,9 @@
 				3F29618A1DAA384E001934A9 /* NewsGameWapPortal.m in Sources */,
 				3F2961B11DAA3A40001934A9 /* MusicPlayHeaderView.m in Sources */,
 				3F2961881DAA384E001934A9 /* NewsGameImgextra.m in Sources */,
+				5DB7FB7C1DAF8148001407FE /* UIImageEffects.m in Sources */,
 				3F844AE41D9E3E2300AE9B3B /* VideoListTag.m in Sources */,
+				5DB7FB491DAF6D82001407FE /* IdeaTableViewCell.m in Sources */,
 				3F29618F1DAA384E001934A9 /* NewsTechnologyImgextra.m in Sources */,
 				3F2961C91DAA43C8001934A9 /* UIImageView+imageViewAnimation.m in Sources */,
 				3F2961511DAA37D4001934A9 /* SongPlayTableViewController.m in Sources */,
@@ -2156,6 +2225,7 @@
 				3F04BF4F1D9B68DF005CCA03 /* BaseViewController.m in Sources */,
 				5DF67D121DAE53F700A1B9D5 /* MainTextcardlist.m in Sources */,
 				5DF554921DA893E100DFCBEC /* ReadCommentTableViewCell.m in Sources */,
+				5DB7FB751DAF7C08001407FE /* AcceptMsgTableViewController.m in Sources */,
 				3FB7B8731DADFF80006C9B6B /* DownloadListTableViewCell.m in Sources */,
 				5DF5549C1DA8CCA200DFCBEC /* JudgeManager.m in Sources */,
 				5D29EA691D9E3A6E00213A82 /* TimingCloseTableViewCell.m in Sources */,
@@ -2169,9 +2239,11 @@
 				5D29E9F31D9CB0DC00213A82 /* DWSwipeGestures.m in Sources */,
 				5DA8EB311D9BB48C006DAECD /* LeftViewController.m in Sources */,
 				5DB7FB1D1DAF66F5001407FE /* HotReadTableViewCell.m in Sources */,
+				5DB7FB7B1DAF8148001407FE /* LYScrollView.m in Sources */,
 				3F576D051DAF358F00397323 /* NewPagedFlowView.m in Sources */,
 				3FB7B86A1DADE033006C9B6B /* DownloadModel.m in Sources */,
 				3FA4E60C1D9AB1510090AC78 /* Reachability.m in Sources */,
+				5DB7FB4E1DAF6D82001407FE /* IntrodutionOfFunctionViewController.m in Sources */,
 				3FA5EE351D9DFC230020E8CC /* MusicRankingListTableViewController.m in Sources */,
 				5DF554841DA893BC00DFCBEC /* ReadCommentSummary.m in Sources */,
 				5DB7FB071DAF5B4C001407FE /* ReaderRankListTableViewCell.m in Sources */,
@@ -2196,7 +2268,6 @@
 				5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */,
 				5DA8EB251D9B9C5B006DAECD /* RegisterViewController.m in Sources */,
 				3FA92D961DA6361F007E622E /* MoviePlayerViewController.m in Sources */,
-				5DF67D031DAE53D700A1B9D5 /* LYScrollView.m in Sources */,
 				3F29618D1DAA384E001934A9 /* NewsTechnologyAds.m in Sources */,
 				5DEEB5781DAA6258004FD1FA /* UserInfoBaseClass.m in Sources */,
 				3FA5EE3F1D9DFD120020E8CC /* SongMenuTableViewCell.m in Sources */,
@@ -2204,6 +2275,7 @@
 				3F6C40491DAD339F005CC6B0 /* UIViewController+animation.m in Sources */,
 				3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */,
 				3F39786E1DABA3E1009979BB /* UIView+ShadowView.m in Sources */,
+				5DB7FB471DAF6D82001407FE /* AboutViewController.m in Sources */,
 				5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */,
 				3F2961821DAA384E001934A9 /* NewsConcentrationT1467284926140.m in Sources */,
 				3F04BFBD1D9B7735005CCA03 /* ReaderListTableViewCell.m in Sources */,
@@ -2363,7 +2435,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2389,7 +2461,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
