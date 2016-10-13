@@ -85,23 +85,24 @@
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         
         [self.tableView.mj_footer endRefreshing];
-       // NSLog(@">>>>>>>%@",dic);
-       
         
-        
-       // NSDictionary *d =dic[@"data"][@"tracks"];
-        NSDictionary *d = [NSDictionary dictionary];
-        d = dic[@"data"][@"tracks"];
-       NSLog(@">>>>>>>>>++++++++++%@",d);
-        NSLog(@"_+_+_++_+_+_+%d",(int)d[@"maxPageId"]);
         self.listBaseModel = [MusicListBaseClass modelObjectWithDictionary:dic];
+        
+        NSLog(@">>>>>>>>>>>>>>%d",(int)self.listBaseModel.data.tracks.maxPageId);
+        _maxPageId =(int)self.listBaseModel.data.tracks.maxPageId;
         for (MusicListList *listModel in self.listBaseModel.data.tracks.list) {
             [self.musicListArray addObject:listModel];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self tableHeaderView];
-            [self footerRefresh];
+          
+            if (self.pageId < _maxPageId) {
+                [self footerRefresh];
+            }
+           
+         
+            
         });
     } Fail:^(NSError *error) {
         NSLog(@">>>>%@",error);
@@ -112,28 +113,35 @@
 -(void)dataRequestMore{
     NSString *str = @"pageSize=20&statEvent=pageview%2Falbum%403726515&statModule=&statPage=categorytag%40%E9%9F%B3%E4%B9%90_%E5%85%A8%E9%83%A8&statPosition=2";
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&device=iPhone&isAsc=true&pageId=%lu&%@",URL_MusicListMore,self.albumId,self.pageId,str];
-    
-    NSLog(@"%@",URLStr);
-    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
-        
-        NSArray *array = dic[@"data"][@"list"];
-        
-      
-        for (NSDictionary *dic in array) {
-            MusicListList *listModel = [MusicListList modelObjectWithDictionary:dic];
-            [self.musicListArray addObject:listModel];
-        }
+        NSLog(@"%@",URLStr);
+    if (_pageId <= _maxPageId) {
+        [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
+            
+            [self.tableView.mj_footer endRefreshing];
+            
+            NSArray *array = dic[@"data"][@"list"];
+            
+            
+            for (NSDictionary *dic in array) {
+                MusicListList *listModel = [MusicListList modelObjectWithDictionary:dic];
+                [self.musicListArray addObject:listModel];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+               
+                [self footerRefresh];
+                
+            });
+        } Fail:^(NSError *error) {
+            NSLog(@">>>>>>%@",error);
+        }];
+    }
    
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-           [self.tableView.mj_footer endRefreshing];
-            [self footerRefresh];
-        });
-    } Fail:^(NSError *error) {
-        NSLog(@">>>>>>%@",error);
-    }];
 }
 
+
+//下载的数据请求
 -(void)dataRequestDownloadWithUid:(int)uid Track:(int)track{
     NSString *URLStr = [NSString stringWithFormat:@"%@/%d/track/%d",URL_DownLoad,uid,track];
    // NSLog(@">>>>>>>>>>>>>>>>>%@",URLStr);
@@ -146,7 +154,7 @@
             SongDownloadManager *manager = [SongDownloadManager defaultManager];
             if (!self.isDownloading) {
                 
-                [LLShowHUD showHUD:self.view Message:@"正在下载..." AfterDelay:0.5];
+                [LLShowHUD showHUD:self.navigationController.view Message:@"正在下载..." AfterDelay:1];
                 
                 DownLoad *download = [manager addDownloadTaskWithURL:self.downloadBaseModel.downloadUrl];
                 [download startDownLoad];
@@ -164,7 +172,8 @@
                     [manager createTable];
                     [manager insertSongWithModel:model];
                     
-                    [LLShowHUD showHUD:self.view Message:@"下载完成!" AfterDelay:0];
+                    
+                    [LLShowHUD showCustomViewHUD:self.navigationController.view ImageName:@"yes" Message:@"下载完成!" AfterDelay:1];
 
                     
                 };
@@ -178,14 +187,11 @@
 }
 
 -(void)footerRefresh{
-   
-    //if (self.pageId <= _maxPageId) {
+      self.pageId++;
         self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-             self.pageId++;
+            
             [self dataRequestMore];
         }];
-    //}
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -199,12 +205,25 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"______________%lu",self.musicListArray.count);
     return self.musicListArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SongListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"songlistcell" forIndexPath:indexPath];
+    
+    
+  /*  //cell重用
+    if (cell.downloadBtn.tag-100 != indexPath.row) {
+        [cell.downloadBtn setImage:[UIImage imageNamed:@"download_normal"] forState:UIControlStateNormal];
+    }else{
+       
+        [cell.downloadBtn setImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
+    }
+    
+    */
+    
     
     MusicListList *listModel = self.musicListArray[indexPath.row];
     cell.listModel = listModel;

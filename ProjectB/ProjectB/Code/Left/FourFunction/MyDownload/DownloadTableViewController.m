@@ -27,7 +27,7 @@
     return _dataArray;
 }
 -(void)viewWillAppear:(BOOL)animated{
-    
+    [self.tableView reloadData];
     DownloadDBManager *manager = [DownloadDBManager defaultManager];
     self.dataArray = [manager selectAllSong];
     if (self.dataArray.count <= 0) {
@@ -54,8 +54,17 @@
     
     UINib *nib = [UINib nibWithNibName:@"DownloadListTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"cell"];
+    
+    
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
+
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated{
+    [super setEditing:editing animated:animated];
+    [self.tableView setEditing:editing animated:animated];
+}
 
 -(void)goback{
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -72,13 +81,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count;
+    return [[[DownloadDBManager defaultManager] selectAllSong] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DownloadListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    DownloadModel *model = self.dataArray[indexPath.row];
+    DownloadModel *model = [[DownloadDBManager defaultManager] selectAllSong][indexPath.row];
     cell.model = model;
     
     [UIView shadowView:cell.cellView];
@@ -89,25 +98,29 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        NSString *songName = [[[DownloadDBManager defaultManager] selectAllSong][indexPath.row] songName];
+        
+        [[DownloadDBManager defaultManager] deleteSongWithSongName:songName];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

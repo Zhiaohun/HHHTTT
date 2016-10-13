@@ -30,6 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"音乐类别";
+    
     [self initUI];
 }
 #pragma mark - private Method -
