@@ -192,6 +192,19 @@
 		5DA8EB561D9BF369006DAECD /* HotVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB551D9BF369006DAECD /* HotVideoViewController.m */; };
 		5DA8EB5A1D9BF399006DAECD /* HotVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */; };
 		5DA8EB5B1D9BF399006DAECD /* HotVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */; };
+		5DB7FB001DAF5B44001407FE /* ReadRankListBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FAF91DAF5B44001407FE /* ReadRankListBaseClass.m */; };
+		5DB7FB011DAF5B44001407FE /* ReadRankListPageinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FAFB1DAF5B44001407FE /* ReadRankListPageinfo.m */; };
+		5DB7FB021DAF5B44001407FE /* ReadRankListPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FAFD1DAF5B44001407FE /* ReadRankListPrice.m */; };
+		5DB7FB031DAF5B44001407FE /* ReadRankListProducts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FAFF1DAF5B44001407FE /* ReadRankListProducts.m */; };
+		5DB7FB071DAF5B4C001407FE /* ReaderRankListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB051DAF5B4C001407FE /* ReaderRankListTableViewCell.m */; };
+		5DB7FB081DAF5B4C001407FE /* ReaderRankListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB7FB061DAF5B4C001407FE /* ReaderRankListTableViewCell.xib */; };
+		5DB7FB131DAF621F001407FE /* ReadHotBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB0B1DAF621F001407FE /* ReadHotBaseClass.m */; };
+		5DB7FB141DAF621F001407FE /* ReadHotPageinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB0E1DAF621F001407FE /* ReadHotPageinfo.m */; };
+		5DB7FB151DAF621F001407FE /* ReadHotPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB101DAF621F001407FE /* ReadHotPrice.m */; };
+		5DB7FB161DAF621F001407FE /* ReadHotProducts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB121DAF621F001407FE /* ReadHotProducts.m */; };
+		5DB7FB191DAF66DF001407FE /* HotReadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB181DAF66DF001407FE /* HotReadTableViewController.m */; };
+		5DB7FB1D1DAF66F5001407FE /* HotReadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7FB1B1DAF66F5001407FE /* HotReadTableViewCell.m */; };
+		5DB7FB1E1DAF66F5001407FE /* HotReadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB7FB1C1DAF66F5001407FE /* HotReadTableViewCell.xib */; };
 		5DEEB5781DAA6258004FD1FA /* UserInfoBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */; };
 		5DEEB5791DAA6258004FD1FA /* UserInfoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB5761DAA6258004FD1FA /* UserInfoData.m */; };
 		5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEEB57B1DAA6C7F004FD1FA /* UserInfoManager.m */; };
@@ -558,9 +571,35 @@
 		5DA8EB511D9BC960006DAECD /* HotListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotListTableViewCell.xib; sourceTree = "<group>"; };
 		5DA8EB541D9BF369006DAECD /* HotVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotVideoViewController.h; sourceTree = "<group>"; };
 		5DA8EB551D9BF369006DAECD /* HotVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotVideoViewController.m; sourceTree = "<group>"; };
-		5DA8EB571D9BF399006DAECD /* HotVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotVideoTableViewCell.h; sourceTree = "<group>"; };
-		5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotVideoTableViewCell.m; sourceTree = "<group>"; };
-		5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotVideoTableViewCell.xib; sourceTree = "<group>"; };
+		5DA8EB571D9BF399006DAECD /* HotVideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotVideoTableViewCell.h; path = ../Controller/HotVideoTableViewCell.h; sourceTree = "<group>"; };
+		5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotVideoTableViewCell.m; path = ../Controller/HotVideoTableViewCell.m; sourceTree = "<group>"; };
+		5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotVideoTableViewCell.xib; path = ../Controller/HotVideoTableViewCell.xib; sourceTree = "<group>"; };
+		5DB7FAF71DAF5B44001407FE /* ReadRankList DataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ReadRankList DataModels.h"; sourceTree = "<group>"; };
+		5DB7FAF81DAF5B44001407FE /* ReadRankListBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadRankListBaseClass.h; sourceTree = "<group>"; };
+		5DB7FAF91DAF5B44001407FE /* ReadRankListBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadRankListBaseClass.m; sourceTree = "<group>"; };
+		5DB7FAFA1DAF5B44001407FE /* ReadRankListPageinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadRankListPageinfo.h; sourceTree = "<group>"; };
+		5DB7FAFB1DAF5B44001407FE /* ReadRankListPageinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadRankListPageinfo.m; sourceTree = "<group>"; };
+		5DB7FAFC1DAF5B44001407FE /* ReadRankListPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadRankListPrice.h; sourceTree = "<group>"; };
+		5DB7FAFD1DAF5B44001407FE /* ReadRankListPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadRankListPrice.m; sourceTree = "<group>"; };
+		5DB7FAFE1DAF5B44001407FE /* ReadRankListProducts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadRankListProducts.h; sourceTree = "<group>"; };
+		5DB7FAFF1DAF5B44001407FE /* ReadRankListProducts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadRankListProducts.m; sourceTree = "<group>"; };
+		5DB7FB041DAF5B4C001407FE /* ReaderRankListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderRankListTableViewCell.h; sourceTree = "<group>"; };
+		5DB7FB051DAF5B4C001407FE /* ReaderRankListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderRankListTableViewCell.m; sourceTree = "<group>"; };
+		5DB7FB061DAF5B4C001407FE /* ReaderRankListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReaderRankListTableViewCell.xib; sourceTree = "<group>"; };
+		5DB7FB0A1DAF621F001407FE /* ReadHotBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadHotBaseClass.h; sourceTree = "<group>"; };
+		5DB7FB0B1DAF621F001407FE /* ReadHotBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadHotBaseClass.m; sourceTree = "<group>"; };
+		5DB7FB0C1DAF621F001407FE /* ReadHotDataModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadHotDataModels.h; sourceTree = "<group>"; };
+		5DB7FB0D1DAF621F001407FE /* ReadHotPageinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadHotPageinfo.h; sourceTree = "<group>"; };
+		5DB7FB0E1DAF621F001407FE /* ReadHotPageinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadHotPageinfo.m; sourceTree = "<group>"; };
+		5DB7FB0F1DAF621F001407FE /* ReadHotPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadHotPrice.h; sourceTree = "<group>"; };
+		5DB7FB101DAF621F001407FE /* ReadHotPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadHotPrice.m; sourceTree = "<group>"; };
+		5DB7FB111DAF621F001407FE /* ReadHotProducts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadHotProducts.h; sourceTree = "<group>"; };
+		5DB7FB121DAF621F001407FE /* ReadHotProducts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadHotProducts.m; sourceTree = "<group>"; };
+		5DB7FB171DAF66DF001407FE /* HotReadTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotReadTableViewController.h; sourceTree = "<group>"; };
+		5DB7FB181DAF66DF001407FE /* HotReadTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotReadTableViewController.m; sourceTree = "<group>"; };
+		5DB7FB1A1DAF66F5001407FE /* HotReadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotReadTableViewCell.h; sourceTree = "<group>"; };
+		5DB7FB1B1DAF66F5001407FE /* HotReadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotReadTableViewCell.m; sourceTree = "<group>"; };
+		5DB7FB1C1DAF66F5001407FE /* HotReadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotReadTableViewCell.xib; sourceTree = "<group>"; };
 		5DEEB5731DAA6258004FD1FA /* UserInfoBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoBaseClass.h; sourceTree = "<group>"; };
 		5DEEB5741DAA6258004FD1FA /* UserInfoBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoBaseClass.m; sourceTree = "<group>"; };
 		5DEEB5751DAA6258004FD1FA /* UserInfoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoData.h; sourceTree = "<group>"; };
@@ -1524,6 +1563,7 @@
 		5DA8EB071D9B8012006DAECD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5DB7FB091DAF621F001407FE /* ReadHotModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1534,6 +1574,12 @@
 				5DA8EB4F1D9BC960006DAECD /* HotListTableViewCell.h */,
 				5DA8EB501D9BC960006DAECD /* HotListTableViewCell.m */,
 				5DA8EB511D9BC960006DAECD /* HotListTableViewCell.xib */,
+				5DA8EB571D9BF399006DAECD /* HotVideoTableViewCell.h */,
+				5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */,
+				5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */,
+				5DB7FB1A1DAF66F5001407FE /* HotReadTableViewCell.h */,
+				5DB7FB1B1DAF66F5001407FE /* HotReadTableViewCell.m */,
+				5DB7FB1C1DAF66F5001407FE /* HotReadTableViewCell.xib */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -1546,9 +1592,8 @@
 				5DA8EB111D9B8089006DAECD /* HotListViewController.xib */,
 				5DA8EB541D9BF369006DAECD /* HotVideoViewController.h */,
 				5DA8EB551D9BF369006DAECD /* HotVideoViewController.m */,
-				5DA8EB571D9BF399006DAECD /* HotVideoTableViewCell.h */,
-				5DA8EB581D9BF399006DAECD /* HotVideoTableViewCell.m */,
-				5DA8EB591D9BF399006DAECD /* HotVideoTableViewCell.xib */,
+				5DB7FB171DAF66DF001407FE /* HotReadTableViewController.h */,
+				5DB7FB181DAF66DF001407FE /* HotReadTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1556,6 +1601,7 @@
 		5DA8EB141D9B80A0006DAECD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5DB7FAF61DAF5B44001407FE /* ReadRankListModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1563,6 +1609,9 @@
 		5DA8EB151D9B80A2006DAECD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5DB7FB041DAF5B4C001407FE /* ReaderRankListTableViewCell.h */,
+				5DB7FB051DAF5B4C001407FE /* ReaderRankListTableViewCell.m */,
+				5DB7FB061DAF5B4C001407FE /* ReaderRankListTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1627,6 +1676,38 @@
 				5DF554981DA8CC0C00DFCBEC /* MMExampleDrawerVisualStateManager.m */,
 			);
 			path = AnimationOfDrawer;
+			sourceTree = "<group>";
+		};
+		5DB7FAF61DAF5B44001407FE /* ReadRankListModel */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7FAF71DAF5B44001407FE /* ReadRankList DataModels.h */,
+				5DB7FAF81DAF5B44001407FE /* ReadRankListBaseClass.h */,
+				5DB7FAF91DAF5B44001407FE /* ReadRankListBaseClass.m */,
+				5DB7FAFA1DAF5B44001407FE /* ReadRankListPageinfo.h */,
+				5DB7FAFB1DAF5B44001407FE /* ReadRankListPageinfo.m */,
+				5DB7FAFC1DAF5B44001407FE /* ReadRankListPrice.h */,
+				5DB7FAFD1DAF5B44001407FE /* ReadRankListPrice.m */,
+				5DB7FAFE1DAF5B44001407FE /* ReadRankListProducts.h */,
+				5DB7FAFF1DAF5B44001407FE /* ReadRankListProducts.m */,
+			);
+			path = ReadRankListModel;
+			sourceTree = "<group>";
+		};
+		5DB7FB091DAF621F001407FE /* ReadHotModel */ = {
+			isa = PBXGroup;
+			children = (
+				5DB7FB0A1DAF621F001407FE /* ReadHotBaseClass.h */,
+				5DB7FB0B1DAF621F001407FE /* ReadHotBaseClass.m */,
+				5DB7FB0C1DAF621F001407FE /* ReadHotDataModels.h */,
+				5DB7FB0D1DAF621F001407FE /* ReadHotPageinfo.h */,
+				5DB7FB0E1DAF621F001407FE /* ReadHotPageinfo.m */,
+				5DB7FB0F1DAF621F001407FE /* ReadHotPrice.h */,
+				5DB7FB101DAF621F001407FE /* ReadHotPrice.m */,
+				5DB7FB111DAF621F001407FE /* ReadHotProducts.h */,
+				5DB7FB121DAF621F001407FE /* ReadHotProducts.m */,
+			);
+			path = ReadHotModel;
 			sourceTree = "<group>";
 		};
 		5DEEB5721DAA6258004FD1FA /* UserInfoModel */ = {
@@ -1812,7 +1893,7 @@
 				TargetAttributes = {
 					3FA4E5DE1D9AB1070090AC78 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = H3C2H2Z8NB;
+						DevelopmentTeam = S2CRPD33DC;
 					};
 				};
 			};
@@ -1883,8 +1964,10 @@
 				3F272FA11DA77AAD00CA7E8F /* SongListHeaderView.xib in Resources */,
 				3F0470AE1D9C0AC500DAD187 /* NewsImageTableViewCell.xib in Resources */,
 				3F3978601DAB47A0009979BB /* SayingTableViewController.xib in Resources */,
+				5DB7FB081DAF5B4C001407FE /* ReaderRankListTableViewCell.xib in Resources */,
 				3F2961D81DAA826D001934A9 /* SongCommentsTableViewController.xib in Resources */,
 				5D29EA6A1D9E3A6E00213A82 /* TimingCloseTableViewCell.xib in Resources */,
+				5DB7FB1E1DAF66F5001407FE /* HotReadTableViewCell.xib in Resources */,
 				3F0470801D9C09EA00DAD187 /* ScienceTableViewController.xib in Resources */,
 				3F844AEB1D9E523400AE9B3B /* VideoDetailViewController.xib in Resources */,
 				5D29E9EF1D9CAB8900213A82 /* MineEditViewController.xib in Resources */,
@@ -1958,6 +2041,7 @@
 				3FB7B8601DADC840006C9B6B /* DownLoad.m in Sources */,
 				3FC1BB3B1D9D036900C834D8 /* VideoNormalCollectionViewCell.m in Sources */,
 				3F272F8B1DA7681300CA7E8F /* MusicListData.m in Sources */,
+				5DB7FB011DAF5B44001407FE /* ReadRankListPageinfo.m in Sources */,
 				3F272F8E1DA7681300CA7E8F /* MusicListUser.m in Sources */,
 				3F272F8C1DA7681300CA7E8F /* MusicListList.m in Sources */,
 				5DF554851DA893BC00DFCBEC /* ReadMotivationBaseClass.m in Sources */,
@@ -1965,7 +2049,9 @@
 				3F2961871DAA384E001934A9 /* NewsGameBaseClass.m in Sources */,
 				3F6C403F1DAD1321005CC6B0 /* UIViewController+XHPhoto.m in Sources */,
 				3F2961A61DAA38F3001934A9 /* KNCollectionViewTextView.m in Sources */,
+				5DB7FB151DAF621F001407FE /* ReadHotPrice.m in Sources */,
 				3F844A881D9E0D4A00AE9B3B /* Data.m in Sources */,
+				5DB7FB031DAF5B44001407FE /* ReadRankListProducts.m in Sources */,
 				5DA8EB481D9BC2B1006DAECD /* TotalTableViewCell.m in Sources */,
 				5DF554B91DA8E1AD00DFCBEC /* MyTracksDBManager.m in Sources */,
 				3F04BF9F1D9B7551005CCA03 /* SongListTableViewController.m in Sources */,
@@ -1973,6 +2059,7 @@
 				3FA5EE381D9DFC230020E8CC /* ReadRankingListTableViewController.m in Sources */,
 				3F04707D1D9C09EA00DAD187 /* RecommendTableViewController.m in Sources */,
 				5DF67D161DAE544300A1B9D5 /* MainView.m in Sources */,
+				5DB7FB131DAF621F001407FE /* ReadHotBaseClass.m in Sources */,
 				3F844ADD1D9E3E2300AE9B3B /* VideoListConsumption.m in Sources */,
 				5DF554991DA8CC0C00DFCBEC /* MMExampleDrawerVisualStateManager.m in Sources */,
 				3F6C40451DAD2137005CC6B0 /* Water.m in Sources */,
@@ -1982,6 +2069,7 @@
 				5DA8EB121D9B8089006DAECD /* HotListViewController.m in Sources */,
 				3F2961B61DAA3A6F001934A9 /* SongPlayCommentTableViewCell.m in Sources */,
 				3FC1BB451D9D089D00C834D8 /* VideoHeaderCollectionViewCell.m in Sources */,
+				5DB7FB141DAF621F001407FE /* ReadHotPageinfo.m in Sources */,
 				3FA5EE3A1D9DFC230020E8CC /* VideoRankingListTableViewController.m in Sources */,
 				3F272F8A1DA7681300CA7E8F /* MusicListBaseClass.m in Sources */,
 				5DF554811DA893BC00DFCBEC /* ReadCommentProduct.m in Sources */,
@@ -2002,6 +2090,7 @@
 				5D29EA611D9E396A00213A82 /* CollectionViewController.m in Sources */,
 				5D29E9F71D9CB61E00213A82 /* MyselfPageViewController.m in Sources */,
 				5DF67D041DAE53D700A1B9D5 /* UIImageEffects.m in Sources */,
+				5DB7FB001DAF5B44001407FE /* ReadRankListBaseClass.m in Sources */,
 				3F2961A91DAA38F3001934A9 /* NSString+hash.m in Sources */,
 				3F272F881DA7681300CA7E8F /* MusicDownloadBaseClass.m in Sources */,
 				3F0470761D9C09EA00DAD187 /* EntertainmentTableViewController.m in Sources */,
@@ -2024,6 +2113,7 @@
 				3F2961801DAA384E001934A9 /* NewsConcentrationBaseClass.m in Sources */,
 				5DA8EB3F1D9BC028006DAECD /* LLShowHUD.m in Sources */,
 				5DF554831DA893BC00DFCBEC /* ReadCommentStars.m in Sources */,
+				5DB7FB161DAF621F001407FE /* ReadHotProducts.m in Sources */,
 				5D29E9EE1D9CAB8900213A82 /* MineEditViewController.m in Sources */,
 				5DF554C01DA8E25500DFCBEC /* CollectionInfoModel.m in Sources */,
 				5DA8EB231D9B9C5B006DAECD /* LoginViewController.m in Sources */,
@@ -2042,17 +2132,20 @@
 				5DA8EB5A1D9BF399006DAECD /* HotVideoTableViewCell.m in Sources */,
 				5DF554881DA893BC00DFCBEC /* ReadMotivationPage.m in Sources */,
 				5DF554B81DA8E1AD00DFCBEC /* DownloadDBManager.m in Sources */,
+				5DB7FB021DAF5B44001407FE /* ReadRankListPrice.m in Sources */,
 				3F2961831DAA384E001934A9 /* NewsEntertainmentAds.m in Sources */,
 				3F0470AF1D9C0AC500DAD187 /* NewsTableViewCell.m in Sources */,
 				5DF5548A1DA893BC00DFCBEC /* ReadMotivationProducts.m in Sources */,
 				3F2961851DAA384E001934A9 /* NewsEntertainmentImgextra.m in Sources */,
 				5D29E9F31D9CB0DC00213A82 /* DWSwipeGestures.m in Sources */,
 				5DA8EB311D9BB48C006DAECD /* LeftViewController.m in Sources */,
+				5DB7FB1D1DAF66F5001407FE /* HotReadTableViewCell.m in Sources */,
 				3F576D051DAF358F00397323 /* NewPagedFlowView.m in Sources */,
 				3FB7B86A1DADE033006C9B6B /* DownloadModel.m in Sources */,
 				3FA4E60C1D9AB1510090AC78 /* Reachability.m in Sources */,
 				3FA5EE351D9DFC230020E8CC /* MusicRankingListTableViewController.m in Sources */,
 				5DF554841DA893BC00DFCBEC /* ReadCommentSummary.m in Sources */,
+				5DB7FB071DAF5B4C001407FE /* ReaderRankListTableViewCell.m in Sources */,
 				5DF5547F1DA893BC00DFCBEC /* ReadCommentBaseClass.m in Sources */,
 				3F29618B1DAA384E001934A9 /* NewsJokeBaseClass.m in Sources */,
 				3F2961BB1DAA3BE2001934A9 /* NewsScrollViewTableViewCell.m in Sources */,
@@ -2112,6 +2205,7 @@
 				3F04BF731D9B7204005CCA03 /* TableViewCell.m in Sources */,
 				3F844ADE1D9E3E2300AE9B3B /* VideoListCover.m in Sources */,
 				3FA4E5E41D9AB1070090AC78 /* main.m in Sources */,
+				5DB7FB191DAF66DF001407FE /* HotReadTableViewController.m in Sources */,
 				5DF554861DA893BC00DFCBEC /* ReadMotivationCategories.m in Sources */,
 				5DF554B71DA8E1AD00DFCBEC /* CollectionInfoDBManager.m in Sources */,
 				3F844ADC1D9E3E2300AE9B3B /* VideoListBaseClass.m in Sources */,
@@ -2230,7 +2324,7 @@
 			baseConfigurationReference = A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3C2H2Z8NB;
+				DEVELOPMENT_TEAM = S2CRPD33DC;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2246,7 +2340,7 @@
 			baseConfigurationReference = FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3C2H2Z8NB;
+				DEVELOPMENT_TEAM = S2CRPD33DC;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ProjectB/Prefixheader.pch";
 				INFOPLIST_FILE = ProjectB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

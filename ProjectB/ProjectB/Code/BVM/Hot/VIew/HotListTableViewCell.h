@@ -12,11 +12,20 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *requestMoreBtn;
 
+@property (weak, nonatomic) IBOutlet UILabel *viewTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
+
 @property (weak, nonatomic) IBOutlet UIImageView *view1Img;
 @property (weak, nonatomic) IBOutlet UILabel *view1Title;
-@property (weak, nonatomic) IBOutlet UIImageView *view1scoreImg;
 @property (weak, nonatomic) IBOutlet UILabel *view1scoreLb;
+
+@property (weak, nonatomic) IBOutlet UIImageView *view2Img;
+@property (weak, nonatomic) IBOutlet UILabel *view2Title;
+@property (weak, nonatomic) IBOutlet UILabel *view2Score;
+
+@property (weak, nonatomic) IBOutlet UIImageView *view3Img;
+@property (weak, nonatomic) IBOutlet UILabel *view3Title;
+@property (weak, nonatomic) IBOutlet UILabel *view3Score;
 
 
 
