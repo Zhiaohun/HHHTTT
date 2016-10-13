@@ -22,24 +22,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    self.titleSizeNormal = 15;
+    self.menuHeight = 44;
+    self.menuViewStyle = WMMenuViewStyleLine;
     self.titleSizeSelected = 15;
-    self.menuViewStyle = WMMenuViewStyleSegmented;
     self.titleColorNormal = [UIColor grayColor];
+    self.titleColorSelected = [JudgeManager defaultManager].originColor;
     self.progressColor = [JudgeManager defaultManager].originColor;
-    self.menuViewLayoutMode = WMMenuViewLayoutModeCenter;
-    self.menuItemWidth = 75;
-    self.menuHeight = 40;
-    self.viewFrame = CGRectMake(0,64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    self.showOnNavigationBar = YES;
+    self.menuBGColor = [UIColor clearColor];
+    self.menuViewLayoutMode = WMMenuViewLayoutModeScatter;
     [super viewDidLoad];
+    
     [self initUI];
 }
 
 #pragma mark - private Method -
 -(void)initUI{
     [self goback];
+    
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
 }
 
 

@@ -7,9 +7,16 @@
 //
 
 #import "ReadRankingListTableViewController.h"
+#import "ReaderRankListTableViewCell.h"
+#import "ReadRankList DataModels.h"
+#import "ReaderDetailViewController.h"
 
 @interface ReadRankingListTableViewController ()
 
+@property (nonatomic,assign) NSInteger page;
+
+@property (nonatomic,strong) ReadRankListBaseClass *base;
+@property (nonatomic,strong) NSMutableArray *moreDataArr;
 @end
 
 @implementation ReadRankingListTableViewController
@@ -17,39 +24,116 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self initUI];
+    [self requestData];
+    [self refreshUI];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - private Method -
+-(void)initUI{
+    _page = 1;
+    _moreDataArr = [NSMutableArray array];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ReaderRankListTableViewCell" bundle:nil] forCellReuseIdentifier:@"ReaderRankListCell"];
+    self.tableView.rowHeight = 178;
+    self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
+    
+}
+
+-(void)refreshUI{
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _page = 1;
+        [self requestData];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+    
+    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        _page ++;
+        [self requestData];
+    }];
+}
+
+
+-(void)requestData{
+    
+    NSString *rankUrl = [NSString stringWithFormat:@"%@&page=%lu",URL_RankListRead,_page];
+    
+    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:rankUrl Parameter:nil Success:^(NSDictionary *dic) {
+        
+        _base = [ReadRankListBaseClass modelObjectWithDictionary:dic];
+        
+        if (_page == 1) {
+            //下拉刷新
+            [_moreDataArr removeAllObjects];
+            [_moreDataArr addObjectsFromArray:_base.products];
+        }
+        else{
+            //上拉加载
+            [_moreDataArr addObjectsFromArray:_base.products];
+            
+        }
+
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer endRefreshing];
+        });
+        
+    } Fail:^(NSError *error) {
+        NSLog(@"请求排行榜失败");
+    }];
+    
+    
+}
+
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return _moreDataArr.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    ReaderRankListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReaderRankListCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    ReadRankListProducts *products = _moreDataArr[indexPath.row];
+    cell.rankLb.text = [NSString stringWithFormat:@"%.0f",products.rank];
+    cell.bookName.text = products.productName;
+    cell.bookWriter.text = [NSString stringWithFormat:@"作者: %@",products.author];
+    cell.bookPrint.text = [NSString stringWithFormat:@"出版社: %@",products.publisher];
+    [cell.bookImg sd_setImageWithURL:[NSURL URLWithString:products.imgUrl]];
+    cell.bookComment.text = [NSString stringWithFormat:@"%@条评论",products.reviewTotal];
+    cell.bookIntroduce.text = products.abstract;
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
-*/
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ReaderDetailViewController *readerDetailVC = [ReaderDetailViewController new];
+    ReadRankListProducts *products = _base.products[indexPath.row];
+    readerDetailVC.productID = products.productId;
+    readerDetailVC.imgUrl = products.imgUrl;
+    readerDetailVC.abstract = products.abstract;
+    [self.navigationController pushViewController:readerDetailVC animated:YES
+    ];
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

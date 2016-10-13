@@ -1,18 +1,18 @@
 //
-//  VideoRankingListTableViewController.m
+//  IdeaTableViewController.m
 //  ProjectB
 //
-//  Created by long on 2016/9/29.
+//  Created by 芏小川 on 2016/10/13.
 //  Copyright © 2016年 long. All rights reserved.
 //
 
-#import "VideoRankingListTableViewController.h"
+#import "IdeaTableViewController.h"
 
-@interface VideoRankingListTableViewController ()
+@interface IdeaTableViewController ()
 
 @end
 
-@implementation VideoRankingListTableViewController
+@implementation IdeaTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,10 +32,12 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Incomplete implementation, return the number of sections
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete implementation, return the number of rows
     return 0;
 }
 
@@ -80,22 +82,6 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 */
 

@@ -29,6 +29,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,11 +49,11 @@
 -(void)initUI{
     self.title = @"书影音";
     //设置导航栏透明
-    //[self changeNavigation];
+    [self changeNavigation];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, VIEW_WIDTH, VIEW_HEIGHT-64)];
     _tableView.rowHeight = 100.0;
     _tableView.dataSource = self;
     _tableView.delegate = self;
