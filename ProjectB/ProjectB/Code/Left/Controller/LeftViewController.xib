@@ -18,6 +18,7 @@
                 <outlet property="userImg" destination="lOj-eu-64V" id="8Dv-WI-wfr"/>
                 <outlet property="username" destination="9v3-pg-Nx1" id="B8u-X9-0EJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weatherBgImg" destination="yoQ-B8-pYe" id="F1u-Y7-6Az"/>
                 <outlet property="weatherConditionsImg" destination="Ggh-EE-AgT" id="Im6-Xb-Yqh"/>
                 <outlet property="weatherView" destination="YKe-Ca-RUP" id="e3m-8o-4Ta"/>
             </connections>
@@ -127,8 +128,8 @@
                 </button>
                 <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKe-Ca-RUP">
                     <subviews>
-                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="yoQ-B8-pYe"/>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-10-09  周日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgC-BW-hwh">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="yoQ-B8-pYe"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="。。。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgC-BW-hwh">
                             <constraints>
                                 <constraint firstAttribute="width" constant="112" id="m0N-2e-lmP"/>
                                 <constraint firstAttribute="height" constant="24" id="w96-t3-NIV"/>
@@ -137,7 +138,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8D-CS-qJn">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="。。。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8D-CS-qJn">
                             <fontDescription key="fontDescription" type="system" pointSize="44"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -148,7 +149,7 @@
                                 <constraint firstAttribute="width" constant="36" id="tZD-En-1JN"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[08:44更新]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9p-VF-goF">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="。。。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9p-VF-goF">
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="3R4-g4-Btq"/>
                                 <constraint firstAttribute="width" constant="101" id="xfp-Bd-SQC"/>
@@ -157,7 +158,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阴    22/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2V-IB-wz5">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="。。。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2V-IB-wz5">
                             <constraints>
                                 <constraint firstAttribute="width" constant="93" id="JZh-ZJ-SJS"/>
                                 <constraint firstAttribute="height" constant="21" id="oKo-mx-eSn"/>

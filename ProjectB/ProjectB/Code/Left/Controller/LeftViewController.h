@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *personalSentence;
 
 @property (weak, nonatomic) IBOutlet UIView *weatherView;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherBgImg;
 @property (weak, nonatomic) IBOutlet UILabel *currentTime;
 @property (weak, nonatomic) IBOutlet UILabel *currentTemperature;
 @property (weak, nonatomic) IBOutlet UILabel *TMaxAndMin;

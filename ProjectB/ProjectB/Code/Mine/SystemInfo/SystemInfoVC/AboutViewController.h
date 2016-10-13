@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutViewController : UIViewController
+@interface AboutViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UIImageView *titleImg;
 
 @end

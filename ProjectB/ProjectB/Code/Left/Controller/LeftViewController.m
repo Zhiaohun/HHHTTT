@@ -34,7 +34,7 @@
     else{
         self.userImg.image = [UIImage imageNamed:@"left_nologin"];
     }
-    NSLog(@"personal++++%@",model.personalSentence);
+    //NSLog(@"personal++++%@",model.personalSentence);
     if (!IsEmptyString(model.personalSentence)) {
         self.personalSentence.text = model.personalSentence;
     }
@@ -88,12 +88,15 @@
         NSDictionary *todayMsg = items[@"today"];
         NSDictionary *right = sumMsg[@"right"];
         
+        NSDictionary *bg = items[@"bg"];
+        NSDictionary *ae = bg[@"ae"];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             _currentTime.text = [NSString stringWithFormat:@"2016/%@",right[@"date"]];
             _currentTemperature.text = [NSString stringWithFormat:@"%@℃",nowMsg[@"temp"]];
             _TMaxAndMin.text = todayMsg[@"temp"];
             _updateTime.text = right[@"pubdate"];
+            [_weatherBgImg sd_setImageWithURL:[NSURL URLWithString:ae[@"background"]]];
         });
         
     } Fail:^(NSError *error) {

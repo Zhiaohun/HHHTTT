@@ -67,13 +67,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return 7;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TimingCloseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"timingCell" forIndexPath:indexPath];
-    NSArray *textArr = @[@"未设置定时关闭",@"10分钟",@"20分钟",@"30分钟",@"60分钟",@"90分钟",@"120分钟",@"节目播放完毕后自动关闭"];
+    NSArray *textArr = @[@"未设置定时关闭",@"10分钟",@"20分钟",@"30分钟",@"60分钟",@"90分钟",@"120分钟"];
     cell.label1.text = textArr[indexPath.row];
     if (indexPath.row == 0) {
         cell.tickImg.hidden = NO;
@@ -118,11 +118,6 @@
             case 6:{
                 [_timer invalidate];
                 _timeSeconds = 7200;
-                break;
-            }
-            case 7:{
-                [_timer invalidate];
-                
                 break;
             }
             default:

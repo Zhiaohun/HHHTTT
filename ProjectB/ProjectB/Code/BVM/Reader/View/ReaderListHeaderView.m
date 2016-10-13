@@ -37,6 +37,7 @@
     [self useBlock];
 }
 
+
 #pragma mark - private Method -
 -(void)getColor{
 
