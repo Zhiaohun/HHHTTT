@@ -96,6 +96,14 @@
         //NSLog(@"thread___%@ mainthread__%@",[NSThread currentThread],[NSThread mainThread]);
         
         _view = [[NSBundle mainBundle]loadNibNamed:@"MainView" owner:nil options:nil][0];
+        
+        __weak typeof (self)weakself = self;
+        _view.hideBlock = ^(){
+            weakself.imageView.hidden = YES;
+        } ;
+        
+        
+        
         _view.frame = CGRectMake(0, 0, _imageView.frame.size.width, _imageView.frame.size.height);
         _view.layer.cornerRadius = 40;
         

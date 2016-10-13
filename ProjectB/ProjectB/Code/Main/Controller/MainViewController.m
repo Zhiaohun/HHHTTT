@@ -14,6 +14,7 @@
 #import "MainDataModels.h"
 
 
+
 @interface MainViewController ()
 
 @property (nonatomic, strong) LYScrollView * scrollView;
@@ -42,6 +43,11 @@
     //NSLog(@"contentsize _____%f",_scrollView.contentoffset.x);
     
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    NSLog(@"hide");
+}
+
 #pragma mark - private Method -
 -(void)initUI{
     self.navigationController.navigationBarHidden = YES;
@@ -50,9 +56,9 @@
     [self handleUserImg];
     
 }
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-}
+
+
+
 
 
 -(void)handleUserImg{
