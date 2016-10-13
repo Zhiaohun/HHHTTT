@@ -84,6 +84,9 @@
 -(void)initUI{
     [self showMsg];
     self.title = @"资讯";
+    
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
 }
 //自定义侧边栏按键
 -(void)showMsg{

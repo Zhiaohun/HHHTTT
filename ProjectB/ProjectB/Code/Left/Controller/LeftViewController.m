@@ -9,6 +9,7 @@
 #import "LeftViewController.h"
 #import "TimingCloseTableViewController.h"
 #import "DownloadTableViewController.h"
+#import "UIImageEffects.h"
 
 @interface LeftViewController ()
 @property (nonatomic, assign) BOOL state; //夜间 state=YES  白天 state=NO
@@ -63,10 +64,17 @@
     self.userImg.layer.borderColor = [UIColor cyanColor].CGColor;
     self.userImg.layer.borderWidth = 3;
     
-    
+    //毛玻璃效果
+//    self.bgImg.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
     
    
     
+}
+
+- (UIImage *)blurViewByLightEffectWithImage:(UIImage *)screenImage
+{
+    UIImage * blurImage = [UIImageEffects imageByApplyingLightEffectToImage:screenImage];
+    return blurImage;
 }
 
 -(void)requestWeatherData{

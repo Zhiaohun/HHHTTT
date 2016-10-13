@@ -35,6 +35,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = YES;
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear: YES];
+    [self.navigationController setValue:[UINavigationBar new] forKey:@"navigationBar"];
+}
 
 -(NSMutableArray *)videoDataArray{
     if (!_videoDataArray) {
@@ -64,6 +68,8 @@
     
     // Register cell classes
    
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
     
      [self headerDataRequest];
 
@@ -163,12 +169,12 @@
 
 
 
--(void)tapHeaderViewAction{
-    VideoListTableViewController *videoListVC = [[VideoListTableViewController alloc] init];
-    videoListVC.listModel = [[ItemList alloc] init];
-    videoListVC.listModel = self.baseModel.itemList[3];
-    [self.navigationController pushViewController:videoListVC animated:YES];
-}
+//-(void)tapHeaderViewAction{
+//    VideoListTableViewController *videoListVC = [[VideoListTableViewController alloc] init];
+//    videoListVC.listModel = [[ItemList alloc] init];
+//    videoListVC.listModel = self.baseModel.itemList[3];
+//    [self.navigationController pushViewController:videoListVC animated:YES];
+//}
 
 
 
@@ -304,12 +310,16 @@
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     
     NSLog(@"点击了第%ld张图",(long)subIndex+1);
+//    
+//    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
+//    moviePlayVC.dataArray = [NSArray array];
+//    moviePlayVC.dataArray = self.headerDataArray;
+//    moviePlayVC.selectIndex = (long)subIndex;
+//    [self.navigationController pushViewController:moviePlayVC animated:YES];
     
-    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
-    moviePlayVC.dataArray = [NSArray array];
-    moviePlayVC.dataArray = self.headerDataArray;
-    moviePlayVC.selectIndex = (long)subIndex;
-    [self.navigationController pushViewController:moviePlayVC animated:YES];
+    
+    
+    
    
 }
 
@@ -328,9 +338,12 @@
         bannerView.layer.masksToBounds = YES;
     }
     //在这里下载网络图片
-    if (self.headerDataArray) {
-        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
-    }
+//    if (self.headerDataArray) {
+//        [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.headerImageArray[index]]];
+//    }
+    
+    NSArray *array = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
+    bannerView.mainImageView.image = array[index];
     
     return bannerView;
 }

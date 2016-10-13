@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TotalViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
 
 @end
