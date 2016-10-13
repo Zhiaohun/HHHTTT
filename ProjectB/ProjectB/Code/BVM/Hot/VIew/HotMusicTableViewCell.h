@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "MusicHotListModel.h"
 @interface HotMusicTableViewCell : UITableViewCell
-
-
-
 @property (weak, nonatomic) IBOutlet UIImageView *musicImageView;
-@property (weak, nonatomic) IBOutlet UILabel *title;
-@property (weak, nonatomic) IBOutlet UILabel *intro;
-@property (weak, nonatomic) IBOutlet UILabel *tracksCounts;
+@property (weak, nonatomic) IBOutlet UILabel *musicTitle;
+@property (weak, nonatomic) IBOutlet UILabel *musicIntro;
+@property (weak, nonatomic) IBOutlet UILabel *musicTracksCounts;
+
+
+
 
 
 @property (nonatomic, strong) MusicHotListModel *model;

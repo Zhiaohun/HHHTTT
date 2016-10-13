@@ -9,8 +9,7 @@
 #import "HOtMusicTableViewController.h"
 #import "MusicHotListModel.h"
 #import "HotMusicTableViewCell.h"
-#import "SongPlayTableViewController.h"
-
+#import "SongListTableViewController.h"
 
 @interface HOtMusicTableViewController ()
 @property (nonatomic, assign) NSInteger pageId;
@@ -43,7 +42,7 @@
 -(void)initUI{
 
     UINib *nib = [UINib nibWithNibName:@"HotMusicTableViewCell" bundle:nil];
-    [self.tableView registerNib:nib forCellReuseIdentifier:@"cell"];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"musiccell"];
 }
 
 -(void)requestMusicData{
@@ -51,6 +50,8 @@
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_HotMusic,_pageId,str];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         NSLog(@">>>>>%@",dic);
+        
+        [self.tableView.mj_footer endRefreshing];
         
         NSArray *arr = [NSArray array];
         arr = dic[@"list"];
@@ -61,6 +62,7 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
+            [self footerRefresh];
         });
         
     } Fail:^(NSError *error) {
@@ -68,6 +70,13 @@
     }];
 }
 
+
+-(void)footerRefresh{
+    self.pageId++;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self requestMusicData];
+    }];
+}
 
 
 #pragma mark - Table view data source
@@ -82,7 +91,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HotMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    HotMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"musiccell" forIndexPath:indexPath];
     MusicHotListModel *model = self.dataArray[indexPath.row];
     cell.model = model;
 
@@ -90,14 +99,13 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 80;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    SongPlayTableViewController *songVC = [[SongPlayTableViewController alloc] init];
-    songVC.musicListArray = [NSMutableArray array];
-    songVC.musicListArray = self.dataArray;
-    songVC.selectIndex = indexPath.row;
+    SongListTableViewController *songVC = [[SongListTableViewController alloc] init];
+    MusicHotListModel *model = self.dataArray[indexPath.row];
+    songVC.albumId = (int)model.albumId;
     [self.navigationController pushViewController:songVC animated:YES];
 }
 

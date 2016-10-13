@@ -33,7 +33,7 @@
 @property (nonatomic, strong) NSString *intro;
 //@property (nonatomic, strong) NSString *nickname;
 @property (nonatomic, strong) NSString *title;
-//@property (nonatomic, assign) double albumId;
+@property (nonatomic, assign) double albumId;
 //@property (nonatomic, assign) double uid;
 @property (nonatomic, assign) double tracksCounts;
 @property (nonatomic, strong) NSString *coverMiddle;

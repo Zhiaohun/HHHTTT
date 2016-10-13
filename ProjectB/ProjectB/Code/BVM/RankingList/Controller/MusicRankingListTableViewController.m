@@ -9,7 +9,7 @@
 #import "MusicRankingListTableViewController.h"
 #import "MusicHotListModel.h"
 #import "HotMusicTableViewCell.h"
-#import "SongPlayTableViewController.h"
+#import "SongListTableViewController.h"
 
 @interface MusicRankingListTableViewController ()
 @property (nonatomic, assign) NSInteger pageId;
@@ -40,7 +40,7 @@
 -(void)initUI{
     
     UINib *nib = [UINib nibWithNibName:@"HotMusicTableViewCell" bundle:nil];
-    [self.tableView registerNib:nib forCellReuseIdentifier:@"cell"];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"musiccell"];
 }
 
 -(void)dataRequest{
@@ -49,6 +49,7 @@
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         NSLog(@">>>>>%@",dic);
         
+        [self.tableView.mj_footer endRefreshing];
         NSArray *arr = [NSArray array];
         arr = dic[@"list"];
         for (NSDictionary *dic in arr) {
@@ -58,10 +59,18 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
+            [self footerRefresh];
         });
         
     } Fail:^(NSError *error) {
         NSLog(@">>>%@",error);
+    }];
+}
+
+-(void)footerRefresh{
+    self.pageId++;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self dataRequest];
     }];
 }
 
@@ -82,7 +91,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HotMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    HotMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"musiccell" forIndexPath:indexPath];
     
     MusicHotListModel *model = self.dataArray[indexPath.row];
     cell.model = model;
@@ -91,15 +100,15 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    SongPlayTableViewController *songVC = [[SongPlayTableViewController alloc] init];
-    songVC.musicListArray = [NSMutableArray array];
-    songVC.musicListArray = self.dataArray;
-    songVC.selectIndex = indexPath.row;
+    SongListTableViewController *songVC = [[SongListTableViewController alloc] init];
+    MusicHotListModel *model = self.dataArray[indexPath.row];
+    songVC.albumId = (int)model.albumId;
     [self.navigationController pushViewController:songVC animated:YES];
 }
 
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 80;
 }
 /*
 // Override to support conditional editing of the table view.
