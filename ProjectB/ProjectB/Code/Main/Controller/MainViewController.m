@@ -96,8 +96,8 @@
     self.imageView.backgroundColor = [UIColor lightGrayColor];
 
     
-    self.imageView.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
-    
+   // self.imageView.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"BG_1.jpg"]];
+    self.imageView.image = [UIImage imageNamed:@"BG_1"];
     self.scrollView = [[LYScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    self.scrollView.delegate = self;
     self.scrollView.isOpenDelete = NO;

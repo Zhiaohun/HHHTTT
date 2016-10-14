@@ -19,15 +19,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="FVF-kU-uVm"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎来到你的世界!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYG-iJ-50u">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="bDS-Oe-lu0"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="bNc-MX-dCc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -35,8 +26,6 @@
                             <constraint firstItem="FVF-kU-uVm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="9yF-cq-84Z"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="FVF-kU-uVm" secondAttribute="bottom" id="kIC-43-k4V"/>
                             <constraint firstAttribute="trailing" secondItem="FVF-kU-uVm" secondAttribute="trailing" id="vJJ-qU-Nun"/>
-                            <constraint firstItem="XYG-iJ-50u" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="veQ-Eq-QmL"/>
-                            <constraint firstItem="XYG-iJ-50u" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wfI-Ak-IY0"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -100,6 +100,9 @@
     cell.cellView.layer.shadowOffset = CGSizeMake(1,1);
     cell.cellView.layer.shadowOpacity = 0.3;
     cell.cellView.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.totalImg.layer.masksToBounds = YES;
+    cell.totalImg.layer.cornerRadius = 10;
+   // cell.clipsToBounds = YES;
     
     return cell;
 }
