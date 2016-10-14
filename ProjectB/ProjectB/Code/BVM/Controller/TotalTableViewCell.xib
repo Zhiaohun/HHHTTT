@@ -12,16 +12,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="99.5"/>
+                <frame key="frameInset" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6JD-dU-geL">
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wyh-jJ-wNx"/>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrZ-K1-hRo">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Wyh-jJ-wNx" secondAttribute="bottom" id="9HD-C7-b7q"/>
+                            <constraint firstItem="wrZ-K1-hRo" firstAttribute="top" secondItem="6JD-dU-geL" secondAttribute="top" id="NeS-0N-uSm"/>
+                            <constraint firstAttribute="trailing" secondItem="wrZ-K1-hRo" secondAttribute="trailing" id="U7q-42-ByR"/>
+                            <constraint firstItem="wrZ-K1-hRo" firstAttribute="leading" secondItem="6JD-dU-geL" secondAttribute="leading" id="Vvo-Zm-XAs"/>
+                            <constraint firstAttribute="bottom" secondItem="wrZ-K1-hRo" secondAttribute="bottom" id="Wwg-eK-4QV"/>
                             <constraint firstItem="Wyh-jJ-wNx" firstAttribute="leading" secondItem="6JD-dU-geL" secondAttribute="leading" id="d7K-SD-vdI"/>
                             <constraint firstAttribute="trailing" secondItem="Wyh-jJ-wNx" secondAttribute="trailing" id="gKa-KU-PEn"/>
                             <constraint firstItem="Wyh-jJ-wNx" firstAttribute="top" secondItem="6JD-dU-geL" secondAttribute="top" id="nOx-3t-Ea2"/>

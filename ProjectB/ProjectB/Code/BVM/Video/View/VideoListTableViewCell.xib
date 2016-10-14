@@ -16,6 +16,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TYf-VS-xXW"/>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUC-Bo-Yus">
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3p-xT-pL0">
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="3hg-TZ-aqB"/>
@@ -36,13 +39,17 @@
                 <constraints>
                     <constraint firstItem="t3p-xT-pL0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="20e-5N-bZK"/>
                     <constraint firstItem="t3p-xT-pL0" firstAttribute="centerX" secondItem="ygB-se-LJw" secondAttribute="centerX" id="9lV-9U-MnR"/>
+                    <constraint firstAttribute="trailing" secondItem="XUC-Bo-Yus" secondAttribute="trailing" id="Q3q-sh-DeN"/>
                     <constraint firstAttribute="bottom" secondItem="TYf-VS-xXW" secondAttribute="bottom" id="a5X-Lc-xqv"/>
+                    <constraint firstItem="XUC-Bo-Yus" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="d0O-ng-LfC"/>
                     <constraint firstItem="ygB-se-LJw" firstAttribute="top" secondItem="t3p-xT-pL0" secondAttribute="bottom" id="eZf-s0-ZAS"/>
+                    <constraint firstItem="XUC-Bo-Yus" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kbU-tf-hlz"/>
                     <constraint firstItem="t3p-xT-pL0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lg5-YF-Djf"/>
                     <constraint firstItem="ygB-se-LJw" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="v38-iF-ki1"/>
                     <constraint firstAttribute="trailing" secondItem="TYf-VS-xXW" secondAttribute="trailing" id="wFi-42-tlC"/>
                     <constraint firstItem="TYf-VS-xXW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wL3-Ti-J5h"/>
                     <constraint firstItem="TYf-VS-xXW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xFd-0o-qKp"/>
+                    <constraint firstAttribute="bottom" secondItem="XUC-Bo-Yus" secondAttribute="bottom" id="yNG-uj-MYE"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

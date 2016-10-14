@@ -16,6 +16,9 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="123456" translatesAutoresizingMaskIntoConstraints="NO" id="Vqf-YX-zut"/>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeL-Lc-QR4">
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L93-GA-hms">
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="XBn-aJ-G2j"/>
@@ -29,11 +32,15 @@
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Vqf-YX-zut" secondAttribute="bottom" id="7rQ-VK-G4O"/>
+                <constraint firstItem="BeL-Lc-QR4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8qN-Un-XVs"/>
                 <constraint firstAttribute="trailing" secondItem="Vqf-YX-zut" secondAttribute="trailing" id="GTf-bf-JSj"/>
                 <constraint firstItem="L93-GA-hms" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="N6B-Jk-eA0"/>
+                <constraint firstItem="BeL-Lc-QR4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QS2-Gf-OAK"/>
+                <constraint firstAttribute="bottom" secondItem="BeL-Lc-QR4" secondAttribute="bottom" id="Spd-Wr-50B"/>
                 <constraint firstItem="L93-GA-hms" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="dvY-eh-IuF"/>
                 <constraint firstItem="Vqf-YX-zut" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="el7-1v-C1h"/>
                 <constraint firstItem="Vqf-YX-zut" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lXs-Vu-kpk"/>
+                <constraint firstAttribute="trailing" secondItem="BeL-Lc-QR4" secondAttribute="trailing" id="lqI-pa-bmW"/>
             </constraints>
             <size key="customSize" width="150" height="150"/>
             <connections>
