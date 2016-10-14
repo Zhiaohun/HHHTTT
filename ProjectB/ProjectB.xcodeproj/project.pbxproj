@@ -84,6 +84,7 @@
 		3F2961C91DAA43C8001934A9 /* UIImageView+imageViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961C81DAA43C8001934A9 /* UIImageView+imageViewAnimation.m */; };
 		3F2961D71DAA826D001934A9 /* SongCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2961D51DAA826D001934A9 /* SongCommentsTableViewController.m */; };
 		3F2961D81DAA826D001934A9 /* SongCommentsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2961D61DAA826D001934A9 /* SongCommentsTableViewController.xib */; };
+		3F3195CC1DB1091200F328EC /* RefreshAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3195CB1DB1091200F328EC /* RefreshAnimation.m */; };
 		3F39785B1DAB3692009979BB /* NewsSayingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F39785A1DAB3692009979BB /* NewsSayingModel.m */; };
 		3F39785F1DAB47A0009979BB /* SayingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F39785D1DAB47A0009979BB /* SayingTableViewController.m */; };
 		3F3978601DAB47A0009979BB /* SayingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F39785E1DAB47A0009979BB /* SayingTableViewController.xib */; };
@@ -415,6 +416,8 @@
 		3F2961D41DAA826D001934A9 /* SongCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCommentsTableViewController.h; sourceTree = "<group>"; };
 		3F2961D51DAA826D001934A9 /* SongCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCommentsTableViewController.m; sourceTree = "<group>"; };
 		3F2961D61DAA826D001934A9 /* SongCommentsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongCommentsTableViewController.xib; sourceTree = "<group>"; };
+		3F3195CA1DB1091200F328EC /* RefreshAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshAnimation.h; sourceTree = "<group>"; };
+		3F3195CB1DB1091200F328EC /* RefreshAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshAnimation.m; sourceTree = "<group>"; };
 		3F3978591DAB3692009979BB /* NewsSayingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsSayingModel.h; sourceTree = "<group>"; };
 		3F39785A1DAB3692009979BB /* NewsSayingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsSayingModel.m; sourceTree = "<group>"; };
 		3F39785C1DAB47A0009979BB /* SayingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SayingTableViewController.h; sourceTree = "<group>"; };
@@ -1477,6 +1480,8 @@
 				3F6C403E1DAD1321005CC6B0 /* UIViewController+XHPhoto.m */,
 				3F6C40471DAD339F005CC6B0 /* UIViewController+animation.h */,
 				3F6C40481DAD339F005CC6B0 /* UIViewController+animation.m */,
+				3F3195CA1DB1091200F328EC /* RefreshAnimation.h */,
+				3F3195CB1DB1091200F328EC /* RefreshAnimation.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -2090,7 +2095,7 @@
 				TargetAttributes = {
 					3FA4E5DE1D9AB1070090AC78 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = S2CRPD33DC;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -2386,6 +2391,7 @@
 				3F272F861DA7681300CA7E8F /* MusicCategoryBaseClass.m in Sources */,
 				3F6C40491DAD339F005CC6B0 /* UIViewController+animation.m in Sources */,
 				3F844AE51D9E3E2300AE9B3B /* VideoListTags.m in Sources */,
+				3F3195CC1DB1091200F328EC /* RefreshAnimation.m in Sources */,
 				3F39786E1DABA3E1009979BB /* UIView+ShadowView.m in Sources */,
 				5DB7FB471DAF6D82001407FE /* AboutViewController.m in Sources */,
 				5DEEB57C1DAA6C7F004FD1FA /* UserInfoManager.m in Sources */,
@@ -2537,7 +2543,7 @@
 			baseConfigurationReference = A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S2CRPD33DC;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK",
@@ -2563,7 +2569,7 @@
 			baseConfigurationReference = FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S2CRPD33DC;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK",
