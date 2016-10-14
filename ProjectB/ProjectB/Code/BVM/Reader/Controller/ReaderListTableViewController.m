@@ -51,7 +51,8 @@
     self.tableView.rowHeight = 120;
     [self.tableView registerNib:[UINib nibWithNibName:@"ReaderListTableViewCell" bundle:nil] forCellReuseIdentifier:@"readerListCell"];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-//    [self viewDidLayoutSubviews];
+    
+    [self viewDidLayoutSubviews];
     
     _readerView = [[NSBundle mainBundle]loadNibNamed:@"ReaderListHeaderView" owner:nil options:nil][0];
     
@@ -95,13 +96,11 @@
     } ;
 }
 
-//-(void)viewDidLayoutSubviews
-//{
-//    _readerView = [[NSBundle mainBundle]loadNibNamed:@"ReaderListHeaderView" owner:nil options:nil][0];
-// 
-//    _readerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97);
-//
-//}
+-(void)viewDidLayoutSubviews
+{
+    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97);
+
+}
 -(void)refreshUI{
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{

@@ -44,6 +44,9 @@
     [self requestDataInSimpleView];
 
 }
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = YES;
+}
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear: YES];
@@ -140,7 +143,7 @@
     if (indexPath.row == 0) {
         //视频
         cell.headImg.image = [UIImage imageNamed:@"video"];
-        cell.view1Title.text = @"热门视频";
+        cell.viewTitle.text = @"热门视频";
         
         VideoListItemList *list1 = _videoBaseModel.itemList[0];
         VideoListItemList *list2 = _videoBaseModel.itemList[1];
@@ -182,7 +185,7 @@
     else{
         //音乐
         cell.headImg.image = [UIImage imageNamed:@"music"];
-        cell.view1Title.text = @"热门音乐";
+        cell.viewTitle.text = @"热门音乐";
         
         MusicHotListModel *list1 = _dataArray[0];
         MusicHotListModel *list2 = _dataArray[1];

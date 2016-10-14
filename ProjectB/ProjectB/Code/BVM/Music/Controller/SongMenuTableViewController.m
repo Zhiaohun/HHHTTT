@@ -34,6 +34,10 @@
     
     [self initUI];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = YES;
+}
+
 #pragma mark - private Method -
 -(void)initUI{
     self.tableView.rowHeight = UITableViewAutomaticDimension;

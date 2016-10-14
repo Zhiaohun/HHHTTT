@@ -50,7 +50,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-    UIImage *image = [[UIImage imageNamed:@"goback"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(goback)];
     
     UINib *nib = [UINib nibWithNibName:@"DownloadListTableViewCell" bundle:nil];

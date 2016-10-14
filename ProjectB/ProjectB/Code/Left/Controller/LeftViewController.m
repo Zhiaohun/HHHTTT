@@ -10,6 +10,7 @@
 #import "TimingCloseTableViewController.h"
 #import "DownloadTableViewController.h"
 #import "UIImageEffects.h"
+#import "CollectionViewController.h"
 
 @interface LeftViewController ()
 @property (nonatomic, assign) BOOL state; //夜间 state=YES  白天 state=NO
@@ -104,17 +105,30 @@
     }];
 }
 
+- (void)showSucHUDWithMessage:(NSString *)msg {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    hud.mode = MBProgressHUDModeCustomView;
+    UIImage *image = [[UIImage imageNamed:@"Checkmark"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    hud.customView = [[UIImageView alloc] initWithImage:image];
+    hud.square = YES;
+    hud.label.text = msg;
+    [hud hideAnimated:YES afterDelay:1.f];
+}
+
 
 
 #pragma mark - Tapclick -
 
 - (IBAction)firstBtn:(id)sender {
     //近期浏览
-    
+    [self showSucHUDWithMessage:@"此功能尚未研究成功,请耐心等候"];
     
 }
 - (IBAction)secondBtn:(id)sender {
     //我的收藏
+    CollectionViewController *collectionVC = [CollectionViewController new ];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:collectionVC];
+    [self presentViewController:navi animated:YES completion:nil];
     
 }
 - (IBAction)ThirdBtn:(id)sender {
