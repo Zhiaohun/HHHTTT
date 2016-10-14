@@ -70,7 +70,7 @@
 
 -(void)headerView{
     VideoListHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"VideoListHeaderView" owner:nil options:nil][0];
-    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 0);
+    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 40);
     [headerView insertSubview:headerView.backgroundView atIndex:0];
     headerView.rightBtnView1.hidden = YES;
     headerView.rightBtnView2.hidden = YES;
@@ -201,6 +201,12 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
      VideoDetailViewController *videoDetailVC = [[VideoDetailViewController alloc] init];
     videoDetailVC.dataArray = [NSArray array];

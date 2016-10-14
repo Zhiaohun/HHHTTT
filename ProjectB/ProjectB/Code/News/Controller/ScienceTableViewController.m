@@ -40,7 +40,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
    // self.tableView.rowHeight = UITableViewAutomaticDimension;
    // self.tableView.estimatedRowHeight = 50;
     
@@ -51,7 +51,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.countStart = 0;
-    [self headerRefresh];
+    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+        
+        [self headerRefresh];
+    }];
+    
+   // [self headerRefresh];
     [self cellResigest];
     
   
@@ -65,11 +70,15 @@
 -(void)dataRequest{
     NSString *URLStr = [NSString stringWithFormat:@"%@/%lu-20.html",URL_Technology,self.countStart];
     
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
+   
+    
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
        // NSLog(@"++++++++++++++%@",dic);
+        
+       
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         self.technologyBaseModel = [NewsTechnologyBaseClass modelObjectWithDictionary:dic];
         _imgArray = [NSMutableArray array];
         _titleArray = [NSMutableArray array];
@@ -89,6 +98,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self footerRefresh];
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     } Fail:^(NSError *error) {
         NSLog(@">>>%@",error);
@@ -160,6 +170,7 @@
             newsImagemoreCell.tmodel = model;
             
             [UIView shadowView:newsImagemoreCell];
+             newsImagemoreCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImagemoreCell;
             
         }else if (model.imgType){
@@ -167,12 +178,13 @@
             newsImageCell.tmodel = model;
             
             [UIView shadowView:newsImageCell];
+             newsImageCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImageCell;
             
         }else{
             NewsTableViewCell *newsCell = [tableView dequeueReusableCellWithIdentifier:@"newscell" forIndexPath:indexPath];
             newsCell.tmodel = model;
-            
+             newsCell.selectionStyle = UITableViewCellSelectionStyleNone;
             [UIView shadowView:newsCell];
             return newsCell;
             

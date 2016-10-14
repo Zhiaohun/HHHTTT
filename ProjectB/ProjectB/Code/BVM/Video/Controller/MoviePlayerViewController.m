@@ -84,7 +84,7 @@
     [self.view addSubview:_activity];
     [_activity startAnimating];
     
-//    //延迟线程
+    //延迟线程
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [UIView animateWithDuration:0.5 animations:^{

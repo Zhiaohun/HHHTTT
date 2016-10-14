@@ -60,6 +60,9 @@
     [self.tableView registerNib:songListNib forCellReuseIdentifier:@"songlistcell"];
     
     [self goback];
+    
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 //自定义返回键
 -(void)goback{

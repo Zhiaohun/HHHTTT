@@ -24,7 +24,8 @@
     
     [self initUI];
     [self requestMovieData];
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +36,7 @@
 -(void)initUI{
     self.title = @"热门电影";
     self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    _tableView.rowHeight = 100;
+    _tableView.rowHeight = 150;
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [_tableView registerNib:[UINib nibWithNibName:@"HotVideoTableViewCell" bundle:nil] forCellReuseIdentifier:@"videocell"];
@@ -88,6 +89,13 @@
     
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

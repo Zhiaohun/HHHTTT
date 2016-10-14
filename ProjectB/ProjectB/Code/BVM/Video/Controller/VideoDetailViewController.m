@@ -11,6 +11,8 @@
 #import "MoviePlayerViewController.h"
 #import "UIImageView+imageViewAnimation.h"
 #import "LLShowHUD.h"
+#import "WeiboSDK.h"
+
 
 @interface VideoDetailViewController ()
 @property (nonatomic, strong) VideoListItemList *listModel;
@@ -30,6 +32,8 @@
 @property (nonatomic, assign) CGFloat offSet;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *countLabelX;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressViewX;
+
+@property (nonatomic, assign) BOOL isCacheBtnSelected;
 
 @property (nonatomic, assign) BOOL isCollectionBtnSelected;
 
@@ -149,14 +153,25 @@
     
 }
 - (IBAction)shareBtnAction:(id)sender {
-    [Share shareToWeiBo:@[self.listModel.data.cover.feed] Content:self.listModel.data.dataDescription URLStr:nil Title:_listModel.data.title];
+   // if([WeiboSDK isWeiboAppInstalled]){
+      [Share shareToWeiBo:@[self.listModel.data.cover.feed] Content:self.listModel.data.dataDescription URLStr:nil Title:_listModel.data.title];
+   // }else{
+   //     [LLShowHUD showHUD:self.view Message:@"请先安装新浪微博APP" AfterDelay:1];
+  //  }
+    
     
 }
 - (IBAction)cacheBtnAction:(id)sender {
     
     UIButton *btn = (UIButton *)sender;
-    [btn setImage:[UIImage imageNamed:@"cached"] forState:UIControlStateNormal];
-    [btn setTitle:@"已缓存" forState:UIControlStateNormal];
+    if (!self.isCacheBtnSelected) {
+        [btn setImage:[UIImage imageNamed:@"cached"] forState:UIControlStateNormal];
+        [btn setTitle:@"已缓存" forState:UIControlStateNormal];
+        self.isCacheBtnSelected = YES;
+
+    }else{
+        [LLShowHUD showHUD:self.view Message:@"您已经缓存过!" AfterDelay:1];
+    }
     
 }
 - (IBAction)cololectionAction:(id)sender {

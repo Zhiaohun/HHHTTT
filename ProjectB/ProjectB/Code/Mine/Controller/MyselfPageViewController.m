@@ -86,6 +86,8 @@
     [self presentViewController:pickerImageVC animated:YES completion:nil];
     
  */
+    
+    /*
     [self showCanEdit:YES photo:^(UIImage *photo) {
        self.selfImageView.image = photo;
         
@@ -96,6 +98,7 @@
         [manager updateWithUsername:self.nickName.text TOPersonalSten:self.personal.text userImg:str gender:self.sex.text city:self.city.text birthday:self.birth.text];
 
     }];
+     */
 
 }
 

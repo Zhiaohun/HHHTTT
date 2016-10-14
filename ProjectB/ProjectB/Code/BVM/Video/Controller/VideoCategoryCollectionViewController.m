@@ -80,9 +80,12 @@
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
 //    self.navigationController.navigationBar.shadowImage = [UIImage new];
     
-     [self headerDataRequest];
-
-    [self dataRequest];
+    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+        [self headerDataRequest];
+        
+        [self dataRequest];
+    }];
+    
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.collectionViewLayout = [self flowLayout];
@@ -121,6 +124,10 @@
 
 -(void)dataRequest{
    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_VideoList Parameter:nil Success:^(NSDictionary *dic) {
+       
+       dispatch_async(dispatch_get_main_queue(), ^{
+           [MBProgressHUD hideHUDForView:self.view animated:YES];
+       });
        self.baseModel = [BaseClass modelObjectWithDictionary:dic];
       // NSLog(@"%@",self.baseModel);
        for (int i= 0; i < self.baseModel.itemList.count; i++) {
@@ -143,7 +150,9 @@
 
 -(void)headerDataRequest{
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_VideoHeader Parameter:nil Success:^(NSDictionary *dic) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
         NSArray *sectionArray = [NSArray array];
         sectionArray = dic[@"sectionList"];
         
@@ -210,6 +219,13 @@
     
     return normalCell;
     
+}
+
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+    cell.layer.transform = CATransform3DMakeScale(0.2, 0.2, 1);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.layer.transform = CATransform3DMakeScale(1, 1, 1);
+    }];
 }
 
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{

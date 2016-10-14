@@ -113,7 +113,7 @@
 
 -(void)tableViewHeaderView{
     _headerView = [[NSBundle mainBundle] loadNibNamed:@"MusicPlayHeaderView" owner:nil options:nil][0];
-    _headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 460);
+    _headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 440);
     self.tableView.tableHeaderView = _headerView;
     
    // MusicListList *listModel = self.musicListArray[self.selectIndex];

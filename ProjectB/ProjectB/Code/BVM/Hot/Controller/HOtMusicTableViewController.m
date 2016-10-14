@@ -31,7 +31,11 @@
     [super viewDidLoad];
     [self initUI];
     [self requestMusicData];
-    self.title = @"专辑列表";
+    self.title = @"热门音乐";
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,6 +123,13 @@
     MusicHotListModel *model = self.dataArray[indexPath.row];
     songVC.albumId = (int)model.albumId;
     [self.navigationController pushViewController:songVC animated:YES];
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
 }
 
 /*

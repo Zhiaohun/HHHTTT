@@ -10,6 +10,8 @@
 #import "NewsSayingModel.h"
 #import "SayingTableViewCell.h"
 #import "UIImageView+imageViewAnimation.h"
+#import "WeiboSDK.h"
+#import "LLShowHUD.h"
 
 @interface SayingTableViewController ()
 
@@ -37,7 +39,14 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];
     self.maxBehotTime = (int)[date timeIntervalSince1970];
-    [self headerRefresh];
+    
+    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+        
+        [self headerRefresh];
+    }];
+   // [self headerRefresh];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     UINib *sayingNib = [UINib nibWithNibName:@"SayingTableViewCell" bundle:nil];
     [self.tableView registerNib:sayingNib forCellReuseIdentifier:@"sayingcell"];
@@ -50,6 +59,7 @@
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_Saying,self.maxBehotTime,str];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         //  NSLog(@">>>>>>>%@",dic);
+        
         
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
@@ -66,6 +76,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self footerRefresh];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     } Fail:^(NSError *error) {
         NSLog(@">>>>%@",error);
@@ -125,30 +136,33 @@
         [weakCell.upBtn.imageView spotAnimation];
         [weakCell.upBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.digg_count + 1] forState:UIControlStateNormal];
+        
+        [weakCell.downBtn setImage:[UIImage imageNamed:@"duanzi_down"] forState:UIControlStateNormal];
+        [weakCell.downBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.bury_count ] forState:UIControlStateNormal];
+        [weakCell.downBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         };
+
     
     cell.downBtnActionBlock = ^{
         [weakCell.downBtn setImage:[UIImage imageNamed:@"duanzi_down_selected"] forState:UIControlStateNormal];
         [weakCell.downBtn.imageView spotAnimation];
         [weakCell.downBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [weakCell.downBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.bury_count + 1] forState:UIControlStateNormal];
+        
+        [weakCell.upBtn setImage:[UIImage imageNamed:@"duanzi_up"] forState:UIControlStateNormal];
+        [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.digg_count ] forState:UIControlStateNormal];
+        [weakCell.upBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     };
-    
-    
+
     cell.shareBtnActionBlock = ^{
         [Share shareToWeiBo:@[model.profile_image_url] Content:model.content URLStr:nil Title:nil];
     };
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+
 
 
 /*

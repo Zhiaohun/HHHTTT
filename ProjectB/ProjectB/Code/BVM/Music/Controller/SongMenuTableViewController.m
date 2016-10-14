@@ -44,12 +44,14 @@
     self.tableView.estimatedRowHeight = 50;
 
     self.pageId = 1;
+    
     [self headerRefresh];
     
     UINib *songMenuNib = [UINib nibWithNibName:@"SongMenuTableViewCell" bundle:nil];
     [self.tableView registerNib:songMenuNib forCellReuseIdentifier:@"songmenucell"];
     
     [self goback];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 //自定义返回键
 -(void)goback{

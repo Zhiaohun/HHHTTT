@@ -45,9 +45,17 @@
     
     UINib *commentNib = [UINib nibWithNibName:@"SongPlayCommentTableViewCell" bundle:nil];
     [self.tableView registerNib:commentNib forCellReuseIdentifier:@"commentcell"];
+    [self goback];
 }
 
-
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void)dataRequest{
     
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&pageSize=30&trackId=%lu",URL_CommentMore,self.pageId,self.trackId];
@@ -106,7 +114,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"<><><><><><><>><>%lu",self.commentArray.count);
     return self.commentArray.count;
 }
 

@@ -22,6 +22,8 @@
 #import "UIViewController+MMDrawerController.h"
 #import "UIView+ShadowView.h"
 
+#import "LLShowHUD.h"
+
 
 
 @interface RecommendTableViewController ()<KNBannerViewDelegate>
@@ -45,13 +47,29 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.countStart = 0;
-    [self headerRefresh];
+  //  [self headerRefresh];
+    
+    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+        
+        [self headerRefresh];
+    }];
+    
     [self cellResigest];
+    [self goback];
     
 }
 
+//自定义返回键
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark - private Method -
 
 -(void)dataRequest{
@@ -75,6 +93,8 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+
             [self.tableView reloadData];
             [self footerRefresh];
         });
@@ -131,7 +151,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+   
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     NewsConcentrationT1467284926140 *model = self.dataArray[indexPath.row];
@@ -150,6 +170,7 @@
             newsImagemoreCell.cmodel = model;
             
             [UIView shadowView:newsImagemoreCell];
+            newsImagemoreCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImagemoreCell;
             
         }else if (model.hasImg){
@@ -157,6 +178,7 @@
             newsImageCell.cmodel = model;
             
             [UIView shadowView:newsImageCell];
+            newsImageCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImageCell;
             
         }else{
@@ -164,7 +186,7 @@
             newsCell.cmodel = model;
             
             [UIView shadowView:newsCell];
-            
+            newsCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsCell;
             
             
@@ -195,6 +217,9 @@
         webVC.URLHtml = model.url;
         [self.navigationController pushViewController:webVC animated:YES];
     }
+    
+    
+    
 }
 
 

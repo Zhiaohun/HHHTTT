@@ -39,14 +39,18 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.countStart = 0;
-    [self headerRefresh];
+    //[self headerRefresh];
+    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+        
+        [self headerRefresh];
+    }];
     [self cellResigest];
     
     
@@ -59,6 +63,7 @@
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
        // NSLog(@"++++++++++++++%@",dic);
+        
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         
@@ -78,6 +83,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self footerRefresh];
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     } Fail:^(NSError *error) {
         NSLog(@">>>%@",error);
@@ -150,6 +156,7 @@
             newsImagemoreCell.gmodel = model;
             
             [UIView shadowView:newsImagemoreCell];
+             newsImagemoreCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImagemoreCell;
             
         }else if (model.imgType){
@@ -157,6 +164,7 @@
             newsImageCell.gmodel = model;
             
             [UIView shadowView:newsImageCell];
+             newsImageCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImageCell;
             
         }else{
@@ -164,6 +172,7 @@
             newsCell.gmodel = model;
             
             [UIView shadowView:newsCell];
+             newsCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsCell;
             
             

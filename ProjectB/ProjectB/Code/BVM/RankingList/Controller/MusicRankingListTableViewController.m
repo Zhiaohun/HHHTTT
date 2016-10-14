@@ -25,6 +25,12 @@
     return _dataArray;
 }
 
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear: YES];
+    [self.navigationController setValue:[UINavigationBar new] forKey:@"navigationBar"];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = YES;
 }
@@ -45,6 +51,7 @@
     
     UINib *nib = [UINib nibWithNibName:@"HotMusicTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"musiccell"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 -(void)dataRequest{
@@ -115,6 +122,13 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
 }
 /*
 // Override to support conditional editing of the table view.

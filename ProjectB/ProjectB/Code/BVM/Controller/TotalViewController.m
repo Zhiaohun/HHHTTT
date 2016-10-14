@@ -89,7 +89,10 @@
 
     
     
-    cell.totalImg.image  = [self blurViewByLightEffectWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",(int)indexPath.row+10]]] ;
+   // cell.totalImg.image  = [self blurViewByLightEffectWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",(int)indexPath.row+10]]] ;
+    cell.totalImg.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",(int)indexPath.row+10]] ;
+    
+   // cell.totalImg.image = [UIImage imageNamed:@"105"];
 //    int a = arc4random() % 255;
 //    int b = arc4random() % 255;
 //    int c = arc4random() % 255;
@@ -102,7 +105,8 @@
     cell.cellView.layer.shadowColor = [UIColor blackColor].CGColor;
     cell.totalImg.layer.masksToBounds = YES;
     cell.totalImg.layer.cornerRadius = 10;
-   // cell.clipsToBounds = YES;
+    cell.cellView.layer.cornerRadius =  10;
+    cell.cellView.clipsToBounds = YES;
     
     return cell;
 }

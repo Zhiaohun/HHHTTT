@@ -40,6 +40,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"ReaderRankListTableViewCell" bundle:nil] forCellReuseIdentifier:@"ReaderRankListCell"];
     self.tableView.rowHeight = 178;
     self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     
 }
 
@@ -135,6 +137,12 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

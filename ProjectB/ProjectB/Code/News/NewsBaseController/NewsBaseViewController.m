@@ -42,6 +42,9 @@
     return _viewControllerArray;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = NO;
+}
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear: YES];
     [self.navigationController setValue:[UINavigationBar new] forKey:@"navigationBar"];
