@@ -52,7 +52,7 @@
                         <action selector="goodNight:" destination="-1" eventType="touchUpInside" id="HBH-Yg-R3h"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAW-OI-Upj">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAW-OI-Upj">
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="G1d-jd-Qrh"/>
                     </constraints>

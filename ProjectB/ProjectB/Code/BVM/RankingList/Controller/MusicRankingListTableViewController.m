@@ -25,6 +25,10 @@
     return _dataArray;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -93,9 +97,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HotMusicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"musiccell" forIndexPath:indexPath];
     
+    
     MusicHotListModel *model = self.dataArray[indexPath.row];
     cell.model = model;
-    
+    cell.rankLb.hidden = NO;
+    cell.rankLb.text = [NSString stringWithFormat:@"%lu",indexPath.row + 1];
     return cell;
 }
 

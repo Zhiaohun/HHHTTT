@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *musicTitle;
 @property (weak, nonatomic) IBOutlet UILabel *musicIntro;
 @property (weak, nonatomic) IBOutlet UILabel *musicTracksCounts;
+@property (weak, nonatomic) IBOutlet UILabel *rankLb;
 
 
 

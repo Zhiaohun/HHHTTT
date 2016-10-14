@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="363" height="74"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="363" height="74"/>
+                <frame key="frameInset" width="363" height="73"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qHl-0Z-Lud">
@@ -48,6 +48,16 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvA-lf-ift">
+                        <color key="backgroundColor" red="0.56802826969999998" green="1" blue="0.74377378419999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="Dd7-RL-ttM"/>
+                            <constraint firstAttribute="height" constant="17" id="FSa-Cj-dsP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="mlH-2t-MKx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="27T-KJ-M6Z"/>
@@ -55,8 +65,10 @@
                     <constraint firstItem="Qhy-Xa-Toe" firstAttribute="leading" secondItem="qHl-0Z-Lud" secondAttribute="trailing" constant="8" id="6OC-31-v3Q"/>
                     <constraint firstItem="Qhy-Xa-Toe" firstAttribute="top" secondItem="NSm-N3-uLI" secondAttribute="bottom" id="B6n-7v-vcl"/>
                     <constraint firstItem="qHl-0Z-Lud" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="NNA-be-ady"/>
+                    <constraint firstItem="fvA-lf-ift" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fm8-5h-0Mh"/>
                     <constraint firstAttribute="bottom" secondItem="Qhy-Xa-Toe" secondAttribute="bottom" constant="5" id="h0P-jM-ovV"/>
                     <constraint firstItem="NSm-N3-uLI" firstAttribute="top" secondItem="mlH-2t-MKx" secondAttribute="bottom" id="lVo-FQ-ium"/>
+                    <constraint firstItem="fvA-lf-ift" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pcN-36-Dii"/>
                     <constraint firstItem="qHl-0Z-Lud" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="wbV-Qr-Xcv"/>
                     <constraint firstItem="mlH-2t-MKx" firstAttribute="leading" secondItem="qHl-0Z-Lud" secondAttribute="trailing" constant="8" id="yGq-8Z-Ww6"/>
                 </constraints>
@@ -66,6 +78,7 @@
                 <outlet property="musicIntro" destination="NSm-N3-uLI" id="5Kp-3a-r0n"/>
                 <outlet property="musicTitle" destination="mlH-2t-MKx" id="Y2s-fA-cEO"/>
                 <outlet property="musicTracksCounts" destination="Qhy-Xa-Toe" id="2FF-ez-RH0"/>
+                <outlet property="rankLb" destination="fvA-lf-ift" id="ZVo-gB-r9T"/>
             </connections>
             <point key="canvasLocation" x="54.5" y="103"/>
         </tableViewCell>

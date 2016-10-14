@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,11 +26,23 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-6T-iBb">
+                        <color key="backgroundColor" red="0.49161776680000002" green="0.82868637089999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="9IS-2i-Ocp"/>
+                            <constraint firstAttribute="height" constant="17" id="sOT-cx-rSe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="i1D-qf-QTL" secondAttribute="trailing" id="2gZ-jj-FKG"/>
                     <constraint firstItem="CGJ-if-2P9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="27" id="5Fm-z9-s3v"/>
+                    <constraint firstItem="z2M-6T-iBb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7kQ-hz-IDg"/>
                     <constraint firstItem="i1D-qf-QTL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BVu-s0-EDn"/>
+                    <constraint firstItem="z2M-6T-iBb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Cfj-TG-4yC"/>
                     <constraint firstAttribute="bottom" secondItem="i1D-qf-QTL" secondAttribute="bottom" id="EWL-wA-9jw"/>
                     <constraint firstItem="i1D-qf-QTL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="L0q-1g-4s0"/>
                     <constraint firstItem="CGJ-if-2P9" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="LpO-bh-VBw"/>
@@ -38,6 +50,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="VideoImageView" destination="i1D-qf-QTL" id="Sze-f9-zSR"/>
+                <outlet property="rankLb" destination="z2M-6T-iBb" id="uRC-dr-EEo"/>
                 <outlet property="videoTitle" destination="CGJ-if-2P9" id="SQH-68-A8a"/>
             </connections>
             <point key="canvasLocation" x="-1" y="39"/>

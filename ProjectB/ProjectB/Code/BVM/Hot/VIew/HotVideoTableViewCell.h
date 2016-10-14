@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *VideoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *videoTitle;
+@property (weak, nonatomic) IBOutlet UILabel *rankLb;
 
 @end

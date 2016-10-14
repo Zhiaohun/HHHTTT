@@ -70,6 +70,8 @@
     [cell.VideoImageView sd_setImageWithURL:[NSURL URLWithString:model.data.cover.feed] placeholderImage:PlaceholderImage];
     cell.videoTitle.text = model.data.title;
     
+    cell.rankLb.hidden = NO;
+    cell.rankLb.text = [NSString stringWithFormat:@"%lu",indexPath.row+1];
     
     return cell;
 }

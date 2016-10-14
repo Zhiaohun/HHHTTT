@@ -44,6 +44,17 @@
 
     UINib *nib = [UINib nibWithNibName:@"HotMusicTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"musiccell"];
+    [self goback];
+}
+
+//自定义返回键
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)requestMusicData{
