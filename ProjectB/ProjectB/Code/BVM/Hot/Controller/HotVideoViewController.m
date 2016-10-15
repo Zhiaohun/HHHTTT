@@ -10,6 +10,7 @@
 #import "HotVideoTableViewCell.h"
 #import "VideoListDataModels.h"
 #import "MoviePlayerViewController.h"
+#import "VideoFullScreenViewController.h"
 
 @interface HotVideoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
@@ -100,12 +101,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MoviePlayerViewController *movieVC = [[MoviePlayerViewController alloc] init];
-    movieVC.dataArray = [NSArray array];
-    movieVC.dataArray = self.videoBaseModel.itemList;
-    movieVC.selectIndex = indexPath.row;
-    
-    [self.navigationController pushViewController:movieVC animated:YES];
+    VideoFullScreenViewController *moviePlayVC = [[VideoFullScreenViewController alloc] init];
+    moviePlayVC.dataArray = [NSArray array];
+    moviePlayVC.dataArray = self.videoBaseModel.itemList;
+    moviePlayVC.selectIndex = indexPath.row;
+    // [self.navigationController pushViewController:moviePlayVC animated:YES];
+    [self presentViewController:moviePlayVC animated:YES completion:nil];
 }
 
 /*

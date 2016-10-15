@@ -17,6 +17,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - Masonry (1.0.1)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - MMDrawerController (0.6.0):
@@ -39,6 +40,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1)
   - FMDB (~> 2.6)
+  - Masonry (~> 1.0)
   - MBProgressHUD (~> 1.0)
   - MJRefresh (~> 3.1)
   - MMDrawerController (~> 0.6)
@@ -48,12 +50,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   WMPageController: befbec759314486572dbbef9eaab97f6fdf2dfde
 
-PODFILE CHECKSUM: e1aa2736841fbaae9b92f3f2adbf59a8d26e0603
+PODFILE CHECKSUM: bc39d4379782e736d53026d14a7d845c07bbaeae
 
 COCOAPODS: 1.0.0

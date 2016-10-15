@@ -19,6 +19,8 @@
 #import "NewPagedFlowView.h"
 #import "PGIndexBannerSubiew.h"
 
+#import "VideoFullScreenViewController.h"
+
 @interface VideoCategoryCollectionViewController ()<NewPagedFlowViewDelegate, NewPagedFlowViewDataSource>
 
 {
@@ -317,11 +319,12 @@
     
     NSLog(@"点击了第%ld张图",(long)subIndex+1);
     
-    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
+    VideoFullScreenViewController *moviePlayVC = [[VideoFullScreenViewController alloc] init];
     moviePlayVC.dataArray = [NSArray array];
     moviePlayVC.dataArray = self.headerDataArray;
     moviePlayVC.selectIndex = (long)subIndex;
-    [self.navigationController pushViewController:moviePlayVC animated:YES];
+   // [self.navigationController pushViewController:moviePlayVC animated:YES];
+    [self presentViewController:moviePlayVC animated:YES completion:nil];
     
     
     

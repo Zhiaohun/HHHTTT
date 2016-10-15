@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) NSMutableArray *newsSayingArray;
 @property (nonatomic, assign) NSInteger maxBehotTime;
+@property (nonatomic, assign) BOOL isUpOrDownSelect;
+@property (nonatomic, strong) NSMutableArray *boolArray;
 @end
 
 @implementation SayingTableViewController
@@ -26,6 +28,13 @@
         _newsSayingArray = [NSMutableArray array];
     }
     return _newsSayingArray;
+}
+
+-(NSMutableArray *)boolArray{
+    if (!_boolArray) {
+        _boolArray = [NSMutableArray array];
+    }
+    return _boolArray;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,7 +73,7 @@
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         
-        NSLog(@">>>>>>>>>>>>>>>>>>>>>>%@",dic[@"data"]);
+        //NSLog(@">>>>>>>>>>>>>>>>>>>>>>%@",dic[@"data"]);
         NSArray *array = dic[@"data"];
         for (NSDictionary *dic in array) {
             NewsSayingModel *model = [[NewsSayingModel alloc] init];
@@ -72,7 +81,7 @@
             [self.newsSayingArray addObject:model];
             NSLog(@"_+_+_+_+_+_+_+_+%@",model);
         }
-        NSLog(@"<<<<<<<<<<<%lu",self.newsSayingArray.count);
+       // NSLog(@"<<<<<<<<<<<%lu",self.newsSayingArray.count);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self footerRefresh];
@@ -121,6 +130,11 @@
     
     
     NewsSayingModel *model = self.newsSayingArray[indexPath.row];
+    
+    
+    cell.shareBtn.tag = indexPath.row + 100;
+    
+    
     cell.model = model;
   
     //给cell加上一层阴影,实现浮动效果
@@ -132,6 +146,7 @@
   
     __weak typeof(cell) weakCell = cell;
     cell.upBtnActionBlock = ^{
+        self.isUpOrDownSelect = YES;
         [weakCell.upBtn setImage:[UIImage imageNamed:@"duanzi_up_selected"] forState:UIControlStateNormal];
         [weakCell.upBtn.imageView spotAnimation];
         [weakCell.upBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -144,6 +159,7 @@
 
     
     cell.downBtnActionBlock = ^{
+        self.isUpOrDownSelect = YES;
         [weakCell.downBtn setImage:[UIImage imageNamed:@"duanzi_down_selected"] forState:UIControlStateNormal];
         [weakCell.downBtn.imageView spotAnimation];
         [weakCell.downBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -154,8 +170,9 @@
         [weakCell.upBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     };
 
-    cell.shareBtnActionBlock = ^{
+    cell.shareBtnActionBlock = ^(NSInteger tag){
         [Share shareToWeiBo:@[model.profile_image_url] Content:model.content URLStr:nil Title:nil];
+
     };
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -10,7 +10,7 @@
 #import "NewsSayingModel.h"
 typedef void(^UpBtnActionBlock)();
 typedef void(^DownBtnActionBlock)();
-typedef void(^ShareBtnActionBlock)();
+typedef void(^ShareBtnActionBlock)(NSInteger);
 @interface SayingTableViewCell : UITableViewCell
 
 

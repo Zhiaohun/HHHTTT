@@ -10,8 +10,16 @@
 #import "VideoListDataModels.h"
 #import "MoviePlayerViewController.h"
 #import "UIImageView+imageViewAnimation.h"
+#import "ZXVideoPlayerController.h"
+
 #import "LLShowHUD.h"
 #import "WeiboSDK.h"
+
+#import "ZFPlayerView.h"
+
+
+
+
 
 
 @interface VideoDetailViewController ()
@@ -36,7 +44,11 @@
 @property (nonatomic, assign) BOOL isCacheBtnSelected;
 
 @property (nonatomic, assign) BOOL isCollectionBtnSelected;
+@property (nonatomic, strong) ZXVideoPlayerController *videoController;
 
+@property (nonatomic, strong) ZFPlayerView *playerView;
+/** 离开页面时候是否在播放 */
+@property (nonatomic, assign) BOOL isPlaying;
 
 
 @end
@@ -44,9 +56,15 @@
 @implementation VideoDetailViewController
 
 
--(void)viewWillAppear:(BOOL)animated{
-    self.tabBarController.tabBar.hidden = YES;
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+       self.tabBarController.tabBar.hidden = YES;
+
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,6 +73,7 @@
     [self.view insertSubview:self.blurImageView atIndex:0];
     self.index = self.selectIndex;
     self.listModel = [[VideoListItemList alloc] init];
+    self.listModel = self.dataArray[self.index];
     
    
     
@@ -86,7 +105,22 @@
     
     [self upDateUI];
     
-    [self goback];
+   // [self goback];
+    
+    
+    
+    
+    //if use Masonry,Please open this annotation
+    /*
+     UIView *topView = [[UIView alloc] init];
+     topView.backgroundColor = [UIColor blackColor];
+     [self.view addSubview:topView];
+     [topView mas_updateConstraints:^(MASConstraintMaker *make) {
+     make.top.left.right.equalTo(self.view);
+     make.height.mas_offset(20);
+     }];
+      */
+
 }
 
 //自定义返回键
@@ -114,12 +148,18 @@
 }
 */
 -(void)tapAction{
-    self.listModel = self.dataArray[self.index];
+   // self.listModel = self.dataArray[self.index];
+    
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    self.view.backgroundColor = [UIColor lightGrayColor];
    
-    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
-    moviePlayVC.dataArray = self.dataArray;
-    moviePlayVC.selectIndex = self.selectIndex;
-    [self presentViewController:moviePlayVC animated:YES completion:nil];
+    [self playVideo];
+//    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
+//    moviePlayVC.dataArray = self.dataArray;
+//    moviePlayVC.selectIndex = self.selectIndex;
+//    [self presentViewController:moviePlayVC animated:YES completion:nil];
 
     
 }
@@ -128,6 +168,7 @@
 -(void)upDateUI{
     
     self.listModel = self.dataArray[self.index];
+     self.title = self.listModel.data.title;
     [self.imageV sd_setImageWithURL:[NSURL URLWithString:_listModel.data.cover.feed] placeholderImage:PlaceholderImage];
     
     [self.imageV backgroundImageAnimation];
@@ -152,12 +193,96 @@
     
     
 }
+
+
+-(void)playVideo{
+    
+    /*
+    self.listModel = self.dataArray[self.index];
+  
+
+    if (!self.videoController) {
+        
+        self.videoController = [[ZXVideoPlayerController alloc] initWithFrame:CGRectMake(0, 64, self.imageV.frame.size.width, self.imageV.frame.size.height)];
+        self.videoController.video = [[ZXVideo alloc] init];
+        __weak typeof(self) weakSelf = self;
+        self.videoController.videoPlayerGoBackBlock = ^{
+            __strong typeof(self) strongSelf = weakSelf;
+            
+          //  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+           
+            
+            [strongSelf.navigationController popViewControllerAnimated:YES];
+            [strongSelf.navigationController setNavigationBarHidden:NO animated:YES];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:@0 forKey:@"ZXVideoPlayer_DidLockScreen"];
+            
+            strongSelf.videoController = nil;
+        };
+        
+        self.videoController.videoPlayerWillChangeToOriginalScreenModeBlock = ^(){
+            NSLog(@"切换为竖屏模式");
+        };
+        self.videoController.videoPlayerWillChangeToFullScreenModeBlock = ^(){
+            NSLog(@"切换为全屏模式");
+        };
+        
+        [self.videoController showInView:self.view];
+    }
+    
+    
+    self.videoController.video.playUrl = self.listModel.data.playUrl;
+    NSLog(@"url____%@",self.videoController.video.playUrl);
+    self.videoController.video.title = self.listModel.data.title;
+ */
+    self.imageV.hidden = YES;
+    self.playImageView.hidden = YES;
+    
+    
+    self.playerView = [[ZFPlayerView alloc] initWithFrame:CGRectMake(0, 20, self.imageV.frame.size.width, self.imageV.frame.size.height+44)];
+    
+    [self.view addSubview:self.playerView];
+    
+    
+    // 设置播放前的占位图（需要在设置视频URL之前设置）
+    self.playerView.placeholderImageName = nil;
+    // 设置视频的URL
+    self.playerView.videoURL = [NSURL URLWithString:self.listModel.data.playUrl];
+    // 设置标题
+    self.playerView.title = self.listModel.data.title;
+    //（可选设置）可以设置视频的填充模式，内部设置默认（ZFPlayerLayerGravityResizeAspect：等比例填充，直到一个维度到达区域边界）
+    self.playerView.playerLayerGravity = ZFPlayerLayerGravityResizeAspect;
+    
+    // 打开下载功能（默认没有这个功能）
+    self.playerView.hasDownload = NO;
+    // 下载按钮的回调
+    self.playerView.downloadBlock = ^(NSString *urlStr) {
+        //        // 此处是截取的下载地址，可以自己根据服务器的视频名称来赋值
+        //        NSString *name = [urlStr lastPathComponent];
+        //        [[ZFDownloadManager sharedDownloadManager] downFileUrl:urlStr filename:name fileimage:nil];
+        //        // 设置最多同时下载个数（默认是3）
+        //        [ZFDownloadManager sharedDownloadManager].maxCount = 1;
+        //self.playerView.
+        
+    };
+    
+    // 如果想从xx秒开始播放视频
+    // self.playerView.seekTime = 15;
+    
+    // 是否自动播放，默认不自动播放
+    [self.playerView autoPlayTheVideo];
+    __weak typeof(self) weakSelf = self;
+    self.playerView.goBackBlock = ^{
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    };
+    
+    
+
+
+}
 - (IBAction)shareBtnAction:(id)sender {
-   // if([WeiboSDK isWeiboAppInstalled]){
-      [Share shareToWeiBo:@[self.listModel.data.cover.feed] Content:self.listModel.data.dataDescription URLStr:nil Title:_listModel.data.title];
-   // }else{
-   //     [LLShowHUD showHUD:self.view Message:@"请先安装新浪微博APP" AfterDelay:1];
-  //  }
+        [Share shareToWeiBo:@[self.listModel.data.cover.feed] Content:self.listModel.data.dataDescription URLStr:nil Title:_listModel.data.title];
+   
     
     
 }
@@ -188,8 +313,6 @@
     }
    
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

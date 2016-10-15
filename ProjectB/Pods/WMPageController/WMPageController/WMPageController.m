@@ -84,11 +84,20 @@ static NSInteger const kWMControllerCountUndefined = -1;
 }
 
 - (void)setEdgesForExtendedLayout:(UIRectEdge)edgesForExtendedLayout {
+    if (self.edgesForExtendedLayout == edgesForExtendedLayout) { return; }
     [super setEdgesForExtendedLayout:edgesForExtendedLayout];
+    
     if (_hasInited) {
         _hasInited = NO;
         [self viewDidLayoutSubviews];
     }
+}
+
+- (void)setScrollEnable:(BOOL)scrollEnable {
+    _scrollEnable = scrollEnable;
+    
+    if (!self.scrollView) { return; }
+    self.scrollView.scrollEnabled = scrollEnable;
 }
 
 - (void)setProgressViewCornerRadius:(CGFloat)progressViewCornerRadius {
@@ -293,10 +302,12 @@ static NSInteger const kWMControllerCountUndefined = -1;
 #pragma mark - Private Methods
 
 - (void)wm_resetScrollView {
-    if (self.scrollView) {
-        [self.scrollView removeFromSuperview];
+    if (!self.scrollView) {
+        [self wm_addScrollView];
     }
-    [self wm_addScrollView];
+    [self.scrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
     [self wm_addViewControllerAtIndex:self.selectIndex];
     self.currentViewController = self.displayVC[@(self.selectIndex)];
 }
@@ -358,7 +369,9 @@ static NSInteger const kWMControllerCountUndefined = -1;
     _memCache = [[NSCache alloc] init];
     _initializedIndex = kWMUndefinedIndex;
     _controllerConut  = kWMControllerCountUndefined;
+    _scrollEnable = YES;
     
+    self.automaticallyCalculatesItemWidths = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.preloadPolicy = WMPageControllerPreloadPolicyNever;
     self.cachePolicy = WMPageControllerCachePolicyNoLimit;
@@ -405,7 +418,6 @@ static NSInteger const kWMControllerCountUndefined = -1;
 }
 
 - (void)wm_addScrollView {
-    
     WMScrollView *scrollView = [[WMScrollView alloc] init];
     scrollView.scrollsToTop = NO;
     scrollView.pagingEnabled = YES;
@@ -415,6 +427,7 @@ static NSInteger const kWMControllerCountUndefined = -1;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.bounces = self.bounces;
     scrollView.otherGestureRecognizerSimultaneously = self.otherGestureRecognizerSimultaneously;
+    scrollView.scrollEnabled = self.scrollEnable;
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
     
@@ -422,7 +435,6 @@ static NSInteger const kWMControllerCountUndefined = -1;
     for (UIGestureRecognizer *gestureRecognizer in scrollView.gestureRecognizers) {
         [gestureRecognizer requireGestureRecognizerToFail:self.navigationController.interactivePopGestureRecognizer];
     }
-    
 }
 
 - (void)wm_addMenuView {
@@ -610,6 +622,9 @@ static NSInteger const kWMControllerCountUndefined = -1;
         [self wm_addMenuView];
     } else {
         [self.menuView reload];
+        if (self.menuView.userInteractionEnabled == NO) {
+            self.menuView.userInteractionEnabled = YES;
+        }
         if (self.selectIndex != 0) {
             [self.menuView selectItemAtIndex:self.selectIndex];
         }
@@ -679,6 +694,14 @@ static NSInteger const kWMControllerCountUndefined = -1;
     CGFloat menuWidth = _viewWidth - menuX - rightWidth;
     self.menuView.frame = CGRectMake(menuX, menuY, menuWidth, menuHeight);
     [self.menuView resetFrames];
+}
+
+- (CGFloat)wm_calculateItemWithAtIndex:(NSInteger)index {
+    NSString *title = [self titleAtIndex:index];
+    UIFont *titleFont = self.titleFontName ? [UIFont fontWithName:self.titleFontName size:self.titleSizeSelected] : [UIFont systemFontOfSize:self.titleSizeSelected];
+    NSDictionary *attrs = @{NSFontAttributeName: titleFont};
+    CGFloat itemWidth = [title boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) attributes:attrs context:nil].size.width;
+    return itemWidth;
 }
 
 #pragma mark - Life Cycle
@@ -831,6 +854,10 @@ static NSInteger const kWMControllerCountUndefined = -1;
 }
 
 - (CGFloat)menuView:(WMMenuView *)menu widthForItemAtIndex:(NSInteger)index {
+    if (self.automaticallyCalculatesItemWidths) {
+        return [self wm_calculateItemWithAtIndex:index];
+    }
+    
     if (self.itemsWidths.count == self.childControllersCount) {
         return [self.itemsWidths[index] floatValue];
     }
