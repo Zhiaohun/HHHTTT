@@ -7,17 +7,42 @@
 //
 
 #import "NewsImageViewController.h"
+#import "ScrollImage.h"
+#import "NewsTechnologyImgextra.h"
 
 @interface NewsImageViewController ()
+@property (nonatomic, strong) NSMutableArray *mArr;
 
 @end
 
 @implementation NewsImageViewController
 
+-(NSMutableArray *)mArr{
+    if (!_mArr) {
+        _mArr = [NSMutableArray array];
+    }
+    return _mArr;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self goback];
+    self.view.backgroundColor = [UIColor blackColor];
+    [self loadImages];
+    
+    
+}
+
+
+-(void)loadImages{
+    
+    for (int i = 0; i < self.imageArray.count; i++) {
+        
+        [self.mArr addObject:[self.imageArray[i] imgsrc]];
+        
+    }
+    ScrollImage *scroll = [[ScrollImage alloc] initWithCurrentController:self urlString:self.mArr labString:nil viewFrame:CGRectMake(0, 150, VIEW_WIDTH, 200) placeholderImage:PlaceholderImage startAnimated:NO];
+    [self.view addSubview:scroll.view];
 }
 //自定义返回键
 -(void)goback{

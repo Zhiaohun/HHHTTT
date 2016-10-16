@@ -201,6 +201,9 @@
     
     if (model.imgextra.count>0) {
         NewsImageViewController *imageVC = [[NewsImageViewController alloc] init];
+        imageVC.imageArray = [NSArray array];
+        imageVC.imageArray = model.imgextra;
+        NSLog(@">>>>>>%@",[imageVC.imageArray[0] imgsrc]);
         [self.navigationController pushViewController:imageVC animated:YES];
     }else{
         NewsWebViewController *webVC = [[NewsWebViewController alloc] init];
