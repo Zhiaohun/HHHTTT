@@ -17,6 +17,12 @@
     // Drawing code
 }
 */
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.autoresizingMask = UIViewAutoresizingNone;
+}
+
 - (IBAction)leftBtnAction:(id)sender {
     self.rightBtnView1.hidden = YES;
     self.rightBtnView2.hidden = YES;

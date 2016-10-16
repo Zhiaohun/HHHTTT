@@ -266,7 +266,8 @@
     songPlayVC.musicListArray = [NSMutableArray array];
     songPlayVC.selectIndex = indexPath.row;
     songPlayVC.musicListArray = self.musicListArray;
-    [self.navigationController pushViewController:songPlayVC animated:YES];
+   // [self.navigationController pushViewController:songPlayVC animated:YES];
+    [self.navigationController wxs_pushViewController:songPlayVC animationType:WXSTransitionAnimationTypePointSpreadPresent];
 }
 
 /*

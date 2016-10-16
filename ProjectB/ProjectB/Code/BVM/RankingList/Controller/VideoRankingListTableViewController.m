@@ -93,6 +93,7 @@
     moviePlayVC.selectIndex = indexPath.row;
     // [self.navigationController pushViewController:moviePlayVC animated:YES];
     [self presentViewController:moviePlayVC animated:YES completion:nil];
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

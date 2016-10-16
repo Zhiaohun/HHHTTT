@@ -29,6 +29,7 @@
 }
 -(void)viewDidDisappear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
+     [_hud hideAnimated:YES];
 }
 
 -(NSMutableArray *)mArr{

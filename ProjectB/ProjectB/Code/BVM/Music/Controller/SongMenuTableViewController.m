@@ -146,7 +146,8 @@
     SongListTableViewController *songListVC = [[SongListTableViewController alloc] init];
     MusicCategoryList *model = self.musicCategoryArray[indexPath.row];
     songListVC.albumId = model.albumId;
-    [self.navigationController pushViewController:songListVC animated:YES];
+    //[self.navigationController pushViewController:songListVC animated:YES];
+    [self.navigationController wxs_pushViewController:songListVC animationType:WXSTransitionAnimationTypePointSpreadPresent];
     
 }
 

@@ -213,7 +213,8 @@
         videoDetailVC.selectIndex = indexPath.row;
     }
     
-    [self.navigationController pushViewController:videoDetailVC animated:YES];
+    //[self.navigationController pushViewController:videoDetailVC animated:YES];
+    [self.navigationController wxs_pushViewController:videoDetailVC animationType:WXSTransitionAnimationTypeBrickOpenVertical];
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

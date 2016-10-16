@@ -114,11 +114,11 @@
 -(UICollectionViewFlowLayout *)flowLayout{
     if(!_flowLayout){
         _flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        _flowLayout.itemSize = CGSizeMake((VIEW_WIDTH-3)/2,140);
+        _flowLayout.itemSize = CGSizeMake((VIEW_WIDTH-3)/2,150);
         _flowLayout.minimumLineSpacing = 3;
         _flowLayout.minimumInteritemSpacing = 3;
         _flowLayout.sectionInset = UIEdgeInsetsMake(3, 0, 3, 0);
-        _flowLayout.headerReferenceSize = CGSizeMake(VIEW_WIDTH, 180);
+        _flowLayout.headerReferenceSize = CGSizeMake(VIEW_WIDTH, 150);
     }
     return _flowLayout;
 }
@@ -266,6 +266,7 @@
     videoListVC.listModel = [[ItemList alloc] init];
     videoListVC.listModel = self.videoDataArray[indexPath.row];
     [self.navigationController pushViewController:videoListVC animated:YES];
+    //[self.navigationController wxs_pushViewController:videoListVC animationType:WXSTransitionAnimationTypeFragmentHideFromBottom];
 }
 #pragma mark <UICollectionViewDelegate>
 

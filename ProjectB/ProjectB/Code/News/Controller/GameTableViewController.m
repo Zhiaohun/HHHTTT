@@ -202,11 +202,13 @@
         imageVC.imageArray = [NSArray array];
         imageVC.imageArray = model.imgextra;
         NSLog(@">>>>>>%@",[imageVC.imageArray[0] imgsrc]);
-        [self.navigationController pushViewController:imageVC animated:YES];
+      //  [self.navigationController pushViewController:imageVC animated:YES];
+         [self.navigationController wxs_pushViewController:imageVC animationType:WXSTransitionAnimationTypeSysCameraIrisHollowOpen];
     }else{
         NewsWebViewController *webVC = [[NewsWebViewController alloc] init];
         webVC.URLHtml = model.url;
-        [self.navigationController pushViewController:webVC animated:YES];
+        //[self.navigationController pushViewController:webVC animated:YES];
+        [self.navigationController wxs_pushViewController:webVC animationType:WXSTransitionAnimationTypeSysRippleEffect];
     }
 }
 
