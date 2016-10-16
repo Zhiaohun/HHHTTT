@@ -10,4 +10,5 @@
 
 @interface NewsImageViewController : UIViewController
 @property (nonatomic, strong) NSArray *imageArray;
+@property (nonatomic, strong) NSString *skipID;
 @end

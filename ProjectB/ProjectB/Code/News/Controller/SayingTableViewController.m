@@ -132,6 +132,7 @@
     NewsSayingModel *model = self.newsSayingArray[indexPath.row];
     
     
+   
     cell.shareBtn.tag = indexPath.row + 100;
     
     
