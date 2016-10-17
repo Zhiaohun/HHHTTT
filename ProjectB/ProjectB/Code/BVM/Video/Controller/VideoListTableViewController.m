@@ -95,10 +95,11 @@
     NSString *url = [[NSString alloc] init];
     if (!IsEmptyString(self.listModel.data.title)) {
         url = [NSString stringWithFormat:@"%@?start=%lu&num=20&categoryId=%d&strategy=%@",URL_NORMAL,self.startCount,(int)self.listModel.data.dataIdentifier,self.strategyType];
-    }else{
-        url = [NSString stringWithFormat:@"%@?start=%lu&num=20&tagId=658&strategy=%@",URL_360,self.startCount,self.strategyType];
-        
     }
+//    else{
+//        url = [NSString stringWithFormat:@"%@?start=%lu&num=20&tagId=658&strategy=%@",URL_360,self.startCount,self.strategyType];
+//        
+//    }
     NSLog(@">>>>%@",url);
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:url Parameter:nil Success:^(NSDictionary *dic) {
@@ -213,8 +214,8 @@
         videoDetailVC.selectIndex = indexPath.row;
     }
     
-    //[self.navigationController pushViewController:videoDetailVC animated:YES];
-    [self.navigationController wxs_pushViewController:videoDetailVC animationType:WXSTransitionAnimationTypeBrickOpenVertical];
+    [self.navigationController pushViewController:videoDetailVC animated:YES];
+    //[self.navigationController wxs_pushViewController:videoDetailVC animationType:WXSTransitionAnimationTypeBrickOpenVertical];
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

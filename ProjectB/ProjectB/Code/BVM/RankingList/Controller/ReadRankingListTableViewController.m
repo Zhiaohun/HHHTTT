@@ -132,8 +132,8 @@
     readerDetailVC.productID = products.productId;
     readerDetailVC.imgUrl = products.imgUrl;
     readerDetailVC.abstract = products.abstract;
-   // [self.navigationController pushViewController:readerDetailVC animated:YES];
-    [self.navigationController wxs_pushViewController:readerDetailVC animationType:WXSTransitionAnimationTypeSysPageCurlFromBottom];
+    [self.navigationController pushViewController:readerDetailVC animated:YES];
+    //[self.navigationController wxs_pushViewController:readerDetailVC animationType:WXSTransitionAnimationTypeSysPageCurlFromBottom];
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{

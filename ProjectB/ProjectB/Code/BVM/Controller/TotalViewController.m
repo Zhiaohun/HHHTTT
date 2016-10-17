@@ -115,29 +115,29 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         HotListViewController *hotVC = [HotListViewController new];
-        //[self.navigationController pushViewController:hotVC animated:YES];
-        [self.navigationController wxs_pushViewController:hotVC animationType:WXSTransitionAnimationTypeSysCubeFromBottom];
+        [self.navigationController pushViewController:hotVC animated:YES];
+        //[self.navigationController wxs_pushViewController:hotVC animationType:WXSTransitionAnimationTypeSysCubeFromBottom];
     }
     else if (indexPath.row == 1){
         ReaderListTableViewController *readerListVC = [ReaderListTableViewController new];
-       // [self.navigationController pushViewController:readerListVC animated:YES];
-        [self.navigationController wxs_pushViewController:readerListVC animationType:WXSTransitionAnimationTypeSysPageCurlFromBottom];
+        [self.navigationController pushViewController:readerListVC animated:YES];
+        //[self.navigationController wxs_pushViewController:readerListVC animationType:WXSTransitionAnimationTypeSysPageCurlFromBottom];
     }
     else if (indexPath.row == 2){
         UICollectionViewFlowLayout *layout= [[UICollectionViewFlowLayout alloc] init];
         VideoCategoryCollectionViewController *videoListVC = [[VideoCategoryCollectionViewController alloc] initWithCollectionViewLayout:layout];
-       // [self.navigationController pushViewController:videoListVC animated:YES];
-        [self.navigationController wxs_pushViewController:videoListVC animationType:WXSTransitionAnimationTypeBrickOpenVertical];
+        [self.navigationController pushViewController:videoListVC animated:YES];
+       // [self.navigationController wxs_pushViewController:videoListVC animationType:WXSTransitionAnimationTypeBrickOpenVertical];
     }
     else if (indexPath.row == 3){
         SongMenuTableViewController *songMenuVC = [[SongMenuTableViewController alloc] init];
-        //[self.navigationController pushViewController:songMenuVC animated:YES];
-        [self.navigationController wxs_pushViewController:songMenuVC animationType:WXSTransitionAnimationTypePointSpreadPresent];
+        [self.navigationController pushViewController:songMenuVC animated:YES];
+        //[self.navigationController wxs_pushViewController:songMenuVC animationType:WXSTransitionAnimationTypePointSpreadPresent];
     }
     else{
         RankingBaseViewController *rankingVC = [[RankingBaseViewController alloc] init];
-        //[self.navigationController pushViewController:rankingVC animated:YES];
-        [self.navigationController wxs_pushViewController:rankingVC animationType:WXSTransitionAnimationTypeSysCubeFromTop];
+        [self.navigationController pushViewController:rankingVC animated:YES];
+        //[self.navigationController wxs_pushViewController:rankingVC animationType:WXSTransitionAnimationTypeSysCubeFromTop];
     }
    
 }

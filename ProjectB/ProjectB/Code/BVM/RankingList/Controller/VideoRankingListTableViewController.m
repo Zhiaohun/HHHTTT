@@ -91,7 +91,8 @@
     moviePlayVC.dataArray = [NSArray array];
     moviePlayVC.dataArray = self.videoBaseModel.itemList;
     moviePlayVC.selectIndex = indexPath.row;
-    // [self.navigationController pushViewController:moviePlayVC animated:YES];
+    //[self.navigationController pushViewController:moviePlayVC animated:YES];
+    //[self presentViewController:moviePlayVC animated:YES completion:nil];
     [self presentViewController:moviePlayVC animated:YES completion:nil];
     
 }

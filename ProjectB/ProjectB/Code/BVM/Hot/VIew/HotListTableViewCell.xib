@@ -12,20 +12,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="342"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="375" height="341"/>
+                <frame key="frameInset" width="375" height="341.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzi-K1-m1M">
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="137-14042QA320-50" translatesAutoresizingMaskIntoConstraints="NO" id="xfi-a8-5ff"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="137-14042QA320-50" translatesAutoresizingMaskIntoConstraints="NO" id="xfi-a8-5ff">
+                                <frame key="frameInset" width="375" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xfi-a8-5ff" firstAttribute="leading" secondItem="zzi-K1-m1M" secondAttribute="leading" id="4jf-su-l2r"/>
-                            <constraint firstItem="xfi-a8-5ff" firstAttribute="top" secondItem="zzi-K1-m1M" secondAttribute="top" id="MGG-sd-Y5c"/>
                             <constraint firstAttribute="height" constant="132" id="i1i-dw-KpQ"/>
-                            <constraint firstAttribute="trailing" secondItem="xfi-a8-5ff" secondAttribute="trailing" id="qUU-6B-xag"/>
-                            <constraint firstAttribute="bottom" secondItem="xfi-a8-5ff" secondAttribute="bottom" id="vry-9v-Ga4"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ON6-wN-1Aw">
