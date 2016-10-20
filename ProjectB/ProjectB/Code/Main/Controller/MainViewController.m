@@ -44,9 +44,10 @@
     
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NSLog(@"hide");
-}
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    NSLog(@"hide");
+//    self.imageView.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
+//}
 
 #pragma mark - private Method -
 -(void)initUI{
@@ -95,8 +96,12 @@
     [self.view addSubview:self.imageView];
     self.imageView.backgroundColor = [UIColor lightGrayColor];
 
-    
-    self.imageView.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
+    _imageView.image = [UIImage imageNamed:@"20121214223818_CmWuM"];
+    //self.imageView.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
+    _imageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *gest = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hide)];
+    gest.numberOfTapsRequired = 1;
+    [_imageView addGestureRecognizer:gest];
     
     self.scrollView = [[LYScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    self.scrollView.delegate = self;
@@ -109,6 +114,16 @@
     
     [self.view addSubview:self.scrollView];
 }
+
+-(void)hide{
+    NSLog(@"nima");
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.imageView.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
+    });
+    
+}
+
 //-(void)scrolIndex:(NSInteger)index
 //{
 //    if (self.itmeArray.count > index) {
