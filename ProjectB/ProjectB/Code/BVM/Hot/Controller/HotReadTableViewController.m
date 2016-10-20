@@ -18,6 +18,7 @@
 
 @property (nonatomic,strong) ReadHotBaseClass *base;
 @property (nonatomic,strong) NSMutableArray *moreDataArr;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 @end
 
 @implementation HotReadTableViewController
@@ -25,6 +26,8 @@
     [super viewDidLoad];
     self.title = @"热门图书";
     [self initUI];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self requestData];
     [self refreshUI];
 }
@@ -75,7 +78,9 @@
     NSString *rankUrl = [NSString stringWithFormat:@"%@&page=%lu",URL_RankListRead,_page];
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:rankUrl Parameter:nil Success:^(NSDictionary *dic) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         _base = [ReadHotBaseClass modelObjectWithDictionary:dic];
         
         if (_page == 1) {

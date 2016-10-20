@@ -32,6 +32,7 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
+  - NVActivityIndicatorView (3.0)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0)
   - MJRefresh (~> 3.1)
   - MMDrawerController (~> 0.6)
+  - NVActivityIndicatorView (~> 3.0)
   - SDWebImage (~> 3.8)
   - WMPageController (~> 1.9)
 
@@ -54,9 +56,10 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
+  NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   WMPageController: befbec759314486572dbbef9eaab97f6fdf2dfde
 
-PODFILE CHECKSUM: bc39d4379782e736d53026d14a7d845c07bbaeae
+PODFILE CHECKSUM: 953e8dd80ac51d48c4ae9d11e33a173038683ccf
 
 COCOAPODS: 1.0.0

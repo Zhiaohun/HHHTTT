@@ -68,8 +68,8 @@
         NSArray *array = dic[@"list"];
         for (NSDictionary *dic in array) {
             CommentModel *model = [[CommentModel alloc] init];
-            [model setValuesForKeysWithDictionary:dic];
-            [self.commentArray addObject:model];
+           // [model setValuesForKeysWithDictionary:dic];
+                        [self.commentArray addObject:model];
             NSLog(@">>>>>>>>>%lu",self.commentArray.count);
             
         }

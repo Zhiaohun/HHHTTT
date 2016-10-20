@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UILabel *contentLabel;
 @property (nonatomic, strong) UILabel *countLabel;
 @property (nonatomic, strong) MBProgressHUD *hud;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -49,13 +50,16 @@
   //  [self scrollView];
     
    
+//    
+//    _hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+//    
+//    // Set some text to show the initial status.
+//    _hud.label.text = @"正在努力加载数据...";
+//    // Will look best, if we set a minimum size.
+//    _hud.minSize = CGSizeMake(150.f, 100.f);
     
-    _hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    
-    // Set some text to show the initial status.
-    _hud.label.text = @"正在努力加载数据...";
-    // Will look best, if we set a minimum size.
-    _hud.minSize = CGSizeMake(150.f, 100.f);
+    _swiftHUD = [[SwiftHUD alloc] init];
+    [_swiftHUD startLoadHUD];
     
     [self dataRequest];
     
@@ -78,7 +82,9 @@
 
 - (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation{
   
-        [_hud hideAnimated:YES afterDelay:1];
+       // [_hud hideAnimated:YES afterDelay:1];
+    [_swiftHUD stopLoadHUD];
+    
   
 }
 

@@ -20,6 +20,7 @@
 @property (nonatomic, strong) VideoListBaseClass *baseModel;
 @property (nonatomic, strong) NSMutableArray *dateArray;
 @property (nonatomic, strong) NSMutableArray *shareArray;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 
 @end
@@ -48,7 +49,10 @@
     self.startCount = 0;
     self.strategyType = @"date";
 
-    [self headerRefresh];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
+    
     [self goback];
     [self headerView];
 }
@@ -66,7 +70,7 @@
 -(void)headerView{
     VideoListHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"VideoListHeaderView" owner:nil options:nil][0];
     headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 40);
-    //[headerView insertSubview:headerView.backgroundView atIndex:0];
+    [headerView insertSubview:headerView.backgroundView atIndex:0];
     headerView.rightBtnView1.hidden = YES;
     headerView.rightBtnView2.hidden = YES;
     headerView.leftBtnView1.hidden = NO;
@@ -104,6 +108,9 @@
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:url Parameter:nil Success:^(NSDictionary *dic) {
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         

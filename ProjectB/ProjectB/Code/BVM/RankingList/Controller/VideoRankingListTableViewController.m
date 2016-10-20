@@ -14,6 +14,7 @@
 
 @interface VideoRankingListTableViewController ()
 @property (nonatomic, strong) VideoListBaseClass *videoBaseModel;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -28,6 +29,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
      [self.tableView registerNib:[UINib nibWithNibName:@"HotVideoTableViewCell" bundle:nil] forCellReuseIdentifier:@"videocell"];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self requestMovieData];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
@@ -39,6 +42,9 @@
         
         self.videoBaseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
         NSLog(@">>>>>%@",dic);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];

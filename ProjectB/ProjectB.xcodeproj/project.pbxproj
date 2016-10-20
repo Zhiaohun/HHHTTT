@@ -212,6 +212,7 @@
 		3FC1BB461D9D089D00C834D8 /* VideoHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FC1BB441D9D089D00C834D8 /* VideoHeaderCollectionViewCell.xib */; };
 		3FC1BB501D9D0C0800C834D8 /* VideoCategoryCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FC1BB4E1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.xib */; };
 		3FC1BB521D9D0D8300C834D8 /* TotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1BB511D9D0D8300C834D8 /* TotalViewController.m */; };
+		3FCF6FB71DB8757F00708F2E /* SwiftHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF6FB61DB8757F00708F2E /* SwiftHUD.swift */; };
 		3FEFB4D01DB3722900D6E4B5 /* UINavigationController+WXSTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFB4B01DB3722900D6E4B5 /* UINavigationController+WXSTransition.m */; };
 		3FEFB4D11DB3722900D6E4B5 /* UIViewController+WXSTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFB4B21DB3722900D6E4B5 /* UIViewController+WXSTransition.m */; };
 		3FEFB4D21DB3722900D6E4B5 /* UIViewController+WXSTransitionProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFB4B41DB3722900D6E4B5 /* UIViewController+WXSTransitionProperty.m */; };
@@ -332,7 +333,7 @@
 		5DF67D121DAE53F700A1B9D5 /* MainTextcardlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D0E1DAE53F700A1B9D5 /* MainTextcardlist.m */; };
 		5DF67D161DAE544300A1B9D5 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67D141DAE544300A1B9D5 /* MainView.m */; };
 		5DF67D171DAE544300A1B9D5 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF67D151DAE544300A1B9D5 /* MainView.xib */; };
-		A08776C5486BA27496832BBC /* libPods-ProjectB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC06D34C79C8B06836926D6 /* libPods-ProjectB.a */; };
+		69BA576A36C820C92418FF17 /* Pods_ProjectB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983403FFC20F3FEFA657EEC3 /* Pods_ProjectB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -685,6 +686,8 @@
 		3FC1BB4C1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCategoryCollectionViewController.h; sourceTree = "<group>"; };
 		3FC1BB4E1D9D0C0800C834D8 /* VideoCategoryCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCategoryCollectionViewController.xib; sourceTree = "<group>"; };
 		3FC1BB511D9D0D8300C834D8 /* TotalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalViewController.m; sourceTree = "<group>"; };
+		3FCF6FB61DB8757F00708F2E /* SwiftHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHUD.swift; sourceTree = "<group>"; };
+		3FCF6FB81DB8783E00708F2E /* ProjectB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectB-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FEFB4AF1DB3722900D6E4B5 /* UINavigationController+WXSTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+WXSTransition.h"; sourceTree = "<group>"; };
 		3FEFB4B01DB3722900D6E4B5 /* UINavigationController+WXSTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+WXSTransition.m"; sourceTree = "<group>"; };
 		3FEFB4B11DB3722900D6E4B5 /* UIViewController+WXSTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WXSTransition.h"; sourceTree = "<group>"; };
@@ -908,8 +911,8 @@
 		5DF67D131DAE544300A1B9D5 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		5DF67D141DAE544300A1B9D5 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 		5DF67D151DAE544300A1B9D5 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		983403FFC20F3FEFA657EEC3 /* Pods_ProjectB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.debug.xcconfig"; sourceTree = "<group>"; };
-		BFC06D34C79C8B06836926D6 /* libPods-ProjectB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectB.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectB/Pods-ProjectB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -931,7 +934,7 @@
 				3FF6BFDA1DAFC08200F2152D /* ShareSDK.framework in Frameworks */,
 				3FF6BFDB1DAFC08200F2152D /* ShareSDKExtension.framework in Frameworks */,
 				3FA92D981DA63AE2007E622E /* MediaPlayer.framework in Frameworks */,
-				A08776C5486BA27496832BBC /* libPods-ProjectB.a in Frameworks */,
+				69BA576A36C820C92418FF17 /* Pods_ProjectB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1657,6 +1660,8 @@
 		3FA4E5D61D9AB1070090AC78 = {
 			isa = PBXGroup;
 			children = (
+				3FCF6FB81DB8783E00708F2E /* ProjectB-Bridging-Header.h */,
+				3FCF6FB61DB8757F00708F2E /* SwiftHUD.swift */,
 				3FA4E5E11D9AB1070090AC78 /* ProjectB */,
 				3FA4E5E01D9AB1070090AC78 /* Products */,
 				F86BAA1F124FA93802E694D0 /* Pods */,
@@ -1679,6 +1684,14 @@
 				3FA4E60E1D9AB1580090AC78 /* Tools */,
 				3FA4E6071D9AB1510090AC78 /* Lib */,
 				3FA4E5F91D9AB1350090AC78 /* Code */,
+				3FA4E5E21D9AB1070090AC78 /* Supporting Files */,
+			);
+			path = ProjectB;
+			sourceTree = "<group>";
+		};
+		3FA4E5E21D9AB1070090AC78 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				3FA4E5E51D9AB1070090AC78 /* AppDelegate.h */,
 				3FA4E5E61D9AB1070090AC78 /* AppDelegate.m */,
 				3FF6BFE31DAFC0CD00F2152D /* Share.h */,
@@ -1688,14 +1701,6 @@
 				3FA4E5EE1D9AB1070090AC78 /* Assets.xcassets */,
 				3FA4E5F01D9AB1070090AC78 /* LaunchScreen.storyboard */,
 				3FA4E5F31D9AB1070090AC78 /* Info.plist */,
-				3FA4E5E21D9AB1070090AC78 /* Supporting Files */,
-			);
-			path = ProjectB;
-			sourceTree = "<group>";
-		};
-		3FA4E5E21D9AB1070090AC78 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
 				3FA4E5E31D9AB1070090AC78 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -2338,7 +2343,7 @@
 				3FF6BFB61DAFBFD200F2152D /* libz.tbd */,
 				3FF6BFB41DAFBFCA00F2152D /* libicucore.tbd */,
 				3FA92D971DA63AE2007E622E /* MediaPlayer.framework */,
-				BFC06D34C79C8B06836926D6 /* libPods-ProjectB.a */,
+				983403FFC20F3FEFA657EEC3 /* Pods_ProjectB.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2387,6 +2392,7 @@
 					3FA4E5DE1D9AB1070090AC78 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = S2CRPD33DC;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2640,6 +2646,7 @@
 				3F272F881DA7681300CA7E8F /* MusicDownloadBaseClass.m in Sources */,
 				3F0470761D9C09EA00DAD187 /* EntertainmentTableViewController.m in Sources */,
 				5DF554BD1DA8E23400DFCBEC /* UserInfoModel.m in Sources */,
+				3FCF6FB71DB8757F00708F2E /* SwiftHUD.swift in Sources */,
 				3FEFB4D71DB3722900D6E4B5 /* WXSTransitionManager+FragmentAnimation.m in Sources */,
 				3F3E92CB1DB1EE0C008BF585 /* UIViewController+ZFPlayerRotation.m in Sources */,
 				3FEFB4DC1DB3722900D6E4B5 /* WXSTransitionManager+TypeTool.m in Sources */,
@@ -2812,6 +2819,7 @@
 		3FA4E5F41D9AB1070090AC78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -2849,6 +2857,10 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2856,6 +2868,7 @@
 		3FA4E5F51D9AB1070090AC78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -2886,6 +2899,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2895,7 +2912,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A39AB722892B6571D9CC60E0 /* Pods-ProjectB.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = S2CRPD33DC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2912,8 +2931,33 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"MMDrawerController\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"NVActivityIndicatorView\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"WMPageController\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.long.ProjectB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = " ${SRCROOT}/**";
 			};
 			name = Debug;
@@ -2922,7 +2966,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA47814AD3CD4869298C960A /* Pods-ProjectB.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = S2CRPD33DC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2939,8 +2985,32 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProjectB/Lib/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"MMDrawerController\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"NVActivityIndicatorView\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"WMPageController\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.long.ProjectB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectB-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = " ${SRCROOT}/**";
 			};
 			name = Release;

@@ -26,6 +26,7 @@
 
 
 
+
 @interface RecommendTableViewController ()<KNBannerViewDelegate>
 @property (nonatomic, assign) NSInteger countStart;
 @property (nonatomic, strong) NewsConcentrationBaseClass *concentrationBaseModel;
@@ -36,6 +37,7 @@
 @property (nonatomic, strong) KNBannerView *bannerView;
 
 @property (nonatomic,strong) UIImageView *ImgView;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 @end
 
 @implementation RecommendTableViewController
@@ -45,16 +47,24 @@
     }
     return _dataArray;
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+   // _swiftHUD = [[SwiftHUD alloc] init];
     self.countStart = 0;
   //  [self headerRefresh];
     
-    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
-        
-        [self headerRefresh];
-    }];
+//    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+//        
+//        [self headerRefresh];
+//    }];
+    
+  
     
     [self cellResigest];
     [self goback];
@@ -75,11 +85,16 @@
 -(void)dataRequest{
     NSString *URLStr = [NSString stringWithFormat:@"%@/%lu-20.html",URL_Recommend,self.countStart];
     
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
+    
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
      //   NSLog(@"++++++++++++++%@",dic);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+             [self.swiftHUD stopLoadHUD];
+        });
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         self.concentrationBaseModel = [NewsConcentrationBaseClass modelObjectWithDictionary:dic];
         _imgArray = [NSMutableArray array];
         _titleArray = [NSMutableArray array];

@@ -14,6 +14,7 @@
 #import "VideoListDataModels.h"
 #import "YYScrollView.h"
 #import "MoviePlayerViewController.h"
+#import "LLShowHUD.h"
 
 
 #import "NewPagedFlowView.h"
@@ -34,6 +35,7 @@
 @property (nonatomic, strong) NSMutableArray *headerDataArray;
 @property (nonatomic, strong) UIImageView *headerImageView;
 @property (nonatomic, strong) NewPagedFlowView *pageFlowView;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 
 @property (nonatomic, strong) YYScrollView *scroll;
@@ -72,7 +74,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//
     self.title = @"视频类别";
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -82,11 +84,16 @@
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
 //    self.navigationController.navigationBar.shadowImage = [UIImage new];
     
-    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
-        [self headerDataRequest];
-        
-        [self dataRequest];
-    }];
+//    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+//        [self headerDataRequest];
+//        
+//        [self dataRequest];
+//    }];
+    _swiftHUD = [[SwiftHUD alloc] init];
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
+    [self headerDataRequest];
+
     
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -128,8 +135,11 @@
    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_VideoList Parameter:nil Success:^(NSDictionary *dic) {
        
        dispatch_async(dispatch_get_main_queue(), ^{
-           [MBProgressHUD hideHUDForView:self.view animated:YES];
+          // [MBProgressHUD hideHUDForView:self.view animated:YES];
+           [_swiftHUD stopLoadHUD];
        });
+       
+       
        self.baseModel = [BaseClass modelObjectWithDictionary:dic];
       // NSLog(@"%@",self.baseModel);
        for (int i= 0; i < self.baseModel.itemList.count; i++) {

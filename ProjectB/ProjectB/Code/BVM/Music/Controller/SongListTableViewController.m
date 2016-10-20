@@ -29,6 +29,7 @@
 @property (nonatomic, strong) MusicDownloadBaseClass *downloadBaseModel;
 @property (nonatomic, assign) BOOL isDownloading;
 @property (nonatomic, assign) NSInteger selectCell;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -53,6 +54,8 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 50;
 
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self dataRequest];
    
     
@@ -93,6 +96,9 @@
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_MusicList,self.albumId,str];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_footer endRefreshing];
         
         self.listBaseModel = [MusicListBaseClass modelObjectWithDictionary:dic];

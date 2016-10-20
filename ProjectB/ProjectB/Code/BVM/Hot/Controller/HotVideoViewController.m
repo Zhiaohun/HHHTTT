@@ -15,6 +15,7 @@
 @interface HotVideoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic, strong) VideoListBaseClass *videoBaseModel;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -24,6 +25,8 @@
     [super viewDidLoad];
     
     [self initUI];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self requestMovieData];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
@@ -58,7 +61,9 @@
 -(void)requestMovieData{
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_hot Parameter:nil Success:^(NSDictionary *dic) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         self.videoBaseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
         NSLog(@">>>>>%@",dic);
         

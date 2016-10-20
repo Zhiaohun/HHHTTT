@@ -14,6 +14,7 @@
 @interface HOtMusicTableViewController ()
 @property (nonatomic, assign) NSInteger pageId;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 
 @end
@@ -30,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self requestMusicData];
     self.title = @"热门音乐";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -66,7 +69,9 @@
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_HotMusic,_pageId,str];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         NSLog(@">>>>>%@",dic);
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_footer endRefreshing];
         
         NSArray *arr = [NSArray array];

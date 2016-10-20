@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 
 @interface NewsWebViewController ()<UIWebViewDelegate>
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 //<WKNavigationDelegate>
 //<UIWebViewDelegate>
 @end
@@ -29,6 +30,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"详情";
+    
     [self initUI];
    
     
@@ -72,6 +74,7 @@
     hud.minSize = CGSizeMake(150.f, 100.f);
     
     [hud hideAnimated:YES afterDelay:3];
+    
 
 }
 

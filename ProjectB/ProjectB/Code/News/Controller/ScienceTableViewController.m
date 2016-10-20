@@ -15,10 +15,12 @@
 #import "NewsTechnologyDataModels.h"
 #import "NewsScrollViewTableViewCell.h"
 #import "UIView+ShadowView.h"
-
+#import "LLShowHUD.h"
 
 #import "KNBannerView.h"
 #import "NSData+KNCache.h"
+
+
 @interface ScienceTableViewController ()<KNBannerViewDelegate>
 @property (nonatomic, assign) NSInteger countStart;
 @property (nonatomic, strong) NewsTechnologyBaseClass *technologyBaseModel;
@@ -27,6 +29,7 @@
 @property (nonatomic, strong) NSMutableArray *imgArray;
 @property (nonatomic, strong) NSMutableArray *titleArray;
 @property (nonatomic, strong) KNBannerView *bannerView;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -51,11 +54,15 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.countStart = 0;
-    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
-        
-        [self headerRefresh];
-    }];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
     
+//    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+//        
+//        [self headerRefresh];
+//    }];
+//    
    // [self headerRefresh];
     [self cellResigest];
     
@@ -75,8 +82,9 @@
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
        // NSLog(@"++++++++++++++%@",dic);
-        
-       
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         self.technologyBaseModel = [NewsTechnologyBaseClass modelObjectWithDictionary:dic];
@@ -124,7 +132,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self dataRequest];
     }];
-    [self.tableView.mj_header beginRefreshing];
+   // [self.tableView.mj_header beginRefreshing];
 }
 
 -(void)footerRefresh{

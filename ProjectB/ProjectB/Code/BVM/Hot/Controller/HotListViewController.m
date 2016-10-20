@@ -25,6 +25,7 @@
 @property (nonatomic, strong) VideoListBaseClass *videoBaseModel;
 @property (nonatomic, strong) MusicHotListModel *listModel;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 
 @end
@@ -41,6 +42,8 @@
     [super viewDidLoad];
     
     [self initUI];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self requestDataInSimpleView];
 
 }
@@ -77,7 +80,9 @@
 -(void)requestDataInSimpleView{
     //图书
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_HotRead Parameter:nil Success:^(NSDictionary *dic) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         _readBase = [ReadHotBaseClass modelObjectWithDictionary:dic];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -91,7 +96,9 @@
     
     //视频
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_hot Parameter:nil Success:^(NSDictionary *dic) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         self.videoBaseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
        
         
@@ -109,6 +116,9 @@
     NSString *URLStr = [NSString stringWithFormat:@"%@=1&%@",URL_HotMusic,str];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         NSLog(@">>>>>%@",dic);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         NSArray *arr = [NSArray array];
         arr = dic[@"list"];
         for (NSDictionary *dic in arr) {

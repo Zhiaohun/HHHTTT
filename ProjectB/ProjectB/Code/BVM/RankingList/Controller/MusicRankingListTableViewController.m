@@ -14,6 +14,7 @@
 @interface MusicRankingListTableViewController ()
 @property (nonatomic, assign) NSInteger pageId;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -44,6 +45,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self initUI];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self dataRequest];
 }
 
@@ -59,7 +62,9 @@
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_RankListMusic,_pageId,str];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         NSLog(@">>>>>%@",dic);
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_footer endRefreshing];
         NSArray *arr = [NSArray array];
         arr = dic[@"list"];

@@ -20,6 +20,7 @@
 @property (nonatomic, assign) NSInteger maxBehotTime;
 @property (nonatomic, assign) BOOL isUpOrDownSelect;
 @property (nonatomic, strong) NSMutableArray *boolArray;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 @end
 
 @implementation SayingTableViewController
@@ -49,11 +50,14 @@
     NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];
     self.maxBehotTime = (int)[date timeIntervalSince1970];
     
-    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
-        
-        [self headerRefresh];
-    }];
-   // [self headerRefresh];
+//    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+//        
+//        [self headerRefresh];
+//    }];
+   
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -69,7 +73,9 @@
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         //  NSLog(@">>>>>>>%@",dic);
         
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         
@@ -96,7 +102,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self dataRequest];
     }];
-    [self.tableView.mj_header beginRefreshing];
+    //[self.tableView.mj_header beginRefreshing];
 }
 
 -(void)footerRefresh{
