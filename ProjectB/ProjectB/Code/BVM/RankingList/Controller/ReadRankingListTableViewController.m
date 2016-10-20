@@ -17,6 +17,7 @@
 
 @property (nonatomic,strong) ReadRankListBaseClass *base;
 @property (nonatomic,strong) NSMutableArray *moreDataArr;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 @end
 
 @implementation ReadRankingListTableViewController
@@ -25,6 +26,8 @@
     [super viewDidLoad];
     
     [self initUI];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self requestData];
     [self refreshUI];
 }
@@ -40,6 +43,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"ReaderRankListTableViewCell" bundle:nil] forCellReuseIdentifier:@"ReaderRankListCell"];
     self.tableView.rowHeight = 178;
     self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     
 }
 
@@ -64,7 +69,9 @@
     NSString *rankUrl = [NSString stringWithFormat:@"%@&page=%lu",URL_RankListRead,_page];
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:rankUrl Parameter:nil Success:^(NSDictionary *dic) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         _base = [ReadRankListBaseClass modelObjectWithDictionary:dic];
         
         if (_page == 1) {
@@ -130,11 +137,16 @@
     readerDetailVC.productID = products.productId;
     readerDetailVC.imgUrl = products.imgUrl;
     readerDetailVC.abstract = products.abstract;
-    [self.navigationController pushViewController:readerDetailVC animated:YES
-    ];
-    
+    [self.navigationController pushViewController:readerDetailVC animated:YES];
+    //[self.navigationController wxs_pushViewController:readerDetailVC animationType:WXSTransitionAnimationTypeSysPageCurlFromBottom];
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

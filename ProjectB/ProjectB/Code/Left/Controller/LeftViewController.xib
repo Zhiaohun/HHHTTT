@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,7 +12,6 @@
                 <outlet property="bgImg" destination="piu-YB-WNI" id="ZdV-Gg-j89"/>
                 <outlet property="currentTemperature" destination="m8D-CS-qJn" id="7hd-BI-E8G"/>
                 <outlet property="currentTime" destination="qgC-BW-hwh" id="0hV-Y1-bT6"/>
-                <outlet property="localCity" destination="qKj-l1-pJh" id="Wa7-xQ-uW2"/>
                 <outlet property="personalSentence" destination="Hyy-Mw-dDP" id="O5G-Nz-iL7"/>
                 <outlet property="updateTime" destination="e9p-VF-goF" id="byK-po-bgy"/>
                 <outlet property="userImg" destination="lOj-eu-64V" id="8Dv-WI-wfr"/>
@@ -167,16 +166,6 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKj-l1-pJh">
-                            <constraints>
-                                <constraint firstAttribute="width" constant="67" id="SGA-0B-ce2"/>
-                                <constraint firstAttribute="height" constant="30" id="a2q-Dm-6DP"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="广州/切换">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9u-2m-AaR">
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -184,6 +173,15 @@
                                 <constraint firstAttribute="height" constant="18" id="sfc-Zg-rVx"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广州" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fw-3Q-vHx">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="KV1-GD-x12"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="OAW-O5-ZGg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
                         <constraint firstItem="yoQ-B8-pYe" firstAttribute="leading" secondItem="YKe-Ca-RUP" secondAttribute="leading" id="4Rc-bp-Fmp"/>
@@ -195,6 +193,7 @@
                         <constraint firstAttribute="bottom" secondItem="d2V-IB-wz5" secondAttribute="bottom" constant="10" id="Dh2-ei-DL7"/>
                         <constraint firstItem="qgC-BW-hwh" firstAttribute="leading" secondItem="YKe-Ca-RUP" secondAttribute="leading" constant="18" id="GJY-5V-q8p"/>
                         <constraint firstItem="e9p-VF-goF" firstAttribute="leading" secondItem="m8D-CS-qJn" secondAttribute="trailing" id="GeM-gC-kPU"/>
+                        <constraint firstItem="6Fw-3Q-vHx" firstAttribute="top" secondItem="YKe-Ca-RUP" secondAttribute="top" constant="8" id="Hns-d9-4vE"/>
                         <constraint firstItem="F9u-2m-AaR" firstAttribute="centerY" secondItem="YKe-Ca-RUP" secondAttribute="centerY" id="JQG-UX-1ZY"/>
                         <constraint firstItem="yoQ-B8-pYe" firstAttribute="top" secondItem="YKe-Ca-RUP" secondAttribute="top" id="TGV-p3-wZQ"/>
                         <constraint firstAttribute="bottom" secondItem="Ggh-EE-AgT" secondAttribute="bottom" constant="5" id="bnO-Ia-Q8T"/>
@@ -202,12 +201,11 @@
                         <constraint firstAttribute="bottom" secondItem="yoQ-B8-pYe" secondAttribute="bottom" id="kFH-PV-yds"/>
                         <constraint firstAttribute="trailing" secondItem="yoQ-B8-pYe" secondAttribute="trailing" id="mAH-wE-27L"/>
                         <constraint firstItem="m8D-CS-qJn" firstAttribute="centerY" secondItem="YKe-Ca-RUP" secondAttribute="centerY" id="pdZ-HQ-gdG"/>
+                        <constraint firstAttribute="trailing" secondItem="6Fw-3Q-vHx" secondAttribute="trailing" constant="8" id="raq-kK-UMm"/>
                         <constraint firstAttribute="trailing" secondItem="yoQ-B8-pYe" secondAttribute="trailing" id="t4l-bC-2S5"/>
                         <constraint firstAttribute="bottom" secondItem="yoQ-B8-pYe" secondAttribute="bottom" id="uFj-Iq-EWy"/>
                         <constraint firstItem="qgC-BW-hwh" firstAttribute="top" secondItem="YKe-Ca-RUP" secondAttribute="top" constant="8" id="vpu-yQ-hqI"/>
-                        <constraint firstAttribute="trailing" secondItem="qKj-l1-pJh" secondAttribute="trailing" constant="8" id="x16-oW-PTB"/>
                         <constraint firstItem="F9u-2m-AaR" firstAttribute="centerX" secondItem="YKe-Ca-RUP" secondAttribute="centerX" id="x8u-UD-d30"/>
-                        <constraint firstItem="qKj-l1-pJh" firstAttribute="top" secondItem="YKe-Ca-RUP" secondAttribute="top" constant="8" id="z9C-d6-PEl"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ok9-oY-MIN">

@@ -16,27 +16,36 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="123456" translatesAutoresizingMaskIntoConstraints="NO" id="Vqf-YX-zut"/>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卧槽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwk-ml-bbp">
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeL-Lc-QR4">
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L93-GA-hms">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="XBn-aJ-G2j"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="zI4-19-ZNQ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Vqf-YX-zut" secondAttribute="bottom" id="7rQ-VK-G4O"/>
+                <constraint firstItem="BeL-Lc-QR4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8qN-Un-XVs"/>
                 <constraint firstAttribute="trailing" secondItem="Vqf-YX-zut" secondAttribute="trailing" id="GTf-bf-JSj"/>
-                <constraint firstItem="Kwk-ml-bbp" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="H2O-Jk-asX"/>
+                <constraint firstItem="L93-GA-hms" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="N6B-Jk-eA0"/>
+                <constraint firstItem="BeL-Lc-QR4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QS2-Gf-OAK"/>
+                <constraint firstAttribute="bottom" secondItem="BeL-Lc-QR4" secondAttribute="bottom" id="Spd-Wr-50B"/>
+                <constraint firstItem="L93-GA-hms" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="dvY-eh-IuF"/>
                 <constraint firstItem="Vqf-YX-zut" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="el7-1v-C1h"/>
-                <constraint firstItem="Kwk-ml-bbp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="gqN-Zq-7EX"/>
                 <constraint firstItem="Vqf-YX-zut" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lXs-Vu-kpk"/>
-                <constraint firstAttribute="trailing" secondItem="Kwk-ml-bbp" secondAttribute="trailing" constant="8" id="oPM-Hj-odK"/>
-                <constraint firstItem="Kwk-ml-bbp" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="vf7-W6-cGu"/>
+                <constraint firstAttribute="trailing" secondItem="BeL-Lc-QR4" secondAttribute="trailing" id="lqI-pa-bmW"/>
             </constraints>
             <size key="customSize" width="150" height="150"/>
             <connections>
                 <outlet property="normalImageView" destination="Vqf-YX-zut" id="zHv-pn-3sj"/>
-                <outlet property="normalTitleLabel" destination="Kwk-ml-bbp" id="d3U-Rc-kxK"/>
+                <outlet property="normalTitleLabel" destination="L93-GA-hms" id="qVc-qy-Pcq"/>
             </connections>
             <point key="canvasLocation" x="-64" y="8"/>
         </collectionViewCell>

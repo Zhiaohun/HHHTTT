@@ -10,6 +10,9 @@
 #import <WebKit/WebKit.h>
 
 @interface NewsWebViewController ()<UIWebViewDelegate>
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
+//<WKNavigationDelegate>
+//<UIWebViewDelegate>
 @end
 
 @implementation NewsWebViewController
@@ -26,27 +29,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"详情";
+    
     [self initUI];
+   
     
     
     
 }
 #pragma mark - private Method -
 -(void)initUI{
-/*
+
+    /*
     WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT)];
     [self.view addSubview:webView];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.URLHtml]];
     
+    
     [webView loadRequest:request];
+    webView.navigationDelegate = self;
     
     [self goback];
      
-     
-  */
-   
-    self.title = @"内容概况";
     
+    self.title = @"内容概况";
+   */
 
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT)];
     webView.delegate = self;
@@ -57,8 +64,21 @@
     [webView loadRequest:request];
     
     [self goback];
+    
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    // Set some text to show the initial status.
+   hud.label.text = @"正在努力加载数据...";
+    // Will look best, if we set a minimum size.
+    hud.minSize = CGSizeMake(150.f, 100.f);
+    
+    [hud hideAnimated:YES afterDelay:3];
+    
 
 }
+
+
 //自定义返回键
 -(void)goback{
     UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -84,26 +104,29 @@
         NSString *str = [NSString stringWithFormat:@"document.getElementsByClassName('%@')[0].style.display='none'",array[i]];
          [webView stringByEvaluatingJavaScriptFromString:str];
     }
-    
+ 
     
 }
 
 
 
+
 /*
+
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     
     NSArray *array = @[@"topbar",@"a_adtemp a_topad js-topad",@"relative_list js-relativelist",@"comment_list comment-list",@"hot_list content-list",@"comment_title",@"hot_news",@"relative_doc",@"more_client more-client",@"botscroll_info",@"comment_info js-replylink",@"comment_info js-replylink",@"article_holdpos article-holdpos",@"foot_nav",@"back_to_top",@"a_adtemp a_tbad js-tbad",@"go_index",@"sub_box sub-box show",@"copyright",@"content_flow"];
-    
     
     for (int i = 0; i < array.count; i++) {
         NSString *str = [NSString stringWithFormat:@"document.getElementsByClassName('%@')[0].style.display='none'",array[i]];
         //[webView stringByEvaluatingJavaScriptFromString:str];
         [webView evaluateJavaScript:str completionHandler:nil];
+        NSLog(@">>%d",i);
+       
     }
 }
-
 */
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -15,7 +15,7 @@
 #import "NewsEntertainmentDataModels.h"
 #import "NewsScrollViewTableViewCell.h"
 #import "UIView+ShadowView.h"
-
+#import "LLShowHUD.h"
 
 
 #import "KNBannerView.h"
@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSMutableArray *imgArray;
 @property (nonatomic, strong) NSMutableArray *titleArray;
 @property (nonatomic, strong) KNBannerView *bannerView;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 @end
 
 @implementation EntertainmentTableViewController
@@ -39,14 +40,21 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.countStart = 0;
-    [self headerRefresh];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
+//    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+//        
+//        [self headerRefresh];
+//    }];
+   // [self headerRefresh];
     [self cellResigest];
 }
 
@@ -58,6 +66,15 @@
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
        // NSLog(@"++++++++++++++%@",dic);
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+
+        
+        
         self.entertainmentBaseModel = [NewsEntertainmentBaseClass modelObjectWithDictionary:dic];
         _imgArray = [NSMutableArray array];
         _titleArray = [NSMutableArray array];
@@ -77,6 +94,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self footerRefresh];
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     } Fail:^(NSError *error) {
         NSLog(@">>>%@",error);
@@ -101,7 +119,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self dataRequest];
     }];
-    [self.tableView.mj_header beginRefreshing];
+    //[self.tableView.mj_header beginRefreshing];
 }
 
 -(void)footerRefresh{
@@ -147,6 +165,7 @@
             newsImagemoreCell.emodel = model;
             
             [UIView shadowView:newsImagemoreCell];
+             newsImagemoreCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImagemoreCell;
             
         }else if (model.hasImg){
@@ -154,6 +173,7 @@
             newsImageCell.emodel = model;
             
             [UIView shadowView:newsImageCell];
+             newsImageCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImageCell;
             
         }else{
@@ -161,6 +181,7 @@
             newsCell.emodel = model;
             
             [UIView shadowView:newsCell];
+             newsCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsCell;
             
             
@@ -186,11 +207,16 @@
     
     if (model.imgextra.count>0) {
         NewsImageViewController *imageVC = [[NewsImageViewController alloc] init];
-        [self.navigationController pushViewController:imageVC animated:YES];
+        imageVC.imageArray = [NSArray array];
+        imageVC.imageArray = model.imgextra;
+        NSLog(@">>>>>>%@",[imageVC.imageArray[0] imgsrc]);
+       // [self.navigationController pushViewController:imageVC animated:YES];
+         [self.navigationController wxs_pushViewController:imageVC animationType:WXSTransitionAnimationTypeSysCameraIrisHollowOpen];
     }else{
         NewsWebViewController *webVC = [[NewsWebViewController alloc] init];
         webVC.URLHtml = model.url;
-        [self.navigationController pushViewController:webVC animated:YES];
+       // [self.navigationController pushViewController:webVC animated:YES];
+        [self.navigationController wxs_pushViewController:webVC animationType:WXSTransitionAnimationTypeSysRippleEffect];
     }
 }
 

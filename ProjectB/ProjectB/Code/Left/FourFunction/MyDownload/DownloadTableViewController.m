@@ -42,7 +42,8 @@
     self.title = @"下载列表";
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 50;
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -93,7 +94,6 @@
     
     [UIView shadowView:cell.cellView];
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     return cell;
 }

@@ -14,6 +14,7 @@
 @interface MusicRankingListTableViewController ()
 @property (nonatomic, assign) NSInteger pageId;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -23,6 +24,12 @@
         _dataArray = [NSMutableArray array];
     }
     return _dataArray;
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear: YES];
+    [self.navigationController setValue:[UINavigationBar new] forKey:@"navigationBar"];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -38,6 +45,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self initUI];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self dataRequest];
 }
 
@@ -45,6 +54,7 @@
     
     UINib *nib = [UINib nibWithNibName:@"HotMusicTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"musiccell"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 -(void)dataRequest{
@@ -52,7 +62,9 @@
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_RankListMusic,_pageId,str];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         NSLog(@">>>>>%@",dic);
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_footer endRefreshing];
         NSArray *arr = [NSArray array];
         arr = dic[@"list"];
@@ -110,11 +122,19 @@
     MusicHotListModel *model = self.dataArray[indexPath.row];
     songVC.albumId = (int)model.albumId;
     [self.navigationController pushViewController:songVC animated:YES];
+   // [self.navigationController wxs_pushViewController:songVC animationType:WXSTransitionAnimationTypePointSpreadPresent];
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
 }
 /*
 // Override to support conditional editing of the table view.

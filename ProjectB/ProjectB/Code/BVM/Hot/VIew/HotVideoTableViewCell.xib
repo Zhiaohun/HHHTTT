@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,10 +16,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="i1D-qf-QTL"/>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-SS-g9S">
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门电影" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGJ-if-2P9">
                         <constraints>
-                            <constraint firstAttribute="height" constant="28" id="ZZW-hS-E6n"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="dRh-xQ-t31"/>
+                            <constraint firstAttribute="height" constant="20.5" id="O5V-uy-0gy"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69.5" id="ogA-pg-z7r"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,13 +41,17 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="i1D-qf-QTL" secondAttribute="trailing" id="2gZ-jj-FKG"/>
-                    <constraint firstItem="CGJ-if-2P9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="27" id="5Fm-z9-s3v"/>
                     <constraint firstItem="z2M-6T-iBb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7kQ-hz-IDg"/>
                     <constraint firstItem="i1D-qf-QTL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BVu-s0-EDn"/>
                     <constraint firstItem="z2M-6T-iBb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Cfj-TG-4yC"/>
                     <constraint firstAttribute="bottom" secondItem="i1D-qf-QTL" secondAttribute="bottom" id="EWL-wA-9jw"/>
                     <constraint firstItem="i1D-qf-QTL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="L0q-1g-4s0"/>
-                    <constraint firstItem="CGJ-if-2P9" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="LpO-bh-VBw"/>
+                    <constraint firstItem="m2Z-SS-g9S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="SRa-bb-jwm"/>
+                    <constraint firstItem="m2Z-SS-g9S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TOm-WB-7I5"/>
+                    <constraint firstAttribute="trailing" secondItem="m2Z-SS-g9S" secondAttribute="trailing" id="bft-D1-e2R"/>
+                    <constraint firstAttribute="bottom" secondItem="m2Z-SS-g9S" secondAttribute="bottom" id="jeB-V7-hyf"/>
+                    <constraint firstItem="CGJ-if-2P9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="miR-Y0-Fgc"/>
+                    <constraint firstItem="CGJ-if-2P9" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="sCc-oN-hea"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

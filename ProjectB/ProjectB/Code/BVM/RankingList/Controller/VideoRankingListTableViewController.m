@@ -10,9 +10,11 @@
 #import "HotVideoTableViewCell.h"
 #import "VideoListDataModels.h"
 #import "MoviePlayerViewController.h"
+#import "VideoFullScreenViewController.h"
 
 @interface VideoRankingListTableViewController ()
 @property (nonatomic, strong) VideoListBaseClass *videoBaseModel;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -27,7 +29,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
      [self.tableView registerNib:[UINib nibWithNibName:@"HotVideoTableViewCell" bundle:nil] forCellReuseIdentifier:@"videocell"];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self requestMovieData];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     
 }
 -(void)requestMovieData{
@@ -36,6 +42,9 @@
         
         self.videoBaseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
         NSLog(@">>>>>%@",dic);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -76,19 +85,28 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MoviePlayerViewController *movieVC = [[MoviePlayerViewController alloc] init];
-    movieVC.dataArray = [NSArray array];
-    movieVC.dataArray = self.videoBaseModel.itemList;
-    movieVC.selectIndex = indexPath.row;
+    VideoFullScreenViewController *moviePlayVC = [[VideoFullScreenViewController alloc] init];
+    moviePlayVC.dataArray = [NSArray array];
+    moviePlayVC.dataArray = self.videoBaseModel.itemList;
+    moviePlayVC.selectIndex = indexPath.row;
+    //[self.navigationController pushViewController:moviePlayVC animated:YES];
+    //[self presentViewController:moviePlayVC animated:YES completion:nil];
+    [self presentViewController:moviePlayVC animated:YES completion:nil];
     
-    [self.navigationController pushViewController:movieVC animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 90;
+    return 150;
 }
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

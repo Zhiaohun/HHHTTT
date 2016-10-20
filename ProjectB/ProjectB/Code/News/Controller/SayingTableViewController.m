@@ -10,12 +10,17 @@
 #import "NewsSayingModel.h"
 #import "SayingTableViewCell.h"
 #import "UIImageView+imageViewAnimation.h"
+#import "WeiboSDK.h"
+#import "LLShowHUD.h"
 
 @interface SayingTableViewController ()
 
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) NSMutableArray *newsSayingArray;
 @property (nonatomic, assign) NSInteger maxBehotTime;
+@property (nonatomic, assign) BOOL isUpOrDownSelect;
+@property (nonatomic, strong) NSMutableArray *boolArray;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 @end
 
 @implementation SayingTableViewController
@@ -24,6 +29,13 @@
         _newsSayingArray = [NSMutableArray array];
     }
     return _newsSayingArray;
+}
+
+-(NSMutableArray *)boolArray{
+    if (!_boolArray) {
+        _boolArray = [NSMutableArray array];
+    }
+    return _boolArray;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,7 +49,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];
     self.maxBehotTime = (int)[date timeIntervalSince1970];
-    [self headerRefresh];
+    
+//    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+//        
+//        [self headerRefresh];
+//    }];
+   
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     UINib *sayingNib = [UINib nibWithNibName:@"SayingTableViewCell" bundle:nil];
     [self.tableView registerNib:sayingNib forCellReuseIdentifier:@"sayingcell"];
@@ -51,10 +73,13 @@
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         //  NSLog(@">>>>>>>%@",dic);
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         
-        NSLog(@">>>>>>>>>>>>>>>>>>>>>>%@",dic[@"data"]);
+        //NSLog(@">>>>>>>>>>>>>>>>>>>>>>%@",dic[@"data"]);
         NSArray *array = dic[@"data"];
         for (NSDictionary *dic in array) {
             NewsSayingModel *model = [[NewsSayingModel alloc] init];
@@ -62,10 +87,11 @@
             [self.newsSayingArray addObject:model];
             NSLog(@"_+_+_+_+_+_+_+_+%@",model);
         }
-        NSLog(@"<<<<<<<<<<<%lu",self.newsSayingArray.count);
+       // NSLog(@"<<<<<<<<<<<%lu",self.newsSayingArray.count);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
             [self footerRefresh];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     } Fail:^(NSError *error) {
         NSLog(@">>>>%@",error);
@@ -76,7 +102,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self dataRequest];
     }];
-    [self.tableView.mj_header beginRefreshing];
+    //[self.tableView.mj_header beginRefreshing];
 }
 
 -(void)footerRefresh{
@@ -110,6 +136,12 @@
     
     
     NewsSayingModel *model = self.newsSayingArray[indexPath.row];
+    
+    
+   
+    cell.shareBtn.tag = indexPath.row + 100;
+    
+    
     cell.model = model;
   
     //给cell加上一层阴影,实现浮动效果
@@ -121,31 +153,40 @@
   
     __weak typeof(cell) weakCell = cell;
     cell.upBtnActionBlock = ^{
+        self.isUpOrDownSelect = YES;
         [weakCell.upBtn setImage:[UIImage imageNamed:@"duanzi_up_selected"] forState:UIControlStateNormal];
         [weakCell.upBtn.imageView spotAnimation];
         [weakCell.upBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.digg_count + 1] forState:UIControlStateNormal];
+        
+        [weakCell.downBtn setImage:[UIImage imageNamed:@"duanzi_down"] forState:UIControlStateNormal];
+        [weakCell.downBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.bury_count ] forState:UIControlStateNormal];
+        [weakCell.downBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         };
+
     
     cell.downBtnActionBlock = ^{
+        self.isUpOrDownSelect = YES;
         [weakCell.downBtn setImage:[UIImage imageNamed:@"duanzi_down_selected"] forState:UIControlStateNormal];
         [weakCell.downBtn.imageView spotAnimation];
         [weakCell.downBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [weakCell.downBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.bury_count + 1] forState:UIControlStateNormal];
+        
+        [weakCell.upBtn setImage:[UIImage imageNamed:@"duanzi_up"] forState:UIControlStateNormal];
+        [weakCell.upBtn setTitle:[NSString stringWithFormat:@"%d",(int)model.digg_count ] forState:UIControlStateNormal];
+        [weakCell.upBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     };
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    cell.shareBtnActionBlock = ^(NSInteger tag){
+        [Share shareToWeiBo:@[model.profile_image_url] Content:model.content URLStr:nil Title:nil];
+
+    };
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+
 
 
 /*

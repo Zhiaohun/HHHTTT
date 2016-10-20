@@ -20,6 +20,7 @@
 @property (nonatomic, strong) VideoListBaseClass *baseModel;
 @property (nonatomic, strong) NSMutableArray *dateArray;
 @property (nonatomic, strong) NSMutableArray *shareArray;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 
 @end
@@ -39,21 +40,19 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-   // if ([@"#" containsString:self.listModel.data.title]) {
-        self.title = [self.listModel.data.title substringFromIndex:1];
-    //}else{
-    //    self.title = @"360全景";
-   // }
-    
-   // [self headerView];
-   // self.tableView.frame = CGRectMake(0, 0, VIEW_WIDTH, VIEW_HEIGHT);
+  
+    self.title = [self.listModel.data.title substringFromIndex:1];
+ 
     UINib *videoListNib = [UINib nibWithNibName:@"VideoListTableViewCell" bundle:nil];
     [self.tableView registerNib:videoListNib forCellReuseIdentifier:@"videolistcell"];
     
     self.startCount = 0;
     self.strategyType = @"date";
 
-    [self headerRefresh];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
+    
     [self goback];
     [self headerView];
 }
@@ -70,7 +69,7 @@
 
 -(void)headerView{
     VideoListHeaderView *headerView = [[NSBundle mainBundle] loadNibNamed:@"VideoListHeaderView" owner:nil options:nil][0];
-    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 0);
+    headerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 40);
     [headerView insertSubview:headerView.backgroundView atIndex:0];
     headerView.rightBtnView1.hidden = YES;
     headerView.rightBtnView2.hidden = YES;
@@ -100,14 +99,18 @@
     NSString *url = [[NSString alloc] init];
     if (!IsEmptyString(self.listModel.data.title)) {
         url = [NSString stringWithFormat:@"%@?start=%lu&num=20&categoryId=%d&strategy=%@",URL_NORMAL,self.startCount,(int)self.listModel.data.dataIdentifier,self.strategyType];
-    }else{
-        url = [NSString stringWithFormat:@"%@?start=%lu&num=20&tagId=658&strategy=%@",URL_360,self.startCount,self.strategyType];
-        
     }
+//    else{
+//        url = [NSString stringWithFormat:@"%@?start=%lu&num=20&tagId=658&strategy=%@",URL_360,self.startCount,self.strategyType];
+//        
+//    }
     NSLog(@">>>>%@",url);
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:url Parameter:nil Success:^(NSDictionary *dic) {
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         
@@ -201,6 +204,12 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
      VideoDetailViewController *videoDetailVC = [[VideoDetailViewController alloc] init];
     videoDetailVC.dataArray = [NSArray array];
@@ -213,6 +222,7 @@
     }
     
     [self.navigationController pushViewController:videoDetailVC animated:YES];
+    //[self.navigationController wxs_pushViewController:videoDetailVC animationType:WXSTransitionAnimationTypeBrickOpenVertical];
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="151" id="KGk-i7-Jjw" customClass="VideoListTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="454" height="151"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="454" height="150.66666666666666"/>
+                <frame key="frameInset" width="375" height="149.66666666666666"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TYf-VS-xXW"/>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUC-Bo-Yus">
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3p-xT-pL0">
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="3hg-TZ-aqB"/>
@@ -36,13 +39,17 @@
                 <constraints>
                     <constraint firstItem="t3p-xT-pL0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="20e-5N-bZK"/>
                     <constraint firstItem="t3p-xT-pL0" firstAttribute="centerX" secondItem="ygB-se-LJw" secondAttribute="centerX" id="9lV-9U-MnR"/>
+                    <constraint firstAttribute="trailing" secondItem="XUC-Bo-Yus" secondAttribute="trailing" id="Q3q-sh-DeN"/>
                     <constraint firstAttribute="bottom" secondItem="TYf-VS-xXW" secondAttribute="bottom" id="a5X-Lc-xqv"/>
+                    <constraint firstItem="XUC-Bo-Yus" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="d0O-ng-LfC"/>
                     <constraint firstItem="ygB-se-LJw" firstAttribute="top" secondItem="t3p-xT-pL0" secondAttribute="bottom" id="eZf-s0-ZAS"/>
+                    <constraint firstItem="XUC-Bo-Yus" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kbU-tf-hlz"/>
                     <constraint firstItem="t3p-xT-pL0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lg5-YF-Djf"/>
                     <constraint firstItem="ygB-se-LJw" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="v38-iF-ki1"/>
                     <constraint firstAttribute="trailing" secondItem="TYf-VS-xXW" secondAttribute="trailing" id="wFi-42-tlC"/>
                     <constraint firstItem="TYf-VS-xXW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wL3-Ti-J5h"/>
                     <constraint firstItem="TYf-VS-xXW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xFd-0o-qKp"/>
+                    <constraint firstAttribute="bottom" secondItem="XUC-Bo-Yus" secondAttribute="bottom" id="yNG-uj-MYE"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

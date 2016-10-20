@@ -14,6 +14,7 @@
 @interface HOtMusicTableViewController ()
 @property (nonatomic, assign) NSInteger pageId;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 
 @end
@@ -30,7 +31,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self requestMusicData];
+    self.title = @"热门音乐";
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +69,9 @@
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_HotMusic,_pageId,str];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         NSLog(@">>>>>%@",dic);
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_footer endRefreshing];
         
         NSArray *arr = [NSArray array];
@@ -118,6 +128,14 @@
     MusicHotListModel *model = self.dataArray[indexPath.row];
     songVC.albumId = (int)model.albumId;
     [self.navigationController pushViewController:songVC animated:YES];
+    //[self.navigationController wxs_pushViewController:songVC animationType:WXSTransitionAnimationTypePointSpreadPresent];
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
 }
 
 /*

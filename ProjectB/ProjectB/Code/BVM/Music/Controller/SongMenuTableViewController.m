@@ -11,10 +11,13 @@
 #import "SongListTableViewController.h"
 #import "MusicCategoryDataModels.h"
 
+
+
 @interface SongMenuTableViewController ()
 @property (nonatomic, assign) NSInteger pageId;
 @property (nonatomic, strong) NSMutableArray *musicCategoryArray;
 @property (nonatomic, strong) MusicCategoryBaseClass *categoryBaseModel;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -44,12 +47,17 @@
     self.tableView.estimatedRowHeight = 50;
 
     self.pageId = 1;
-    [self headerRefresh];
+    
+    
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
     
     UINib *songMenuNib = [UINib nibWithNibName:@"SongMenuTableViewCell" bundle:nil];
     [self.tableView registerNib:songMenuNib forCellReuseIdentifier:@"songmenucell"];
     
     [self goback];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 //自定义返回键
 -(void)goback{
@@ -68,6 +76,9 @@
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
         
@@ -94,7 +105,7 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self dataRequest];
     }];
-    [self.tableView.mj_header beginRefreshing];
+   // [self.tableView.mj_header beginRefreshing];
     
     
 }
@@ -106,6 +117,8 @@
     }];
     
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -145,6 +158,7 @@
     MusicCategoryList *model = self.musicCategoryArray[indexPath.row];
     songListVC.albumId = model.albumId;
     [self.navigationController pushViewController:songListVC animated:YES];
+    //[self.navigationController wxs_pushViewController:songListVC animationType:WXSTransitionAnimationTypePointSpreadPresent];
     
 }
 

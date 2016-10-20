@@ -92,12 +92,12 @@
         switch (indexPath.row) {
             case 1:{
                 [_timer invalidate];
-                _timeSeconds = 5;
+                _timeSeconds = 600;
                 break;
             }
             case 2:{
                 [_timer invalidate];
-                _timeSeconds = 10;
+                _timeSeconds = 1200;
                 break;
             }
             case 3:{

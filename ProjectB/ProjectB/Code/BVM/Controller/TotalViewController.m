@@ -54,7 +54,7 @@
 //    self.automaticallyAdjustsScrollViewInsets = NO;
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, VIEW_WIDTH, VIEW_HEIGHT-64-44)];
-    _tableView.rowHeight = 100.0;
+    _tableView.rowHeight = 150;
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [_tableView registerNib:[UINib nibWithNibName:@"TotalTableViewCell" bundle:nil] forCellReuseIdentifier:@"totalCell"];
@@ -86,8 +86,13 @@
     TotalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"totalCell" forIndexPath:indexPath];
     NSArray *arr = @[@"热门",@"图书",@"电影",@"音乐",@"排行榜"];
     cell.totalName.text = arr[indexPath.row];
+
     
-    cell.totalImg.image  = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]] ;
+    
+   // cell.totalImg.image  = [self blurViewByLightEffectWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",(int)indexPath.row+10]]] ;
+    cell.totalImg.image  = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",(int)indexPath.row+10]] ;
+    
+   // cell.totalImg.image = [UIImage imageNamed:@"105"];
 //    int a = arc4random() % 255;
 //    int b = arc4random() % 255;
 //    int c = arc4random() % 255;
@@ -98,6 +103,10 @@
     cell.cellView.layer.shadowOffset = CGSizeMake(1,1);
     cell.cellView.layer.shadowOpacity = 0.3;
     cell.cellView.layer.shadowColor = [UIColor blackColor].CGColor;
+    cell.totalImg.layer.masksToBounds = YES;
+    cell.totalImg.layer.cornerRadius = 10;
+    cell.cellView.layer.cornerRadius =  10;
+    cell.cellView.clipsToBounds = YES;
     
     return cell;
 }
@@ -107,23 +116,28 @@
     if (indexPath.row == 0) {
         HotListViewController *hotVC = [HotListViewController new];
         [self.navigationController pushViewController:hotVC animated:YES];
+        //[self.navigationController wxs_pushViewController:hotVC animationType:WXSTransitionAnimationTypeSysCubeFromBottom];
     }
     else if (indexPath.row == 1){
         ReaderListTableViewController *readerListVC = [ReaderListTableViewController new];
         [self.navigationController pushViewController:readerListVC animated:YES];
+        //[self.navigationController wxs_pushViewController:readerListVC animationType:WXSTransitionAnimationTypeSysPageCurlFromBottom];
     }
     else if (indexPath.row == 2){
         UICollectionViewFlowLayout *layout= [[UICollectionViewFlowLayout alloc] init];
         VideoCategoryCollectionViewController *videoListVC = [[VideoCategoryCollectionViewController alloc] initWithCollectionViewLayout:layout];
         [self.navigationController pushViewController:videoListVC animated:YES];
+       // [self.navigationController wxs_pushViewController:videoListVC animationType:WXSTransitionAnimationTypeBrickOpenVertical];
     }
     else if (indexPath.row == 3){
         SongMenuTableViewController *songMenuVC = [[SongMenuTableViewController alloc] init];
         [self.navigationController pushViewController:songMenuVC animated:YES];
+        //[self.navigationController wxs_pushViewController:songMenuVC animationType:WXSTransitionAnimationTypePointSpreadPresent];
     }
     else{
         RankingBaseViewController *rankingVC = [[RankingBaseViewController alloc] init];
         [self.navigationController pushViewController:rankingVC animated:YES];
+        //[self.navigationController wxs_pushViewController:rankingVC animationType:WXSTransitionAnimationTypeSysCubeFromTop];
     }
    
 }

@@ -56,7 +56,7 @@
     
     _readerView = [[NSBundle mainBundle]loadNibNamed:@"ReaderListHeaderView" owner:nil options:nil][0];
     
-    _readerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97-64);
+    _readerView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97);
     self.tableView.tableHeaderView = _readerView;
     
     //self.tableView.tableHeaderView.frame = CGRectMake(0, 0, VIEW_WIDTH, 97-64);
@@ -186,12 +186,19 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ReaderDetailViewController *readDetailVC = [ReaderDetailViewController new];
-    ReadMotivationProducts *products = _base.products[indexPath.row];
+    ReadMotivationProducts *products = _moreDataArr[indexPath.row];
     readDetailVC.productID = products.productsIdentifier;
     readDetailVC.abstract = products.subname;
     readDetailVC.imgUrl = products.imageUrl;
     [self.navigationController pushViewController:readDetailVC animated:YES];
 
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
 }
 
 /*

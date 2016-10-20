@@ -14,10 +14,13 @@
 #import "VideoListDataModels.h"
 #import "YYScrollView.h"
 #import "MoviePlayerViewController.h"
+#import "LLShowHUD.h"
 
 
 #import "NewPagedFlowView.h"
 #import "PGIndexBannerSubiew.h"
+
+#import "VideoFullScreenViewController.h"
 
 @interface VideoCategoryCollectionViewController ()<NewPagedFlowViewDelegate, NewPagedFlowViewDataSource>
 
@@ -32,6 +35,7 @@
 @property (nonatomic, strong) NSMutableArray *headerDataArray;
 @property (nonatomic, strong) UIImageView *headerImageView;
 @property (nonatomic, strong) NewPagedFlowView *pageFlowView;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 
 @property (nonatomic, strong) YYScrollView *scroll;
@@ -70,7 +74,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//
     self.title = @"视频类别";
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -80,9 +84,17 @@
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
 //    self.navigationController.navigationBar.shadowImage = [UIImage new];
     
-     [self headerDataRequest];
-
+//    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+//        [self headerDataRequest];
+//        
+//        [self dataRequest];
+//    }];
+    _swiftHUD = [[SwiftHUD alloc] init];
+    [_swiftHUD startLoadHUD];
     [self dataRequest];
+    [self headerDataRequest];
+
+    
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.collectionViewLayout = [self flowLayout];
@@ -109,11 +121,11 @@
 -(UICollectionViewFlowLayout *)flowLayout{
     if(!_flowLayout){
         _flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        _flowLayout.itemSize = CGSizeMake((VIEW_WIDTH-3)/2,140);
+        _flowLayout.itemSize = CGSizeMake((VIEW_WIDTH-3)/2,150);
         _flowLayout.minimumLineSpacing = 3;
         _flowLayout.minimumInteritemSpacing = 3;
         _flowLayout.sectionInset = UIEdgeInsetsMake(3, 0, 3, 0);
-        _flowLayout.headerReferenceSize = CGSizeMake(VIEW_WIDTH, 180);
+        _flowLayout.headerReferenceSize = CGSizeMake(VIEW_WIDTH, 150);
     }
     return _flowLayout;
 }
@@ -121,6 +133,13 @@
 
 -(void)dataRequest{
    [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_VideoList Parameter:nil Success:^(NSDictionary *dic) {
+       
+       dispatch_async(dispatch_get_main_queue(), ^{
+          // [MBProgressHUD hideHUDForView:self.view animated:YES];
+           [_swiftHUD stopLoadHUD];
+       });
+       
+       
        self.baseModel = [BaseClass modelObjectWithDictionary:dic];
       // NSLog(@"%@",self.baseModel);
        for (int i= 0; i < self.baseModel.itemList.count; i++) {
@@ -143,7 +162,9 @@
 
 -(void)headerDataRequest{
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_VideoHeader Parameter:nil Success:^(NSDictionary *dic) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
         NSArray *sectionArray = [NSArray array];
         sectionArray = dic[@"sectionList"];
         
@@ -212,6 +233,13 @@
     
 }
 
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+    cell.layer.transform = CATransform3DMakeScale(0.2, 0.2, 1);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.layer.transform = CATransform3DMakeScale(1, 1, 1);
+    }];
+}
+
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
     
@@ -248,6 +276,7 @@
     videoListVC.listModel = [[ItemList alloc] init];
     videoListVC.listModel = self.videoDataArray[indexPath.row];
     [self.navigationController pushViewController:videoListVC animated:YES];
+    //[self.navigationController wxs_pushViewController:videoListVC animationType:WXSTransitionAnimationTypeFragmentHideFromBottom];
 }
 #pragma mark <UICollectionViewDelegate>
 
@@ -301,11 +330,12 @@
     
     NSLog(@"点击了第%ld张图",(long)subIndex+1);
     
-    MoviePlayerViewController *moviePlayVC = [[MoviePlayerViewController alloc] init];
+    VideoFullScreenViewController *moviePlayVC = [[VideoFullScreenViewController alloc] init];
     moviePlayVC.dataArray = [NSArray array];
     moviePlayVC.dataArray = self.headerDataArray;
     moviePlayVC.selectIndex = (long)subIndex;
-    [self.navigationController pushViewController:moviePlayVC animated:YES];
+   // [self.navigationController pushViewController:moviePlayVC animated:YES];
+    [self presentViewController:moviePlayVC animated:YES completion:nil];
     
     
     

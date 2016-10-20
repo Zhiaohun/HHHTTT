@@ -26,3 +26,7 @@
 //图片加载背景
 #define PlaceholderImage [UIImage imageNamed:@"placeholderImage"]
 #endif /* ToolMacroDefine_h */
+
+
+// player的单例
+#define ZFPlayerShared                      [ZFBrightnessView sharedBrightnessView]

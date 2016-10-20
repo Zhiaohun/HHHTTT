@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSArray *categoriesArray;
 @property (nonatomic, strong) NSArray *viewControllerArray;
 
+
 @end
 
 @implementation RankingBaseViewController

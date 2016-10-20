@@ -29,6 +29,7 @@
 @property (nonatomic, strong) MusicDownloadBaseClass *downloadBaseModel;
 @property (nonatomic, assign) BOOL isDownloading;
 @property (nonatomic, assign) NSInteger selectCell;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -46,11 +47,15 @@
     
     self.selectCell = -1;
     
+    self.title = @"专辑列表";
+    
     NSLog(@"_+_+_+%lu",self.albumId);
     self.pageId = 1;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 50;
 
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self dataRequest];
    
     
@@ -58,6 +63,9 @@
     [self.tableView registerNib:songListNib forCellReuseIdentifier:@"songlistcell"];
     
     [self goback];
+    
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 //自定义返回键
 -(void)goback{
@@ -88,6 +96,9 @@
     NSString *URLStr = [NSString stringWithFormat:@"%@=%lu&%@",URL_MusicList,self.albumId,str];
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         [self.tableView.mj_footer endRefreshing];
         
         self.listBaseModel = [MusicListBaseClass modelObjectWithDictionary:dic];
@@ -262,6 +273,7 @@
     songPlayVC.selectIndex = indexPath.row;
     songPlayVC.musicListArray = self.musicListArray;
     [self.navigationController pushViewController:songPlayVC animated:YES];
+    //[self.navigationController wxs_pushViewController:songPlayVC animationType:WXSTransitionAnimationTypePointSpreadPresent];
 }
 
 /*

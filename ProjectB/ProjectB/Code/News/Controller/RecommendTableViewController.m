@@ -22,6 +22,9 @@
 #import "UIViewController+MMDrawerController.h"
 #import "UIView+ShadowView.h"
 
+#import "LLShowHUD.h"
+
+
 
 
 @interface RecommendTableViewController ()<KNBannerViewDelegate>
@@ -34,6 +37,7 @@
 @property (nonatomic, strong) KNBannerView *bannerView;
 
 @property (nonatomic,strong) UIImageView *ImgView;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 @end
 
 @implementation RecommendTableViewController
@@ -43,25 +47,54 @@
     }
     return _dataArray;
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [_swiftHUD startLoadHUD];
+    [self dataRequest];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+   // _swiftHUD = [[SwiftHUD alloc] init];
     self.countStart = 0;
-    [self headerRefresh];
+  //  [self headerRefresh];
+    
+//    [LLShowHUD showDataRequestHUD:self.view Message:@"正在加载数据..." NetWorkRequest:^{
+//        
+//        [self headerRefresh];
+//    }];
+    
+  
+    
     [self cellResigest];
+    [self goback];
     
 }
 
+//自定义返回键
+-(void)goback{
+    UIImage *image = [[UIImage imageNamed:@"返回"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(TapLeftAction)];
+}
+-(void)TapLeftAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark - private Method -
 
 -(void)dataRequest{
     NSString *URLStr = [NSString stringWithFormat:@"%@/%lu-20.html",URL_Recommend,self.countStart];
     
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
+    
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URLStr Parameter:nil Success:^(NSDictionary *dic) {
      //   NSLog(@"++++++++++++++%@",dic);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+             [self.swiftHUD stopLoadHUD];
+        });
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         self.concentrationBaseModel = [NewsConcentrationBaseClass modelObjectWithDictionary:dic];
         _imgArray = [NSMutableArray array];
         _titleArray = [NSMutableArray array];
@@ -75,6 +108,8 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+
             [self.tableView reloadData];
             [self footerRefresh];
         });
@@ -131,7 +166,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+   
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     NewsConcentrationT1467284926140 *model = self.dataArray[indexPath.row];
@@ -150,6 +185,7 @@
             newsImagemoreCell.cmodel = model;
             
             [UIView shadowView:newsImagemoreCell];
+            newsImagemoreCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImagemoreCell;
             
         }else if (model.hasImg){
@@ -157,6 +193,7 @@
             newsImageCell.cmodel = model;
             
             [UIView shadowView:newsImageCell];
+            newsImageCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsImageCell;
             
         }else{
@@ -164,7 +201,7 @@
             newsCell.cmodel = model;
             
             [UIView shadowView:newsCell];
-            
+            newsCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return newsCell;
             
             
@@ -189,12 +226,23 @@
     
     if (model.imgextra.count>0) {
         NewsImageViewController *imageVC = [[NewsImageViewController alloc] init];
-        [self.navigationController pushViewController:imageVC animated:YES];
+        
+        imageVC.skipID = model.skipID;
+//        imageVC.imageArray = [NSArray array];
+//        imageVC.imageArray = model.imgextra;
+//        NSLog(@">>>>>>%@",[imageVC.imageArray[0] imgsrc]);
+       // [self.navigationController pushViewController:imageVC animated:YES];
+        
+        [self.navigationController wxs_pushViewController:imageVC animationType:WXSTransitionAnimationTypeSysCameraIrisHollowOpen];
     }else{
         NewsWebViewController *webVC = [[NewsWebViewController alloc] init];
         webVC.URLHtml = model.url;
-        [self.navigationController pushViewController:webVC animated:YES];
+       // [self.navigationController pushViewController:webVC animated:YES];
+        [self.navigationController wxs_pushViewController:webVC animationType:WXSTransitionAnimationTypeSysRippleEffect];
     }
+    
+    
+    
 }
 
 

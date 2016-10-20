@@ -45,10 +45,9 @@
     }
 }
 - (IBAction)shareBtnAction:(id)sender {
-    
+    UIButton *btn = (UIButton *)sender;
     if (self.shareBtnActionBlock) {
-        self.shareBtnActionBlock();
-        
+        self.shareBtnActionBlock(btn.tag);
     }
 }
 

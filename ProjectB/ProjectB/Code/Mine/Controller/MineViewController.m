@@ -31,7 +31,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = NO;
     self.tabBarController.tabBar.hidden = NO;
-    
+    [self.systemInfoTableView reloadData];
     if (![JudgeManager defaultManager].isLogin) {
         _LoginView.hidden = YES;
         _signOutView.hidden = YES;

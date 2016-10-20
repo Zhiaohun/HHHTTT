@@ -10,10 +10,12 @@
 #import "HotVideoTableViewCell.h"
 #import "VideoListDataModels.h"
 #import "MoviePlayerViewController.h"
+#import "VideoFullScreenViewController.h"
 
 @interface HotVideoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic, strong) VideoListBaseClass *videoBaseModel;
+@property (nonatomic, strong) SwiftHUD *swiftHUD;
 
 @end
 
@@ -23,8 +25,11 @@
     [super viewDidLoad];
     
     [self initUI];
+    _swiftHUD = [SwiftHUD new];
+    [_swiftHUD startLoadHUD];
     [self requestMovieData];
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +40,7 @@
 -(void)initUI{
     self.title = @"热门电影";
     self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    _tableView.rowHeight = 100;
+    _tableView.rowHeight = 150;
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [_tableView registerNib:[UINib nibWithNibName:@"HotVideoTableViewCell" bundle:nil] forCellReuseIdentifier:@"videocell"];
@@ -56,7 +61,9 @@
 -(void)requestMovieData{
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_hot Parameter:nil Success:^(NSDictionary *dic) {
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.swiftHUD stopLoadHUD];
+        });
         self.videoBaseModel = [VideoListBaseClass modelObjectWithDictionary:dic];
         NSLog(@">>>>>%@",dic);
         
@@ -90,14 +97,21 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.transform = CGAffineTransformTranslate(cell.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+    }];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MoviePlayerViewController *movieVC = [[MoviePlayerViewController alloc] init];
-    movieVC.dataArray = [NSArray array];
-    movieVC.dataArray = self.videoBaseModel.itemList;
-    movieVC.selectIndex = indexPath.row;
-    
-    [self.navigationController pushViewController:movieVC animated:YES];
+    VideoFullScreenViewController *moviePlayVC = [[VideoFullScreenViewController alloc] init];
+    moviePlayVC.dataArray = [NSArray array];
+    moviePlayVC.dataArray = self.videoBaseModel.itemList;
+    moviePlayVC.selectIndex = indexPath.row;
+    // [self.navigationController pushViewController:moviePlayVC animated:YES];
+    [self presentViewController:moviePlayVC animated:YES completion:nil];
 }
 
 /*
