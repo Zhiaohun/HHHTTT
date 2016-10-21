@@ -103,7 +103,9 @@
 }
 
 -(void)initUI{
-    self.title = @"我的";
+    
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"我的"];
     //用户信息
     self.LoginImg.layer.cornerRadius = 40;
     self.LoginImg.layer.borderWidth = 3;

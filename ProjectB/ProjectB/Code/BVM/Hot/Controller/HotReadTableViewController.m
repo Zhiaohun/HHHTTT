@@ -24,7 +24,8 @@
 @implementation HotReadTableViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"热门图书";
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"热门图书"];
     [self initUI];
     _swiftHUD = [SwiftHUD new];
     [_swiftHUD startLoadHUD];

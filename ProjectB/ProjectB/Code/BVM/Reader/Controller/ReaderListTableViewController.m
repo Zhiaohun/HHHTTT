@@ -45,7 +45,8 @@
     [self goback];
     _page = 1;
     _moreDataArr = [NSMutableArray array];
-    self.title = @"图书列表";
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"图书列表"];
     //    self.automaticallyAdjustsScrollViewInsets = NO;
     //    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView.rowHeight = 120;

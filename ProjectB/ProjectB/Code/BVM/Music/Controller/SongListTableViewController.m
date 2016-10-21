@@ -47,7 +47,8 @@
     
     self.selectCell = -1;
     
-    self.title = @"专辑列表";
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"专辑列表"];
     
     NSLog(@"_+_+_+%lu",self.albumId);
     self.pageId = 1;

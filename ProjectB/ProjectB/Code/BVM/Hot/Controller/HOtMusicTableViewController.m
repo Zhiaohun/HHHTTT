@@ -34,7 +34,9 @@
     _swiftHUD = [SwiftHUD new];
     [_swiftHUD startLoadHUD];
     [self requestMusicData];
-    self.title = @"热门音乐";
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"热门音乐"];
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
 

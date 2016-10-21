@@ -30,7 +30,10 @@
 #pragma mark - private Method -
 
 -(void)initUI{
-    self.title = @"收藏列表";
+//    self.title = @"收藏列表";
+    
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"收藏列表"];
     
     [self goback];
 }

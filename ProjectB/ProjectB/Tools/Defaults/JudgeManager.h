@@ -22,4 +22,6 @@
 @property (nonatomic,strong) NSString *MainBGImg;
 @property (nonatomic,strong) NSString *LeftBGImg;
 
+-(UILabel *)setFont:(NSString *)str;
+
 @end
