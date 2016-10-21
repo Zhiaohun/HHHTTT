@@ -51,7 +51,9 @@
 }
 
 -(void)initUI{
-    self.title = @"我的主题";
+//    self.title = @"我的主题";
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"我的主题"];
     [self collection];
     [self goback];
     [self defaulted];

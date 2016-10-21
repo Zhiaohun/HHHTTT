@@ -168,7 +168,10 @@
 -(void)upDateUI{
     
     self.listModel = self.dataArray[self.index];
-     self.title = self.listModel.data.title;
+     //self.title = self.listModel.data.title;
+    
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:self.listModel.data.title];
     [self.imageV sd_setImageWithURL:[NSURL URLWithString:_listModel.data.cover.feed] placeholderImage:PlaceholderImage];
     
     [self.imageV backgroundImageAnimation];

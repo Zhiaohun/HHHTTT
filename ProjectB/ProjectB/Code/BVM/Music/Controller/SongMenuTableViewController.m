@@ -33,7 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"音乐类别";
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"音乐类别"];
     
     [self initUI];
 }

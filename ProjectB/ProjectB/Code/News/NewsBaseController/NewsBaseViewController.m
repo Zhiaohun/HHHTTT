@@ -91,7 +91,9 @@
 
 -(void)initUI{
     [self showMsg];
-    self.title = @"资讯";
+   
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"资讯"];
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];

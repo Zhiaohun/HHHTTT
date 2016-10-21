@@ -15,6 +15,9 @@ class SwiftHUD: UIViewController,NVActivityIndicatorViewable {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        
     }
     
     func startLoadHUD() -> Void {
@@ -27,6 +30,12 @@ class SwiftHUD: UIViewController,NVActivityIndicatorViewable {
         stopAnimating()
     }
 
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

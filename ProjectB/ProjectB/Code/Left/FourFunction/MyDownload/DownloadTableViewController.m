@@ -39,7 +39,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"下载列表";
+//self.title = @"下载列表";
+    
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"下载列表"];
+    
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 50;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

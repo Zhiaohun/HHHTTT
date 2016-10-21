@@ -64,7 +64,8 @@
 
 #pragma mark - private Menthod -
 -(void)initUI{
-    self.title = @"热门";
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"热门"];
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]forBarMetrics:UIBarMetricsDefault];
 //    self.navigationController.navigationBar.shadowImage = [UIImage new];
     

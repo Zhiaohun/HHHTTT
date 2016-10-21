@@ -173,6 +173,7 @@
 		3F844AE61D9E3E2300AE9B3B /* VideoListWebUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844ADA1D9E3E2300AE9B3B /* VideoListWebUrl.m */; };
 		3F844AEA1D9E523400AE9B3B /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F844AE81D9E523400AE9B3B /* VideoDetailViewController.m */; };
 		3F844AEB1D9E523400AE9B3B /* VideoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F844AE91D9E523400AE9B3B /* VideoDetailViewController.xib */; };
+		3FA31F151DBA340C00BE53AA /* 迷你简行楷.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3FA31F141DBA340C00BE53AA /* 迷你简行楷.TTF */; };
 		3FA4E5E41D9AB1070090AC78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E5E31D9AB1070090AC78 /* main.m */; };
 		3FA4E5E71D9AB1070090AC78 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4E5E61D9AB1070090AC78 /* AppDelegate.m */; };
 		3FA4E5ED1D9AB1070090AC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA4E5EB1D9AB1070090AC78 /* Main.storyboard */; };
@@ -648,6 +649,7 @@
 		3F844AE71D9E523400AE9B3B /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
 		3F844AE81D9E523400AE9B3B /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailViewController.m; sourceTree = "<group>"; };
 		3F844AE91D9E523400AE9B3B /* VideoDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoDetailViewController.xib; sourceTree = "<group>"; };
+		3FA31F141DBA340C00BE53AA /* 迷你简行楷.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "迷你简行楷.TTF"; sourceTree = "<group>"; };
 		3FA4E5DF1D9AB1070090AC78 /* ProjectB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA4E5E31D9AB1070090AC78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3FA4E5E51D9AB1070090AC78 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1781,6 +1783,7 @@
 				3FA4E5EE1D9AB1070090AC78 /* Assets.xcassets */,
 				3FA4E5F01D9AB1070090AC78 /* LaunchScreen.storyboard */,
 				3FA4E5F31D9AB1070090AC78 /* Info.plist */,
+				3FA31F141DBA340C00BE53AA /* 迷你简行楷.TTF */,
 				3FA4E5E31D9AB1070090AC78 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -2650,6 +2653,7 @@
 				3F2961B71DAA3A6F001934A9 /* SongPlayCommentTableViewCell.xib in Resources */,
 				3F3195FC1DB1245600F328EC /* kr-video-player-fullscreen@3x.png in Resources */,
 				5D29EA221D9D19DE00213A82 /* SystemInfoTableViewCell.xib in Resources */,
+				3FA31F151DBA340C00BE53AA /* 迷你简行楷.TTF in Resources */,
 				3F272FA11DA77AAD00CA7E8F /* SongListHeaderView.xib in Resources */,
 				3F0470AE1D9C0AC500DAD187 /* NewsImageTableViewCell.xib in Resources */,
 				3F3196111DB1245700F328EC /* zx-video-player-volume@2x.png in Resources */,

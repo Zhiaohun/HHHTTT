@@ -38,7 +38,9 @@
 }
 #pragma mark - private Method -
 -(void)initUI{
-    self.title = @"热门电影";
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"热门电影"];
+    
     self.tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     _tableView.rowHeight = 150;
     _tableView.dataSource = self;

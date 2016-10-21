@@ -75,7 +75,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //
-    self.title = @"视频类别";
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:@"视频类别"];
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     

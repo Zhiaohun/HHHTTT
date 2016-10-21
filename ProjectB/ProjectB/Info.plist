@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>迷你简行楷.TTF</string>
+		<string>华文行楷.ttf</string>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string>合川</string>
 	<key>NSAppTransportSecurity</key>

@@ -37,7 +37,9 @@
     [super viewDidLoad];
     _listModel = self.musicListArray[_selectIndex];
     //改变标题
-    self.title = self.listModel.title;
+    //self.title = self.listModel.title;
+    JudgeManager *manager = [JudgeManager defaultManager];
+    self.navigationItem.titleView = [manager setFont:self.listModel.title];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
