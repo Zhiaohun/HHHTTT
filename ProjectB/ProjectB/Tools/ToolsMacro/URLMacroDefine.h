@@ -14,7 +14,7 @@
 #define URL_Main @"http://115.28.168.103:8080/yiyan/getalltextcard?category=0&v=2.2"
 
 //天气
-#define URL_Weather   @"http://tq.91.com/api/?chl=otSy9Zonl%2Fk5CTkt33reOQ%3D%3D&pid=168&marsLat=23.174925001898622&fromId=0&isfamily=0&cityName=%E5%A4%A9%E6%B2%B3%E5%8C%BA&spid=1&osv=8.3&lat=23.177468538866503&imei=EC5D43FF-9DB5-41F7-832E-2AD723B62D42&city=1012801014401060003&dm=iPhone6%2C2&sv=1.2.0&act=210&lng=113.340477823105431&marsLng=113.345936383709926&nt=10&mt=1"
+#define URL_Weather   @"https://api.heweather.com/x3/weather?key=2e39142365f74cba8c3d9ccc09f73eaa&city=guangzhou"
 
 //书影音
 

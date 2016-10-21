@@ -11,16 +11,27 @@
 #import "DownloadTableViewController.h"
 #import "UIImageEffects.h"
 #import "CollectionViewController.h"
+#import "WeatherDataModels.h"
+#import "MyThemeViewController.h"
 
 @interface LeftViewController ()
 @property (nonatomic, assign) BOOL state; //夜间 state=YES  白天 state=NO
-
+@property (nonatomic,strong) WeatherBaseClass *base;
 
 @end
 
 @implementation LeftViewController
 
 -(void)viewWillAppear:(BOOL)animated{
+    
+    if (![JudgeManager defaultManager].LeftBGImg){
+        self.bgImg.image = [UIImage imageNamed:@"left_bg"];
+    }
+    else{
+        [self.bgImg sd_setImageWithURL:[NSURL URLWithString:[JudgeManager defaultManager].LeftBGImg]];
+    }
+    
+    
     if (!IsEmptyString([UserInfoManager getUname])) {
         self.username.text = [UserInfoManager getUname];
     }
@@ -68,7 +79,7 @@
     //毛玻璃效果
 //    self.bgImg.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"20121214223818_CmWuM"]];
     
-   
+    
     
 }
 
@@ -82,22 +93,17 @@
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_Weather Parameter:nil Success:^(NSDictionary *dic) {
         
-        NSDictionary *items = dic[@"items"][0];
+        _base = [WeatherBaseClass modelObjectWithDictionary:dic];
+        WeatherHeWeatherDataService30 *data = _base.heWeatherDataService30[0];
+        WeatherDailyForecast *daily = data.dailyForecast[0];
         
-        NSDictionary *nowMsg = items[@"now"];
-        NSDictionary *sumMsg = items[@"summary"];
-        NSDictionary *todayMsg = items[@"today"];
-        NSDictionary *right = sumMsg[@"right"];
-        
-        NSDictionary *bg = items[@"bg"];
-        NSDictionary *ae = bg[@"ae"];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            _currentTime.text = [NSString stringWithFormat:@"2016/%@",right[@"date"]];
-            _currentTemperature.text = [NSString stringWithFormat:@"%@℃",nowMsg[@"temp"]];
-            _TMaxAndMin.text = todayMsg[@"temp"];
-            _updateTime.text = right[@"pubdate"];
-            [_weatherBgImg sd_setImageWithURL:[NSURL URLWithString:ae[@"background"]]];
+            _currentTime.text = [NSString stringWithFormat:@"%@",data.basic.update.loc];
+            _currentTemperature.text = [NSString stringWithFormat:@"%@℃",data.now.tmp];
+            _TMaxAndMin.text = [NSString stringWithFormat:@"%@ %@",daily.tmp.max,daily.tmp.min];
+            _updateTime.text = [NSString stringWithFormat:@"%@转%@",daily.cond.txtD,daily.cond.txtN];
+            //[_weatherBgImg sd_setImageWithURL:[NSURL URLWithString:ae[@"background"]]];
         });
         
     } Fail:^(NSError *error) {
@@ -105,23 +111,26 @@
     }];
 }
 
-- (void)showSucHUDWithMessage:(NSString *)msg {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    hud.mode = MBProgressHUDModeCustomView;
-    UIImage *image = [[UIImage imageNamed:@"Checkmark"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    hud.customView = [[UIImageView alloc] initWithImage:image];
-    hud.square = YES;
-    hud.label.text = msg;
-    [hud hideAnimated:YES afterDelay:1.f];
-}
+//- (void)showSucHUDWithMessage:(NSString *)msg {
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+//    hud.mode = MBProgressHUDModeCustomView;
+//    UIImage *image = [[UIImage imageNamed:@"Checkmark"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    hud.customView = [[UIImageView alloc] initWithImage:image];
+//    hud.square = YES;
+//    hud.label.text = msg;
+//    [hud hideAnimated:YES afterDelay:1.f];
+//}
 
 
 
 #pragma mark - Tapclick -
 
 - (IBAction)firstBtn:(id)sender {
-    //近期浏览
-    [self showSucHUDWithMessage:@"此功能尚未研究成功,请耐心等候"];
+    //我的主题
+    MyThemeViewController *themeVC = [MyThemeViewController new];
+    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:themeVC];
+    navi.navigationBar.hidden = NO;
+    [self presentViewController:navi animated:YES completion:nil];
     
 }
 - (IBAction)secondBtn:(id)sender {

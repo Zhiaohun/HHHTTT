@@ -8,6 +8,7 @@
 
 #ifndef ProjectB_Bridging_Header_h
 #define ProjectB_Bridging_Header_h
+#import "LeftViewController.h"
 
 
 #endif /* ProjectB_Bridging_Header_h */

@@ -28,10 +28,9 @@
 @property (nonatomic,strong) NSMutableArray *imgArr;
 @property (nonatomic,strong) NSMutableArray *tagArr;
 
-
+@property (nonatomic,assign)NSInteger refreshTag;
 
 @property (nonatomic,strong) MainTextcardlist *list;
-
 @end
 
 @implementation LYScrollView
@@ -315,8 +314,25 @@
     
 }
 
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    if (_refreshTag == 1) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"refresh" object:nil];
+    }
+    
+    
+}
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if (scrollView.contentOffset.x <= -50) {
+        _refreshTag = 1;
+    }
+    else{
+        _refreshTag = 0;
+    }
+    
+    
     UIImageView * currImageView = [scrollView viewWithTag:kImageTag + self.currIndex];
     
     UIImageView * beforeImageView = [scrollView viewWithTag:kImageTag + self.currIndex - 1];

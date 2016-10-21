@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -51,11 +51,11 @@
                         <action selector="goodNight:" destination="-1" eventType="touchUpInside" id="HBH-Yg-R3h"/>
                     </connections>
                 </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAW-OI-Upj">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAW-OI-Upj">
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="G1d-jd-Qrh"/>
                     </constraints>
-                    <state key="normal" title="     我的足迹" image="left_subscibe">
+                    <state key="normal" title="     我的主题" image="left_subscibe">
                         <color key="titleColor" red="0.97680382020000001" green="0.97680382020000001" blue="0.97680382020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
@@ -125,21 +125,19 @@
                         <action selector="forthBtn:" destination="-1" eventType="touchUpInside" id="Eu0-FK-659"/>
                     </connections>
                 </button>
-                <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKe-Ca-RUP">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKe-Ca-RUP">
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20121214223818_CmWuM" translatesAutoresizingMaskIntoConstraints="NO" id="yoQ-B8-pYe"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weatherbg" translatesAutoresizingMaskIntoConstraints="NO" id="yoQ-B8-pYe"/>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="。。。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgC-BW-hwh">
                             <constraints>
                                 <constraint firstAttribute="width" constant="112" id="m0N-2e-lmP"/>
                                 <constraint firstAttribute="height" constant="24" id="w96-t3-NIV"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="。。。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8D-CS-qJn">
                             <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="天气" translatesAutoresizingMaskIntoConstraints="NO" id="Ggh-EE-AgT">
@@ -154,7 +152,6 @@
                                 <constraint firstAttribute="width" constant="101" id="xfp-Bd-SQC"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="。。。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2V-IB-wz5">
@@ -163,7 +160,6 @@
                                 <constraint firstAttribute="height" constant="21" id="oKo-mx-eSn"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9u-2m-AaR">
@@ -179,7 +175,6 @@
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="OAW-O5-ZGg"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -269,7 +264,6 @@
         </view>
     </objects>
     <resources>
-        <image name="20121214223818_CmWuM" width="1920" height="1200"/>
         <image name="left_bg" width="528" height="1136"/>
         <image name="left_collect" width="20" height="20"/>
         <image name="left_download" width="20" height="20"/>
@@ -277,6 +271,7 @@
         <image name="left_subscibe" width="20" height="20"/>
         <image name="left_timeline" width="20" height="20"/>
         <image name="sidebar_signature_nor" width="19" height="19"/>
+        <image name="weatherbg" width="452" height="300"/>
         <image name="夜间模式" width="32" height="32"/>
         <image name="天气" width="32" height="32"/>
     </resources>
