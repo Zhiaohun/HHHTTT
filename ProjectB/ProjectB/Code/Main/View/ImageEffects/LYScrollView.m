@@ -16,7 +16,6 @@
 #define kImageTag 888
 
 @interface LYScrollView ()<UIScrollViewDelegate, UIGestureRecognizerDelegate>
-
 @property (nonatomic, strong) UIScrollView * scrollView;
 
 @property (nonatomic, assign) NSInteger currIndex;
@@ -31,6 +30,8 @@
 @property (nonatomic,assign)NSInteger refreshTag;
 
 @property (nonatomic,strong) MainTextcardlist *list;
+
+
 @end
 
 @implementation LYScrollView
@@ -43,6 +44,18 @@
     }
     return self;
 }
+
+
+-(void)setContentOffset:(CGPoint)contentOffset{
+    
+    _scrollView.contentOffset = contentOffset;
+}
+-(CGPoint)contentOffset{
+    return _scrollView.contentOffset;
+}
+
+
+
 - (void)setUp
 {
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScrollViewWidth, kViewHeight)];
@@ -56,7 +69,7 @@
 
 - (void)setItmeArray:(NSMutableArray *)itmeArray
 {
-    
+
     _itmeArray = [NSMutableArray array];
     _itmeArray = itmeArray;
     
@@ -311,15 +324,13 @@
     self.currIndex = scrollView.contentOffset.x / scrollView.frame.size.width;
     self.beginOffX = scrollView.contentOffset.x;
     
-    
 }
 
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
     if (_refreshTag == 1) {
         [[NSNotificationCenter defaultCenter]postNotificationName:@"refresh" object:nil];
+        
     }
-    
-    
 }
 
 
@@ -331,7 +342,6 @@
     else{
         _refreshTag = 0;
     }
-    
     
     UIImageView * currImageView = [scrollView viewWithTag:kImageTag + self.currIndex];
     

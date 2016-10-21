@@ -15,7 +15,7 @@
 
 
 
-@interface MainViewController ()<BeginRefresh>
+@interface MainViewController ()
 
 @property (nonatomic, strong) LYScrollView * scrollView;
 @property (nonatomic, strong) NSMutableArray * itmeArray;
@@ -31,7 +31,6 @@
 
 @property (nonatomic,strong) MainBaseClass *base;
 @property (nonatomic,assign) NSInteger refresh;
-
 @end
 
 @implementation MainViewController
@@ -55,6 +54,7 @@
     
     [super viewWillAppear: animated];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(XXXrefresh) name:@"refresh" object:nil];
+
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -109,7 +109,21 @@
 }
 
 -(void)leftDrawerButtonPress:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
+    NSLog(@"%f",self.scrollView.contentOffset.x);
+    if (self.scrollView.contentOffset.x > 0) {
+        [UIView beginAnimations:@"move" context:nil];
+        [UIView setAnimationDuration:1];
+        [UIView setAnimationRepeatCount:1];
+        self.scrollView.contentOffset = CGPointMake(0, 0);
+        [UIView commitAnimations];
+        NSLog(@"回到第一张图片");
+    }
+    else{
+        [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+        NSLog(@"打开抽屉栏");
+    }
+    
 }
 
 -(void)handleScroImg{
@@ -155,10 +169,15 @@
                      [_scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
                      [self handleScroImg];
                      [self handleUserImg];
+                     if (![JudgeManager defaultManager].MainBGImg) {
+                         self.imageView.image = [UIImage imageNamed:@"BG_1"];
+                     }
+                     else{
+                         [self.imageView sd_setImageWithURL:[NSURL URLWithString:[JudgeManager defaultManager].MainBGImg]];
+                     }
                  }
                  _refresh = 0;
                  self.scrollView.itmeArray = [NSMutableArray arrayWithArray:_base.textcardlist];
-                 [_scrollView.swifthud stopLoadHUD];
              });
             NSLog(@"有数据");
         }
