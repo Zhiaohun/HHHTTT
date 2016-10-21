@@ -17,9 +17,9 @@
 
 @property (nonatomic,strong) NSString *currentID;
 @property (nonatomic,strong) NSString *currentAbsract;
-
-
 @property (nonatomic,strong) NSString *content;
 
+@property (nonatomic,strong) NSString *MainBGImg;
+@property (nonatomic,strong) NSString *LeftBGImg;
 
 @end

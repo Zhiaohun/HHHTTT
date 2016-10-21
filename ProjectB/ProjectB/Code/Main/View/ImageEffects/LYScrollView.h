@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MainDataModels.h"
 #import "MainView.h"
-typedef void(^ContentBlock)(NSString *);
+typedef void(^RefreshBlock)();
+@protocol BeginRefresh <NSObject>
+
+-(void)beginRefresh;
+
+@end
 
 @protocol LYScrollViewDelegate <NSObject>
 
@@ -27,6 +32,8 @@ typedef void(^ContentBlock)(NSString *);
 @property (nonatomic,strong) MainBaseClass *mainBase;
 
 @property (nonatomic,strong) MainView *view;
-
+@property (nonatomic,copy) RefreshBlock refreshBlock;
+@property (nonatomic,assign) id<BeginRefresh> setdelegate;
+@property (nonatomic,strong) SwiftHUD *swifthud;
 
 @end

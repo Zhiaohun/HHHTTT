@@ -190,6 +190,7 @@
     readDetailVC.productID = products.productsIdentifier;
     readDetailVC.abstract = products.subname;
     readDetailVC.imgUrl = products.imageUrl;
+//    [self.navigationController wxs_pushViewController:readDetailVC animationType:WXSTransitionAnimationTypeSysPageCurlFromBottom];
     [self.navigationController pushViewController:readDetailVC animated:YES];
 
 }

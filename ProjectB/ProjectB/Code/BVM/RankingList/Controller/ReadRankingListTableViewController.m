@@ -44,7 +44,6 @@
     self.tableView.rowHeight = 178;
     self.tableView.backgroundColor = [JudgeManager defaultManager].originColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
     
 }
 
@@ -54,7 +53,7 @@
         _page = 1;
         [self requestData];
     }];
-    [self.tableView.mj_header beginRefreshing];
+    //[self.tableView.mj_header beginRefreshing];
     
     
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{

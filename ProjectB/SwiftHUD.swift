@@ -10,9 +10,7 @@ import UIKit
 import NVActivityIndicatorView
 
 
-
 class SwiftHUD: UIViewController,NVActivityIndicatorViewable {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +23,7 @@ class SwiftHUD: UIViewController,NVActivityIndicatorViewable {
     func startLoadHUD() -> Void {
         let size = CGSize(width: 100, height: 100)
         startAnimating(size, message: "正在努力加载...", type: NVActivityIndicatorType.orbit, color: UIColor.init(red: 17/255.0, green: 255/255.0, blue: 244/255.0, alpha: 1), padding: nil, displayTimeThreshold: nil, minimumDisplayTime: nil)
+        
     }
     
     func stopLoadHUD() -> Void {

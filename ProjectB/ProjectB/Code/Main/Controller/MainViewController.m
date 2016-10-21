@@ -15,7 +15,7 @@
 
 
 
-@interface MainViewController ()
+@interface MainViewController ()<BeginRefresh>
 
 @property (nonatomic, strong) LYScrollView * scrollView;
 @property (nonatomic, strong) NSMutableArray * itmeArray;
@@ -30,6 +30,7 @@
 
 
 @property (nonatomic,strong) MainBaseClass *base;
+@property (nonatomic,assign) NSInteger refresh;
 
 @end
 
@@ -40,12 +41,24 @@
     
     [self requestData];
     [self initUI];
-    //NSLog(@"contentsize _____%f",_scrollView.contentoffset.x);
+    
     
 }
+-(void)viewWillAppear:(BOOL)animated{
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    NSLog(@"hide");
+    if (![JudgeManager defaultManager].MainBGImg) {
+        self.imageView.image = [UIImage imageNamed:@"BG_1"];
+    }
+    else{
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:[JudgeManager defaultManager].MainBGImg]];
+    }
+    
+    [super viewWillAppear: animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(XXXrefresh) name:@"refresh" object:nil];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"refresh" object:nil];
 }
 
 #pragma mark - private Method -
@@ -54,10 +67,19 @@
     [JudgeManager defaultManager].originColor = _originalView.backgroundColor;
     [self handleScroImg];
     [self handleUserImg];
-    
 }
 
+//    _scrollView.setdelegate = self;
+    
 
+//-(void)beginRefresh{
+//    _refresh = 1;
+//    [self requestData];
+//}
+-(void)XXXrefresh{
+    _refresh = 1;
+    [self requestData];
+}
 
 
 
@@ -97,7 +119,8 @@
 
     
    // self.imageView.image = [self blurViewByLightEffectWithImage:[UIImage imageNamed:@"BG_1.jpg"]];
-    self.imageView.image = [UIImage imageNamed:@"BG_1"];
+    
+    
     self.scrollView = [[LYScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    self.scrollView.delegate = self;
     self.scrollView.isOpenDelete = NO;
@@ -125,27 +148,18 @@
 -(void)requestData{
     
     [LLNetWorkingRequest reuqestWithType:GET Controller:self URLString:URL_Main Parameter:nil Success:^(NSDictionary *dic) {
-        
         _base = [MainBaseClass modelObjectWithDictionary:dic];
-        //NSLog(@"mainVc++++++%@",_base);
         if (_base) {
-            
              dispatch_async(dispatch_get_main_queue(), ^{
-            self.scrollView.itmeArray = [NSMutableArray arrayWithArray:_base.textcardlist];
+                 if (_refresh == 1) {
+                     [_scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+                     [self handleScroImg];
+                     [self handleUserImg];
+                 }
+                 _refresh = 0;
+                 self.scrollView.itmeArray = [NSMutableArray arrayWithArray:_base.textcardlist];
+                 [_scrollView.swifthud stopLoadHUD];
              });
-            
-            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                
-//                MainTextcardlist *list = _base.textcardlist[0];
-//                _scrollView.view.realContentLb.text  = list.content;
-//                
-//                
-//            });
-            
-            //NSLog(@"++++%@",self.scrollView.itmeArray);
-            
-           // self.scrollView.mainBase = _base;
             NSLog(@"有数据");
         }
         
